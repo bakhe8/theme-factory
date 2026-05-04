@@ -27,6 +27,15 @@
 - اطلبها من `specs/<theme>.specs.json`.
 - شغل `certify` قبل التسليم.
 
+## ماذا أقرأ بعد هذا؟
+
+| إذا كنت تريد | اقرأ |
+| --- | --- |
+| فهم خط الإنتاج كاملا | `docs/FACTORY_WORKFLOW.md` |
+| إضافة Feature أو Component جديد | `docs/CAPABILITIES.md` |
+| فهم التزام سلة والبوابات | `docs/SALLA_COMPLIANCE.md` |
+| فهم فلسفة القدرات والسياسة | `THEME_FACTORY_GUIDELINES.md` |
+
 ## أين تبدأ؟
 
 1. أنشئ أو حدث عقد الثيم:
@@ -130,6 +139,9 @@ node factory.js certify <theme-name> --relaxed-docs
 ## ملفات مهمة
 
 - `THEME_FACTORY_GUIDELINES.md`: فلسفة المصنع وقواعد قبول القدرات.
+- `docs/FACTORY_WORKFLOW.md`: خط الإنتاج من intake إلى deliver.
+- `docs/CAPABILITIES.md`: خريطة القدرات والـ registries/generators/gates.
+- `docs/SALLA_COMPLIANCE.md`: كيف يثبت المصنع الالتزام بتعليمات سلة.
 - `capabilities/`: catalog القدرات القابلة للاستخدام.
 - `specs/`: عقود الثيمات.
 - `core/*-registry.js`: تعريفات المصنع.

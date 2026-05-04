@@ -15,6 +15,11 @@ Goals:
 const guides = {
   'new-theme': {
     title: 'إنشاء ثيم جديد',
+    docs: [
+      'docs/START_HERE.md',
+      'docs/FACTORY_WORKFLOW.md',
+      'docs/SALLA_COMPLIANCE.md',
+    ],
     commands: [
       'node factory.js intake <theme-name>',
       'node factory.js manufacture <theme-name> --skip-deliver',
@@ -30,6 +35,11 @@ const guides = {
   },
   'add-capability': {
     title: 'إضافة قدرة مصنع جديدة',
+    docs: [
+      'docs/CAPABILITIES.md',
+      'THEME_FACTORY_GUIDELINES.md',
+      'docs/SALLA_COMPLIANCE.md',
+    ],
     commands: [
       'node factory.js capabilities new <id> --type=<home-experience|page-experience|integration|vertical>',
       'node factory.js innovation propose <id>',
@@ -45,6 +55,11 @@ const guides = {
   },
   certify: {
     title: 'اعتماد ثيم محليا',
+    docs: [
+      'docs/FACTORY_WORKFLOW.md',
+      'docs/SALLA_COMPLIANCE.md',
+      'docs/CAPABILITIES.md',
+    ],
     commands: [
       'node factory.js specs gate <theme-name>',
       'node factory.js capabilities gate <theme-name>',
@@ -61,6 +76,11 @@ const guides = {
   },
   deliver: {
     title: 'تجهيز مجلد التسليم',
+    docs: [
+      'docs/FACTORY_WORKFLOW.md',
+      'docs/SALLA_COMPLIANCE.md',
+      'quality/salla-reviews/README.md',
+    ],
     commands: [
       'node factory.js certify <theme-name> --relaxed-docs',
       'node factory.js salla-review template <theme-name>',
@@ -75,6 +95,11 @@ const guides = {
   },
   'fix-failure': {
     title: 'إصلاح فشل Gate',
+    docs: [
+      'docs/FACTORY_WORKFLOW.md',
+      'reports/',
+      'THEME_FACTORY_GUIDELINES.md',
+    ],
     commands: [
       'اقرأ أول gate فاشل في مخرجات certify.',
       'افتح التقرير المطابق في reports/',
@@ -87,6 +112,11 @@ const guides = {
   },
   docs: {
     title: 'تحديث ذاكرة وثائق سلة',
+    docs: [
+      'docs/SALLA_COMPLIANCE.md',
+      'core/docs-intelligence/salla-docs-config.js',
+      'core/docs-intelligence/generated/',
+    ],
     commands: [
       'node factory.js docs sync --max=180',
       'node factory.js docs urls',
@@ -110,6 +140,11 @@ function printGuide(goal = '') {
     for (const [id, guide] of Object.entries(guides)) {
       console.log(`- ${id}: ${guide.title}`);
     }
+    console.log('\nوثائق البداية:');
+    console.log('- docs/START_HERE.md');
+    console.log('- docs/FACTORY_WORKFLOW.md');
+    console.log('- docs/CAPABILITIES.md');
+    console.log('- docs/SALLA_COMPLIANCE.md');
     console.log('\nمثال: node factory.js guide add-capability');
     return;
   }
@@ -123,6 +158,11 @@ function printGuide(goal = '') {
 
   console.log(`\n🧭 ${guide.title}`);
   console.log('----------------');
+  if (guide.docs?.length) {
+    console.log('اقرأ:');
+    for (const doc of guide.docs) console.log(`- ${doc}`);
+    console.log('');
+  }
   console.log('الأوامر:');
   for (const command of guide.commands) console.log(`- ${command}`);
 

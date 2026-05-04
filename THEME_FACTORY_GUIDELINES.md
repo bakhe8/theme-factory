@@ -30,6 +30,12 @@ deliverables/<theme>/theme
 
 اقرأ `docs/START_HERE.md` قبل إنشاء أو تعديل أي ثيم. هذا الملف يشرح خط الإنتاج اليومي من طلب العميل إلى مجلد التسليم.
 
+الوثائق التشغيلية المكملة:
+
+- `docs/FACTORY_WORKFLOW.md`: مراحل المصنع وأوامر الإنتاج والتسليم.
+- `docs/CAPABILITIES.md`: أين تعرف القدرة وأين تنفذ وأي بوابة تثبتها.
+- `docs/SALLA_COMPLIANCE.md`: مصادر سلة والبوابات التي تثبت الامتثال.
+
 القاعدة التنفيذية الآن: أي قيمة `required: true` في `experiences`, `page_experiences`, `verticals`, أو `integrations` يجب أن تملك ملفا مطابقا في `capabilities/` وأن تمر عبر:
 
 ```bash
