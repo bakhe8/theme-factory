@@ -1,0 +1,55 @@
+{
+  "schema": "salla-theme-factory/capability@1",
+  "id": "luxury-fragrance",
+  "type": "vertical",
+  "status": "implemented",
+  "title": {
+    "ar": "متجر عطور فاخر",
+    "en": "Luxury Fragrance Store"
+  },
+  "summary": "بيئة بيانات ومعاينة محلية لمتاجر العطور الفاخرة تغطي المنتجات، التصنيفات، المراجعات، أقسام الصفحة الرئيسية، وخصائص العطر.",
+  "source": {
+    "kind": "benchmark",
+    "links": [
+      {
+        "title": "Junaid Perfumes benchmark",
+        "url": "docs/benchmarks/junaid-perfumes.md"
+      },
+      {
+        "title": "Fragrance vertical guide",
+        "url": "docs/FRAGRANCE_VERTICAL.md"
+      }
+    ],
+    "notes": "يعتمد على benchmark سلوكي لقياس جاهزية المصنع وليس لنسخ تصميم أو محتوى المتجر المرجعي."
+  },
+  "policy": {
+    "decision": "allowed_with_conditions",
+    "conditions": [
+      "تستخدم بيانات fixture محلية أو بيانات متجر سلة المتاحة في runtime فقط.",
+      "لا تنسخ أصول أو نصوص أو تصميم benchmark حرفيا.",
+      "يجب أن تغطي preview pages وvisual checklist القطاع قبل التسليم."
+    ]
+  },
+  "factory": {
+    "registry": "core/vertical-registry.js",
+    "generator": "core/vertical-factory.js",
+    "gate": "core/vertical-factory.js",
+    "spec_section": "verticals",
+    "spec_key": "luxury_fragrance",
+    "registry_id": "luxury-fragrance"
+  },
+  "quality": {
+    "required_gates": [
+      "fixtures",
+      "vertical",
+      "experience",
+      "preview",
+      "coverage",
+      "links",
+      "browser",
+      "twilight",
+      "rtl",
+      "visual"
+    ]
+  }
+}

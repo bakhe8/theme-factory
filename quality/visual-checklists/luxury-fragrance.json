@@ -1,0 +1,97 @@
+{
+  "schema": "salla-theme-factory/visual-checklist@1",
+  "theme": "luxury-fragrance",
+  "reviewed_at": "2026-05-04T18:12:49.335Z",
+  "reviewer": "Codex local visual gate",
+  "theme_fingerprint": {
+    "algorithm": "sha256",
+    "hash": "3c8c482da9a7adbcd1827e5456c11e3fdc6cfc5da4931095436ab274c0da8a6f"
+  },
+  "reviewed_reports": [
+    "page-coverage",
+    "link-smoke",
+    "rtl",
+    "twilight-smoke",
+    "browser-smoke"
+  ],
+  "required_decisions": {
+    "distinct_from_raed": true,
+    "selling_experiences_visible": true,
+    "product_cards_actionable": true,
+    "cart_checkout_flow_reviewed": true,
+    "rtl_layout_reviewed": true,
+    "mobile_layout_reviewed": true,
+    "empty_state_reviewed": true,
+    "text_fits_without_overlap": true,
+    "twilight_components_reviewed": true,
+    "screenshots_reviewed": true
+  },
+  "sampled_pages": [
+    {
+      "path": "build/luxury-fragrance/fragrance-luxury/index.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "Hero العطور وتجربة fragrance-discovery ظاهران بهوية داكنة/فاخرة مختلفة عن Raed."
+    },
+    {
+      "path": "build/luxury-fragrance/fragrance-luxury/index.html",
+      "viewport": "mobile",
+      "checked": true,
+      "notes": "RTL وmobile تمت مراجعتهما عبر RTL gate ولقطات browser smoke بدون overflow مانع."
+    },
+    {
+      "path": "build/luxury-fragrance/fragrance-luxury/product.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "صفحة المنتج تعرض الصورة والمساحة الأساسية دون تداخل ظاهر في عينة fragrance-luxury."
+    },
+    {
+      "path": "build/luxury-fragrance/fragrance-luxury/products.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "صفحة قائمة المنتجات تعرض الفرز والعنوان وبطاقات المنتجات ضمن fixture العطور."
+    },
+    {
+      "path": "build/luxury-fragrance/fragrance-luxury/cart.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "السلة تعرض المنتج والإجمالي والصورة دون كسر بصري مانع."
+    },
+    {
+      "path": "build/luxury-fragrance/checkout-flow/cart.html",
+      "viewport": "mobile",
+      "checked": true,
+      "notes": "Fixture checkout-flow يغطي حالات السلة المعقدة على mobile وروابطه مرت في link smoke."
+    },
+    {
+      "path": "build/luxury-fragrance/checkout-flow/customer/orders/9001.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "صفحة الطلب تدخل ضمن page contract وcoverage وتعرض كتجربة حساب/طلب قابلة للتنقل."
+    },
+    {
+      "path": "build/luxury-fragrance/fragrance-luxury/offers/summer.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "صفحة العرض تعرض عنوان الحملة ونسخة ترويجية دون تداخل واضح."
+    },
+    {
+      "path": "build/luxury-fragrance/fragrance-luxury/brands/index.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "Page experience للبراندات بالحروف العائمة موجود بصرياً ويحافظ على صفحة الماركات."
+    },
+    {
+      "path": "build/luxury-fragrance/empty-store/index.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "حالة المتجر الفارغ تعرض رسالة واضحة؛ تحذير empty source معروف في Twilight smoke وغير مانع."
+    }
+  ],
+  "blocking_issues": [],
+  "followups": [
+    "استبدال شعار وصور fixture المؤقتة عند تجهيز ثيم عميل حقيقي.",
+    "تحسين ترجمات المعاينة المحلية التي تظهر مثل common.search في fixture قبل العروض التجارية."
+  ],
+  "notes": "تمت مراجعة browser-smoke screenshots لعينة fragrance-luxury مع تقارير page coverage وlink smoke وRTL وTwilight. لا توجد مشاكل layout مانعة في العينات، وتبقى مراجعة Partner Portal/سلة الحقيقية مطلوبة قبل الإرسال النهائي."
+}

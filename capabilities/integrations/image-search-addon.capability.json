@@ -1,0 +1,43 @@
+{
+  "schema": "salla-theme-factory/capability@1",
+  "id": "image-search-addon",
+  "type": "integration",
+  "status": "requires-contract",
+  "title": {
+    "ar": "إضافة البحث بالصورة",
+    "en": "Image Search Addon"
+  },
+  "summary": "تمثيل ميزة بحث بالصورة عندما تكون مفعلة فعلا عبر إضافة أو خدمة موثقة في متجر العميل، بدون اختراع API داخل الثيم.",
+  "source": {
+    "kind": "client-request",
+    "links": [],
+    "notes": "لا تصبح قدرة إنتاجية إلا بعد تحديد مصدر الإضافة وطريقة عرضها وfallback عند غيابها."
+  },
+  "policy": {
+    "decision": "requires_contract",
+    "conditions": [
+      "يجب توفير source_url أو مرجع الإضافة الفعلي في متجر العميل.",
+      "يجب تحديد handled_by وplacement في specs.",
+      "يمنع رفع صور العميل إلى endpoint غير موثق من داخل الثيم.",
+      "يمنع إضافة سكربت خارجي غير مثبت من التاجر أو منصة سلة."
+    ]
+  },
+  "factory": {
+    "registry": "core/integration-registry.js",
+    "generator": "core/integration-factory.js",
+    "gate": "core/integration-factory.js",
+    "spec_section": "integrations",
+    "spec_key": "image_search",
+    "registry_id": "image-search-addon"
+  },
+  "quality": {
+    "required_gates": [
+      "integration",
+      "policy",
+      "preview",
+      "browser",
+      "visual"
+    ]
+  }
+}
+

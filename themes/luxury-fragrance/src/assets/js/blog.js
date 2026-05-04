@@ -26,23 +26,41 @@ class Blog extends BasePage {
                 return salla.notify.error(salla.lang.get('common.messages.must_login'));
             }
 
-            const originalContent = likeBtn.textContent;
-            likeBtn.querySelector('i').outerHTML = '<span class="loader loader--small"></span>';
+            const restoreLikeIcon = this.showLikeLoader(likeBtn);
 
             const endpoint = `blog/articles/${blogId}/like`;
             try {
                 await salla.api.request(endpoint, '', this.isLiked ? 'delete' : 'put');
-                likeBtn.textContent = originalContent;
+                restoreLikeIcon();
                 this.updateLikedBlogs(blogId, !this.isLiked);
                 this.updateLikesCount(!this.isLiked);
                 this.isLiked = !this.isLiked;
             } catch (e) {
-                 likeBtn.textContent = originalContent;
+                restoreLikeIcon();
                 if (e.response?.status === 409) {
                     this.handleExistingLike(likeBtn, blogId);
                 }
             }
         });
+    }
+
+    showLikeLoader(likeBtn) {
+        const icon = likeBtn.querySelector('i');
+        if (!icon) {
+            return () => {};
+        }
+
+        const originalIcon = icon.cloneNode(true);
+        const loader = document.createElement('span');
+        loader.className = 'loader loader--small';
+        loader.setAttribute('aria-hidden', 'true');
+        icon.replaceWith(loader);
+
+        return () => {
+            if (loader.isConnected) {
+                loader.replaceWith(originalIcon);
+            }
+        };
     }
 
     handleExistingLike(likeBtn, blogId) {

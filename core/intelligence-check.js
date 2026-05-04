@@ -4,6 +4,7 @@ const { compileDocs } = require('./docs-intelligence/compile');
 const { printCheck } = require('./docs-intelligence/check');
 const { printDocsGate } = require('./docs-intelligence/guard');
 const { syncDocs } = require('./docs-intelligence/sync');
+const { printUrlStatus, monitorConfiguredUrls } = require('./docs-intelligence/url-monitor');
 const { generatedDir, rootDir } = require('./docs-intelligence/salla-docs-config');
 const { readJson } = require('./docs-intelligence/utils');
 
@@ -30,6 +31,7 @@ function printStatus() {
   const webComponentsUsageContract = readJson(path.join(generatedDir, 'web-components-usage-contract.json'), null);
   const twilightJsonContract = readJson(path.join(generatedDir, 'twilight-json-contract.json'), null);
   const twigContracts = readJson(path.join(generatedDir, 'twig-contracts.json'), {});
+  const urlStatus = readJson(path.join(generatedDir, 'url-status.json'), null);
 
   console.log('\n🧠 Salla Docs Intelligence Status');
   console.log('-----------------------------------------');
@@ -57,6 +59,7 @@ function printStatus() {
   console.log(`Web components usage contract: ${webComponentsUsageContract ? 'yes' : 'no'}`);
   console.log(`Twilight json contract: ${twilightJsonContract ? 'yes' : 'no'}`);
   console.log(`Twig helpers/filters: ${(twigContracts.helpers || []).length}/${(twigContracts.filters || []).length}`);
+  console.log(`Configured URL status: ${urlStatus ? `${urlStatus.summary?.ok || 0}/${urlStatus.summary?.total || 0}` : 'not checked'}`);
   console.log(`Drift added/changed/removed: ${manifest.drift?.added?.length || 0}/${manifest.drift?.changed?.length || 0}/${manifest.drift?.removed?.length || 0}`);
 }
 
@@ -65,6 +68,7 @@ async function main() {
     case 'sync':
       await syncDocs(args);
       compileDocs();
+      await monitorConfiguredUrls(args.filter((arg) => arg.startsWith('--max=')));
       break;
 
     case 'compile':
@@ -97,12 +101,19 @@ async function main() {
       printStatus();
       break;
 
+    case 'urls':
+    case 'links':
+    case 'monitor':
+      await printUrlStatus(args);
+      break;
+
     default:
       console.log('Available docs intelligence commands:');
       console.log('  node factory.js docs sync [--seeds-only] [--max=120] - Fetch Salla docs and compile local policy memory');
       console.log('  node factory.js docs compile                         - Recompile generated JSON from cached docs');
       console.log('  node factory.js docs check [theme]                   - Check theme usage against local docs memory');
       console.log('  node factory.js docs gate [theme] [--strict]         - Enforce docs memory freshness and critical coverage');
+      console.log('  node factory.js docs urls [--max=50]                 - Check configured Salla docs/source URLs');
       console.log('  node factory.js docs status                          - Show local docs memory status');
       process.exitCode = 1;
   }

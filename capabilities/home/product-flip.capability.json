@@ -1,0 +1,63 @@
+{
+  "schema": "salla-theme-factory/capability@1",
+  "id": "product-flip",
+  "type": "home-experience",
+  "status": "implemented",
+  "title": {
+    "ar": "بطاقات منتجات قابلة للقلب",
+    "en": "Product Flip Cards"
+  },
+  "summary": "عرض منتجات مختارة ببطاقة قابلة للقلب لإظهار تفاصيل إضافية مع الحفاظ على الصورة والسعر والرابط وزر الإضافة للسلة.",
+  "source": {
+    "kind": "factory",
+    "links": [
+      {
+        "title": "Twilight theme components",
+        "url": "https://docs.salla.dev/421921m0"
+      },
+      {
+        "title": "Home Page components",
+        "url": "https://docs.salla.dev/422558m0"
+      },
+      {
+        "title": "Product Card component",
+        "url": "https://docs.salla.dev/422718m0"
+      },
+      {
+        "title": "Components customization",
+        "url": "https://docs.salla.dev/422690m0"
+      }
+    ],
+    "notes": "قدرة تفاعلية محلية لا تضيف شبكة خارجية ولا تغير عقد المنتج."
+  },
+  "policy": {
+    "decision": "allowed_with_conditions",
+    "conditions": [
+      "يجب أن تبقى صورة المنتج وسعره ورابطه وزر الإضافة للسلة ظاهرة أو قابلة للوصول.",
+      "يجب أن يكون التفاعل محليا وداعما للوحة المفاتيح وRTL.",
+      "يمنع استخدام HTML حر من التاجر أو DOM sinks غير مسجلة."
+    ]
+  },
+  "factory": {
+    "registry": "core/experience-registry.js",
+    "generator": "core/experience-factory.js",
+    "gate": "core/experience-gate.js",
+    "spec_section": "experiences",
+    "spec_key": "product_flip",
+    "registry_id": "product-flip"
+  },
+  "quality": {
+    "required_gates": [
+      "experience",
+      "policy",
+      "preview",
+      "coverage",
+      "links",
+      "browser",
+      "twilight",
+      "rtl",
+      "visual"
+    ]
+  }
+}
+

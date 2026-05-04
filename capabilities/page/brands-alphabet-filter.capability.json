@@ -1,0 +1,55 @@
+{
+  "schema": "salla-theme-factory/capability@1",
+  "id": "brands-alphabet-filter",
+  "type": "page-experience",
+  "status": "implemented",
+  "title": {
+    "ar": "فلتر الماركات الأبجدي العائم",
+    "en": "Floating Brand Alphabet Filter"
+  },
+  "summary": "تحسين صفحة البراندات بأزرار حروف أفقية عائمة تقفز إلى مجموعات البراندات بدون تغيير روابطها أو بياناتها.",
+  "source": {
+    "kind": "client-request",
+    "links": [
+      {
+        "title": "Brands Page docs",
+        "url": "https://docs.salla.dev/422570m0"
+      },
+      {
+        "title": "Raed brands index template",
+        "url": "https://github.com/SallaApp/theme-raed/blob/master/src/views/pages/brands/index.twig"
+      }
+    ],
+    "notes": "طلب عميل قابل للتنفيذ لأنه يعمل فوق صفحة البراندات وبياناتها الأصلية."
+  },
+  "policy": {
+    "decision": "allowed_with_conditions",
+    "conditions": [
+      "يستخدم بيانات صفحة البراندات وروابطها الأصلية.",
+      "لا يخفي محتوى الصفحة عن قارئات الشاشة أو التنقل بلوحة المفاتيح.",
+      "يجب أن يكون sticky/floating بدون تغطية عناصر الشراء أو رأس الصفحة."
+    ]
+  },
+  "factory": {
+    "registry": "core/page-experience-registry.js",
+    "generator": "core/page-experience-factory.js",
+    "gate": "core/page-experience-gate.js",
+    "spec_section": "page_experiences",
+    "spec_key": "brands_alphabet_filter",
+    "registry_id": "brands-alphabet-filter"
+  },
+  "quality": {
+    "required_gates": [
+      "page-experience",
+      "page-contract",
+      "policy",
+      "preview",
+      "coverage",
+      "links",
+      "browser",
+      "rtl",
+      "visual"
+    ]
+  }
+}
+

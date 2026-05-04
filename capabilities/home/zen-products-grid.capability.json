@@ -1,0 +1,64 @@
+{
+  "schema": "salla-theme-factory/capability@1",
+  "id": "zen-products-grid",
+  "type": "home-experience",
+  "status": "certified",
+  "title": {
+    "ar": "شبكة منتجات تحريرية",
+    "en": "Editorial Products Grid"
+  },
+  "summary": "شبكة منتجات بصرية قابلة لإعادة الاستخدام تحافظ على عقد المنتج الرسمي وتعمل كقدرة مصنع بدلا من تعديل يدوي داخل الثيم.",
+  "source": {
+    "kind": "innovation",
+    "links": [
+      {
+        "title": "Innovation record",
+        "url": "innovations/zen-products-grid.innovation.json"
+      },
+      {
+        "title": "Twilight theme components",
+        "url": "https://docs.salla.dev/421921m0"
+      },
+      {
+        "title": "Home Page components",
+        "url": "https://docs.salla.dev/422558m0"
+      },
+      {
+        "title": "Product Card component",
+        "url": "https://docs.salla.dev/422718m0"
+      }
+    ],
+    "notes": "رقيت من مكون داخل zen-theme إلى قدرة مصنع مسجلة ومعتمدة محليا."
+  },
+  "policy": {
+    "decision": "allowed_with_conditions",
+    "conditions": [
+      "لا تكسر رابط المنتج أو السعر أو الصورة أو زر الإضافة للسلة.",
+      "لا تعتمد على HTML حر أو طلبات شبكة خارجية لكل منتج.",
+      "يجب أن تمر عبر experience gate والاعتماد البصري."
+    ]
+  },
+  "factory": {
+    "registry": "core/experience-registry.js",
+    "generator": "core/experience-factory.js",
+    "gate": "core/experience-gate.js",
+    "spec_section": "experiences",
+    "spec_key": "zen_products_grid",
+    "registry_id": "zen-products-grid"
+  },
+  "quality": {
+    "required_gates": [
+      "innovation",
+      "experience",
+      "policy",
+      "preview",
+      "coverage",
+      "links",
+      "browser",
+      "twilight",
+      "rtl",
+      "visual"
+    ]
+  }
+}
+

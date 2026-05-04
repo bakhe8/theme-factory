@@ -1,0 +1,68 @@
+{
+  "schema": "salla-theme-factory/capability@1",
+  "id": "fragrance-discovery",
+  "type": "home-experience",
+  "status": "implemented",
+  "title": {
+    "ar": "اكتشاف العطر المناسب",
+    "en": "Fragrance Discovery"
+  },
+  "summary": "تجربة بيع عطرية تجمع مرشح عائلات الرائحة، هرم النوتات، اقتراحات الإهداء، والمقارنة السريعة بدون منطق خارج منصة سلة.",
+  "source": {
+    "kind": "benchmark",
+    "links": [
+      {
+        "title": "Junaid Perfumes benchmark",
+        "url": "docs/benchmarks/junaid-perfumes.md"
+      },
+      {
+        "title": "Fragrance vertical notes",
+        "url": "docs/FRAGRANCE_VERTICAL.md"
+      },
+      {
+        "title": "Twilight theme components",
+        "url": "https://docs.salla.dev/421921m0"
+      },
+      {
+        "title": "Home Page components",
+        "url": "https://docs.salla.dev/422558m0"
+      },
+      {
+        "title": "Product Card component",
+        "url": "https://docs.salla.dev/422718m0"
+      }
+    ],
+    "notes": "مستنتجة من benchmark متجر عطور حقيقي، لكنها منفذة كسلوك مصنع عام لا ينسخ كود أو تصميم المتجر المرجعي."
+  },
+  "policy": {
+    "decision": "allowed_with_conditions",
+    "conditions": [
+      "تستخدم بيانات fixture أو بيانات منتجات سلة المتاحة فقط.",
+      "لا تنشئ توصية طبية أو ادعاءات عطرية مضللة.",
+      "تحافظ على السعر والرابط وزر السلة وحالات نفاد المخزون."
+    ]
+  },
+  "factory": {
+    "registry": "core/experience-registry.js",
+    "generator": "core/experience-factory.js",
+    "gate": "core/experience-gate.js",
+    "spec_section": "experiences",
+    "spec_key": "fragrance_discovery",
+    "registry_id": "fragrance-discovery"
+  },
+  "quality": {
+    "required_gates": [
+      "experience",
+      "vertical",
+      "policy",
+      "preview",
+      "coverage",
+      "links",
+      "browser",
+      "twilight",
+      "rtl",
+      "visual"
+    ]
+  }
+}
+

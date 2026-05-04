@@ -317,14 +317,38 @@
 | **تم** | DOM sinks allowlist + تحويل الباقي لـ error | منخفض | عالٍ | تحليلنا |
 | **تم** | page-contract gate | منخفض | عالٍ | تحليلنا |
 | **تم** | git pre-commit hook | منخفض | عالٍ | تحليلنا |
-| **قريب** | مراقبة الـ 43 URL تلقائياً عند كل sync | منخفض | متوسط | مراجعة خارجية |
+| **تم** | مراقبة روابط وثائق سلة ومصادر Raed تلقائياً عند `docs sync` | منخفض | متوسط | مراجعة خارجية |
 | **تم** | RTL render gate مع browser smoke | منخفض | متوسط | تحليلنا |
 | **تم** | checkout fixture جديد | متوسط | متوسط | تحليلنا |
-| **متوسط** | `node factory.js guide` للتوجيه التفاعلي | متوسط | متوسط | مراجعة خارجية |
-| **متوسط** | توثيق "متى تستخدم أي أمر" لتخفيف ثقل manufacture | منخفض | متوسط | مراجعة خارجية |
+| **تم** | `node factory.js guide` للتوجيه العملي حسب هدف المطور | متوسط | متوسط | مراجعة خارجية |
+| **تم** | توثيق "متى تستخدم أي أمر" في `docs/START_HERE.md` و`guide` | منخفض | متوسط | مراجعة خارجية |
 | **تم** | Exception Registry للاستثناءات المؤقتة الموثقة | متوسط | عالٍ | مراجعة خارجية |
 | **تم** | Twilight.js في browser smoke | متوسط | عالٍ | تحليلنا |
 | **متوسط** | رفع rules من 14 → ~30 | عالٍ | متوسط | تحليلنا |
 | **متوسط** | Twig helpers الناقصة | منخفض | منخفض | تحليلنا |
 | **تم** | visual checklist إلزامي في certify | منخفض | متوسط | تحليلنا |
-| **طويل المدى** | partner portal كخطوة إلزامية في workflow | تنظيمي | عالٍ | تحليلنا |
+| **تم للمرحلة الأولى** | Partner Portal/Salla review gate قبل `deliver` مع waiver موثق | تنظيمي | عالٍ | تحليلنا |
+
+---
+
+## ثامناً: تحديث خط الإنتاج بعد Capability Catalog
+
+تمت إضافة طبقة `capabilities/` كبوابة إنتاجية بين `specs` والتنفيذ. أي قيمة `required: true` في `experiences`, `page_experiences`, `verticals`, أو `integrations` يجب أن تكون قدرة مسجلة ولها مصدر وسياسة وبوابات جودة.
+
+الأوامر الجديدة:
+
+```bash
+node factory.js capabilities new <id> --type=<type>
+node factory.js capabilities gate <theme>
+node factory.js salla-review template <theme>
+node factory.js salla-review gate <theme>
+node factory.js docs urls
+node factory.js guide
+```
+
+الأثر:
+
+- `certify` يثبت الآن أن مواصفات الثيم لا تطلب قدرة غير مسجلة.
+- `deliver` يرفض التسليم النهائي دون مراجعة سلة حقيقية أو waiver موثق ومربوط ببصمة الثيم.
+- `docs sync` يشغل مراقبة روابط الوثائق حتى تظهر انكسارات روابط سلة أو Raed مبكراً.
+- المطور الجديد لم يعد يحتاج حفظ كل أوامر المصنع؛ `guide` يوجهه حسب الهدف.

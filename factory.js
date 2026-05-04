@@ -15,6 +15,7 @@ const scripts = {
   create: path.join(coreDir, 'create-theme.js'),
   manufacture: path.join(coreDir, 'manufacture-theme.js'),
   deliver: path.join(coreDir, 'deliver-theme.js'),
+  guide: path.join(coreDir, 'factory-guide.js'),
   workflow: path.join(coreDir, 'workflow-gate.js'),
   fix: path.join(coreDir, 'factory-fixer.js'),
   policy: path.join(coreDir, 'policy-check.js'),
@@ -23,6 +24,7 @@ const scripts = {
   certify: path.join(coreDir, 'certify-theme.js'),
   docs: path.join(coreDir, 'intelligence-check.js'),
   specs: path.join(coreDir, 'specs-gate.js'),
+  capabilities: path.join(coreDir, 'capability-catalog-gate.js'),
   innovation: path.join(coreDir, 'innovation-factory.js'),
   display: path.join(coreDir, 'display-feature-gate.js'),
   component: path.join(coreDir, 'component-factory.js'),
@@ -36,6 +38,7 @@ const scripts = {
   twilight: path.join(coreDir, 'twilight-smoke.js'),
   rtl: path.join(coreDir, 'rtl-gate.js'),
   visual: path.join(coreDir, 'visual-checklist-gate.js'),
+  'salla-review': path.join(coreDir, 'salla-review-gate.js'),
   links: path.join(coreDir, 'link-smoke.js'),
   coverage: path.join(coreDir, 'page-coverage.js'),
   'apply-specs': path.join(coreDir, 'apply-specs.js'),
@@ -94,12 +97,14 @@ function runStage(label, callback) {
 function printHelp() {
   console.log('Available Commands:');
   console.log('  intake <theme>          - Create workorder and specs contract as the only allowed starting point');
+  console.log('  guide [goal]            - Show the right factory path for a common developer goal');
   console.log('  manufacture <theme>     - Run the full factory line from specs to certified deliverable');
   console.log('  deliver <theme>         - Create deliverables/<theme>/theme after certification');
   console.log('  workflow gate <theme>   - Ensure the theme was created by the factory and not copied manually');
   console.log('  create <theme>          - Create a new policy-compliant theme from the approved template');
   console.log('  apply-specs <theme> [specs-file] - Apply specs.json (colors, fonts, features, settings) to theme');
   console.log('  specs gate <theme>      - Validate the required specs contract before certification');
+  console.log('  capabilities <list|show|gate> [theme] - Validate specs against the reusable factory capability catalog');
   console.log('  innovation <list|show|gate|propose|promote> ... - Govern new factory capabilities before production use');
   console.log('  display gate <theme>    - Ensure display features are factory-registered and specs-driven');
   console.log('  component <theme> feature <feature-id> [--dry-run] - Add a documented Twilight feature');
@@ -119,6 +124,7 @@ function printHelp() {
   console.log('  twilight <theme>         - Run generated previews against official Twilight web components');
   console.log('  rtl <theme>              - Validate generated previews render as RTL without horizontal overflow');
   console.log('  visual <gate|template|show> <theme> - Enforce or create the visual review checklist');
+  console.log('  salla-review <list|template|show|gate> <theme> - Require real Salla review evidence before delivery');
   console.log('  git-guard                - Validate staged theme changes before commit');
   console.log('  fix                     - Scan all themes for known unsafe patterns without destructive rewrites');
   console.log('  policy [theme]          - Validate theme structure, twilight.json, locales, and layout hooks');
@@ -126,7 +132,7 @@ function printHelp() {
   console.log('  preview <theme>         - Generate local runtime preview into build/<theme>/index.html');
   console.log('  build <theme>           - Run full local gates including verticals, preview coverage, links, and browser smoke');
   console.log('  certify <theme> [--require-salla|--relaxed-docs|--template-calibration] - Run the full local certification pipeline');
-  console.log('  docs <sync|compile|check|status> - Maintain Salla docs intelligence memory');
+  console.log('  docs <sync|compile|check|gate|urls|status> - Maintain Salla docs intelligence memory');
 }
 
 console.log('🏭 Salla Theme Factory v10.0 | Unified CLI');
@@ -139,6 +145,10 @@ switch (command) {
       process.exit(1);
     }
     process.exitCode = runNode(scripts.intake, [themeArg, ...extraArgs]) ? 0 : 1;
+    break;
+
+  case 'guide':
+    process.exitCode = runNode(scripts.guide, [themeArg, ...extraArgs].filter(Boolean)) ? 0 : 1;
     break;
 
   case 'manufacture':
@@ -249,6 +259,11 @@ switch (command) {
     break;
   }
 
+  case 'salla-review': {
+    process.exitCode = runNode(scripts['salla-review'], [themeArg || 'list', ...extraArgs].filter(Boolean)) ? 0 : 1;
+    break;
+  }
+
   case 'links': {
     process.exitCode = runNode(scripts.links, [theme, ...extraArgs]) ? 0 : 1;
     break;
@@ -293,6 +308,11 @@ switch (command) {
     break;
   }
 
+  case 'capabilities': {
+    process.exitCode = runNode(scripts.capabilities, [themeArg || 'list', ...extraArgs].filter(Boolean)) ? 0 : 1;
+    break;
+  }
+
   case 'display': {
     process.exitCode = runNode(scripts.display, [themeArg || 'gate', ...extraArgs].filter(Boolean)) ? 0 : 1;
     break;
@@ -306,6 +326,7 @@ switch (command) {
       runStage('Salla docs intelligence gate', () => runNode(scripts.docs, ['gate', theme, '--strict'])) &&
       runStage('Factory workflow gate', () => runNode(scripts.workflow, ['gate', theme, '--deliverable'])) &&
       runStage('Specs contract gate', () => runNode(scripts.specs, ['gate', theme])) &&
+      runStage('Capability catalog gate', () => runNode(scripts.capabilities, ['gate', theme])) &&
       runStage('Innovation gate', () => runNode(scripts.innovation, ['gate', theme])) &&
       runStage('Factory display feature gate', () => runNode(scripts.display, ['gate', theme])) &&
       runStage('Salla policy gate', () => runNode(scripts.policy, [theme])) &&

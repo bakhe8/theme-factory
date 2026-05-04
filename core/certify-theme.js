@@ -134,6 +134,7 @@ const stages = [
   ['Salla docs intelligence gate', process.execPath, docsGateArgs],
   ['Factory workflow gate', process.execPath, workflowGateArgs],
   ['Specs contract gate', process.execPath, [path.join(__dirname, 'specs-gate.js'), 'gate', themeName]],
+  ['Capability catalog gate', process.execPath, [path.join(__dirname, 'capability-catalog-gate.js'), 'gate', themeName]],
   ['Innovation gate', process.execPath, [path.join(__dirname, 'innovation-factory.js'), 'gate', themeName]],
   ['Factory display feature gate', process.execPath, [path.join(__dirname, 'display-feature-gate.js'), 'gate', themeName]],
   ['Policy gate', process.execPath, [path.join(__dirname, 'policy-check.js'), themeName]],

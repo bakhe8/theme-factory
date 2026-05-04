@@ -1,0 +1,63 @@
+{
+  "schema": "salla-theme-factory/capability@1",
+  "id": "lookbook",
+  "type": "home-experience",
+  "status": "implemented",
+  "title": {
+    "ar": "لوك بوك قابل للتسوق",
+    "en": "Shoppable Lookbook"
+  },
+  "summary": "تحويل صورة أو مجموعة تحريرية إلى تجربة استكشاف مرتبطة بمنتجات قابلة للشراء داخل الصفحة الرئيسية.",
+  "source": {
+    "kind": "factory",
+    "links": [
+      {
+        "title": "Twilight theme components",
+        "url": "https://docs.salla.dev/421921m0"
+      },
+      {
+        "title": "Home Page components",
+        "url": "https://docs.salla.dev/422558m0"
+      },
+      {
+        "title": "Product Card component",
+        "url": "https://docs.salla.dev/422718m0"
+      },
+      {
+        "title": "Components customization",
+        "url": "https://docs.salla.dev/422690m0"
+      }
+    ],
+    "notes": "تجربة عرض ترتبط بمنتجات سلة الموجودة ولا تنشئ منطق شراء بديل."
+  },
+  "policy": {
+    "decision": "allowed_with_conditions",
+    "conditions": [
+      "تستخدم منتجات وروابط سلة الأصلية.",
+      "لا تعتمد على طلبات شبكة خارجية عند العرض.",
+      "يجب أن تدعم حالة عدم وجود منتجات أو صورة."
+    ]
+  },
+  "factory": {
+    "registry": "core/experience-registry.js",
+    "generator": "core/experience-factory.js",
+    "gate": "core/experience-gate.js",
+    "spec_section": "experiences",
+    "spec_key": "lookbook",
+    "registry_id": "lookbook"
+  },
+  "quality": {
+    "required_gates": [
+      "experience",
+      "policy",
+      "preview",
+      "coverage",
+      "links",
+      "browser",
+      "twilight",
+      "rtl",
+      "visual"
+    ]
+  }
+}
+

@@ -1,6 +1,7 @@
 const path = require('path');
 const { checkTheme } = require('./check');
 const { generatedDir } = require('./salla-docs-config');
+const { loadUrlStatus } = require('./url-monitor');
 const { readJson } = require('./utils');
 
 const DEFAULT_MAX_AGE_DAYS = 14;
@@ -35,6 +36,7 @@ function validateDocsGate(themeName, options = {}) {
   const webComponentsUsageContract = readJson(path.join(generatedDir, 'web-components-usage-contract.json'), null);
   const twilightJsonContract = readJson(path.join(generatedDir, 'twilight-json-contract.json'), null);
   const twigContracts = readJson(path.join(generatedDir, 'twig-contracts.json'), {});
+  const urlStatus = loadUrlStatus();
 
   const issues = [];
   const warnings = [];
@@ -42,7 +44,7 @@ function validateDocsGate(themeName, options = {}) {
 
   if (!manifest) {
     issues.push('ذاكرة وثائق سلة غير موجودة. شغل: node factory.js docs sync --max=180');
-    return { issues, warnings, manifest, rules, components, officialTemplateComponents, raedThemeContract, pageContracts, templateComponents, componentCatalog, componentsCustomizationContract, webComponentsUsageContract, twilightJsonContract, twigContracts, themeCheck, strict, maxAgeDays };
+    return { issues, warnings, manifest, rules, components, officialTemplateComponents, raedThemeContract, pageContracts, templateComponents, componentCatalog, componentsCustomizationContract, webComponentsUsageContract, twilightJsonContract, twigContracts, urlStatus, themeCheck, strict, maxAgeDays };
   }
 
   const docs = manifest.docs || [];
@@ -73,6 +75,28 @@ function validateDocsGate(themeName, options = {}) {
 
   if (syncedAge > maxAgeDays) {
     issues.push(`ذاكرة وثائق سلة قديمة (${Math.floor(syncedAge)} يوم). شغل: node factory.js docs sync --max=180`);
+  }
+
+  if (urlStatus) {
+    const checkedAge = ageInDays(urlStatus.checked_at);
+    const failed = (urlStatus.records || []).filter((item) => item.status !== 'ok');
+    const criticalFailed = failed.filter((item) => item.critical);
+
+    if (checkedAge > maxAgeDays) {
+      const message = `مراقبة روابط وثائق سلة قديمة (${Math.floor(checkedAge)} يوم). شغل: node factory.js docs urls`;
+      if (strict) issues.push(message);
+      else warnings.push(message);
+    }
+
+    for (const item of criticalFailed) {
+      issues.push(`رابط وثائق/مصدر حرج لا يستجيب: ${item.title} (${item.url}) - ${item.error || 'failed'}`);
+    }
+
+    if (failed.length > criticalFailed.length) {
+      warnings.push(`هناك ${failed.length - criticalFailed.length} رابط غير حرج لا يستجيب في مراقبة وثائق سلة.`);
+    }
+  } else {
+    warnings.push('لم يتم تشغيل مراقبة روابط وثائق سلة بعد. شغل: node factory.js docs urls');
   }
 
   if (!Array.isArray(rules) || rules.length === 0) {
@@ -131,7 +155,7 @@ function validateDocsGate(themeName, options = {}) {
     }
   }
 
-  return { issues, warnings, manifest, rules, components, officialTemplateComponents, raedThemeContract, pageContracts, templateComponents, componentCatalog, componentsCustomizationContract, webComponentsUsageContract, twilightJsonContract, twigContracts, themeCheck, strict, maxAgeDays };
+  return { issues, warnings, manifest, rules, components, officialTemplateComponents, raedThemeContract, pageContracts, templateComponents, componentCatalog, componentsCustomizationContract, webComponentsUsageContract, twilightJsonContract, twigContracts, urlStatus, themeCheck, strict, maxAgeDays };
 }
 
 function printDocsGate(themeName, options = {}) {
@@ -159,6 +183,7 @@ function printDocsGate(themeName, options = {}) {
     console.log(`Web components usage contract: ${result.webComponentsUsageContract ? 'yes' : 'no'}`);
     console.log(`Twilight json contract: ${result.twilightJsonContract ? 'yes' : 'no'}`);
     console.log(`Twig helpers/filters: ${(result.twigContracts.helpers || []).length}/${(result.twigContracts.filters || []).length}`);
+    console.log(`Configured URL status: ${result.urlStatus ? `${result.urlStatus.summary?.ok || 0}/${result.urlStatus.summary?.total || 0}` : 'not checked'}`);
   }
 
   if (result.themeCheck) {

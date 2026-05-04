@@ -74,6 +74,17 @@ function runCertify() {
   });
 }
 
+function assertSallaReview() {
+  try {
+    execFileSync(process.execPath, [path.join(__dirname, 'salla-review-gate.js'), 'gate', themeName], {
+      cwd: rootDir,
+      stdio: 'inherit',
+    });
+  } catch (error) {
+    fail('لا يمكن إنشاء التسليم قبل اجتياز Salla Review Gate.');
+  }
+}
+
 function loadCertification() {
   const reportJson = path.join(reportsDir, `certify-${themeName}.json`);
   if (!fs.existsSync(reportJson)) {
@@ -143,6 +154,7 @@ if (!skipCertify) {
 }
 
 const certificationState = assertFreshCertification(themePath);
+assertSallaReview();
 
 const deliveryRoot = path.join(deliverablesDir, themeName);
 const themeDeliveryPath = path.join(deliveryRoot, 'theme');
@@ -164,6 +176,8 @@ const reportFiles = [
   `rtl-${themeName}.json`,
   `visual-checklist-${themeName}.md`,
   `visual-checklist-${themeName}.json`,
+  `salla-review-${themeName}.md`,
+  `salla-review-${themeName}.json`,
   `link-smoke-${themeName}.json`,
 ];
 
