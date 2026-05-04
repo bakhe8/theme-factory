@@ -1107,6 +1107,253 @@ const fixtures = {
       requiresRegisteredUser: true,
     },
   },
+  'checkout-flow': {
+    id: 'checkout-flow',
+    title: 'Checkout Flow Dataset',
+    purpose: 'بيانات مركزة لاختبار السلة وما حولها: قسيمة، شحن مجاني، خيارات منتج، ولاء، هدية، منتج رقمي، وطلب دفع معلق.',
+    store: {
+      ...baseStore,
+      id: 41,
+      name: 'مختبر الدفع المحلي',
+      username: 'checkout-lab',
+      slogan: 'كل حالات السلة في صفحة واحدة',
+      settings: {
+        ...baseStore.settings,
+        cart: {
+          apply_coupon_enabled: true,
+          free_shipping_enabled: true,
+        },
+      },
+    },
+    user: {
+      ...users.registered,
+      name: 'عميل يختبر الدفع',
+      wallet: { balance: 520 },
+      wishlist: [401, 402, 403],
+    },
+    users: Object.values(users),
+    products: [
+      product({
+        id: 401,
+        name: 'طقم هدية فاخر مع تغليف',
+        subtitle: 'منتج فعلي مع خيار هدية وملاحظة',
+        price: 360,
+        regular_price: 420,
+        sale_price: 360,
+        product_price: 420,
+        is_on_sale: true,
+        quantity: 8,
+        is_giftable: true,
+        can_add_note: true,
+        can_upload_file: true,
+        image: { url: IMAGE.giftSet, alt: 'طقم هدية فاخر' },
+        thumbnail: IMAGE.giftSet,
+        rating: { stars: 5, count: 18 },
+        options: [
+          {
+            id: 701,
+            name: 'نوع التغليف',
+            required: true,
+            type: 'single-option',
+            details: [
+              { id: 1, name: 'أسود فاخر', full_name: 'أسود فاخر (+25 ر.س)', additional_price: 25, is_selected: true },
+              { id: 2, name: 'أبيض كلاسيكي', full_name: 'أبيض كلاسيكي', additional_price: 0, is_selected: false },
+            ],
+          },
+        ],
+      }),
+      product({
+        id: 402,
+        name: 'بطاقة إهداء رقمية فورية',
+        subtitle: 'منتج رقمي لا يحتاج شحن',
+        price: 150,
+        regular_price: 150,
+        sale_price: 150,
+        product_price: 150,
+        type: 'digital',
+        quantity: 999,
+        can_add_note: true,
+        image: { url: IMAGE.squareBanner, alt: 'بطاقة إهداء رقمية' },
+        thumbnail: IMAGE.squareBanner,
+        rating: { stars: 4, count: 12 },
+      }),
+      product({
+        id: 403,
+        name: 'عينة عطرية قبل الشراء',
+        subtitle: 'منتج صغير لاختبار رسوم الشحن والشحن المجاني',
+        price: 85,
+        regular_price: 85,
+        sale_price: 85,
+        product_price: 85,
+        quantity: 30,
+        image: { url: IMAGE.perfume, alt: 'عينة عطرية' },
+        thumbnail: IMAGE.perfume,
+        rating: { stars: 5, count: 31 },
+      }),
+      product({
+        id: 404,
+        name: 'باقة اشتراك شهرية',
+        subtitle: 'منتج bundle لاختبار الملحقات',
+        price: 240,
+        regular_price: 300,
+        sale_price: 240,
+        product_price: 300,
+        is_on_sale: true,
+        type: 'bundle',
+        quantity: 4,
+        image: { url: IMAGE.wideBanner, alt: 'باقة اشتراك شهرية' },
+        thumbnail: IMAGE.wideBanner,
+        rating: { stars: 4, count: 9 },
+      }),
+    ],
+    cart: cartFromProducts([
+      product({
+        id: 401,
+        name: 'طقم هدية فاخر مع تغليف',
+        price: 360,
+        regular_price: 420,
+        sale_price: 360,
+        product_price: 420,
+        is_on_sale: true,
+        quantity: 8,
+        is_giftable: true,
+        can_add_note: true,
+        can_upload_file: true,
+        image: { url: IMAGE.giftSet, alt: 'طقم هدية فاخر' },
+        thumbnail: IMAGE.giftSet,
+        options: [
+          {
+            id: 701,
+            name: 'نوع التغليف',
+            required: true,
+            type: 'single-option',
+            details: [
+              { id: 1, name: 'أسود فاخر', full_name: 'أسود فاخر (+25 ر.س)', additional_price: 25, is_selected: true },
+              { id: 2, name: 'أبيض كلاسيكي', full_name: 'أبيض كلاسيكي', additional_price: 0, is_selected: false },
+            ],
+          },
+        ],
+      }),
+      product({
+        id: 402,
+        name: 'بطاقة إهداء رقمية فورية',
+        price: 150,
+        regular_price: 150,
+        sale_price: 150,
+        product_price: 150,
+        type: 'digital',
+        quantity: 999,
+        can_add_note: true,
+        image: { url: IMAGE.squareBanner, alt: 'بطاقة إهداء رقمية' },
+        thumbnail: IMAGE.squareBanner,
+      }),
+      product({
+        id: 403,
+        name: 'عينة عطرية قبل الشراء',
+        price: 85,
+        regular_price: 85,
+        sale_price: 85,
+        product_price: 85,
+        quantity: 30,
+        image: { url: IMAGE.perfume, alt: 'عينة عطرية' },
+        thumbnail: IMAGE.perfume,
+      }),
+    ], {
+      id: 'checkout-flow-cart',
+      coupon: { code: 'CHECKOUT20', discount: 90 },
+      total_discount: 90,
+      sub_total: 595,
+      tax_amount: 89.25,
+      real_shipping_cost: 0,
+      total: 529.25,
+      is_require_shipping: true,
+      has_shipping: true,
+      free_shipping_bar: {
+        minimum_amount: 500,
+        has_free_shipping: true,
+        percent: 100,
+        remaining: 0,
+      },
+      options_total: 25,
+      options: [
+        {
+          id: 9501,
+          quantity: 1,
+          name: 'رسالة إهداء مطبوعة',
+          price: 25,
+          options: [
+            {
+              id: 801,
+              name: 'نص الرسالة',
+              required: true,
+              type: 'textarea',
+              details: [],
+            },
+          ],
+        },
+      ],
+    }),
+    gift: {
+      enabled: true,
+      text: 'اكتب رسالة الإهداء واختر تغليفاً مناسباً قبل إتمام الطلب.',
+      type: 'physical',
+    },
+    reviews: richReviews.slice(0, 3),
+    testimonials: richReviews.slice(0, 3).map((review) => ({
+      name: review.name,
+      text: review.text,
+      avatar: review.avatar || IMAGE.emptyPlaceholder,
+      stars: review.stars,
+    })),
+    categories: [
+      { id: 41, name: 'هدايا', url: 'categories/gifts.html', icon: 'sicon-gift', image: IMAGE.giftSet },
+      { id: 42, name: 'منتجات رقمية', url: 'categories/digital.html', icon: 'sicon-send', image: IMAGE.squareBanner },
+      { id: 43, name: 'عينات', url: 'categories/samples.html', icon: 'sicon-star2', image: IMAGE.perfume },
+    ],
+    brands: [
+      { id: 41, name: 'Checkout Lab', url: 'brands/checkout-lab.html', logo: IMAGE.emptyPlaceholder },
+    ],
+    orders: [
+      {
+        id: 9401,
+        status: 'pending',
+        is_pending_payment: true,
+        pending_payment_ends_in: 1800,
+        total: 529.25,
+        source: 'buy_as_gift',
+        url: 'customer/orders/9401.html',
+      },
+    ],
+    blog: [
+      { id: 41, title: 'كيف تعمل خيارات الدفع والشحن محلياً', url: 'blog/checkout-guide.html', image: IMAGE.wideBanner },
+    ],
+    home: {
+      ...commonHome,
+      slides: [
+        {
+          image: IMAGE.wideBanner,
+          title: 'اختبار سلة دفع كاملة',
+          description: 'قسائم، شحن مجاني، هدية، منتج رقمي، وولاء داخل معاينة واحدة.',
+          without_overlay: false,
+        },
+      ],
+      productSections: [
+        { title: 'منتجات الدفع التجريبية', sub_title: 'كل الحالات التي تضغط صفحة السلة', ids: [401, 402, 403, 404], limit: 4 },
+      ],
+    },
+    expectations: {
+      minProducts: 4,
+      minReviews: 3,
+      requiredProductTypes: ['product', 'digital', 'bundle'],
+      requiresSaleProduct: true,
+      requiresRegisteredUser: true,
+      requiresCoupon: true,
+      requiresFreeShipping: true,
+      requiresCartOptions: true,
+      requiresGiftWidget: true,
+      requiresPendingPaymentOrder: true,
+    },
+  },
   'empty-store': {
     id: 'empty-store',
     title: 'Empty Store Dataset',
@@ -1253,6 +1500,26 @@ function validateFixture(fixture) {
 
   if (expectations.requiresRegisteredUser && fixture.user?.type === 'guest') {
     issues.push(`${fixture.id}: المستخدم يجب أن يكون مسجلاً`);
+  }
+
+  if (expectations.requiresCoupon && !fixture.cart?.coupon?.code) {
+    issues.push(`${fixture.id}: لا توجد قسيمة في السلة`);
+  }
+
+  if (expectations.requiresFreeShipping && fixture.cart?.free_shipping_bar?.has_free_shipping !== true) {
+    issues.push(`${fixture.id}: الشحن المجاني غير مفعل في السلة`);
+  }
+
+  if (expectations.requiresCartOptions && !(fixture.cart?.options || []).length) {
+    issues.push(`${fixture.id}: لا توجد خيارات طلب داخل السلة`);
+  }
+
+  if (expectations.requiresGiftWidget && fixture.gift?.enabled !== true) {
+    issues.push(`${fixture.id}: gift widget غير مفعل`);
+  }
+
+  if (expectations.requiresPendingPaymentOrder && !(fixture.orders || []).some((order) => order.is_pending_payment || order.status === 'pending')) {
+    issues.push(`${fixture.id}: لا يوجد طلب دفع معلق`);
   }
 
   products.forEach((item, index) => {

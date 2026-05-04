@@ -33,6 +33,7 @@
     "factory:coverage": "node factory.js coverage",
     "factory:links": "node factory.js links",
     "factory:browser": "node factory.js browser",
+    "factory:rtl": "node factory.js rtl",
     "factory:page-contract": "node factory.js page-contract",
     "factory:git-guard": "node factory.js git-guard",
     "factory:exceptions": "node factory.js exceptions",

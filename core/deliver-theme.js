@@ -158,6 +158,8 @@ const reportFiles = [
   `page-contract-${themeName}.md`,
   `page-contract-${themeName}.json`,
   `page-coverage-${themeName}.json`,
+  `rtl-${themeName}.md`,
+  `rtl-${themeName}.json`,
   `link-smoke-${themeName}.json`,
 ];
 

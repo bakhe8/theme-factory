@@ -137,13 +137,16 @@ const baseTranslations = {
   'pages.cart.empty_cart': 'السلة فارغة',
   'pages.cart.final_total': 'الإجمالي النهائي',
   'pages.cart.free_shipping': 'الشحن المجاني',
+  'pages.cart.gift_widget_title': 'أرسل الطلب كهدية',
   'pages.products.donation_exceed': 'اكتمل التبرع',
   'pages.cart.has_free_shipping': 'تم تفعيل الشحن المجاني',
   'pages.cart.free_shipping_alert': 'باقي {amount} للشحن المجاني',
   'pages.cart.items_total': 'مجموع المنتجات',
   'pages.cart.items_total_without_tax': 'مجموع المنتجات بدون الضريبة',
+  'pages.cart.order_options_total': 'خيارات الطلب',
   'pages.cart.out_of_stock': 'غير متوفر',
   'pages.cart.summary': 'ملخص الطلب',
+  'pages.cart.shipping_cost': 'تكلفة الشحن',
   'pages.cart.total': 'الإجمالي',
   'pages.cart.VAT_tax_amount': 'ضريبة القيمة المضافة',
   'pages.blog_articles.related': 'مقالات ذات صلة',
@@ -670,6 +673,10 @@ function createLoyaltyProgram(products = []) {
         })),
       },
     ],
+    prize: {
+      points: 350,
+      title: 'شحن مجاني للطلب القادم',
+    },
   };
 }
 
@@ -744,8 +751,8 @@ function createOrder(source = {}, products = [], index = 0) {
     can_rate: true,
     cancel_url: '#',
     payment_url: 'cart.html',
-    is_pending_payment: false,
-    pending_payment_ends_in: 3600,
+    is_pending_payment: source.is_pending_payment ?? false,
+    pending_payment_ends_in: source.pending_payment_ends_in ?? 3600,
     is_price_quote: false,
     is_rated: true,
     refund_message: '',
@@ -826,8 +833,8 @@ function createMockContext(themeName, themePath, options = {}) {
   const runtimeCart = {
     ...cart,
     id: cart.id || 'local-cart',
-    is_require_shipping: true,
-    has_shipping: true,
+    is_require_shipping: cart.is_require_shipping ?? true,
+    has_shipping: cart.has_shipping ?? true,
     free_shipping_bar: cart.free_shipping_bar || {
       minimum_amount: 500,
       has_free_shipping: Number(cart.total || 0) >= 500,
@@ -894,7 +901,7 @@ function createMockContext(themeName, themePath, options = {}) {
       settings: themeSettings,
     },
     cart: runtimeCart,
-    gift: { enabled: false, text: '', type: 'physical' },
+    gift: fixture.gift || { enabled: false, text: '', type: 'physical' },
     gifting_intro: 'أرسلها كهدية',
     loyalty,
     landing,

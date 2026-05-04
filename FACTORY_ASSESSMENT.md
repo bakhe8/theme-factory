@@ -23,7 +23,9 @@
 | Page contracts | أُغلقت | `page-contract gate` مربوط بـ `factory.js build` و`certify` |
 | Git pre-commit | أُغلقت | `.husky/pre-commit` يشغل `core/git-workflow-guard.js` |
 | Exception Registry | أُغلقت للمرحلة الأولى | `exceptions gate` يثبت أن كل استثناء له نطاق ومصدر ومراجعة |
-| RTL/checkout/Twilight الحقيقي | مفتوحة | ما زالت تحتاج بوابات وتجارب أعمق |
+| RTL | أُغلقت للمرحلة الأولى | `rtl gate` يفحص صفحات معاينة desktop/mobile بلا overflow أفقي |
+| Checkout fixture | أُغلقت | `checkout-flow` يضغط القسيمة والشحن المجاني والولاء والهدايا والدفع المعلق |
+| Twilight الحقيقي | مفتوحة | ما زال يحتاج smoke يحمّل Twilight.js الحقيقي أو بيئة سلة أقرب |
 | Visual checklist | مفتوحة | تحتاج ربطاً إلزامياً قبل الاعتماد |
 
 **القاعدة بعد هذا التحديث:** أي فجوة بقيت في هذا الملف يجب أن تكون قابلة للتحويل إلى Gate أو Checklist أو سجل استثناءات، لا مجرد ملاحظة محفوظة.
@@ -218,8 +220,8 @@
 | **تم** | DOM sinks allowlist + تحويل الباقي لـ error | منخفض | عالٍ | 2، 3، 7 |
 | **تم** | page-contract gate | منخفض | عالٍ | 5 |
 | **تم** | git pre-commit hook | منخفض | عالٍ | 1 |
-| **قريب** | RTL rule في policy + browser smoke مع RTL | منخفض | متوسط | 10 |
-| **قريب** | checkout fixture جديد | متوسط | متوسط | 9 |
+| **تم** | RTL render gate مع browser smoke | منخفض | متوسط | 10 |
+| **تم** | checkout fixture جديد | متوسط | متوسط | 9 |
 | **متوسط** | Twilight.js في browser smoke | متوسط | عالٍ | 11 |
 | **متوسط** | رفع rules من 14 → ~30 | عالٍ | متوسط | 4 |
 | **متوسط** | Twig helpers الناقصة | منخفض | منخفض | 6 |
@@ -232,7 +234,7 @@
 
 الخيط المشترك بين كل التحفظات: المصنع قوي في منع الأخطاء البنيوية والأمنية الواضحة، لكن الفجوة بين ما يُفحص محلياً وما تطلبه سلة فعلياً لا تزال قائمة — سواء على مستوى الفريق (الانضباط) أو التغطية (7.7%) أو البيئة (محلي vs cloud).
 
-**تم تنفيذ page-contract gate وgit hook وException Registry. أكبر ثغرة فورية متبقية الآن خارج هذه الجولة هي RTL/checkout/Twilight الحقيقي.**
+**تم تنفيذ page-contract gate وgit hook وException Registry وRTL gate وcheckout fixture. أكبر ثغرة تشغيلية متبقية الآن هي Twilight.js الحقيقي/بيئة سلة الأقرب للواقع، ثم visual checklist.**
 
 ---
 
@@ -318,8 +320,8 @@
 | **تم** | page-contract gate | منخفض | عالٍ | تحليلنا |
 | **تم** | git pre-commit hook | منخفض | عالٍ | تحليلنا |
 | **قريب** | مراقبة الـ 43 URL تلقائياً عند كل sync | منخفض | متوسط | مراجعة خارجية |
-| **قريب** | RTL rule في policy + browser smoke مع RTL | منخفض | متوسط | تحليلنا |
-| **قريب** | checkout fixture جديد | متوسط | متوسط | تحليلنا |
+| **تم** | RTL render gate مع browser smoke | منخفض | متوسط | تحليلنا |
+| **تم** | checkout fixture جديد | متوسط | متوسط | تحليلنا |
 | **متوسط** | `node factory.js guide` للتوجيه التفاعلي | متوسط | متوسط | مراجعة خارجية |
 | **متوسط** | توثيق "متى تستخدم أي أمر" لتخفيف ثقل manufacture | منخفض | متوسط | مراجعة خارجية |
 | **تم** | Exception Registry للاستثناءات المؤقتة الموثقة | متوسط | عالٍ | مراجعة خارجية |

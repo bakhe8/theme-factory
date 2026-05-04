@@ -3,7 +3,7 @@ const path = require('path');
 const { createMockContext } = require('./runtime/mock-data');
 const { hasFixture } = require('./runtime/fixtures');
 
-const DEFAULT_FIXTURES = ['fashion-rich', 'edge-cases', 'fragrance-luxury', 'empty-store'];
+const DEFAULT_FIXTURES = ['fashion-rich', 'edge-cases', 'fragrance-luxury', 'checkout-flow', 'empty-store'];
 const IGNORED_PAGE_VIEW_PATTERNS = [
   /^pages\/partials\//,
 ];

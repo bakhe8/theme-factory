@@ -150,6 +150,7 @@ const stages = [
   ['Page coverage gate', process.execPath, [path.join(__dirname, 'page-coverage.js'), themeName]],
   ['Link smoke gate', process.execPath, [path.join(__dirname, 'link-smoke.js'), themeName]],
   ['Browser smoke gate', process.execPath, [path.join(__dirname, 'browser-smoke.js'), themeName]],
+  ['RTL render gate', process.execPath, [path.join(__dirname, 'rtl-gate.js'), themeName]],
 ];
 
 let localPassed = true;
