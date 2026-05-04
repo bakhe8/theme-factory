@@ -14,7 +14,7 @@ const themesDir = path.join(rootDir, 'themes');
 const HELP = `
 Usage:
   node factory.js component <theme> feature <feature-id> [--dry-run]
-  node factory.js component <theme> custom <slug> [--preset=basic|banner|links|products-grid|product-flip|lookbook|fragrance-discovery] [--title-ar=...] [--title-en=...] [--icon=...] [--dry-run]
+  node factory.js component <theme> custom <slug> [--preset=basic|banner|links|products-grid|product-flip|lookbook|fragrance-discovery|scent-quiz] [--title-ar=...] [--title-en=...] [--icon=...] [--dry-run]
 
 Examples:
   node factory.js component zen-theme feature component-youtube
@@ -23,6 +23,7 @@ Examples:
   node factory.js component zen-theme custom flip-showcase --preset=product-flip --title-ar="منتجات تفاعلية"
   node factory.js component zen-theme custom editorial-look --preset=lookbook --title-ar="إطلالة مختارة"
   node factory.js component zen-theme custom fragrance-discovery --preset=fragrance-discovery --title-ar="اكتشف عطرك"
+  node factory.js component zen-theme custom scent-quiz --preset=scent-quiz --title-ar="اختبار الرائحة"
 `;
 
 const SOURCES = {
@@ -43,7 +44,7 @@ const SOURCES = {
   },
 };
 
-const PRESETS = new Set(['basic', 'banner', 'links', 'products-grid', 'product-flip', 'lookbook', 'fragrance-discovery']);
+const PRESETS = new Set(['basic', 'banner', 'links', 'products-grid', 'product-flip', 'lookbook', 'fragrance-discovery', 'scent-quiz']);
 
 function parseOptions(args) {
   const options = {
@@ -671,6 +672,106 @@ function presetFields(preset) {
     ];
   }
 
+  if (preset === 'scent-quiz') {
+    return [
+      {
+        id: 'title',
+        type: 'string',
+        icon: 'sicon-format-text-alt',
+        label: 'العنوان',
+        format: 'text',
+        required: false,
+        multilanguage: true,
+      },
+      {
+        id: 'subtitle',
+        type: 'string',
+        icon: 'sicon-typography',
+        label: 'الوصف',
+        placeholder: 'وصف مختصر يدعو المتسوق لاكتشاف العطر الأقرب له',
+        format: 'textarea',
+        required: false,
+        multilanguage: true,
+        maxLength: 240,
+      },
+      {
+        id: 'products',
+        type: 'items',
+        source: 'products',
+        label: 'منتجات اختبار الرائحة',
+        required: true,
+        multichoice: true,
+        maxLength: 8,
+      },
+      {
+        id: 'quiz_title',
+        type: 'string',
+        icon: 'sicon-star2',
+        label: 'عنوان الاختبار',
+        format: 'text',
+        required: false,
+        multilanguage: true,
+      },
+      {
+        id: 'result_title',
+        type: 'string',
+        icon: 'sicon-check',
+        label: 'عنوان النتيجة',
+        format: 'text',
+        required: false,
+        multilanguage: true,
+      },
+      {
+        id: 'quiz_questions',
+        type: 'collection',
+        format: 'collection',
+        label: 'اختيارات الرائحة',
+        item_label: 'اختيار',
+        required: false,
+        minLength: 2,
+        maxLength: 6,
+        fields: [
+          {
+            id: 'quiz_questions.icon',
+            type: 'string',
+            icon: 'sicon-format-text-alt',
+            label: 'الأيقونة',
+            format: 'icon',
+            required: false,
+            value: 'sicon-star2',
+          },
+          {
+            id: 'quiz_questions.title',
+            type: 'string',
+            icon: 'sicon-format-text-alt',
+            label: 'العنوان',
+            format: 'text',
+            required: true,
+            multilanguage: true,
+          },
+          {
+            id: 'quiz_questions.note',
+            type: 'string',
+            icon: 'sicon-typography',
+            label: 'الوصف',
+            format: 'textarea',
+            required: false,
+            multilanguage: true,
+            maxLength: 140,
+          },
+          {
+            id: 'quiz_questions.value',
+            type: 'string',
+            icon: 'sicon-search',
+            label: 'كلمة المطابقة',
+            format: 'text',
+            required: true,
+          },
+        ],
+      },
+    ];
+  }
+
   return baseFields();
 }
 
@@ -1278,6 +1379,147 @@ function renderFragranceDiscoveryTemplate(slug) {
 `;
 }
 
+function renderScentQuizTemplate(slug) {
+  return `{#
+| Variable                 | Type      | Description                                                       |
+|--------------------------|-----------|-------------------------------------------------------------------|
+| component                | object    | Contains merchant settings for fields from twilight.json          |
+| component.title          | ?string   | Section title                                                     |
+| component.subtitle       | ?string   | Section description                                               |
+| component.products       | Product[] | Selected products for quiz recommendations                        |
+| component.quiz_title     | ?string   | Quiz options title                                                |
+| component.result_title   | ?string   | Result panel title                                                |
+| component.quiz_questions | array     | Optional local matching choices                                   |
+| position                 | int       | Sorting number start from zero                                    |
+#}
+{% set selected_products = component.products is defined and component.products|length ? component.products : products|default([]) %}
+{% set quiz_questions = component.quiz_questions is defined and component.quiz_questions|length ? component.quiz_questions : [] %}
+{% set quiz_title = component.quiz_title ? component.quiz_title : 'ما الرائحة الأقرب لك؟' %}
+{% set result_title = component.result_title ? component.result_title : 'اقتراحات مناسبة لك' %}
+{% set component_id = '${slug}-' ~ position %}
+
+<section class="s-block s-block--${slug} s-block--scent-quiz container py-8" id="{{ component_id }}" data-scent-quiz>
+    <div class="scent-quiz">
+        <div class="scent-quiz__intro">
+            {% if component.title %}
+                <h2>{{ component.title }}</h2>
+            {% endif %}
+            {% if component.subtitle %}
+                <p>{{ component.subtitle }}</p>
+            {% endif %}
+        </div>
+
+        <div class="scent-quiz__panel" data-scent-quiz-panel>
+            <div class="scent-quiz__question">
+                <h3>{{ quiz_title }}</h3>
+                <div class="scent-quiz__options" role="group" aria-label="{{ quiz_title|e('html_attr') }}">
+                    <button type="button" data-scent-quiz-option data-scent-match="all" aria-pressed="true" data-scent-title="الكل" data-scent-note="اعرض كل الترشيحات">
+                        <i class="sicon-stars"></i>
+                        <span>الكل</span>
+                    </button>
+
+                    {% if quiz_questions|length %}
+                        {% for question in quiz_questions %}
+                            <button
+                                type="button"
+                                data-scent-quiz-option
+                                data-scent-match="{{ question.value|default(question.title)|e('html_attr') }}"
+                                data-scent-title="{{ question.title|e('html_attr') }}"
+                                data-scent-note="{{ question.note|default('')|e('html_attr') }}"
+                                aria-pressed="false">
+                                {% if question.icon %}
+                                    <i class="{{ question.icon }}"></i>
+                                {% endif %}
+                                <span>{{ question.title }}</span>
+                                {% if question.note %}
+                                    <small>{{ question.note }}</small>
+                                {% endif %}
+                            </button>
+                        {% endfor %}
+                    {% else %}
+                        <button type="button" data-scent-quiz-option data-scent-match="عود" data-scent-title="دفء العود" data-scent-note="روائح عميقة للمساء والمناسبات" aria-pressed="false"><i class="sicon-star2"></i><span>دفء العود</span><small>للمساء</small></button>
+                        <button type="button" data-scent-quiz-option data-scent-match="مسك" data-scent-title="نعومة المسك" data-scent-note="اختيار هادئ ونظيف للاستخدام اليومي" aria-pressed="false"><i class="sicon-heart"></i><span>نعومة المسك</span><small>يومي</small></button>
+                        <button type="button" data-scent-quiz-option data-scent-match="حمضيات" data-scent-title="انتعاش الحمضيات" data-scent-note="افتتاحية مشرقة وخفيفة" aria-pressed="false"><i class="sicon-sun"></i><span>انتعاش</span><small>صباحي</small></button>
+                        <button type="button" data-scent-quiz-option data-scent-match="للجنسين" data-scent-title="هدية آمنة" data-scent-note="اختيارات مرنة تناسب أكثر من ذوق" aria-pressed="false"><i class="sicon-gift"></i><span>هدية آمنة</span><small>مرنة</small></button>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="scent-quiz__result" data-scent-quiz-result>
+                <span>{{ result_title }}</span>
+                <strong data-scent-quiz-result-title>الكل</strong>
+                <p data-scent-quiz-result-note>اعرض كل الترشيحات</p>
+            </div>
+        </div>
+
+        <div class="scent-quiz__products">
+            {% if selected_products|length %}
+                <div class="scent-quiz__grid" data-scent-quiz-products>
+                    {% for product in selected_products %}
+                        {% set notes = product.fragrance_notes|default([]) %}
+                        {% set notes_text = notes|join(' ') %}
+                        <article
+                            class="scent-quiz-product"
+                            data-scent-quiz-product
+                            data-scent-quiz-key="{{ (product.name|default('') ~ ' ' ~ product.scent_family|default('') ~ ' ' ~ product.audience|default('') ~ ' ' ~ notes_text ~ ' ' ~ product.category.name|default(''))|e('html_attr') }}">
+                            <a href="{{ product.url }}" class="scent-quiz-product__media" aria-label="{{ product.name|e('html_attr') }}">
+                                <img src="{{ product.image.url|default(product.thumbnail) }}" alt="{{ product.image.alt|default(product.name)|e('html_attr') }}" loading="lazy">
+                            </a>
+
+                            <div class="scent-quiz-product__content">
+                                <div class="scent-quiz-product__meta">
+                                    {% if product.scent_family %}
+                                        <span>{{ product.scent_family }}</span>
+                                    {% endif %}
+                                    {% if product.audience %}
+                                        <span>{{ product.audience }}</span>
+                                    {% endif %}
+                                </div>
+
+                                <h3><a href="{{ product.url }}">{{ product.name }}</a></h3>
+
+                                {% if notes|length %}
+                                    <p class="scent-quiz-product__notes">{{ notes|slice(0, 3)|join('، ') }}</p>
+                                {% endif %}
+
+                                <div class="scent-quiz-product__price">
+                                    {% if product.is_on_sale %}
+                                        <span class="line-through opacity-60">{{ product.regular_price|money }}</span>
+                                    {% endif %}
+                                    <strong>{{ product.price|money }}</strong>
+                                </div>
+
+                                <div class="scent-quiz-product__actions">
+                                    <salla-add-product-button
+                                        fill="outline"
+                                        width="wide"
+                                        product-id="{{ product.id }}"
+                                        product-status="{{ product.status }}"
+                                        product-type="{{ product.type }}">
+                                        <i class="sicon-shopping-bag"></i>
+                                        <span>{{ trans('pages.cart.add_to_cart') }}</span>
+                                    </salla-add-product-button>
+                                    <a href="{{ product.url }}">{{ trans('blocks.home.display_all')|default('View details') }}</a>
+                                </div>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+
+                <p class="scent-quiz__empty" data-scent-quiz-empty hidden>
+                    {{ trans('common.no_products') }}
+                </p>
+            {% else %}
+                <div class="py-10 text-center text-gray-400">
+                    {{ trans('common.no_products') }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+`;
+}
+
 function renderTemplate(slug, preset) {
   if (preset === 'banner') return renderBannerTemplate(slug);
   if (preset === 'links') return renderLinksTemplate(slug);
@@ -1285,6 +1527,7 @@ function renderTemplate(slug, preset) {
   if (preset === 'product-flip') return renderProductFlipTemplate(slug);
   if (preset === 'lookbook') return renderLookbookTemplate(slug);
   if (preset === 'fragrance-discovery') return renderFragranceDiscoveryTemplate(slug);
+  if (preset === 'scent-quiz') return renderScentQuizTemplate(slug);
   return renderBasicTemplate(slug);
 }
 
@@ -2116,8 +2359,288 @@ function renderFragranceDiscoveryStyles() {
 `;
 }
 
+function renderScentQuizScript() {
+  return `function scentQuizText(product) {
+  return String(product.dataset.scentQuizKey || '').toLowerCase();
+}
+
+function scentQuizMatches(product, value) {
+  const normalized = String(value || 'all').trim().toLowerCase();
+  if (!normalized || normalized === 'all') return true;
+  return scentQuizText(product).includes(normalized);
+}
+
+function setScentQuizResult(quiz, button) {
+  const value = button.dataset.scentMatch || 'all';
+  let visible = 0;
+
+  quiz.querySelectorAll('[data-scent-quiz-option]').forEach((option) => {
+    option.setAttribute('aria-pressed', option === button ? 'true' : 'false');
+  });
+
+  quiz.querySelectorAll('[data-scent-quiz-product]').forEach((product) => {
+    const matched = scentQuizMatches(product, value);
+    product.hidden = !matched;
+    if (matched) visible += 1;
+  });
+
+  const resultTitle = quiz.querySelector('[data-scent-quiz-result-title]');
+  const resultNote = quiz.querySelector('[data-scent-quiz-result-note]');
+  const result = quiz.querySelector('[data-scent-quiz-result]');
+  const empty = quiz.querySelector('[data-scent-quiz-empty]');
+
+  if (resultTitle) resultTitle.textContent = button.dataset.scentTitle || button.textContent.trim();
+  if (resultNote) resultNote.textContent = button.dataset.scentNote || '';
+  if (result) result.hidden = false;
+  if (empty) empty.hidden = visible !== 0;
+}
+
+function resetScentQuiz(quiz) {
+  const first = quiz.querySelector('[data-scent-quiz-option]');
+  if (first) setScentQuizResult(quiz, first);
+}
+
+function initScentQuiz(root = document) {
+  root.querySelectorAll('[data-scent-quiz]').forEach((quiz) => {
+    if (quiz.dataset.scentQuizReady === 'true') return;
+    quiz.dataset.scentQuizReady = 'true';
+
+    quiz.querySelectorAll('[data-scent-quiz-option]').forEach((button) => {
+      button.addEventListener('click', () => setScentQuizResult(quiz, button));
+    });
+
+    quiz.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') resetScentQuiz(quiz);
+    });
+  });
+}
+
+document.addEventListener('theme::ready', () => initScentQuiz());
+if (document.readyState !== 'loading') initScentQuiz();
+`;
+}
+
+function renderScentQuizStyles() {
+  return `.s-block--scent-quiz {
+  .scent-quiz {
+    display: grid;
+    gap: 1rem;
+
+    &__intro {
+      max-width: 760px;
+
+      h2 {
+        margin: 0;
+        font-size: 1.45rem;
+        font-weight: 900;
+        line-height: 1.45;
+      }
+
+      p {
+        margin: 0.35rem 0 0;
+        color: rgba(17, 24, 39, 0.66);
+        line-height: 1.8;
+      }
+    }
+
+    &__panel {
+      display: grid;
+      gap: 1rem;
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 0.5rem;
+      background: #fff;
+      padding: 1rem;
+
+      @media (min-width: 900px) {
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.34fr);
+        align-items: stretch;
+      }
+    }
+
+    &__question h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    &__options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.65rem;
+
+      button {
+        display: grid;
+        min-height: 92px;
+        align-content: center;
+        gap: 0.25rem;
+        padding: 0.75rem;
+        border: 1px solid rgba(17, 24, 39, 0.1);
+        border-radius: 0.5rem;
+        background: #fafafa;
+        color: #111827;
+        text-align: start;
+        transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+
+        i {
+          color: var(--color-primary);
+        }
+
+        span {
+          font-weight: 900;
+        }
+
+        small {
+          color: rgba(17, 24, 39, 0.58);
+          line-height: 1.5;
+        }
+
+        &[aria-pressed='true'],
+        &:hover,
+        &:focus-visible {
+          border-color: var(--color-primary);
+          box-shadow: 0 14px 30px rgba(17, 24, 39, 0.08);
+          transform: translateY(-1px);
+        }
+      }
+    }
+
+    &__result {
+      display: grid;
+      align-content: center;
+      gap: 0.35rem;
+      border-radius: 0.5rem;
+      background: #111827;
+      color: #fff;
+      padding: 1rem;
+
+      span {
+        color: rgba(255, 255, 255, 0.68);
+        font-size: 0.78rem;
+        font-weight: 800;
+      }
+
+      strong {
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+
+      p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.76);
+        line-height: 1.7;
+      }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    &__empty {
+      margin: 0;
+      padding: 1rem;
+      border: 1px dashed rgba(17, 24, 39, 0.16);
+      border-radius: 0.5rem;
+      color: rgba(17, 24, 39, 0.62);
+      text-align: center;
+    }
+  }
+
+  .scent-quiz-product {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 0.5rem;
+    background: #fff;
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+
+    &:hover,
+    &:focus-within {
+      border-color: var(--color-primary);
+      box-shadow: 0 18px 38px rgba(17, 24, 39, 0.08);
+      transform: translateY(-2px);
+    }
+
+    &__media {
+      display: block;
+      aspect-ratio: 1 / 1;
+      background: #f3f4f6;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 0.65rem;
+      padding: 0.9rem;
+
+      h3 {
+        margin: 0;
+        font-size: 0.98rem;
+        font-weight: 900;
+        line-height: 1.55;
+      }
+    }
+
+    &__meta,
+    &__price {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    &__meta span {
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      background: #f8fafc;
+      color: rgba(17, 24, 39, 0.68);
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    &__notes {
+      margin: 0;
+      color: rgba(17, 24, 39, 0.62);
+      font-size: 0.84rem;
+      line-height: 1.7;
+    }
+
+    &__actions {
+      display: grid;
+      gap: 0.5rem;
+      margin-top: auto;
+
+      a {
+        color: var(--color-primary);
+        font-size: 0.86rem;
+        font-weight: 900;
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-block--scent-quiz .scent-quiz__options button,
+  .s-block--scent-quiz .scent-quiz-product {
+    transition: none;
+    transform: none;
+  }
+}
+`;
+}
+
 function assetPlanForPreset(themeRoot, slug, preset) {
-  if (!['products-grid', 'product-flip', 'lookbook', 'fragrance-discovery'].includes(preset)) return [];
+  if (!['products-grid', 'product-flip', 'lookbook', 'fragrance-discovery', 'scent-quiz'].includes(preset)) return [];
 
   const renderers = {
     'products-grid': {
@@ -2135,6 +2658,10 @@ function assetPlanForPreset(themeRoot, slug, preset) {
     'fragrance-discovery': {
       script: renderFragranceDiscoveryScript,
       styles: renderFragranceDiscoveryStyles,
+    },
+    'scent-quiz': {
+      script: renderScentQuizScript,
+      styles: renderScentQuizStyles,
     },
   };
 
@@ -2200,7 +2727,7 @@ function replaceOrAppendComponent(components, candidate, force) {
 function addCustomComponent(themeName, rawSlug, options) {
   const slug = slugify(rawSlug);
   if (!slug || slug.length < 3) throw new Error('اسم Custom Component يجب أن يكون slug واضحاً مثل promo-strip.');
-  if (!PRESETS.has(options.preset)) throw new Error(`Preset غير معروف: ${options.preset}. استخدم basic أو banner أو links أو products-grid أو product-flip أو lookbook أو fragrance-discovery.`);
+  if (!PRESETS.has(options.preset)) throw new Error(`Preset غير معروف: ${options.preset}. استخدم basic أو banner أو links أو products-grid أو product-flip أو lookbook أو fragrance-discovery أو scent-quiz.`);
 
   const componentPath = options.componentPath || `home.${slug}`;
   if (!isValidComponentPath(componentPath)) {

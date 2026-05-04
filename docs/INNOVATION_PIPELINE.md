@@ -77,3 +77,14 @@ node factory.js innovation gate <theme> --allow-experimental
 
 - الفكرة لم تعد تعديلا يدويا داخل الثيم.
 - أي ثيم يستطيع طلبها من `specs.innovation.experiments`، وسيضيف `intake` الـ fulfillment المناسب إلى specs عند معرفة الخطة.
+
+## مثال العطور
+
+`scent-quiz` بدأ كاختبار عملي لسؤال: هل يستطيع المصنع ابتكار تجربة غير موجودة في Raed مع البقاء داخل سياسات سلة؟ تمت إجازته فقط بعد أن أصبح:
+
+- ملف قدرة في `capabilities/home/scent-quiz.capability.json`.
+- سجل ابتكار في `innovations/scent-quiz.innovation.json`.
+- مدخلا في `core/experience-registry.js`.
+- preset مولدا في `core/component-factory.js`.
+- مطلبا صريحا في `specs/luxury-fragrance.specs.json`.
+- تجربة تمر عبر `build`, `browser`, `twilight`, `rtl`, و`visual`.

@@ -1,11 +1,11 @@
 {
   "schema": "salla-theme-factory/visual-checklist@1",
   "theme": "luxury-fragrance",
-  "reviewed_at": "2026-05-04T18:12:49.335Z",
+  "reviewed_at": "2026-05-04T19:48:00.000Z",
   "reviewer": "Codex local visual gate",
   "theme_fingerprint": {
     "algorithm": "sha256",
-    "hash": "3c8c482da9a7adbcd1827e5456c11e3fdc6cfc5da4931095436ab274c0da8a6f"
+    "hash": "a4aaa1f2d74a6fb81888957de42fc59137db5fc9ae63ba27c544582b13d4135e"
   },
   "reviewed_reports": [
     "page-coverage",
@@ -31,7 +31,7 @@
       "path": "build/luxury-fragrance/fragrance-luxury/index.html",
       "viewport": "desktop",
       "checked": true,
-      "notes": "Hero العطور وتجربة fragrance-discovery ظاهران بهوية داكنة/فاخرة مختلفة عن Raed."
+      "notes": "Hero العطور وتجارب fragrance-discovery وscent-quiz ظاهرة كمسار بيع عطري مختلف عن Raed."
     },
     {
       "path": "build/luxury-fragrance/fragrance-luxury/index.html",
@@ -93,5 +93,5 @@
     "استبدال شعار وصور fixture المؤقتة عند تجهيز ثيم عميل حقيقي.",
     "تحسين ترجمات المعاينة المحلية التي تظهر مثل common.search في fixture قبل العروض التجارية."
   ],
-  "notes": "تمت مراجعة browser-smoke screenshots لعينة fragrance-luxury مع تقارير page coverage وlink smoke وRTL وTwilight. لا توجد مشاكل layout مانعة في العينات، وتبقى مراجعة Partner Portal/سلة الحقيقية مطلوبة قبل الإرسال النهائي."
+  "notes": "تمت مراجعة browser-smoke screenshots لعينة fragrance-luxury مع تقارير page coverage وlink smoke وRTL وTwilight بعد إضافة scent-quiz. لا توجد مشاكل layout مانعة في العينات، وتبقى مراجعة Partner Portal/سلة الحقيقية مطلوبة قبل الإرسال النهائي."
 }

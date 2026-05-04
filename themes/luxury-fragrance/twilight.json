@@ -1195,6 +1195,112 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "scent-quiz",
+            "title": {
+                "en": "Find Your Scent Match",
+                "ar": "اختبر ذوقك العطري"
+            },
+            "icon": "sicon-layout-grid-rearrange",
+            "path": "home.scent-quiz",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان",
+                    "format": "text",
+                    "required": false,
+                    "multilanguage": true
+                },
+                {
+                    "id": "subtitle",
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "الوصف",
+                    "placeholder": "وصف مختصر يدعو المتسوق لاكتشاف العطر الأقرب له",
+                    "format": "textarea",
+                    "required": false,
+                    "multilanguage": true,
+                    "maxLength": 240
+                },
+                {
+                    "id": "products",
+                    "type": "items",
+                    "source": "products",
+                    "label": "منتجات اختبار الرائحة",
+                    "required": true,
+                    "multichoice": true,
+                    "maxLength": 8
+                },
+                {
+                    "id": "quiz_title",
+                    "type": "string",
+                    "icon": "sicon-star2",
+                    "label": "عنوان الاختبار",
+                    "format": "text",
+                    "required": false,
+                    "multilanguage": true
+                },
+                {
+                    "id": "result_title",
+                    "type": "string",
+                    "icon": "sicon-check",
+                    "label": "عنوان النتيجة",
+                    "format": "text",
+                    "required": false,
+                    "multilanguage": true
+                },
+                {
+                    "id": "quiz_questions",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "اختيارات الرائحة",
+                    "item_label": "اختيار",
+                    "required": false,
+                    "minLength": 2,
+                    "maxLength": 6,
+                    "fields": [
+                        {
+                            "id": "quiz_questions.icon",
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "الأيقونة",
+                            "format": "icon",
+                            "required": false,
+                            "value": "sicon-star2"
+                        },
+                        {
+                            "id": "quiz_questions.title",
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "العنوان",
+                            "format": "text",
+                            "required": true,
+                            "multilanguage": true
+                        },
+                        {
+                            "id": "quiz_questions.note",
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "الوصف",
+                            "format": "textarea",
+                            "required": false,
+                            "multilanguage": true,
+                            "maxLength": 140
+                        },
+                        {
+                            "id": "quiz_questions.value",
+                            "type": "string",
+                            "icon": "sicon-search",
+                            "label": "كلمة المطابقة",
+                            "format": "text",
+                            "required": true
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "support_url": "https://salla.com/",

@@ -108,7 +108,7 @@ function printHelp() {
   console.log('  innovation <list|show|gate|propose|promote> ... - Govern new factory capabilities before production use');
   console.log('  display gate <theme>    - Ensure display features are factory-registered and specs-driven');
   console.log('  component <theme> feature <feature-id> [--dry-run] - Add a documented Twilight feature');
-  console.log('  component <theme> custom <slug> [--preset=basic|banner|links|product-flip|lookbook|fragrance-discovery] [--dry-run] - Create a policy-checked custom component');
+  console.log('  component <theme> custom <slug> [--preset=basic|banner|links|products-grid|product-flip|lookbook|fragrance-discovery|scent-quiz] [--dry-run] - Create a policy-checked custom component');
   console.log('  experience <theme> <experience-id> [slug] [--dry-run] - Create a registered selling experience');
   console.log('  experience <list|show|gate> ... - Inspect or validate Experience Registry entries and specs requirements');
   console.log('  page-experience <theme> <id> [--dry-run] - Create a registered page-level experience');

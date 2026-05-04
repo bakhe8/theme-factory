@@ -1,0 +1,77 @@
+{
+  "schema": "salla-theme-factory/innovation@1",
+  "id": "scent-quiz",
+  "type": "experience",
+  "status": "certified",
+  "title": {
+    "ar": "اختبار الرائحة المناسب",
+    "en": "Scent Quiz"
+  },
+  "summary": "تحويل فكرة مستشار الرائحة إلى تجربة مصنع قابلة للتوليد والفحص، تقترح منتجات عطرية بناء على اختيارات محلية دون API خارجي.",
+  "created_at": "2026-05-04T00:00:00.000Z",
+  "updated_at": "2026-05-05T00:00:00.000Z",
+  "owner": "Salla Theme Factory",
+  "salla_policy": {
+    "docs_sources": [
+      "https://docs.salla.dev/421921m0",
+      "https://docs.salla.dev/422558m0",
+      "https://docs.salla.dev/422718m0",
+      "https://docs.salla.dev/422690m0"
+    ],
+    "risk_notes": [
+      "الاختبار يجب أن يبقى فلترة عرض محلية لا توصية حساسة ولا API خارجية.",
+      "المنتجات المعروضة يجب أن تحافظ على السعر والرابط وزر الإضافة للسلة."
+    ],
+    "forbidden_if": [
+      "يرسل اختيارات المتسوق أو بياناته إلى API خارجية.",
+      "يخفي السعر أو رابط المنتج أو زر السلة.",
+      "يعتمد على HTML حر من التاجر أو DOM sinks غير مسجلة.",
+      "يعرض ادعاءات علاجية أو وعودا غير مثبتة عن العطر."
+    ]
+  },
+  "factory_plan": {
+    "registry_file": "core/experience-registry.js",
+    "generator_file": "core/component-factory.js",
+    "gate_file": "core/experience-gate.js",
+    "fixtures": [
+      "fragrance-luxury",
+      "edge-cases",
+      "empty-store"
+    ],
+    "preview_pages": [
+      "home.index"
+    ],
+    "fulfillment": {
+      "type": "experience",
+      "id": "scent-quiz",
+      "slug": "scent-quiz",
+      "spec_key": "scent_quiz"
+    }
+  },
+  "promotion_checklist": {
+    "registered_in_factory": true,
+    "has_generator": true,
+    "has_gate": true,
+    "has_fixture": true,
+    "docs_sources_mapped": true,
+    "passes_policy": true,
+    "passes_browser": true
+  },
+  "history": [
+    {
+      "status": "proposed",
+      "at": "2026-05-04T00:00:00.000Z",
+      "note": "Requested as a real end-to-end test for factory creativity beyond Raed."
+    },
+    {
+      "status": "implemented",
+      "at": "2026-05-04T00:00:00.000Z",
+      "note": "Implemented as a factory experience preset with registry, capability catalog, and gate markers."
+    },
+    {
+      "status": "certified",
+      "at": "2026-05-05T00:00:00.000Z",
+      "note": "Passed luxury-fragrance local build with browser, Twilight, RTL, and visual gates."
+    }
+  ]
+}

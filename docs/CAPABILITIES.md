@@ -84,6 +84,7 @@ node factory.js certify <theme> --relaxed-docs
 - `product-flip`
 - `lookbook`
 - `fragrance-discovery`
+- `scent-quiz`
 - `zen-products-grid`
 
 يجب أن تحافظ على:
@@ -94,6 +95,8 @@ node factory.js certify <theme> --relaxed-docs
 - زر الإضافة للسلة.
 - حالات نفاد المخزون.
 - RTL وmobile.
+
+`scent-quiz` مثال مهم: هو ليس نسخة من Raed، بل تجربة عطرية مبتكرة تعمل محليا فوق بيانات المنتجات. لذلك يقبلها المصنع فقط لأنها مسجلة كقدرة، ولها preset في `component-factory`, وتعتمد على markers يفحصها `experience gate`, وتحافظ على التجارة الأساسية: السعر، الرابط، الصورة، وزر السلة.
 
 ### Page Experience
 

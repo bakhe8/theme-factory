@@ -69,6 +69,11 @@
     "fragrance_discovery": {
       "required": true,
       "slug": "fragrance-discovery"
+    },
+    "scent_quiz": {
+      "id": "scent-quiz",
+      "required": true,
+      "slug": "scent-quiz"
     }
   },
   "page_experiences": {
@@ -89,7 +94,9 @@
     }
   },
   "innovation": {
-    "_comment": "لا توجد ابتكارات تجريبية مطلوبة لهذا الثيم عند التسليم",
-    "experiments": []
+    "_comment": "تجارب مبتكرة لا تدخل التسليم إلا إذا كانت implemented أو certified ولها fulfillment مثبت",
+    "experiments": [
+      "scent-quiz"
+    ]
   }
 }

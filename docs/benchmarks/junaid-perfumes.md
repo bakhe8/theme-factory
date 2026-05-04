@@ -23,6 +23,7 @@ The benchmark is represented by:
 - Theme gate from specs: `node factory.js vertical theme-gate <theme>`
 - Manual theme gate: `node factory.js vertical theme-gate <theme> luxury-fragrance`
 - Required experience: `fragrance-discovery`
+- Optional/advanced experience: `scent-quiz`
 - Preview coverage: included in `node factory.js preview <theme> --all-pages --all-fixtures`
 
 The fixture intentionally uses synthetic product names and data inspired by the category structure, not scraped customer or merchant data.
@@ -44,3 +45,5 @@ node factory.js browser <theme>
 ```
 
 The required experience is intentionally not a visual clone. It translates the fragrance benchmark into reusable selling behavior: scent finder filters, note pyramid rendering, gift/sample prompts, comparison rows, and standard Salla add-to-cart links.
+
+`scent-quiz` extends this benchmark as an optional factory innovation: a local quiz-like selling path that uses product scent metadata without external APIs and keeps the standard product URL, price, image, and add-to-cart action visible.

@@ -1,0 +1,69 @@
+{
+  "schema": "salla-theme-factory/capability@1",
+  "id": "scent-quiz",
+  "type": "home-experience",
+  "status": "certified",
+  "title": {
+    "ar": "اختبار الرائحة المناسب",
+    "en": "Scent Quiz"
+  },
+  "summary": "اختبار تفاعلي محلي يساعد المتسوق على اختيار عطر مناسب عبر مطابقة اختياراته مع بيانات المنتجات العطرية، مع الحفاظ على السعر والرابط وزر الإضافة للسلة.",
+  "source": {
+    "kind": "benchmark",
+    "links": [
+      {
+        "title": "Junaid Perfumes benchmark",
+        "url": "docs/benchmarks/junaid-perfumes.md"
+      },
+      {
+        "title": "Fragrance vertical guide",
+        "url": "docs/FRAGRANCE_VERTICAL.md"
+      },
+      {
+        "title": "Twilight theme components",
+        "url": "https://docs.salla.dev/421921m0"
+      },
+      {
+        "title": "Home Page components",
+        "url": "https://docs.salla.dev/422558m0"
+      },
+      {
+        "title": "Product Card component",
+        "url": "https://docs.salla.dev/422718m0"
+      }
+    ],
+    "notes": "قدرة مبتكرة مستوحاة من احتياج متجر العطور لاكتشاف الرائحة، ولا تنسخ تصميما أو كودا من benchmark."
+  },
+  "policy": {
+    "decision": "allowed_with_conditions",
+    "conditions": [
+      "تعمل محليا فوق بيانات المنتجات ولا تستخدم API أو شبكة خارجية.",
+      "لا تقدم ادعاءات صحية أو توصية حساسة؛ هي فلترة عرض عطرية فقط.",
+      "تحافظ على رابط المنتج والسعر وزر الإضافة للسلة وحالات نفاد المخزون.",
+      "تدعم RTL ولوحة المفاتيح وEscape لإعادة ضبط الاختيار."
+    ]
+  },
+  "factory": {
+    "registry": "core/experience-registry.js",
+    "generator": "core/experience-factory.js",
+    "gate": "core/experience-gate.js",
+    "spec_section": "experiences",
+    "spec_key": "scent_quiz",
+    "registry_id": "scent-quiz"
+  },
+  "quality": {
+    "required_gates": [
+      "innovation",
+      "experience",
+      "capabilities",
+      "policy",
+      "preview",
+      "coverage",
+      "links",
+      "browser",
+      "twilight",
+      "rtl",
+      "visual"
+    ]
+  }
+}

@@ -21,6 +21,7 @@ node factory.js preview zen-theme --fixture=fragrance-luxury --all-pages
 - المنتج العطري يحتاج حقولاً معنوية مثل `scent_family`, `fragrance_notes`, `volume`, و`audience`.
 - يجب اختبار منتجات: عطر بخاخ، دهن عود، مسك، بخور، مبخرة، مجموعة، عينة، منتج نافد، منتج مخفض، ومنتج طلب مسبق.
 - يجب أن تطلب مواصفات الثيم `luxury_fragrance` و`fragrance_discovery` إذا كان سيعتمد لهذا الـ vertical: مستشار رائحة، هرم نوتات، إهداء/جرب وقرر، ومقارنة.
+- يمكن للثيم طلب `scent_quiz` كتجربة اكتشاف إضافية عندما يحتاج المتجر إلى مسار تفاعلي لاختيار العطر المناسب.
 - تجربة المتجر يجب أن تبقى قابلة للفحص عبر صفحات المنتجات والتصنيفات والمقالات والطلبات، لا عبر الصفحة الرئيسية فقط.
 
 ## معيار الرفض
@@ -41,6 +42,10 @@ node factory.js preview zen-theme --fixture=fragrance-luxury --all-pages
     "fragrance_discovery": {
       "required": true,
       "slug": "fragrance-discovery"
+    },
+    "scent_quiz": {
+      "required": true,
+      "slug": "scent-quiz"
     }
   }
 }
@@ -52,6 +57,11 @@ node factory.js preview zen-theme --fixture=fragrance-luxury --all-pages
 node factory.js experience show fragrance-discovery
 node factory.js experience <theme> fragrance-discovery --dry-run
 node factory.js experience <theme> fragrance-discovery
+node factory.js experience show scent-quiz
+node factory.js experience <theme> scent-quiz --dry-run
+node factory.js experience <theme> scent-quiz
 ```
 
 هذه التجربة لا تضيف Feature رسمية جديدة إلى `twilight.features`. هي Custom Component موثق داخل `twilight.components` ويستخدم بيانات المنتج المتاحة مثل `fragrance_notes`, `scent_family`, `audience`, و`volume`، مع JS محلي بلا طلبات شبكة لكل منتج.
+
+`scent-quiz` يتبع نفس القاعدة: اختبار عرض محلي، لا يرسل اختيارات المتسوق إلى خدمة خارجية، ولا يخفي السعر أو رابط المنتج أو زر الإضافة للسلة. إذا كسر هذه الشروط يصبح تعديلا مرفوضا وليس قدرة مصنع.

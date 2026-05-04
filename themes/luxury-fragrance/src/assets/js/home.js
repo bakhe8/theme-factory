@@ -1,3 +1,4 @@
+import "./components/scent-quiz";
 import "./components/fragrance-discovery";
 import "lite-youtube-embed";
 import BasePage from "./base-page";

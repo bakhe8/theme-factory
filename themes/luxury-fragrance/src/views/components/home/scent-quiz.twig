@@ -1,0 +1,137 @@
+{#
+| Variable                 | Type      | Description                                                       |
+|--------------------------|-----------|-------------------------------------------------------------------|
+| component                | object    | Contains merchant settings for fields from twilight.json          |
+| component.title          | ?string   | Section title                                                     |
+| component.subtitle       | ?string   | Section description                                               |
+| component.products       | Product[] | Selected products for quiz recommendations                        |
+| component.quiz_title     | ?string   | Quiz options title                                                |
+| component.result_title   | ?string   | Result panel title                                                |
+| component.quiz_questions | array     | Optional local matching choices                                   |
+| position                 | int       | Sorting number start from zero                                    |
+#}
+{% set selected_products = component.products is defined and component.products|length ? component.products : products|default([]) %}
+{% set quiz_questions = component.quiz_questions is defined and component.quiz_questions|length ? component.quiz_questions : [] %}
+{% set quiz_title = component.quiz_title ? component.quiz_title : 'ما الرائحة الأقرب لك؟' %}
+{% set result_title = component.result_title ? component.result_title : 'اقتراحات مناسبة لك' %}
+{% set component_id = 'scent-quiz-' ~ position %}
+
+<section class="s-block s-block--scent-quiz s-block--scent-quiz container py-8" id="{{ component_id }}" data-scent-quiz>
+    <div class="scent-quiz">
+        <div class="scent-quiz__intro">
+            {% if component.title %}
+                <h2>{{ component.title }}</h2>
+            {% endif %}
+            {% if component.subtitle %}
+                <p>{{ component.subtitle }}</p>
+            {% endif %}
+        </div>
+
+        <div class="scent-quiz__panel" data-scent-quiz-panel>
+            <div class="scent-quiz__question">
+                <h3>{{ quiz_title }}</h3>
+                <div class="scent-quiz__options" role="group" aria-label="{{ quiz_title|e('html_attr') }}">
+                    <button type="button" data-scent-quiz-option data-scent-match="all" aria-pressed="true" data-scent-title="الكل" data-scent-note="اعرض كل الترشيحات">
+                        <i class="sicon-stars"></i>
+                        <span>الكل</span>
+                    </button>
+
+                    {% if quiz_questions|length %}
+                        {% for question in quiz_questions %}
+                            <button
+                                type="button"
+                                data-scent-quiz-option
+                                data-scent-match="{{ question.value|default(question.title)|e('html_attr') }}"
+                                data-scent-title="{{ question.title|e('html_attr') }}"
+                                data-scent-note="{{ question.note|default('')|e('html_attr') }}"
+                                aria-pressed="false">
+                                {% if question.icon %}
+                                    <i class="{{ question.icon }}"></i>
+                                {% endif %}
+                                <span>{{ question.title }}</span>
+                                {% if question.note %}
+                                    <small>{{ question.note }}</small>
+                                {% endif %}
+                            </button>
+                        {% endfor %}
+                    {% else %}
+                        <button type="button" data-scent-quiz-option data-scent-match="عود" data-scent-title="دفء العود" data-scent-note="روائح عميقة للمساء والمناسبات" aria-pressed="false"><i class="sicon-star2"></i><span>دفء العود</span><small>للمساء</small></button>
+                        <button type="button" data-scent-quiz-option data-scent-match="مسك" data-scent-title="نعومة المسك" data-scent-note="اختيار هادئ ونظيف للاستخدام اليومي" aria-pressed="false"><i class="sicon-heart"></i><span>نعومة المسك</span><small>يومي</small></button>
+                        <button type="button" data-scent-quiz-option data-scent-match="حمضيات" data-scent-title="انتعاش الحمضيات" data-scent-note="افتتاحية مشرقة وخفيفة" aria-pressed="false"><i class="sicon-sun"></i><span>انتعاش</span><small>صباحي</small></button>
+                        <button type="button" data-scent-quiz-option data-scent-match="للجنسين" data-scent-title="هدية آمنة" data-scent-note="اختيارات مرنة تناسب أكثر من ذوق" aria-pressed="false"><i class="sicon-gift"></i><span>هدية آمنة</span><small>مرنة</small></button>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="scent-quiz__result" data-scent-quiz-result>
+                <span>{{ result_title }}</span>
+                <strong data-scent-quiz-result-title>الكل</strong>
+                <p data-scent-quiz-result-note>اعرض كل الترشيحات</p>
+            </div>
+        </div>
+
+        <div class="scent-quiz__products">
+            {% if selected_products|length %}
+                <div class="scent-quiz__grid" data-scent-quiz-products>
+                    {% for product in selected_products %}
+                        {% set notes = product.fragrance_notes|default([]) %}
+                        {% set notes_text = notes|join(' ') %}
+                        <article
+                            class="scent-quiz-product"
+                            data-scent-quiz-product
+                            data-scent-quiz-key="{{ (product.name|default('') ~ ' ' ~ product.scent_family|default('') ~ ' ' ~ product.audience|default('') ~ ' ' ~ notes_text ~ ' ' ~ product.category.name|default(''))|e('html_attr') }}">
+                            <a href="{{ product.url }}" class="scent-quiz-product__media" aria-label="{{ product.name|e('html_attr') }}">
+                                <img src="{{ product.image.url|default(product.thumbnail) }}" alt="{{ product.image.alt|default(product.name)|e('html_attr') }}" loading="lazy">
+                            </a>
+
+                            <div class="scent-quiz-product__content">
+                                <div class="scent-quiz-product__meta">
+                                    {% if product.scent_family %}
+                                        <span>{{ product.scent_family }}</span>
+                                    {% endif %}
+                                    {% if product.audience %}
+                                        <span>{{ product.audience }}</span>
+                                    {% endif %}
+                                </div>
+
+                                <h3><a href="{{ product.url }}">{{ product.name }}</a></h3>
+
+                                {% if notes|length %}
+                                    <p class="scent-quiz-product__notes">{{ notes|slice(0, 3)|join('، ') }}</p>
+                                {% endif %}
+
+                                <div class="scent-quiz-product__price">
+                                    {% if product.is_on_sale %}
+                                        <span class="line-through opacity-60">{{ product.regular_price|money }}</span>
+                                    {% endif %}
+                                    <strong>{{ product.price|money }}</strong>
+                                </div>
+
+                                <div class="scent-quiz-product__actions">
+                                    <salla-add-product-button
+                                        fill="outline"
+                                        width="wide"
+                                        product-id="{{ product.id }}"
+                                        product-status="{{ product.status }}"
+                                        product-type="{{ product.type }}">
+                                        <i class="sicon-shopping-bag"></i>
+                                        <span>{{ trans('pages.cart.add_to_cart') }}</span>
+                                    </salla-add-product-button>
+                                    <a href="{{ product.url }}">{{ trans('blocks.home.display_all')|default('View details') }}</a>
+                                </div>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+
+                <p class="scent-quiz__empty" data-scent-quiz-empty hidden>
+                    {{ trans('common.no_products') }}
+                </p>
+            {% else %}
+                <div class="py-10 text-center text-gray-400">
+                    {{ trans('common.no_products') }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
