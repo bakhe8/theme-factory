@@ -1,0 +1,206 @@
+{#
+| Variable                 | Type      | Description                                                                  |
+|--------------------------|-----------|------------------------------------------------------------------------------|
+| component                | object    | Contains merchant settings for fields from twilight.json component section   |
+| component.title          | ?string   | Section title                                                                |
+| component.subtitle       | ?string   | Section description                                                          |
+| component.products       | Product[] | Fragrance products selected by the merchant                                  |
+| component.guide_title    | ?string   | Scent finder title                                                           |
+| component.gift_title     | ?string   | Gift/sample selector title                                                   |
+| component.compare_title  | ?string   | Comparison title                                                             |
+| component.guide_items    | array     | Optional scent finder cards                                                  |
+| position                 | int       | Sorting number start from zero                                               |
+#}
+{% set selected_products = component.products is defined and component.products|length ? component.products : products|default([]) %}
+{% set guide_items = component.guide_items is defined and component.guide_items|length ? component.guide_items : [] %}
+{% set guide_title = component.guide_title ? component.guide_title : 'اختر حسب الرائحة' %}
+{% set gift_title = component.gift_title ? component.gift_title : 'للهدايا أو التجربة' %}
+{% set compare_title = component.compare_title ? component.compare_title : 'قارن قبل الشراء' %}
+{% set component_id = 'fragrance-discovery-' ~ position %}
+
+<section class="s-block s-block--fragrance-discovery s-block--fragrance-discovery container py-8" id="{{ component_id }}" data-fragrance-discovery>
+    {% if component.title or component.subtitle %}
+        <div class="s-block__title">
+            <div class="right-side">
+                {% if component.title %}
+                    <h2>{{ component.title }}</h2>
+                {% endif %}
+                {% if component.subtitle %}
+                    <p>{{ component.subtitle }}</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="fragrance-discovery">
+        <aside class="fragrance-discovery__finder" data-fragrance-finder>
+            <h3>{{ guide_title }}</h3>
+
+            <div class="fragrance-discovery__filters" role="group" aria-label="{{ guide_title|e('html_attr') }}">
+                <button type="button" data-fragrance-filter="all" aria-pressed="true">
+                    <i class="sicon-stars"></i>
+                    <span>الكل</span>
+                </button>
+
+                {% if guide_items|length %}
+                    {% for guide in guide_items %}
+                        <button type="button" data-fragrance-filter="{{ guide.filter|default(guide.title)|e('html_attr') }}" aria-pressed="false">
+                            {% if guide.icon %}
+                                <i class="{{ guide.icon }}"></i>
+                            {% endif %}
+                            <span>{{ guide.title }}</span>
+                        </button>
+                    {% endfor %}
+                {% else %}
+                    <button type="button" data-fragrance-filter="عود" aria-pressed="false"><i class="sicon-star2"></i><span>عود</span></button>
+                    <button type="button" data-fragrance-filter="مسك" aria-pressed="false"><i class="sicon-heart"></i><span>مسك</span></button>
+                    <button type="button" data-fragrance-filter="بخور" aria-pressed="false"><i class="sicon-fire"></i><span>بخور</span></button>
+                    <button type="button" data-fragrance-filter="للجنسين" aria-pressed="false"><i class="sicon-users"></i><span>هدايا</span></button>
+                {% endif %}
+            </div>
+
+            {% if guide_items|length %}
+                <div class="fragrance-discovery__guide">
+                    {% for guide in guide_items %}
+                        <button type="button" class="fragrance-guide-card" data-fragrance-filter="{{ guide.filter|default(guide.title)|e('html_attr') }}" aria-pressed="false">
+                            {% if guide.icon %}
+                                <i class="{{ guide.icon }}"></i>
+                            {% endif %}
+                            <strong>{{ guide.title }}</strong>
+                            {% if guide.note %}
+                                <span>{{ guide.note }}</span>
+                            {% endif %}
+                        </button>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </aside>
+
+        <div class="fragrance-discovery__products">
+            {% if selected_products|length %}
+                <div class="fragrance-product-grid" data-fragrance-products>
+                    {% for product in selected_products %}
+                        {% set notes = product.fragrance_notes|default([]) %}
+                        {% set notes_text = notes|join(' ') %}
+                        <article
+                            class="fragrance-product"
+                            data-fragrance-product
+                            data-fragrance-audience="{{ product.audience|default('')|e('html_attr') }}"
+                            data-fragrance-family="{{ product.scent_family|default('')|e('html_attr') }}"
+                            data-fragrance-notes="{{ notes_text|e('html_attr') }}"
+                            data-fragrance-key="{{ (product.name|default('') ~ ' ' ~ product.category.name|default('') ~ ' ' ~ product.type|default(''))|e('html_attr') }}">
+                            <a href="{{ product.url }}" class="fragrance-product__media" aria-label="{{ product.name|e('html_attr') }}">
+                                <img src="{{ product.image.url|default(product.thumbnail) }}" alt="{{ product.image.alt|default(product.name)|e('html_attr') }}" loading="lazy">
+                            </a>
+
+                            <div class="fragrance-product__content">
+                                <div class="fragrance-product__meta">
+                                    {% if product.audience %}
+                                        <span>{{ product.audience }}</span>
+                                    {% endif %}
+                                    {% if product.volume %}
+                                        <span>{{ product.volume }}</span>
+                                    {% endif %}
+                                </div>
+
+                                <h3><a href="{{ product.url }}">{{ product.name }}</a></h3>
+
+                                {% if product.scent_family %}
+                                    <p class="fragrance-product__family">{{ product.scent_family }}</p>
+                                {% endif %}
+
+                                <ol class="fragrance-note-pyramid" data-fragrance-note-pyramid>
+                                    <li>
+                                        <span>الافتتاحية</span>
+                                        <strong>{{ notes[0]|default(product.scent_family|default('-')) }}</strong>
+                                    </li>
+                                    <li>
+                                        <span>القلب</span>
+                                        <strong>{{ notes[1]|default(product.audience|default('-')) }}</strong>
+                                    </li>
+                                    <li>
+                                        <span>القاعدة</span>
+                                        <strong>{{ notes[2]|default(product.concentration|default('-')) }}</strong>
+                                    </li>
+                                </ol>
+
+                                <div class="fragrance-product__price">
+                                    {% if product.is_on_sale %}
+                                        <span class="line-through opacity-60">{{ product.regular_price|money }}</span>
+                                    {% endif %}
+                                    <strong>{{ product.price|money }}</strong>
+                                </div>
+
+                                <div class="fragrance-product__actions">
+                                    <salla-add-product-button
+                                        fill="outline"
+                                        width="wide"
+                                        product-id="{{ product.id }}"
+                                        product-status="{{ product.status }}"
+                                        product-type="{{ product.type }}">
+                                        <i class="sicon-shopping-bag"></i>
+                                        <span>{{ trans('pages.cart.add_to_cart') }}</span>
+                                    </salla-add-product-button>
+
+                                    <a href="{{ product.url }}" class="fragrance-product__details">
+                                        {{ trans('blocks.home.display_all')|default('View details') }}
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+
+                <p class="fragrance-discovery__empty" data-fragrance-empty hidden>
+                    {{ trans('common.no_products') }}
+                </p>
+            {% else %}
+                <div class="py-10 text-center text-gray-400">
+                    {{ trans('common.no_products') }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if selected_products|length %}
+        <div class="fragrance-discovery__commerce">
+            <div class="fragrance-gift-selector" data-fragrance-gift-selector>
+                <h3>{{ gift_title }}</h3>
+                <div>
+                    <button type="button" data-fragrance-filter="للجنسين" aria-pressed="false">
+                        <i class="sicon-gift"></i>
+                        <span>هدية آمنة</span>
+                    </button>
+                    <button type="button" data-fragrance-filter="عينات" aria-pressed="false">
+                        <i class="sicon-star2"></i>
+                        <span>جرب وقرر</span>
+                    </button>
+                    <button type="button" data-fragrance-filter="بخور" aria-pressed="false">
+                        <i class="sicon-fire"></i>
+                        <span>للمجالس</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fragrance-comparison" data-fragrance-comparison>
+                <h3>{{ compare_title }}</h3>
+                <div class="fragrance-comparison__table" role="table" aria-label="{{ compare_title|e('html_attr') }}">
+                    <div role="row">
+                        <span role="columnheader">العطر</span>
+                        <span role="columnheader">العائلة</span>
+                        <span role="columnheader">النوتات</span>
+                        <span role="columnheader">الحجم</span>
+                    </div>
+                    {% for product in selected_products %}
+                        <a href="{{ product.url }}" role="row" data-fragrance-compare-row>
+                            <span role="cell">{{ product.name }}</span>
+                            <span role="cell">{{ product.scent_family|default('-') }}</span>
+                            <span role="cell">{{ product.fragrance_notes|default([])|join('، ') }}</span>
+                            <span role="cell">{{ product.volume|default('-') }}</span>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</section>

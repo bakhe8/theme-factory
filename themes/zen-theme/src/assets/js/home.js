@@ -1,3 +1,7 @@
+import "./components/zen-products";
+import "./components/fragrance-discovery";
+import "./components/editorial-lookbook";
+import "./components/flip-showcase";
 import "lite-youtube-embed";
 import BasePage from "./base-page";
 import Lightbox from "fslightbox";

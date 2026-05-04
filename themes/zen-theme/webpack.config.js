@@ -56,7 +56,14 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {loader: "css-loader", options: {url: false}},
                     "postcss-loader",
-                    "sass-loader",
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sassOptions: {
+                                silenceDeprecations: ["import"],
+                            },
+                        },
+                    },
                 ]
             },
         ],
@@ -71,6 +78,10 @@ module.exports = {
             `...`,
             new CssMinimizerPlugin(),
         ],
+    },
+    performance: {
+        maxAssetSize: 1024 * 1024,
+        maxEntrypointSize: 1024 * 1024,
     },
 }
 ;

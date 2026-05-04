@@ -7,14 +7,20 @@ const {
   validateTheme,
 } = require('./policies/salla-theme-policy');
 const { validateDocsGate } = require('./docs-intelligence/guard');
+const { getApprovedThemeSource, loadFactoryConfig, workspacePath } = require('./factory-config');
 
 const rawThemeName = process.argv[2];
+const args = process.argv.slice(3);
 const themeName = sanitizeThemeName(rawThemeName);
-const templateName = sanitizeThemeName(process.env.FACTORY_TEMPLATE_THEME || 'raed');
 const rootDir = path.join(__dirname, '..');
-const themesDir = path.join(rootDir, 'themes');
-const templatePath = path.join(themesDir, templateName);
+const config = loadFactoryConfig();
+const themesDir = workspacePath('themes');
+const specsDir = workspacePath('specs');
+const templateName = sanitizeThemeName(process.env.FACTORY_TEMPLATE_THEME || 'raed');
+const approvedSource = getApprovedThemeSource(templateName);
+const templatePath = approvedSource?.absolutePath || path.join(themesDir, templateName);
 const themePath = path.join(themesDir, themeName);
+const specsPath = path.join(specsDir, `${themeName}.specs.json`);
 
 const IGNORED_ENTRIES = new Set([
   '.git',
@@ -38,6 +44,7 @@ function readJson(file) {
 }
 
 function writeJson(file, data) {
+  fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`);
 }
 
@@ -114,6 +121,21 @@ function refreshLockfile() {
   });
 }
 
+function writeFactoryManifest() {
+  writeJson(path.join(themePath, '.factory', 'manifest.json'), {
+    schema: 'salla-theme-factory/theme-manifest@1',
+    theme: themeName,
+    role: 'generated-theme',
+    created_by: 'salla-theme-factory',
+    factory_version: config.factory_version || '10.0.0',
+    source_template: approvedSource.id,
+    source_path: approvedSource.path,
+    source_url: approvedSource.source_url,
+    specs_path: path.relative(rootDir, specsPath).replace(/\\/g, '/'),
+    created_at: new Date().toISOString(),
+  });
+}
+
 if (!rawThemeName) {
   fail('يرجى تحديد اسم الثيم: node factory.js create my-new-theme');
 }
@@ -128,6 +150,14 @@ if (rawThemeName !== themeName) {
 
 if (!fs.existsSync(templatePath)) {
   fail(`قالب المصنع غير موجود: themes/${templateName}`);
+}
+
+if (!approvedSource) {
+  fail(`القالب ${templateName} غير معتمد في factory.config.json. لا تستخدم قوالب غير مسجلة كمصدر تصنيع.`);
+}
+
+if (!fs.existsSync(specsPath) && !args.includes('--allow-missing-specs')) {
+  fail(`ملف المواصفات إلزامي قبل إنشاء الثيم: specs/${themeName}.specs.json\nابدأ بـ: node factory.js intake ${themeName}`);
 }
 
 if (fs.existsSync(themePath)) {
@@ -150,6 +180,7 @@ console.log(`📦 القالب المعتمد: themes/${templateName}`);
 
 try {
   copyRecursive(templatePath, themePath);
+  writeFactoryManifest();
   const manifest = rewritePackage();
   rewriteTwilight(manifest);
 
@@ -180,7 +211,7 @@ try {
   }
 
   console.log(`✅ تم إنشاء الثيم بنجاح في: themes/${themeName}`);
-  console.log(`💡 الخطوة التالية: node factory.js certify ${themeName}`);
+  console.log(`💡 الخطوة التالية: node factory.js apply-specs ${themeName}`);
 } catch (error) {
   console.error('❌ حدث خطأ أثناء إنشاء الثيم:', error.message);
   process.exit(1);

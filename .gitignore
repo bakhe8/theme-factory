@@ -5,6 +5,7 @@ themes/*/node_modules/
 # Build outputs
 build/
 reports/
+deliverables/
 themes/*/public/dist/
 themes/*/public/css/
 themes/*/public/js/

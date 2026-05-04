@@ -1,0 +1,55 @@
+{
+  "_instructions": "عقد مواصفات مستقل لثيم Raed داخل المصنع المحلي. Raed معيار معايرة وليس سقف الإبداع.",
+  "brand": {
+    "name_ar": "رائد",
+    "name_en": "Theme Raed",
+    "identifier": "raed",
+    "version": "1.0.3",
+    "author": "Salla",
+    "author_email": "support@salla.sa"
+  },
+  "visual_identity": {
+    "preset": "custom",
+    "colors": {
+      "primary": "#414042",
+      "accent": "#5CD5C4",
+      "background": "#FDFDFD",
+      "text": "#231F1E"
+    },
+    "font": "DINNextLTArabic"
+  },
+  "settings": {},
+  "features": {
+    "mega_menu": true,
+    "fonts": true,
+    "color": true,
+    "breadcrumb": true,
+    "filters": true,
+    "unite_cards_height": true,
+    "menu_images": true,
+    "component_featured_products": true,
+    "component_fixed_banner": true,
+    "component_fixed_products": true,
+    "component_products_slider": true,
+    "component_photos_slider": true,
+    "component_parallax_background": true,
+    "component_random_testimonials": false,
+    "component_testimonials": true,
+    "component_square_photos": true,
+    "component_store_features": true,
+    "component_youtube": true
+  },
+  "verticals": {},
+  "experiences": {
+    "fragrance_discovery": {
+      "required": true,
+      "slug": "fragrance-discovery"
+    }
+  },
+  "page_experiences": {},
+  "integrations": {},
+  "innovation": {
+    "_comment": "Raed معيار معايرة ولا يطلب ابتكارات تجريبية",
+    "experiments": []
+  }
+}

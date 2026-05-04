@@ -1,0 +1,75 @@
+{
+  "schema": "salla-theme-factory/innovation@1",
+  "id": "zen-products-grid",
+  "type": "component",
+  "status": "certified",
+  "title": {
+    "ar": "شبكة منتجات زين",
+    "en": "Zen Products Grid"
+  },
+  "summary": "تحويل مكون home.zen-products الحالي إلى قدرة مصنع مسجلة لها مولد وبوابة وفحص بيانات قبل السماح بها في ثيمات الإنتاج.",
+  "created_at": "2026-05-04T00:00:00.000Z",
+  "updated_at": "2026-05-04T00:00:00.000Z",
+  "owner": "Salla Theme Factory",
+  "salla_policy": {
+    "docs_sources": [
+      "https://docs.salla.dev/421921m0",
+      "https://docs.salla.dev/422558m0",
+      "https://docs.salla.dev/422718m0",
+      "https://docs.salla.dev/422690m0"
+    ],
+    "risk_notes": [
+      "المكون موجود داخل ثيم zen-theme كمكون عرض غير مسجل، لذلك يرفضه display gate حتى يصبح قدرة مصنع."
+    ],
+    "forbidden_if": [
+      "يستخدم طلبات شبكة لكل منتج عند العرض.",
+      "يكسر رابط المنتج أو السعر أو الصورة أو زر السلة.",
+      "يعتمد على HTML حر من التاجر أو innerHTML غير آمن."
+    ]
+  },
+  "factory_plan": {
+    "registry_file": "core/experience-registry.js",
+    "generator_file": "core/component-factory.js",
+    "gate_file": "core/experience-gate.js",
+    "fixtures": [
+      "fashion-rich",
+      "edge-cases",
+      "empty-store"
+    ],
+    "preview_pages": [
+      "home.index"
+    ],
+    "fulfillment": {
+      "type": "experience",
+      "id": "zen-products-grid",
+      "slug": "zen-products",
+      "spec_key": "zen_products_grid"
+    }
+  },
+  "promotion_checklist": {
+    "registered_in_factory": true,
+    "has_generator": true,
+    "has_gate": true,
+    "has_fixture": true,
+    "docs_sources_mapped": true,
+    "passes_policy": true,
+    "passes_browser": true
+  },
+  "history": [
+    {
+      "status": "proposed",
+      "at": "2026-05-04T00:00:00.000Z",
+      "note": "Seeded from display gate failure for themes/zen-theme home.zen-products."
+    },
+    {
+      "status": "implemented",
+      "at": "2026-05-04T00:00:00.000Z",
+      "note": "Implemented as products-grid preset with registry and experience gate coverage."
+    },
+    {
+      "status": "certified",
+      "at": "2026-05-04T00:00:00.000Z",
+      "note": "Passed full local certification and browser smoke on zen-theme."
+    }
+  ]
+}

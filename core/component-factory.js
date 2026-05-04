@@ -14,13 +14,15 @@ const themesDir = path.join(rootDir, 'themes');
 const HELP = `
 Usage:
   node factory.js component <theme> feature <feature-id> [--dry-run]
-  node factory.js component <theme> custom <slug> [--preset=basic|banner|links|product-flip|lookbook] [--title-ar=...] [--title-en=...] [--icon=...] [--dry-run]
+  node factory.js component <theme> custom <slug> [--preset=basic|banner|links|products-grid|product-flip|lookbook|fragrance-discovery] [--title-ar=...] [--title-en=...] [--icon=...] [--dry-run]
 
 Examples:
   node factory.js component zen-theme feature component-youtube
   node factory.js component zen-theme custom promo-strip --preset=banner --title-ar="شريط عرض" --title-en="Promo Strip"
+  node factory.js component zen-theme custom zen-products --preset=products-grid --title-ar="منتجات مختارة"
   node factory.js component zen-theme custom flip-showcase --preset=product-flip --title-ar="منتجات تفاعلية"
   node factory.js component zen-theme custom editorial-look --preset=lookbook --title-ar="إطلالة مختارة"
+  node factory.js component zen-theme custom fragrance-discovery --preset=fragrance-discovery --title-ar="اكتشف عطرك"
 `;
 
 const SOURCES = {
@@ -41,7 +43,7 @@ const SOURCES = {
   },
 };
 
-const PRESETS = new Set(['basic', 'banner', 'links', 'product-flip', 'lookbook']);
+const PRESETS = new Set(['basic', 'banner', 'links', 'products-grid', 'product-flip', 'lookbook', 'fragrance-discovery']);
 
 function parseOptions(args) {
   const options = {
@@ -411,6 +413,50 @@ function presetFields(preset) {
     ];
   }
 
+  if (preset === 'products-grid') {
+    return [
+      {
+        id: 'title',
+        type: 'string',
+        icon: 'sicon-format-text-alt',
+        label: 'العنوان',
+        format: 'text',
+        required: false,
+        multilanguage: true,
+      },
+      {
+        id: 'subtitle',
+        type: 'string',
+        icon: 'sicon-typography',
+        label: 'الوصف',
+        placeholder: 'وصف مختصر يظهر أعلى المنتجات',
+        format: 'textarea',
+        required: false,
+        multilanguage: true,
+        maxLength: 220,
+      },
+      {
+        id: 'products',
+        type: 'items',
+        source: 'products',
+        label: 'اختر المنتجات',
+        required: true,
+        multichoice: true,
+        maxLength: 12,
+      },
+      {
+        id: 'show_hover_actions',
+        type: 'boolean',
+        icon: 'sicon-toggle-off',
+        label: 'إظهار زر السلة عند تمرير المؤشر',
+        format: 'switch',
+        required: false,
+        value: true,
+        selected: true,
+      },
+    ];
+  }
+
   if (preset === 'product-flip') {
     return [
     {
@@ -512,6 +558,115 @@ function presetFields(preset) {
         format: 'text',
         required: false,
         multilanguage: true,
+      },
+    ];
+  }
+
+  if (preset === 'fragrance-discovery') {
+    return [
+      {
+        id: 'title',
+        type: 'string',
+        icon: 'sicon-format-text-alt',
+        label: 'العنوان',
+        format: 'text',
+        required: false,
+        multilanguage: true,
+      },
+      {
+        id: 'subtitle',
+        type: 'string',
+        icon: 'sicon-typography',
+        label: 'الوصف',
+        placeholder: 'وصف مختصر يوجه المتسوق لاختيار الرائحة المناسبة',
+        format: 'textarea',
+        required: false,
+        multilanguage: true,
+        maxLength: 280,
+      },
+      {
+        id: 'products',
+        type: 'items',
+        source: 'products',
+        label: 'منتجات تجربة العطور',
+        required: true,
+        multichoice: true,
+        maxLength: 8,
+      },
+      {
+        id: 'guide_title',
+        type: 'string',
+        icon: 'sicon-star2',
+        label: 'عنوان مستشار الرائحة',
+        format: 'text',
+        required: false,
+        multilanguage: true,
+      },
+      {
+        id: 'gift_title',
+        type: 'string',
+        icon: 'sicon-gift',
+        label: 'عنوان الإهداء والتجربة',
+        format: 'text',
+        required: false,
+        multilanguage: true,
+      },
+      {
+        id: 'compare_title',
+        type: 'string',
+        icon: 'sicon-list',
+        label: 'عنوان المقارنة',
+        format: 'text',
+        required: false,
+        multilanguage: true,
+      },
+      {
+        id: 'guide_items',
+        type: 'collection',
+        format: 'collection',
+        label: 'بطاقات مستشار الرائحة',
+        item_label: 'اقتراح',
+        required: false,
+        minLength: 1,
+        maxLength: 4,
+        fields: [
+          {
+            id: 'guide_items.icon',
+            type: 'string',
+            icon: 'sicon-format-text-alt',
+            label: 'الأيقونة',
+            format: 'icon',
+            required: false,
+            value: 'sicon-star2',
+          },
+          {
+            id: 'guide_items.title',
+            type: 'string',
+            icon: 'sicon-format-text-alt',
+            label: 'العنوان',
+            format: 'text',
+            required: true,
+            multilanguage: true,
+          },
+          {
+            id: 'guide_items.note',
+            type: 'string',
+            icon: 'sicon-typography',
+            label: 'الوصف',
+            format: 'textarea',
+            required: false,
+            multilanguage: true,
+            maxLength: 180,
+          },
+          {
+            id: 'guide_items.filter',
+            type: 'string',
+            icon: 'sicon-search',
+            label: 'كلمة المطابقة',
+            format: 'text',
+            required: false,
+          },
+        ],
       },
     ];
   }
@@ -651,6 +806,79 @@ function renderLinksTemplate(slug) {
             </div>
         {% endif %}
     </div>
+</section>
+`;
+}
+
+function renderProductsGridTemplate(slug) {
+  return `{#
+| Variable                     | Type      | Description                                                                  |
+|------------------------------|-----------|------------------------------------------------------------------------------|
+| component                    | object    | Contains merchant settings for fields from twilight.json component section   |
+| title                        | ?string   | Fallback section title                                                       |
+| subtitle                     | ?string   | Fallback section subtitle                                                    |
+| products                     | Product[] | Fallback selected products                                                   |
+| component.products           | Product[] | Selected products                                                            |
+| component.show_hover_actions | bool      | Shows add-to-cart action over product image                                  |
+| position                     | int       | Sorting number start from zero                                               |
+#}
+{% set block_title = component is defined and component.title is defined ? component.title : title|default(null) %}
+{% set block_subtitle = component is defined and component.subtitle is defined ? component.subtitle : subtitle|default(null) %}
+{% set selected_products = component is defined and component.products is defined ? component.products : products|default([]) %}
+{% set show_hover_actions = component is defined and component.show_hover_actions is defined ? component.show_hover_actions : true %}
+{% set component_id = '${slug}-' ~ position %}
+
+<section class="s-block s-block--${slug} s-block--products-grid container py-8" id="{{ component_id }}" data-products-grid-experience>
+    {% if block_title or block_subtitle %}
+        <div class="s-block__title">
+            <div class="right-side">
+                {% if block_title %}
+                    <h2>{{ block_title }}</h2>
+                {% endif %}
+                {% if block_subtitle %}
+                    <p>{{ block_subtitle }}</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if selected_products|length %}
+        <div class="products-grid">
+            {% for product in selected_products %}
+                <article class="products-grid-card" data-products-grid-card tabindex="0" aria-current="false">
+                    <a href="{{ product.url }}" class="products-grid-card__media" aria-label="{{ product.name|e('html_attr') }}">
+                        <img src="{{ product.image.url|default(product.thumbnail) }}" alt="{{ product.image.alt|default(product.name)|e('html_attr') }}" loading="lazy">
+                    </a>
+
+                    {% if show_hover_actions %}
+                        <div class="products-grid-card__actions">
+                            <salla-add-product-button
+                                width="wide"
+                                product-id="{{ product.id }}"
+                                product-status="{{ product.status }}"
+                                product-type="{{ product.type }}">
+                                <span>{{ trans('pages.cart.add_to_cart') }}</span>
+                            </salla-add-product-button>
+                        </div>
+                    {% endif %}
+
+                    <div class="products-grid-card__content">
+                        <h3><a href="{{ product.url }}">{{ product.name }}</a></h3>
+                        <div class="products-grid-card__price">
+                            {% if product.is_on_sale %}
+                                <span class="line-through opacity-60">{{ product.regular_price|money }}</span>
+                            {% endif %}
+                            <strong>{{ product.price|money }}</strong>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="py-10 text-center text-gray-400">
+            {{ trans('common.no_products') }}
+        </div>
+    {% endif %}
 </section>
 `;
 }
@@ -840,12 +1068,246 @@ function renderLookbookTemplate(slug) {
 `;
 }
 
+function renderFragranceDiscoveryTemplate(slug) {
+  return `{#
+| Variable                 | Type      | Description                                                                  |
+|--------------------------|-----------|------------------------------------------------------------------------------|
+| component                | object    | Contains merchant settings for fields from twilight.json component section   |
+| component.title          | ?string   | Section title                                                                |
+| component.subtitle       | ?string   | Section description                                                          |
+| component.products       | Product[] | Fragrance products selected by the merchant                                  |
+| component.guide_title    | ?string   | Scent finder title                                                           |
+| component.gift_title     | ?string   | Gift/sample selector title                                                   |
+| component.compare_title  | ?string   | Comparison title                                                             |
+| component.guide_items    | array     | Optional scent finder cards                                                  |
+| position                 | int       | Sorting number start from zero                                               |
+#}
+{% set selected_products = component.products is defined and component.products|length ? component.products : products|default([]) %}
+{% set guide_items = component.guide_items is defined and component.guide_items|length ? component.guide_items : [] %}
+{% set guide_title = component.guide_title ? component.guide_title : 'اختر حسب الرائحة' %}
+{% set gift_title = component.gift_title ? component.gift_title : 'للهدايا أو التجربة' %}
+{% set compare_title = component.compare_title ? component.compare_title : 'قارن قبل الشراء' %}
+{% set component_id = '${slug}-' ~ position %}
+
+<section class="s-block s-block--${slug} s-block--fragrance-discovery container py-8" id="{{ component_id }}" data-fragrance-discovery>
+    {% if component.title or component.subtitle %}
+        <div class="s-block__title">
+            <div class="right-side">
+                {% if component.title %}
+                    <h2>{{ component.title }}</h2>
+                {% endif %}
+                {% if component.subtitle %}
+                    <p>{{ component.subtitle }}</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="fragrance-discovery">
+        <aside class="fragrance-discovery__finder" data-fragrance-finder>
+            <h3>{{ guide_title }}</h3>
+
+            <div class="fragrance-discovery__filters" role="group" aria-label="{{ guide_title|e('html_attr') }}">
+                <button type="button" data-fragrance-filter="all" aria-pressed="true">
+                    <i class="sicon-stars"></i>
+                    <span>الكل</span>
+                </button>
+
+                {% if guide_items|length %}
+                    {% for guide in guide_items %}
+                        <button type="button" data-fragrance-filter="{{ guide.filter|default(guide.title)|e('html_attr') }}" aria-pressed="false">
+                            {% if guide.icon %}
+                                <i class="{{ guide.icon }}"></i>
+                            {% endif %}
+                            <span>{{ guide.title }}</span>
+                        </button>
+                    {% endfor %}
+                {% else %}
+                    <button type="button" data-fragrance-filter="عود" aria-pressed="false"><i class="sicon-star2"></i><span>عود</span></button>
+                    <button type="button" data-fragrance-filter="مسك" aria-pressed="false"><i class="sicon-heart"></i><span>مسك</span></button>
+                    <button type="button" data-fragrance-filter="بخور" aria-pressed="false"><i class="sicon-fire"></i><span>بخور</span></button>
+                    <button type="button" data-fragrance-filter="للجنسين" aria-pressed="false"><i class="sicon-users"></i><span>هدايا</span></button>
+                {% endif %}
+            </div>
+
+            {% if guide_items|length %}
+                <div class="fragrance-discovery__guide">
+                    {% for guide in guide_items %}
+                        <button type="button" class="fragrance-guide-card" data-fragrance-filter="{{ guide.filter|default(guide.title)|e('html_attr') }}" aria-pressed="false">
+                            {% if guide.icon %}
+                                <i class="{{ guide.icon }}"></i>
+                            {% endif %}
+                            <strong>{{ guide.title }}</strong>
+                            {% if guide.note %}
+                                <span>{{ guide.note }}</span>
+                            {% endif %}
+                        </button>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </aside>
+
+        <div class="fragrance-discovery__products">
+            {% if selected_products|length %}
+                <div class="fragrance-product-grid" data-fragrance-products>
+                    {% for product in selected_products %}
+                        {% set notes = product.fragrance_notes|default([]) %}
+                        {% set notes_text = notes|join(' ') %}
+                        <article
+                            class="fragrance-product"
+                            data-fragrance-product
+                            data-fragrance-audience="{{ product.audience|default('')|e('html_attr') }}"
+                            data-fragrance-family="{{ product.scent_family|default('')|e('html_attr') }}"
+                            data-fragrance-notes="{{ notes_text|e('html_attr') }}"
+                            data-fragrance-key="{{ (product.name|default('') ~ ' ' ~ product.category.name|default('') ~ ' ' ~ product.type|default(''))|e('html_attr') }}">
+                            <a href="{{ product.url }}" class="fragrance-product__media" aria-label="{{ product.name|e('html_attr') }}">
+                                <img src="{{ product.image.url|default(product.thumbnail) }}" alt="{{ product.image.alt|default(product.name)|e('html_attr') }}" loading="lazy">
+                            </a>
+
+                            <div class="fragrance-product__content">
+                                <div class="fragrance-product__meta">
+                                    {% if product.audience %}
+                                        <span>{{ product.audience }}</span>
+                                    {% endif %}
+                                    {% if product.volume %}
+                                        <span>{{ product.volume }}</span>
+                                    {% endif %}
+                                </div>
+
+                                <h3><a href="{{ product.url }}">{{ product.name }}</a></h3>
+
+                                {% if product.scent_family %}
+                                    <p class="fragrance-product__family">{{ product.scent_family }}</p>
+                                {% endif %}
+
+                                <ol class="fragrance-note-pyramid" data-fragrance-note-pyramid>
+                                    <li>
+                                        <span>الافتتاحية</span>
+                                        <strong>{{ notes[0]|default(product.scent_family|default('-')) }}</strong>
+                                    </li>
+                                    <li>
+                                        <span>القلب</span>
+                                        <strong>{{ notes[1]|default(product.audience|default('-')) }}</strong>
+                                    </li>
+                                    <li>
+                                        <span>القاعدة</span>
+                                        <strong>{{ notes[2]|default(product.concentration|default('-')) }}</strong>
+                                    </li>
+                                </ol>
+
+                                <div class="fragrance-product__price">
+                                    {% if product.is_on_sale %}
+                                        <span class="line-through opacity-60">{{ product.regular_price|money }}</span>
+                                    {% endif %}
+                                    <strong>{{ product.price|money }}</strong>
+                                </div>
+
+                                <div class="fragrance-product__actions">
+                                    <salla-add-product-button
+                                        fill="outline"
+                                        width="wide"
+                                        product-id="{{ product.id }}"
+                                        product-status="{{ product.status }}"
+                                        product-type="{{ product.type }}">
+                                        <i class="sicon-shopping-bag"></i>
+                                        <span>{{ trans('pages.cart.add_to_cart') }}</span>
+                                    </salla-add-product-button>
+
+                                    <a href="{{ product.url }}" class="fragrance-product__details">
+                                        {{ trans('blocks.home.display_all')|default('View details') }}
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+
+                <p class="fragrance-discovery__empty" data-fragrance-empty hidden>
+                    {{ trans('common.no_products') }}
+                </p>
+            {% else %}
+                <div class="py-10 text-center text-gray-400">
+                    {{ trans('common.no_products') }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if selected_products|length %}
+        <div class="fragrance-discovery__commerce">
+            <div class="fragrance-gift-selector" data-fragrance-gift-selector>
+                <h3>{{ gift_title }}</h3>
+                <div>
+                    <button type="button" data-fragrance-filter="للجنسين" aria-pressed="false">
+                        <i class="sicon-gift"></i>
+                        <span>هدية آمنة</span>
+                    </button>
+                    <button type="button" data-fragrance-filter="عينات" aria-pressed="false">
+                        <i class="sicon-star2"></i>
+                        <span>جرب وقرر</span>
+                    </button>
+                    <button type="button" data-fragrance-filter="بخور" aria-pressed="false">
+                        <i class="sicon-fire"></i>
+                        <span>للمجالس</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fragrance-comparison" data-fragrance-comparison>
+                <h3>{{ compare_title }}</h3>
+                <div class="fragrance-comparison__table" role="table" aria-label="{{ compare_title|e('html_attr') }}">
+                    <div role="row">
+                        <span role="columnheader">العطر</span>
+                        <span role="columnheader">العائلة</span>
+                        <span role="columnheader">النوتات</span>
+                        <span role="columnheader">الحجم</span>
+                    </div>
+                    {% for product in selected_products %}
+                        <a href="{{ product.url }}" role="row" data-fragrance-compare-row>
+                            <span role="cell">{{ product.name }}</span>
+                            <span role="cell">{{ product.scent_family|default('-') }}</span>
+                            <span role="cell">{{ product.fragrance_notes|default([])|join('، ') }}</span>
+                            <span role="cell">{{ product.volume|default('-') }}</span>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</section>
+`;
+}
+
 function renderTemplate(slug, preset) {
   if (preset === 'banner') return renderBannerTemplate(slug);
   if (preset === 'links') return renderLinksTemplate(slug);
+  if (preset === 'products-grid') return renderProductsGridTemplate(slug);
   if (preset === 'product-flip') return renderProductFlipTemplate(slug);
   if (preset === 'lookbook') return renderLookbookTemplate(slug);
+  if (preset === 'fragrance-discovery') return renderFragranceDiscoveryTemplate(slug);
   return renderBasicTemplate(slug);
+}
+
+function renderProductsGridScript() {
+  return `function setProductsGridCardState(card, active) {
+  card.setAttribute('aria-current', active ? 'true' : 'false');
+}
+
+function initProductsGridExperience(root = document) {
+  root.querySelectorAll('[data-products-grid-card]').forEach((card) => {
+    if (card.dataset.productsGridReady === 'true') return;
+    card.dataset.productsGridReady = 'true';
+
+    card.addEventListener('mouseenter', () => setProductsGridCardState(card, true));
+    card.addEventListener('mouseleave', () => setProductsGridCardState(card, false));
+    card.addEventListener('focusin', () => setProductsGridCardState(card, true));
+    card.addEventListener('focusout', () => setProductsGridCardState(card, false));
+  });
+}
+
+document.addEventListener('theme::ready', () => initProductsGridExperience());
+if (document.readyState !== 'loading') initProductsGridExperience();
+`;
 }
 
 function renderProductFlipScript() {
@@ -875,6 +1337,105 @@ function initProductFlipExperience(root = document) {
 
 document.addEventListener('theme::ready', () => initProductFlipExperience());
 if (document.readyState !== 'loading') initProductFlipExperience();
+`;
+}
+
+function renderProductsGridStyles() {
+  return `.s-block--products-grid {
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .products-grid-card {
+    position: relative;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 0.5rem;
+    background: #fff;
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+
+    &[aria-current='true'],
+    &:hover,
+    &:focus-within {
+      border-color: var(--color-primary);
+      box-shadow: 0 18px 38px rgba(17, 24, 39, 0.08);
+      transform: translateY(-2px);
+    }
+
+    &__media {
+      display: block;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #f3f4f6;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 260ms ease;
+      }
+    }
+
+    &:hover &__media img,
+    &:focus-within &__media img {
+      transform: scale(1.04);
+    }
+
+    &__actions {
+      position: absolute;
+      right: 0.75rem;
+      bottom: 5.25rem;
+      left: 0.75rem;
+      opacity: 0;
+      transform: translateY(0.6rem);
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    &:hover &__actions,
+    &:focus-within &__actions {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &__content {
+      display: grid;
+      gap: 0.55rem;
+      padding: 0.9rem;
+      text-align: center;
+
+      h3 {
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.95rem;
+        font-weight: 800;
+      }
+    }
+
+    &__price {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.45rem;
+      color: var(--color-primary);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-block--products-grid .products-grid-card,
+  .s-block--products-grid .products-grid-card__media img,
+  .s-block--products-grid .products-grid-card__actions {
+    transition: none;
+    transform: none;
+  }
+}
 `;
 }
 
@@ -1157,10 +1718,412 @@ function renderLookbookStyles() {
 `;
 }
 
+function renderFragranceDiscoveryScript() {
+  return `function fragranceText(product) {
+  return [
+    product.dataset.fragranceAudience,
+    product.dataset.fragranceFamily,
+    product.dataset.fragranceNotes,
+    product.dataset.fragranceKey,
+  ].filter(Boolean).join(' ').toLowerCase();
+}
+
+function productMatchesFragranceFilter(product, filter) {
+  const normalized = String(filter || 'all').trim().toLowerCase();
+  if (!normalized || normalized === 'all') return true;
+  return fragranceText(product).includes(normalized);
+}
+
+function setFragranceFilter(discovery, filter, sourceButton = null) {
+  let visible = 0;
+
+  discovery.querySelectorAll('[data-fragrance-filter]').forEach((button) => {
+    const active = button === sourceButton || (sourceButton == null && button.dataset.fragranceFilter === filter);
+    button.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+
+  discovery.querySelectorAll('[data-fragrance-product]').forEach((product) => {
+    const matched = productMatchesFragranceFilter(product, filter);
+    product.hidden = !matched;
+    if (matched) visible += 1;
+  });
+
+  const empty = discovery.querySelector('[data-fragrance-empty]');
+  if (empty) empty.hidden = visible !== 0;
+}
+
+function initFragranceDiscovery(root = document) {
+  root.querySelectorAll('[data-fragrance-discovery]').forEach((discovery) => {
+    if (discovery.dataset.fragranceDiscoveryReady === 'true') return;
+    discovery.dataset.fragranceDiscoveryReady = 'true';
+
+    discovery.querySelectorAll('[data-fragrance-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        setFragranceFilter(discovery, button.dataset.fragranceFilter, button);
+      });
+    });
+
+    discovery.querySelectorAll('[data-fragrance-compare-row]').forEach((row) => {
+      row.addEventListener('mouseenter', () => row.setAttribute('aria-current', 'true'));
+      row.addEventListener('mouseleave', () => row.setAttribute('aria-current', 'false'));
+      row.addEventListener('focus', () => row.setAttribute('aria-current', 'true'));
+      row.addEventListener('blur', () => row.setAttribute('aria-current', 'false'));
+    });
+
+    discovery.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setFragranceFilter(discovery, 'all');
+    });
+  });
+}
+
+document.addEventListener('theme::ready', () => initFragranceDiscovery());
+if (document.readyState !== 'loading') initFragranceDiscovery();
+`;
+}
+
+function renderFragranceDiscoveryStyles() {
+  return `.s-block--fragrance-discovery {
+  .fragrance-discovery {
+    display: grid;
+    gap: 1rem;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: minmax(260px, 0.34fr) minmax(0, 1fr);
+      align-items: start;
+    }
+
+    &__finder,
+    &__commerce {
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 0.5rem;
+      background: #fff;
+    }
+
+    &__finder {
+      position: sticky;
+      top: 1rem;
+      display: grid;
+      gap: 1rem;
+      padding: 1rem;
+
+      h3 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 800;
+      }
+    }
+
+    &__filters {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+
+      button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.375rem;
+        min-height: 42px;
+        padding: 0.55rem 0.65rem;
+        border: 1px solid rgba(17, 24, 39, 0.1);
+        border-radius: 0.375rem;
+        background: #fafafa;
+        color: #111827;
+        font-size: 0.875rem;
+        font-weight: 700;
+        transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+
+        &[aria-pressed='true'],
+        &:hover,
+        &:focus-visible {
+          border-color: var(--color-primary);
+          background: rgba(17, 24, 39, 0.04);
+          color: var(--color-primary);
+        }
+      }
+    }
+
+    &__guide {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    &__empty {
+      margin: 1rem 0 0;
+      padding: 1rem;
+      border: 1px dashed rgba(17, 24, 39, 0.16);
+      border-radius: 0.5rem;
+      color: rgba(17, 24, 39, 0.62);
+      text-align: center;
+    }
+
+    &__commerce {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding: 1rem;
+
+      @media (min-width: 1024px) {
+        grid-template-columns: minmax(240px, 0.34fr) minmax(0, 1fr);
+      }
+    }
+  }
+
+  .fragrance-guide-card {
+    display: grid;
+    gap: 0.25rem;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 0.5rem;
+    background: #ffffff;
+    text-align: start;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+
+    i {
+      color: var(--color-primary);
+    }
+
+    strong {
+      font-size: 0.9rem;
+    }
+
+    span {
+      color: rgba(17, 24, 39, 0.62);
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    &[aria-pressed='true'],
+    &:hover,
+    &:focus-visible {
+      border-color: var(--color-primary);
+      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+    }
+  }
+
+  .fragrance-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .fragrance-product {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 0.5rem;
+    background: #fff;
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+
+    &:hover,
+    &:focus-within {
+      border-color: var(--color-primary);
+      box-shadow: 0 18px 38px rgba(17, 24, 39, 0.08);
+      transform: translateY(-2px);
+    }
+
+    &__media {
+      display: block;
+      aspect-ratio: 1 / 1;
+      background: #f3f4f6;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 0.7rem;
+      padding: 0.9rem;
+
+      h3 {
+        margin: 0;
+        font-size: 0.98rem;
+        font-weight: 800;
+        line-height: 1.55;
+      }
+    }
+
+    &__meta,
+    &__price {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    &__meta span {
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      background: #f8fafc;
+      color: rgba(17, 24, 39, 0.68);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    &__family {
+      color: rgba(17, 24, 39, 0.66);
+      font-size: 0.86rem;
+      line-height: 1.6;
+    }
+
+    &__actions {
+      display: grid;
+      gap: 0.55rem;
+      margin-top: auto;
+    }
+
+    &__details {
+      color: var(--color-primary);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+  }
+
+  .fragrance-note-pyramid {
+    display: grid;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 32px;
+      padding: 0.35rem 0.5rem;
+      border-radius: 0.375rem;
+      background: #f9fafb;
+    }
+
+    span {
+      color: rgba(17, 24, 39, 0.54);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    strong {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.82rem;
+    }
+  }
+
+  .fragrance-gift-selector {
+    display: grid;
+    align-content: start;
+    gap: 0.75rem;
+
+    h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    div {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      min-height: 42px;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid rgba(17, 24, 39, 0.1);
+      border-radius: 0.375rem;
+      background: #fff;
+      font-weight: 800;
+
+      &[aria-pressed='true'],
+      &:hover,
+      &:focus-visible {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  .fragrance-comparison {
+    min-width: 0;
+
+    h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    &__table {
+      display: grid;
+      overflow-x: auto;
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 0.5rem;
+    }
+
+    [role='row'] {
+      display: grid;
+      grid-template-columns: minmax(160px, 1.4fr) minmax(120px, 0.8fr) minmax(220px, 1.4fr) minmax(90px, 0.6fr);
+      min-width: 620px;
+    }
+
+    [role='columnheader'],
+    [role='cell'] {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+      color: #111827;
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    [role='columnheader'] {
+      background: #f9fafb;
+      font-weight: 900;
+    }
+
+    a[role='row'] {
+      transition: background 180ms ease;
+
+      &[aria-current='true'],
+      &:hover,
+      &:focus-visible {
+        background: rgba(17, 24, 39, 0.035);
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s-block--fragrance-discovery .fragrance-product,
+  .s-block--fragrance-discovery .fragrance-guide-card,
+  .s-block--fragrance-discovery .fragrance-comparison a[role='row'] {
+    transition: none;
+    transform: none;
+  }
+}
+`;
+}
+
 function assetPlanForPreset(themeRoot, slug, preset) {
-  if (!['product-flip', 'lookbook'].includes(preset)) return [];
+  if (!['products-grid', 'product-flip', 'lookbook', 'fragrance-discovery'].includes(preset)) return [];
 
   const renderers = {
+    'products-grid': {
+      script: renderProductsGridScript,
+      styles: renderProductsGridStyles,
+    },
     'product-flip': {
       script: renderProductFlipScript,
       styles: renderProductFlipStyles,
@@ -1168,6 +2131,10 @@ function assetPlanForPreset(themeRoot, slug, preset) {
     lookbook: {
       script: renderLookbookScript,
       styles: renderLookbookStyles,
+    },
+    'fragrance-discovery': {
+      script: renderFragranceDiscoveryScript,
+      styles: renderFragranceDiscoveryStyles,
     },
   };
 
@@ -1233,7 +2200,7 @@ function replaceOrAppendComponent(components, candidate, force) {
 function addCustomComponent(themeName, rawSlug, options) {
   const slug = slugify(rawSlug);
   if (!slug || slug.length < 3) throw new Error('اسم Custom Component يجب أن يكون slug واضحاً مثل promo-strip.');
-  if (!PRESETS.has(options.preset)) throw new Error(`Preset غير معروف: ${options.preset}. استخدم basic أو banner أو links أو product-flip أو lookbook.`);
+  if (!PRESETS.has(options.preset)) throw new Error(`Preset غير معروف: ${options.preset}. استخدم basic أو banner أو links أو products-grid أو product-flip أو lookbook أو fragrance-discovery.`);
 
   const componentPath = options.componentPath || `home.${slug}`;
   if (!isValidComponentPath(componentPath)) {

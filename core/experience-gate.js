@@ -7,8 +7,10 @@ const {
   getExperience,
   isImplemented,
   listExperiences,
+  normalizeExperienceId,
   pathsForExperience,
 } = require('./experience-registry');
+const { loadThemeSpecs, requiredSpecEntries } = require('./specs-loader');
 
 const rootDir = path.join(__dirname, '..');
 const themesDir = path.join(rootDir, 'themes');
@@ -51,7 +53,7 @@ function validateForbiddenJs(result, jsContent, file) {
   const forbidden = [
     { label: 'طلب شبكة مباشر داخل تجربة العرض', pattern: /\bfetch\s*\(|\bXMLHttpRequest\b|\baxios\b|\bsalla\.api\.request\s*\(/ },
     { label: 'تنفيذ كود ديناميكي خطر', pattern: /\beval\s*\(|\bnew\s+Function\s*\(|\bdocument\.write\s*\(/ },
-    { label: 'حقن HTML مباشر', pattern: /\.innerHTML\s*=/ },
+    { label: 'حقن HTML مباشر', pattern: /\.innerHTML\s*=|\.outerHTML\s*=|\.insertAdjacentHTML\s*\(/ },
   ];
 
   for (const check of forbidden) {
@@ -203,10 +205,40 @@ function detectInstalledExperiences(themeName) {
   return detected;
 }
 
+function requiredExperiencesFromSpecs(themeName) {
+  const loaded = loadThemeSpecs(themeName);
+  const issues = [];
+
+  if (!loaded.valid) {
+    issues.push({
+      file: 'specs',
+      detail: `ملف المواصفات غير صالح: ${path.relative(rootDir, loaded.path)} - ${loaded.error}`,
+    });
+  }
+
+  const required = requiredSpecEntries(loaded.specs, 'experiences', normalizeExperienceId).map((item) => ({
+    experienceId: item.id,
+    slug: item.config?.slug || '',
+    key: item.key,
+    config: item.config,
+  }));
+
+  return {
+    specsPath: loaded.path,
+    specsExists: loaded.exists,
+    required,
+    issues,
+  };
+}
+
 function validateThemeExperiences(themeName) {
+  const requiredSpecs = requiredExperiencesFromSpecs(themeName);
   const result = {
     theme: themeName,
     detected: [],
+    required: requiredSpecs.required,
+    specsPath: requiredSpecs.specsPath,
+    specsExists: requiredSpecs.specsExists,
     results: [],
     issues: [],
     warnings: [],
@@ -219,16 +251,60 @@ function validateThemeExperiences(themeName) {
   }
 
   result.detected = detectInstalledExperiences(themeName);
+  for (const specIssue of requiredSpecs.issues) issue(result, specIssue.file, specIssue.detail);
 
+  const validationTargets = new Map();
   for (const item of result.detected) {
+    validationTargets.set(`${item.experienceId}:${item.slug}`, item);
+  }
+
+  for (const item of result.required) {
+    const experience = getExperience(item.experienceId);
+    if (!experience) {
+      issue(result, 'specs', `experiences يطلب تجربة غير معروفة: ${item.key} (${item.experienceId})`);
+      continue;
+    }
+    if (!isImplemented(experience)) {
+      issue(result, 'specs', `experiences يطلب تجربة غير منفذة بعد: ${item.experienceId}`);
+    }
+
+    const requiredSlug = item.slug ? defaultSlugFor(experience, item.slug) : '';
+    const installed = result.detected.find((detected) => (
+      detected.experienceId === item.experienceId
+      && (!requiredSlug || detected.slug === requiredSlug)
+    ));
+
+    if (!installed) {
+      issue(
+        result,
+        'specs',
+        `experiences يطلب ${item.experienceId}${requiredSlug ? ` (${requiredSlug})` : ''} لكنها غير مثبتة في الثيم`,
+      );
+      const slug = requiredSlug || defaultSlugFor(experience);
+      validationTargets.set(`${item.experienceId}:${slug}`, { experienceId: item.experienceId, slug });
+      continue;
+    }
+
+    validationTargets.set(`${installed.experienceId}:${installed.slug}`, installed);
+  }
+
+  const seenIssues = new Set();
+  const seenWarnings = new Set();
+  for (const item of validationTargets.values()) {
     const child = validateExperience(themeName, item.experienceId, item.slug);
     result.results.push(child);
 
     for (const childIssue of child.issues) {
+      const key = `${childIssue.file}:${childIssue.detail}`;
+      if (seenIssues.has(key)) continue;
+      seenIssues.add(key);
       issue(result, childIssue.file, `[${child.experience}:${child.slug}] ${childIssue.detail}`);
     }
 
     for (const childWarning of child.warnings) {
+      const key = `${childWarning.file}:${childWarning.detail}`;
+      if (seenWarnings.has(key)) continue;
+      seenWarnings.add(key);
       warning(result, childWarning.file, `[${child.experience}:${child.slug}] ${childWarning.detail}`);
     }
   }
@@ -268,10 +344,14 @@ function printThemeExperienceGate(themeName) {
 
   console.log(`\n🧪 Experience Registry Gate | ${themeName}`);
   console.log('----------------------------------------');
+  if (result.specsPath) {
+    console.log(`Specs: ${path.relative(rootDir, result.specsPath)}${result.specsExists ? '' : ' (not found)'}`);
+  }
   console.log(`Detected experiences: ${result.detected.length}`);
   for (const item of result.detected) {
     console.log(`- ${item.experienceId}: ${item.slug}`);
   }
+  console.log(`Required by specs: ${result.required.length ? result.required.map((item) => `${item.experienceId}${item.slug ? `:${item.slug}` : ''}`).join(', ') : '-'}`);
   console.log(`Issues: ${result.issues.length}`);
   console.log(`Warnings: ${result.warnings.length}`);
 
@@ -296,6 +376,7 @@ module.exports = {
   detectInstalledExperiences,
   printExperienceGate,
   printThemeExperienceGate,
+  requiredExperiencesFromSpecs,
   validateExperience,
   validateThemeExperiences,
 };

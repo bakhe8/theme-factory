@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 const IMAGE = {
   fashionHero: 'https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&q=80&w=1600',
   lookbook: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&q=80&w=1400',
@@ -6,6 +9,12 @@ const IMAGE = {
   shirt: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=700',
   glasses: 'https://images.unsplash.com/photo-1511499767390-a73953f44222?auto=format&fit=crop&q=80&w=700',
   perfume: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=700',
+  perfumeShelf: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=1600',
+  oudOil: 'https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&q=80&w=900',
+  bakhoor: 'https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&q=80&w=900',
+  incense: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=900',
+  giftSet: 'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=900',
+  musk: 'https://images.unsplash.com/photo-1563170351-be82bc888aa4?auto=format&fit=crop&q=80&w=900',
   watch: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&q=80&w=700',
   shoes: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=700',
   abaya: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&q=80&w=700',
@@ -13,6 +22,7 @@ const IMAGE = {
   squareBanner: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=900',
   emptyPlaceholder: 'https://demo.salla.sa/assets/images/placeholder.png',
 };
+
 
 function product(overrides = {}) {
   const base = {
@@ -212,6 +222,8 @@ const fashionProducts = [
   }),
 ];
 
+
+
 const richReviews = [
   {
     id: 1,
@@ -353,6 +365,15 @@ const baseStore = {
     category: {
       testimonial_enabled: true,
     },
+    blog: {
+      allow_likes_and_comments: true,
+    },
+    rating: {
+      enabled: true,
+      show_on_product: true,
+      allow_update: true,
+      update_period: 14,
+    },
     tax: {
       number: '310123456700003',
       certificate: IMAGE.emptyPlaceholder,
@@ -407,6 +428,412 @@ const commonHome = {
     { icon: 'sicon-shield-check', title: 'دفع آمن', text: 'تجربة دفع محمية' },
     { icon: 'sicon-return-box', title: 'استبدال مرن', text: 'سياسة واضحة للمرتجعات' },
   ],
+};
+
+const fragranceBrand = {
+  id: 21,
+  name: 'دار العود',
+  url: 'brands/dar-al-oud.html',
+  logo: IMAGE.emptyPlaceholder,
+};
+
+const fragranceCategories = [
+  { id: 31, key: 'men', name: 'عطور رجالية', url: 'categories/perfumes-for-men.html', icon: 'sicon-user', image: IMAGE.perfume },
+  { id: 32, key: 'women', name: 'عطور نسائية', url: 'categories/perfumes-for-women.html', icon: 'sicon-female', image: IMAGE.musk },
+  { id: 33, key: 'unisex', name: 'له ولها', url: 'categories/unisex-fragrances.html', icon: 'sicon-users', image: IMAGE.oudOil },
+  { id: 34, key: 'try-decide', name: 'جرب وقرّر', url: 'categories/try-and-decide.html', icon: 'sicon-star2', image: IMAGE.giftSet },
+  { id: 35, key: 'bakhoor', name: 'بخور ومباخر', url: 'categories/bakhoor.html', icon: 'sicon-fire', image: IMAGE.bakhoor },
+  { id: 36, key: 'sets', name: 'مجموعات', url: 'categories/fragrance-sets.html', icon: 'sicon-gift', image: IMAGE.giftSet },
+  { id: 37, key: 'oils', name: 'زيوت عطرية', url: 'categories/perfume-oils.html', icon: 'sicon-drop', image: IMAGE.oudOil },
+  { id: 38, key: 'musk', name: 'المسك', url: 'categories/musk.html', icon: 'sicon-heart', image: IMAGE.musk },
+];
+
+function fragranceProduct(overrides = {}) {
+  const category = fragranceCategories.find((item) => item.key === overrides.family) || fragranceCategories[0];
+  return product({
+    brand: fragranceBrand,
+    category,
+    categories: [category],
+    scent_family: overrides.scent_family || 'شرقي',
+    fragrance_notes: overrides.fragrance_notes || ['عود', 'مسك', 'عنبر'],
+    volume: overrides.volume || '100 مل',
+    concentration: overrides.concentration || 'Eau de Parfum',
+    audience: overrides.audience || 'للجنسين',
+    ...overrides,
+  });
+}
+
+const fragranceProducts = [
+  fragranceProduct({
+    id: 301,
+    family: 'oils',
+    name: 'دهن عود جنيد - للجنسين - زيت عربي - 3مل',
+    subtitle: 'زيت عود مركز بطابع شرقي فاخر',
+    price: 230,
+    regular_price: 230,
+    sale_price: 230,
+    product_price: 230,
+    quantity: 18,
+    sold_quantity: 72,
+    volume: '3 مل',
+    concentration: 'زيت عربي مركز',
+    scent_family: 'عود شرقي',
+    fragrance_notes: ['عود طبيعي', 'خشب دافئ', 'لمسة بلسمية'],
+    image: { url: IMAGE.oudOil, alt: 'دهن عود جنيد' },
+    thumbnail: IMAGE.oudOil,
+    rating: { stars: 5, count: 64 },
+    tags: ['عود', 'زيت عربي', 'الأكثر مبيعاً'],
+  }),
+  fragranceProduct({
+    id: 302,
+    family: 'women',
+    name: 'عطر فتينه - نسائي - عطر غربي - 100 مل',
+    subtitle: 'زهور ناعمة مع قاعدة مسكية',
+    price: 110,
+    regular_price: 110,
+    sale_price: 110,
+    product_price: 110,
+    quantity: 42,
+    volume: '100 مل',
+    audience: 'نسائي',
+    scent_family: 'زهري غربي',
+    fragrance_notes: ['ورد', 'فاكهة ناعمة', 'مسك أبيض'],
+    image: { url: IMAGE.perfume, alt: 'عطر فتينه' },
+    thumbnail: IMAGE.perfume,
+    rating: { stars: 5, count: 38 },
+  }),
+  fragranceProduct({
+    id: 303,
+    family: 'unisex',
+    name: 'عطر حجر - للجنسين - عطر عربي غربي - 100 مل',
+    subtitle: 'مزج شرقي غربي بنفحات عود',
+    price: 90,
+    regular_price: 90,
+    sale_price: 90,
+    product_price: 90,
+    quantity: 34,
+    audience: 'للجنسين',
+    scent_family: 'عربي غربي',
+    fragrance_notes: ['حمضيات', 'خشب الصندل', 'دهن عود'],
+    image: { url: IMAGE.perfumeShelf, alt: 'عطر حجر' },
+    thumbnail: IMAGE.perfumeShelf,
+    rating: { stars: 4, count: 27 },
+  }),
+  fragranceProduct({
+    id: 304,
+    family: 'women',
+    name: 'عطر ثلوج - نسائي - غربي - 100مل',
+    subtitle: 'انتعاش بارد ولمسة أنثوية يومية',
+    price: 80,
+    regular_price: 80,
+    sale_price: 80,
+    product_price: 80,
+    quantity: 0,
+    status: 'out',
+    audience: 'نسائي',
+    scent_family: 'منعش زهري',
+    fragrance_notes: ['زهور بيضاء', 'مسك', 'حمضيات'],
+    image: { url: IMAGE.musk, alt: 'عطر ثلوج' },
+    thumbnail: IMAGE.musk,
+    rating: { stars: 4, count: 18 },
+  }),
+  fragranceProduct({
+    id: 305,
+    family: 'unisex',
+    name: 'عطر تباهي - للجنسين - عطر عربي غربي - 100 مل',
+    subtitle: 'ملك عطور العود بقاعدة دافئة',
+    price: 350,
+    regular_price: 390,
+    sale_price: 350,
+    product_price: 390,
+    is_on_sale: true,
+    quantity: 12,
+    audience: 'للجنسين',
+    scent_family: 'عود فاخر',
+    fragrance_notes: ['عود', 'عنبر', 'جلد ناعم'],
+    image: { url: IMAGE.oudOil, alt: 'عطر تباهي' },
+    thumbnail: IMAGE.oudOil,
+    rating: { stars: 5, count: 91 },
+    promotion_title: 'الأكثر طلباً',
+  }),
+  fragranceProduct({
+    id: 306,
+    family: 'musk',
+    name: 'عطر مسك - نسائي - عطر غربي - 50 مل',
+    subtitle: 'مسك أبيض ناعم بحجم عملي',
+    price: 80,
+    regular_price: 80,
+    sale_price: 80,
+    product_price: 80,
+    quantity: 25,
+    volume: '50 مل',
+    audience: 'نسائي',
+    scent_family: 'مسك',
+    fragrance_notes: ['مسك أبيض', 'بودرة', 'ورد'],
+    image: { url: IMAGE.musk, alt: 'عطر مسك' },
+    thumbnail: IMAGE.musk,
+    rating: { stars: 5, count: 15 },
+  }),
+  fragranceProduct({
+    id: 307,
+    family: 'bakhoor',
+    name: 'بخور البيت الخليجي الملكي - للجنسين - 60 جرام',
+    subtitle: 'بخور فرنسي بطابع مجالس فاخر',
+    price: 160,
+    regular_price: 160,
+    sale_price: 160,
+    product_price: 160,
+    quantity: 30,
+    volume: '60 جرام',
+    audience: 'للجنسين',
+    scent_family: 'بخور فرنسي',
+    fragrance_notes: ['خشب عطري', 'ورد', 'عنبر'],
+    image: { url: IMAGE.bakhoor, alt: 'بخور البيت الخليجي الملكي' },
+    thumbnail: IMAGE.bakhoor,
+    rating: { stars: 4, count: 21 },
+  }),
+  fragranceProduct({
+    id: 308,
+    family: 'bakhoor',
+    name: 'مبخر مداخن المجالس - فضة',
+    subtitle: 'إكسسوار فاخر لتجربة البخور',
+    price: 220,
+    regular_price: 220,
+    sale_price: 220,
+    product_price: 220,
+    quantity: 9,
+    audience: 'منزلي',
+    scent_family: 'مبخرة',
+    fragrance_notes: ['فضة', 'معدن مصقول', 'تصميم مجالس'],
+    image: { url: IMAGE.incense, alt: 'مبخر مداخن المجالس' },
+    thumbnail: IMAGE.incense,
+    rating: { stars: 4, count: 8 },
+  }),
+  fragranceProduct({
+    id: 309,
+    family: 'sets',
+    name: 'مجموعة مسك كولكشن - للجنسين - مجموعة عطور بخاخ - 30 مل',
+    subtitle: 'مجموعة روائح صغيرة للتجربة والإهداء',
+    price: 180,
+    regular_price: 180,
+    sale_price: 180,
+    product_price: 180,
+    type: 'bundle',
+    quantity: 16,
+    volume: '30 مل',
+    audience: 'للجنسين',
+    scent_family: 'مجموعة مسك',
+    fragrance_notes: ['مسك', 'ورد', 'فانيلا'],
+    image: { url: IMAGE.giftSet, alt: 'مجموعة مسك كولكشن' },
+    thumbnail: IMAGE.giftSet,
+    rating: { stars: 5, count: 6 },
+  }),
+  fragranceProduct({
+    id: 310,
+    family: 'try-decide',
+    name: 'مجموعة عينات جرب وقرّر - خمس عطور فاخرة',
+    subtitle: 'عينات عطرية لاكتشاف الرائحة المناسبة',
+    price: 35,
+    regular_price: 35,
+    sale_price: 35,
+    product_price: 35,
+    type: 'digital',
+    quantity: 100,
+    volume: '5 عينات',
+    audience: 'للجنسين',
+    scent_family: 'عينات متنوعة',
+    fragrance_notes: ['عود', 'مسك', 'زهور', 'عنبر', 'بخور'],
+    image: { url: IMAGE.giftSet, alt: 'مجموعة عينات جرب وقرر' },
+    thumbnail: IMAGE.giftSet,
+    rating: { stars: 5, count: 33 },
+    add_to_cart_label: 'اطلب العينة',
+  }),
+  fragranceProduct({
+    id: 311,
+    family: 'men',
+    name: 'عطر كربون - رجالي - غربي - 200 مل',
+    subtitle: 'رائحة رجالية بثبات عال وحضور واضح',
+    price: 220,
+    regular_price: 220,
+    sale_price: 220,
+    product_price: 220,
+    quantity: 20,
+    volume: '200 مل',
+    audience: 'رجالي',
+    scent_family: 'خشبي غربي',
+    fragrance_notes: ['حمضيات', 'أخشاب', 'باتشولي'],
+    image: { url: IMAGE.perfumeShelf, alt: 'عطر كربون' },
+    thumbnail: IMAGE.perfumeShelf,
+    rating: { stars: 4, count: 29 },
+  }),
+  fragranceProduct({
+    id: 312,
+    family: 'oils',
+    name: 'دهن طيف - للجنسين - زيت غربي - 23 مل',
+    subtitle: 'زيت عطري فاخر بحجم كبير',
+    price: 420,
+    regular_price: 420,
+    sale_price: 420,
+    product_price: 420,
+    quantity: 5,
+    has_preorder_campaign: true,
+    preorder: { label: 'اطلب توفيره' },
+    volume: '23 مل',
+    concentration: 'زيت غربي',
+    audience: 'للجنسين',
+    scent_family: 'زيت فاخر',
+    fragrance_notes: ['عنبر', 'مسك', 'أخشاب ناعمة'],
+    image: { url: IMAGE.oudOil, alt: 'دهن طيف' },
+    thumbnail: IMAGE.oudOil,
+    rating: { stars: 5, count: 12 },
+  }),
+];
+
+const fragranceReviews = [
+  {
+    id: 31,
+    product_id: 301,
+    name: 'عبدالله',
+    user: 'عبدالله',
+    avatar: 'https://i.pravatar.cc/150?u=oud',
+    stars: 5,
+    rating: 5,
+    text: 'ثبات ممتاز ورائحة العود واضحة من أول استخدام.',
+    content: 'ثبات ممتاز ورائحة العود واضحة من أول استخدام.',
+    created_at: '2026-04-28',
+  },
+  {
+    id: 32,
+    product_id: 305,
+    name: 'سارة',
+    user: 'سارة',
+    avatar: 'https://i.pravatar.cc/150?u=tabahi',
+    stars: 5,
+    rating: 5,
+    text: 'تغليف فاخر والرائحة مناسبة للإهداء.',
+    content: 'تغليف فاخر والرائحة مناسبة للإهداء.',
+    created_at: '2026-04-20',
+  },
+  {
+    id: 33,
+    product_id: 307,
+    name: 'نواف',
+    user: 'نواف',
+    avatar: '',
+    stars: 4,
+    rating: 4,
+    text: 'البخور مناسب للمجالس، تمنيت وصفاً أوضح للمكونات.',
+    content: 'البخور مناسب للمجالس، تمنيت وصفاً أوضح للمكونات.',
+    created_at: '2026-04-12',
+  },
+  {
+    id: 34,
+    product_id: 310,
+    name: 'ريم',
+    user: 'ريم',
+    avatar: 'https://i.pravatar.cc/150?u=samples',
+    stars: 5,
+    rating: 5,
+    text: 'فكرة العينات ممتازة وساعدتني أختار العطر المناسب.',
+    content: 'فكرة العينات ممتازة وساعدتني أختار العطر المناسب.',
+    created_at: '2026-04-08',
+  },
+];
+
+const fragranceHome = {
+  slides: [
+    {
+      image: IMAGE.perfumeShelf,
+      title: 'تسوق الآن واحصل على شحن مجاني',
+      description: 'عطور عربية وغربية وزيوت عطرية وبخور بتجربة متجر فاخر.',
+      without_overlay: false,
+      url: 'categories/try-and-decide.html',
+    },
+    {
+      image: IMAGE.bakhoor,
+      title: 'بخور ومعمول ومباخر',
+      description: 'منتجات مجالس بروائح شرقية وثبات طويل.',
+      without_overlay: false,
+      url: 'categories/bakhoor.html',
+    },
+    {
+      image: IMAGE.giftSet,
+      title: 'اطلب توفيره',
+      description: 'تجربة طلب مسبق للمنتجات النادرة والمميزة.',
+      without_overlay: false,
+      url: 'products/312.html',
+    },
+  ],
+  banners: [
+    {
+      image: IMAGE.giftSet,
+      url: 'categories/try-and-decide.html',
+      title: 'جرب وقرّر',
+      description: 'عينات مختارة لاكتشاف الرائحة المناسبة.',
+    },
+    {
+      image: IMAGE.bakhoor,
+      url: 'categories/bakhoor.html',
+      title: 'تشكيلة البخور',
+      description: 'بخور ومباخر للمجالس والهدايا.',
+    },
+    {
+      image: IMAGE.perfumeShelf,
+      url: 'pages/fragrance-consultant.html',
+      title: 'استشر خبير العطور',
+      description: 'اختيار الرائحة حسب المناسبة والشخصية.',
+    },
+  ],
+  links: fragranceCategories.map((category) => ({
+    icon: category.icon,
+    title: category.name,
+    url: category.url,
+  })),
+  features: [
+    { icon: 'sicon-shipping-fast', title: 'شحن مجاني', text: 'تفعيل الشحن المجاني داخل السعودية' },
+    { icon: 'sicon-shield-check', title: 'دفع آمن', text: 'دعم خيارات الدفع الآجل والمحافظ' },
+    { icon: 'sicon-gift', title: 'تغليف فاخر', text: 'تجربة مناسبة للهدايا والمناسبات' },
+  ],
+  productSections: [
+    { title: 'الأكثر مبيعاً', sub_title: 'منتجات عطرية تشبه كثافة متجر جنيد', ids: [301, 302, 303, 305, 311, 309], limit: 6 },
+    { title: 'تشكيلة المسك', sub_title: 'روائح مسكية ناعمة', ids: [306, 309, 310, 302], limit: 4 },
+    { title: 'بخور، معمول، مباخر', sub_title: 'منتجات مجالس وإكسسوارات', ids: [307, 308], limit: 4 },
+    { title: 'اكتشف إطلاقات جديدة', sub_title: 'منتجات فاخرة وحديثة', ids: [312, 311, 305, 310], limit: 4 },
+  ],
+  fragranceDiscovery: {
+    title: 'اكتشف عطرك المناسب',
+    subtitle: 'مستشار عطري محلي لاختبار قدرة الثيم على شرح الرائحة، اقتراح الهدايا، ومساعدة المتسوق على المقارنة قبل الشراء.',
+    guide_title: 'مستشار الرائحة',
+    gift_title: 'اقتراحات الإهداء والتجربة',
+    compare_title: 'مقارنة الروائح',
+    product_ids: [301, 302, 305, 306, 307, 309, 310, 311],
+    guide_items: [
+      {
+        icon: 'sicon-star2',
+        title: 'فخم للمناسبات',
+        note: 'عود وعنبر وحضور واضح للمساء والهدايا الرسمية.',
+        filter: 'عود',
+      },
+      {
+        icon: 'sicon-heart',
+        title: 'ناعم يومي',
+        note: 'مسك وزهور بروائح هادئة للاستخدام اليومي.',
+        filter: 'مسك',
+      },
+      {
+        icon: 'sicon-fire',
+        title: 'للمجالس',
+        note: 'بخور ومباخر وروائح خشبية لاستقبال الضيوف.',
+        filter: 'بخور',
+      },
+      {
+        icon: 'sicon-gift',
+        title: 'هدية آمنة',
+        note: 'خيارات للجنسين أو عينات تساعد المتسوق على القرار.',
+        filter: 'للجنسين',
+      },
+    ],
+  },
 };
 
 const fixtures = {
@@ -581,6 +1008,105 @@ const fixtures = {
       requiresRegisteredUser: true,
     },
   },
+  'fragrance-luxury': {
+    id: 'fragrance-luxury',
+    title: 'Luxury Fragrance Dataset',
+    purpose: 'بيئة توليد واختبار لمتاجر العطور الفاخرة المشابهة لمتجر جنيد: عطور، عود، مسك، بخور، مجموعات، عينات، وتعدد دول/عملات.',
+    source_reference: {
+      name: 'Junaid Perfumes Saudi Arabia',
+      url: 'https://sa.junaidperfumes.com/',
+      observed_patterns: [
+        'قائمة تصنيفات عطرية واسعة',
+        'سلايدر عروض رئيسي',
+        'أقسام منتجات متكررة: الأكثر مبيعاً، المسك، البخور، الإطلاقات الجديدة',
+        'منتجات بزيوت عطرية وبخور ومجموعات وعينات',
+        'رسائل شحن مجاني ودفع آمن',
+        'تعدد دول/عملات ولغتين',
+      ],
+    },
+    store: {
+      ...baseStore,
+      id: 21,
+      name: 'دار العود للعطور',
+      username: 'dar-al-oud',
+      description: 'متجر عطور فاخر لاختبار ثيمات الروائح الشرقية والغربية على منصة سلة.',
+      slogan: 'اكتشف رائحتك المميزة',
+      logo: IMAGE.emptyPlaceholder,
+      contacts: {
+        mobile: '+966500002121',
+        phone: '+966500002121',
+        email: 'care@daraloud.example',
+        whatsapp: '+966500002121',
+      },
+      social: {
+        instagram: 'daraloud',
+        twitter: 'daraloud',
+        snapchat: 'daraloud',
+        tiktok: 'daraloud',
+        youtube: 'daraloud',
+      },
+      settings: {
+        ...baseStore.settings,
+        currencies_enabled: true,
+        is_multilingual: true,
+        cart: {
+          apply_coupon_enabled: true,
+          free_shipping_enabled: true,
+        },
+        product: {
+          ...baseStore.settings.product,
+          show_notes: true,
+          total_sold_enabled: true,
+        },
+      },
+    },
+    user: {
+      ...users.registered,
+      name: 'عميل مهتم بالعطور',
+      wishlist: [301, 305, 310, 312],
+      wallet: { balance: 380 },
+    },
+    users: Object.values(users),
+    products: fragranceProducts,
+    cart: cartFromProducts(fragranceProducts.slice(0, 3), {
+      coupon: { code: 'OUD15', discount: 55 },
+      total_discount: 55,
+      real_shipping_cost: 0,
+    }),
+    reviews: fragranceReviews,
+    testimonials: fragranceReviews.map((review) => ({
+      name: review.name,
+      text: review.text,
+      avatar: review.avatar || IMAGE.emptyPlaceholder,
+      stars: review.stars,
+    })),
+    categories: fragranceCategories,
+    brands: [fragranceBrand],
+    orders: [
+      { id: 9301, status: 'delivered', total: 570, items: fragranceProducts.slice(0, 2), url: 'customer/orders/9301.html' },
+      { id: 9302, status: 'processing', total: 760, items: fragranceProducts.slice(6, 9), url: 'customer/orders/9302.html' },
+    ],
+    blog: [
+      { id: 31, title: 'كيف تختار العطر المناسب لشخصيتك', url: 'blog/choose-your-scent.html', image: IMAGE.perfumeShelf },
+      { id: 32, title: 'الفرق بين دهن العود والعطر البخاخ', url: 'blog/oud-oil-vs-spray.html', image: IMAGE.oudOil },
+      { id: 33, title: 'دليل استخدام البخور في المجالس', url: 'blog/bakhoor-guide.html', image: IMAGE.bakhoor },
+    ],
+    home: fragranceHome,
+    expectations: {
+      minProducts: 12,
+      minReviews: 4,
+      minCategories: 8,
+      requiredProductTypes: ['product', 'bundle', 'digital'],
+      requiredProductFamilies: ['men', 'women', 'unisex', 'try-decide', 'bakhoor', 'sets', 'oils', 'musk'],
+      requiredFragranceFields: ['scent_family', 'fragrance_notes', 'volume', 'audience'],
+      requiredHomeProductSections: ['الأكثر مبيعاً', 'تشكيلة المسك', 'بخور، معمول، مباخر', 'اكتشف إطلاقات جديدة'],
+      requiredHomeExperienceBlocks: ['fragranceDiscovery'],
+      requiresSaleProduct: true,
+      requiresOutOfStockProduct: true,
+      requiresPreorderProduct: true,
+      requiresRegisteredUser: true,
+    },
+  },
   'empty-store': {
     id: 'empty-store',
     title: 'Empty Store Dataset',
@@ -625,23 +1151,39 @@ function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
-function getFixture(id = 'fashion-rich') {
+function loadThemeFixtures(themePath) {
+  if (!themePath) return {};
+  const file = path.join(themePath, 'fixtures.js');
+  if (!fs.existsSync(file)) return {};
+  try {
+    return require(file);
+  } catch (e) {
+    return {};
+  }
+}
+
+function getFixture(id = 'fashion-rich', themePath = null) {
+  const local = loadThemeFixtures(themePath);
+  if (local[id]) return clone(local[id]);
   const fixture = fixtures[id] || fixtures['fashion-rich'];
   return clone(fixture);
 }
 
-function hasFixture(id) {
+function hasFixture(id, themePath = null) {
+  if (themePath && loadThemeFixtures(themePath)[id]) return true;
   return Boolean(fixtures[id]);
 }
 
-function listFixtures() {
-  return Object.values(fixtures).map((fixture) => ({
+function listFixtures(themePath = null) {
+  const local = loadThemeFixtures(themePath);
+  const all = { ...fixtures, ...local };
+  return Object.values(all).map((fixture) => ({
     id: fixture.id,
     title: fixture.title,
     purpose: fixture.purpose,
-    products: fixture.products.length,
-    reviews: fixture.reviews.length,
-    users: fixture.users.length,
+    products: (fixture.products || []).length,
+    reviews: (fixture.reviews || []).length,
+    users: (fixture.users || []).length,
   }));
 }
 
@@ -670,8 +1212,31 @@ function validateFixture(fixture) {
     issues.push(`${fixture.id}: عدد المراجعات أقل من المطلوب (${reviews.length}/${expectations.minReviews})`);
   }
 
+  if ((fixture.categories || []).length < Number(expectations.minCategories || 0)) {
+    issues.push(`${fixture.id}: عدد التصنيفات أقل من المطلوب (${(fixture.categories || []).length}/${expectations.minCategories})`);
+  }
+
   for (const type of expectations.requiredProductTypes || []) {
     if (!hasProductType(products, type)) issues.push(`${fixture.id}: لا يوجد منتج من نوع ${type}`);
+  }
+
+  for (const family of expectations.requiredProductFamilies || []) {
+    if (!products.some((item) => item.family === family)) {
+      issues.push(`${fixture.id}: لا يوجد منتج من عائلة ${family}`);
+    }
+  }
+
+  for (const section of expectations.requiredHomeProductSections || []) {
+    const sections = fixture.home?.productSections || [];
+    if (!sections.some((item) => item.title === section)) {
+      issues.push(`${fixture.id}: قسم الصفحة الرئيسية مفقود: ${section}`);
+    }
+  }
+
+  for (const block of expectations.requiredHomeExperienceBlocks || []) {
+    if (!fixture.home?.[block]) {
+      issues.push(`${fixture.id}: تجربة الصفحة الرئيسية مفقودة: ${block}`);
+    }
   }
 
   if (expectations.requiresSaleProduct && !products.some((item) => item.is_on_sale)) {
@@ -699,6 +1264,11 @@ function validateFixture(fixture) {
     if (!item.image?.url && !expectations.allowsMissingImages) warnings.push(`${label}: image.url مفقود`);
     if (!item.status) issues.push(`${label}: status مفقود`);
     if (!item.type) issues.push(`${label}: type مفقود`);
+    for (const field of expectations.requiredFragranceFields || []) {
+      if (!item[field] || (Array.isArray(item[field]) && !item[field].length)) {
+        issues.push(`${label}: حقل العطور ${field} مفقود`);
+      }
+    }
   });
 
   return { issues, warnings };
@@ -709,4 +1279,6 @@ module.exports = {
   hasFixture,
   listFixtures,
   validateFixture,
+  makeProduct: product,
+  cartFromProducts,
 };

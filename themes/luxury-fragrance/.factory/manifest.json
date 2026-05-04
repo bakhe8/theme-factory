@@ -1,0 +1,12 @@
+{
+  "schema": "salla-theme-factory/theme-manifest@1",
+  "theme": "luxury-fragrance",
+  "role": "generated-theme",
+  "created_by": "salla-theme-factory",
+  "factory_version": "10.0.0",
+  "source_template": "raed",
+  "source_path": "themes/raed",
+  "source_url": "https://github.com/SallaApp/theme-raed",
+  "specs_path": "specs/luxury-fragrance.specs.json",
+  "created_at": "2026-05-04T00:00:00.000Z"
+}

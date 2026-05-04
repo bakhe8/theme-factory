@@ -238,10 +238,10 @@
     ],
     "components": [
         {
-            "key": "zen-products-grid",
+            "key": "zen-products",
             "title": {
-                "en": "Zen Products Grid",
-                "ar": "شبكة منتجات زين (عصري)"
+                "en": "Selected Products",
+                "ar": "منتجات مختارة"
             },
             "icon": "sicon-layout-grid-rearrange",
             "path": "home.zen-products",
@@ -249,9 +249,22 @@
                 {
                     "id": "title",
                     "type": "string",
-                    "label": "عنوان القسم",
-                    "placeholder": "أدخل عنواناً للقسم هنا...",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان",
+                    "format": "text",
+                    "required": false,
                     "multilanguage": true
+                },
+                {
+                    "id": "subtitle",
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "الوصف",
+                    "placeholder": "وصف مختصر يظهر أعلى المنتجات",
+                    "format": "textarea",
+                    "required": false,
+                    "multilanguage": true,
+                    "maxLength": 220
                 },
                 {
                     "id": "products",
@@ -261,6 +274,16 @@
                     "required": true,
                     "multichoice": true,
                     "maxLength": 12
+                },
+                {
+                    "id": "show_hover_actions",
+                    "type": "boolean",
+                    "icon": "sicon-toggle-off",
+                    "label": "إظهار زر السلة عند تمرير المؤشر",
+                    "format": "switch",
+                    "required": false,
+                    "value": true,
+                    "selected": true
                 }
             ]
         },
@@ -1101,6 +1124,238 @@
                     "required": false,
                     "minLength": 1,
                     "maxLength": 30
+                }
+            ]
+        },
+        {
+            "key": "flip-showcase",
+            "title": {
+                "en": "Interactive Products",
+                "ar": "منتجات تفاعلية"
+            },
+            "icon": "sicon-layout-grid-rearrange",
+            "path": "home.flip-showcase",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان",
+                    "format": "text",
+                    "required": false,
+                    "multilanguage": true
+                },
+                {
+                    "id": "subtitle",
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "الوصف",
+                    "placeholder": "وصف مختصر يظهر أعلى المنتجات",
+                    "format": "textarea",
+                    "required": false,
+                    "multilanguage": true,
+                    "maxLength": 255
+                },
+                {
+                    "id": "products",
+                    "type": "items",
+                    "source": "products",
+                    "label": "اختر المنتجات",
+                    "required": true,
+                    "multichoice": true,
+                    "maxLength": 8
+                },
+                {
+                    "id": "show_details_button",
+                    "type": "boolean",
+                    "icon": "sicon-toggle-off",
+                    "label": "عرض زر التفاصيل داخل البطاقة",
+                    "format": "switch",
+                    "required": false,
+                    "value": true,
+                    "selected": true
+                }
+            ]
+        },
+        {
+            "key": "editorial-lookbook",
+            "title": {
+                "en": "Shoppable Lookbook",
+                "ar": "إطلالة قابلة للتسوق"
+            },
+            "icon": "sicon-layout-grid-rearrange",
+            "path": "home.editorial-lookbook",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان",
+                    "format": "text",
+                    "required": false,
+                    "multilanguage": true
+                },
+                {
+                    "id": "subtitle",
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "الوصف",
+                    "placeholder": "اكتب قصة قصيرة تربط الصورة بالمنتجات",
+                    "format": "textarea",
+                    "required": false,
+                    "multilanguage": true,
+                    "maxLength": 280
+                },
+                {
+                    "id": "image",
+                    "type": "string",
+                    "icon": "sicon-image",
+                    "label": "صورة اللوحة",
+                    "format": "image",
+                    "required": true
+                },
+                {
+                    "id": "image_alt",
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "وصف الصورة",
+                    "format": "text",
+                    "required": false,
+                    "multilanguage": true,
+                    "maxLength": 120
+                },
+                {
+                    "id": "products",
+                    "type": "items",
+                    "source": "products",
+                    "label": "اختر المنتجات المرتبطة بالصورة",
+                    "required": true,
+                    "multichoice": true,
+                    "maxLength": 6
+                },
+                {
+                    "id": "button_label",
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "نص زر التفاصيل",
+                    "format": "text",
+                    "required": false,
+                    "multilanguage": true
+                }
+            ]
+        },
+        {
+            "key": "fragrance-discovery",
+            "title": {
+                "en": "Find Your Scent",
+                "ar": "اكتشف عطرك"
+            },
+            "icon": "sicon-layout-grid-rearrange",
+            "path": "home.fragrance-discovery",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان",
+                    "format": "text",
+                    "required": false,
+                    "multilanguage": true
+                },
+                {
+                    "id": "subtitle",
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "الوصف",
+                    "placeholder": "وصف مختصر يوجه المتسوق لاختيار الرائحة المناسبة",
+                    "format": "textarea",
+                    "required": false,
+                    "multilanguage": true,
+                    "maxLength": 280
+                },
+                {
+                    "id": "products",
+                    "type": "items",
+                    "source": "products",
+                    "label": "منتجات تجربة العطور",
+                    "required": true,
+                    "multichoice": true,
+                    "maxLength": 8
+                },
+                {
+                    "id": "guide_title",
+                    "type": "string",
+                    "icon": "sicon-star2",
+                    "label": "عنوان مستشار الرائحة",
+                    "format": "text",
+                    "required": false,
+                    "multilanguage": true
+                },
+                {
+                    "id": "gift_title",
+                    "type": "string",
+                    "icon": "sicon-gift",
+                    "label": "عنوان الإهداء والتجربة",
+                    "format": "text",
+                    "required": false,
+                    "multilanguage": true
+                },
+                {
+                    "id": "compare_title",
+                    "type": "string",
+                    "icon": "sicon-list",
+                    "label": "عنوان المقارنة",
+                    "format": "text",
+                    "required": false,
+                    "multilanguage": true
+                },
+                {
+                    "id": "guide_items",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "بطاقات مستشار الرائحة",
+                    "item_label": "اقتراح",
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 4,
+                    "fields": [
+                        {
+                            "id": "guide_items.icon",
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "الأيقونة",
+                            "format": "icon",
+                            "required": false,
+                            "value": "sicon-star2"
+                        },
+                        {
+                            "id": "guide_items.title",
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "العنوان",
+                            "format": "text",
+                            "required": true,
+                            "multilanguage": true
+                        },
+                        {
+                            "id": "guide_items.note",
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "الوصف",
+                            "format": "textarea",
+                            "required": false,
+                            "multilanguage": true,
+                            "maxLength": 180
+                        },
+                        {
+                            "id": "guide_items.filter",
+                            "type": "string",
+                            "icon": "sicon-search",
+                            "label": "كلمة المطابقة",
+                            "format": "text",
+                            "required": false
+                        }
+                    ]
                 }
             ]
         }

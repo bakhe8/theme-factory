@@ -1,0 +1,95 @@
+{
+  "_instructions": "مواصفات ثيم مستقل لمتاجر العطور الفاخرة داخل المصنع المحلي",
+  "brand": {
+    "name_ar": "ثيم العطور الفاخرة",
+    "name_en": "Luxury Fragrance",
+    "identifier": "luxury-fragrance",
+    "version": "1.0.0",
+    "author": "Salla Theme Factory",
+    "author_email": "support@salla.sa"
+  },
+  "visual_identity": {
+    "preset": "custom",
+    "colors": {
+      "primary": "#151515",
+      "accent": "#B88A44",
+      "background": "#FBFAF7",
+      "text": "#1F1A17"
+    },
+    "font": "DINNextLTArabic"
+  },
+  "settings": {
+    "header": {
+      "sticky": true,
+      "dark_topbar": true,
+      "important_links": true,
+      "more_menu": true
+    },
+    "homepage": {
+      "show_all_button": true,
+      "vertical_fixed_products": false
+    },
+    "product": {
+      "image_zoom": true,
+      "sticky_add_to_cart": true,
+      "add_product_toast": true,
+      "show_tags": true
+    },
+    "footer": {
+      "dark": true
+    }
+  },
+  "features": {
+    "mega_menu": true,
+    "fonts": true,
+    "color": true,
+    "breadcrumb": true,
+    "filters": true,
+    "unite_cards_height": true,
+    "menu_images": true,
+    "component_featured_products": true,
+    "component_fixed_banner": true,
+    "component_fixed_products": true,
+    "component_products_slider": true,
+    "component_photos_slider": true,
+    "component_parallax_background": false,
+    "component_random_testimonials": false,
+    "component_testimonials": true,
+    "component_square_photos": true,
+    "component_store_features": true,
+    "component_youtube": false
+  },
+  "verticals": {
+    "luxury_fragrance": {
+      "required": true,
+      "fixture": "fragrance-luxury"
+    }
+  },
+  "experiences": {
+    "fragrance_discovery": {
+      "required": true,
+      "slug": "fragrance-discovery"
+    }
+  },
+  "page_experiences": {
+    "brands_alphabet_filter": {
+      "required": true,
+      "page": "brands.index",
+      "floating": true,
+      "letters": "ar-en"
+    }
+  },
+  "integrations": {
+    "image_search": {
+      "required": false,
+      "implementation": "external-addon",
+      "handled_by": "",
+      "placement": "header-search",
+      "source_url": ""
+    }
+  },
+  "innovation": {
+    "_comment": "لا توجد ابتكارات تجريبية مطلوبة لهذا الثيم عند التسليم",
+    "experiments": []
+  }
+}

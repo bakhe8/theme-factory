@@ -1,0 +1,113 @@
+name: Factory Certification
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  factory-preflight:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install factory dependencies
+        run: npm ci
+
+      - name: Validate core JavaScript syntax
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const { execFileSync } = require('child_process');
+          function walk(dir, files = []) {
+            for (const entry of fs.readdirSync(dir)) {
+              const full = path.join(dir, entry);
+              const stat = fs.statSync(full);
+              if (stat.isDirectory()) walk(full, files);
+              else if (entry.endsWith('.js')) files.push(full);
+            }
+            return files;
+          }
+          for (const file of walk('core')) execFileSync(process.execPath, ['-c', file], { stdio: 'inherit' });
+          execFileSync(process.execPath, ['-c', 'factory.js'], { stdio: 'inherit' });
+          NODE
+
+      - name: Validate JSON contracts
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const roots = ['package.json', 'factory.config.json'];
+          function collect(dir, suffix, out = []) {
+            if (!fs.existsSync(dir)) return out;
+            for (const entry of fs.readdirSync(dir)) {
+              if (entry === 'node_modules' || entry === 'build' || entry === 'public') continue;
+              const full = path.join(dir, entry);
+              const stat = fs.statSync(full);
+              if (stat.isDirectory()) collect(full, suffix, out);
+              else if (entry.endsWith(suffix)) out.push(full);
+            }
+            return out;
+          }
+          const files = [
+            ...roots.filter((file) => fs.existsSync(file)),
+            ...collect('specs', '.json'),
+            ...collect('innovations', '.json'),
+            ...collect('themes', 'twilight.json'),
+          ];
+          for (const file of files) JSON.parse(fs.readFileSync(file, 'utf8'));
+          console.log(`JSON ok: ${files.length} files`);
+          NODE
+
+      - name: Salla docs memory status
+        run: node factory.js docs status
+
+      - name: Innovation registry gate
+        run: node factory.js innovation gate
+
+      - name: Runtime fixtures gate
+        run: node factory.js fixtures gate
+
+      - name: Source template workflow gate
+        run: node factory.js workflow gate raed
+
+  certify-themes:
+    needs: factory-preflight
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        theme: [zen-theme, luxury-fragrance]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.19.0
+
+      - name: Install factory dependencies
+        run: npm ci
+
+      - name: Deliverable workflow gate
+        run: node factory.js workflow gate ${{ matrix.theme }} --deliverable
+
+      - name: Certify theme
+        run: node factory.js certify ${{ matrix.theme }}

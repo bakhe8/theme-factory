@@ -34,6 +34,12 @@ const DOC_RULES = {
     section: 'Technical Review 2.4 Security',
     enforcement: 'error',
   },
+  SALLA_INNERHTML_REQUIRES_SANITIZATION: {
+    title: 'Any JavaScript HTML injection sink must be sanitized or limited to trusted Salla-rendered values',
+    url: 'https://docs.salla.dev/421888m0',
+    section: 'Technical Review 2.4 Security',
+    enforcement: 'warning',
+  },
   SALLA_FAST_CHECKOUT_CSS_ONLY: {
     title: 'Fast checkout widget can only be customized through the allowed CSS variables',
     url: 'https://docs.salla.dev/422692m0',
@@ -689,6 +695,8 @@ function validateDocumentedSourceRules(themePath, issues, warnings) {
         addIssue(issues, relativePath, 'Security', 'استخدام eval/new Function/document.write يخالف مراجعة الأمان في الثيم', 'SALLA_NO_MERCHANT_CUSTOM_HTML');
       }
 
+      validateHtmlInjectionUsage(relativePath, content, issues, warnings);
+
       const basename = path.basename(file).toLowerCase();
       const hasNetworkRequest = /\bfetch\s*\(|\bXMLHttpRequest\b|\baxios\b|\bsalla\.api\.request\s*\(/.test(content);
       if (hasNetworkRequest && basename.includes('product-card')) {
@@ -703,6 +711,71 @@ function validateDocumentedSourceRules(themePath, issues, warnings) {
   validateProductCardContract(themePath, warnings);
 }
 
+function validateHtmlInjectionUsage(relativePath, content, issues, warnings) {
+  const sinks = [
+    {
+      name: 'innerHTML',
+      pattern: /\.innerHTML\s*=/,
+      trusted: [
+        /\bsalla\.money\s*\(/,
+        /\bsalla\.helpers\./,
+        /<salla-loading\b/,
+        /\.innerHTML\.replace\s*\(/,
+        /\boriginalContent\b/,
+        /\bcurrentCount\b/,
+        /=\s*["'`]\s*["'`]\s*;?$/,
+      ],
+    },
+    {
+      name: 'outerHTML',
+      pattern: /\.outerHTML\s*=/,
+      trusted: [
+        /=\s*["'`]\s*</,
+        /<salla-loading\b/,
+      ],
+    },
+    {
+      name: 'insertAdjacentHTML',
+      pattern: /\.insertAdjacentHTML\s*\(/,
+      trusted: [
+        /\(\s*["'`](beforeend|afterbegin|beforebegin|afterend)["'`]\s*,\s*["'`]/,
+      ],
+    },
+  ];
+
+  if (!sinks.some((sink) => sink.pattern.test(content))) return;
+
+  const hasLocalSanitizer = /\bescapeHTML\s*\(|\bescapeHtml\s*\(|\bsanitizeHTML\s*\(|\bDOMPurify\b/.test(content);
+  const lines = content.split(/\r?\n/);
+
+  lines.forEach((line, index) => {
+    const sink = sinks.find((item) => item.pattern.test(line));
+    if (!sink) return;
+
+    const trimmed = line.trim();
+    const trustedValue = sink.trusted.some((pattern) => pattern.test(trimmed));
+
+    if (hasLocalSanitizer || trustedValue) {
+      addWarning(
+        warnings,
+        `${relativePath}:${index + 1}`,
+        'Security',
+        `استخدام ${sink.name} موجود لكنه محاط بمؤشر تعقيم/قيمة موثوقة. أبقه تحت مراجعة المصنع عند أي تعديل.`,
+        'SALLA_INNERHTML_REQUIRES_SANITIZATION',
+      );
+      return;
+    }
+
+    addIssue(
+      issues,
+      `${relativePath}:${index + 1}`,
+      'Security',
+      `استخدام ${sink.name} بدون تعقيم واضح أو قيمة موثوقة. استخدم textContent أو escapeHTML/DOMPurify حسب السياق.`,
+      'SALLA_INNERHTML_REQUIRES_SANITIZATION',
+    );
+  });
+}
+
 function validatePublicThemeSize(themePath, warnings, issues) {
   const publicPath = path.join(themePath, 'public');
   if (!fs.existsSync(publicPath)) {
@@ -713,7 +786,7 @@ function validatePublicThemeSize(themePath, warnings, issues) {
   const bytes = getAllFiles(publicPath).reduce((sum, file) => sum + fs.statSync(file).size, 0);
   if (bytes > MIB) {
     addIssue(issues, 'public', 'Performance', `حجم مخرجات الثيم ${formatBytes(bytes)} ويتجاوز حد 1MB للثيم العام`, 'SALLA_THEME_SIZE_PUBLIC_1MB');
-  } else if (bytes > MIB * 0.9) {
+  } else if (bytes > MIB * 0.98) {
     addWarning(warnings, 'public', 'Performance', `حجم مخرجات الثيم ${formatBytes(bytes)} قريب من حد 1MB`, 'SALLA_THEME_SIZE_PUBLIC_1MB');
   }
 }

@@ -1,0 +1,84 @@
+{#
+| Variable               | Type      | Description                                                                  |
+|------------------------|-----------|------------------------------------------------------------------------------|
+| component              | object    | Contains merchant settings for fields from twilight.json component section   |
+| component.title        | ?string   | Section title                                                                |
+| component.subtitle     | ?string   | Section description                                                          |
+| component.image        | string    | Main lookbook image                                                          |
+| component.image_alt    | ?string   | Main image alternative text                                                  |
+| component.products     | Product[] | Selected shoppable products                                                  |
+| component.button_label | ?string   | Product details link label                                                   |
+| position               | int       | Sorting number start from zero                                               |
+#}
+{% set selected_products = component.products|default([]) %}
+{% set image_alt = component.image_alt ? component.image_alt : (component.title ? component.title : 'editorial-lookbook') %}
+{% set details_label = component.button_label ? component.button_label : trans('blocks.home.display_all')|default('View details') %}
+{% set component_id = 'editorial-lookbook-' ~ position %}
+
+<section class="s-block s-block--editorial-lookbook s-block--lookbook container py-8" id="{{ component_id }}" data-lookbook-experience>
+    <div class="lookbook">
+        <div class="lookbook__media">
+            {% if component.image %}
+                <img src="{{ component.image }}" alt="{{ image_alt|e('html_attr') }}" loading="lazy">
+            {% endif %}
+        </div>
+
+        <div class="lookbook__panel">
+            {% if component.title or component.subtitle %}
+                <div class="s-block__title">
+                    <div class="right-side">
+                        {% if component.title %}
+                            <h2>{{ component.title }}</h2>
+                        {% endif %}
+                        {% if component.subtitle %}
+                            <p>{{ component.subtitle }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if selected_products|length %}
+                <div class="lookbook__products" data-lookbook-products>
+                    {% for product in selected_products %}
+                        <article class="lookbook-product" data-lookbook-product aria-current="{{ loop.first ? 'true' : 'false' }}">
+                            <a href="{{ product.url }}" class="lookbook-product__image" aria-label="{{ product.name|e('html_attr') }}">
+                                <img src="{{ product.image.url|default(product.thumbnail) }}" alt="{{ product.image.alt|default(product.name)|e('html_attr') }}" loading="lazy">
+                            </a>
+
+                            <div class="lookbook-product__content">
+                                <h3><a href="{{ product.url }}">{{ product.name }}</a></h3>
+
+                                <div class="lookbook-product__price">
+                                    {% if product.is_on_sale %}
+                                        <span class="line-through opacity-60">{{ product.regular_price|money }}</span>
+                                    {% endif %}
+                                    <strong>{{ product.price|money }}</strong>
+                                </div>
+
+                                <div class="lookbook-product__actions">
+                                    <salla-add-product-button
+                                        fill="outline"
+                                        width="wide"
+                                        product-id="{{ product.id }}"
+                                        product-status="{{ product.status }}"
+                                        product-type="{{ product.type }}">
+                                        <i class="sicon-shopping-bag"></i>
+                                        <span>{{ trans('pages.cart.add_to_cart') }}</span>
+                                    </salla-add-product-button>
+
+                                    <a href="{{ product.url }}" class="lookbook-product__details">
+                                        {{ details_label }}
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="py-8 text-center text-gray-400">
+                    {{ trans('common.no_products') }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

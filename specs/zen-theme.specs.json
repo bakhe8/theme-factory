@@ -1,0 +1,70 @@
+{
+  "_instructions": "عقد مواصفات مستقل لثيم zen-theme داخل المصنع المحلي",
+  "brand": {
+    "name_ar": "ثيم زين",
+    "name_en": "Zen Theme",
+    "identifier": "zen-theme",
+    "version": "1.0.3",
+    "author": "Antigravity Factory",
+    "author_email": "support@salla.sa"
+  },
+  "visual_identity": {
+    "preset": "custom",
+    "colors": {
+      "primary": "#111111",
+      "accent": "#E6BEAE",
+      "background": "#FDFDFD",
+      "text": "#231F1E"
+    },
+    "font": "Outfit"
+  },
+  "settings": {},
+  "features": {
+    "mega_menu": true,
+    "fonts": true,
+    "color": true,
+    "breadcrumb": true,
+    "filters": true,
+    "unite_cards_height": true,
+    "menu_images": true,
+    "component_featured_products": true,
+    "component_fixed_banner": true,
+    "component_fixed_products": true,
+    "component_products_slider": true,
+    "component_photos_slider": true,
+    "component_parallax_background": true,
+    "component_random_testimonials": false,
+    "component_testimonials": true,
+    "component_square_photos": true,
+    "component_store_features": true,
+    "component_youtube": true
+  },
+  "verticals": {},
+  "experiences": {
+    "product_flip": {
+      "required": true,
+      "slug": "flip-showcase"
+    },
+    "lookbook": {
+      "required": true,
+      "slug": "editorial-lookbook"
+    },
+    "fragrance_discovery": {
+      "required": true,
+      "slug": "fragrance-discovery"
+    },
+    "zen_products_grid": {
+      "id": "zen-products-grid",
+      "required": true,
+      "slug": "zen-products"
+    }
+  },
+  "page_experiences": {},
+  "integrations": {},
+  "innovation": {
+    "_comment": "كل فكرة تدخل الإنتاج يجب أن تكون implemented أو certified في innovations/",
+    "experiments": [
+      "zen-products-grid"
+    ]
+  }
+}

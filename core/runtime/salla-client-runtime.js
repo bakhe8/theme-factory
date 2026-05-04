@@ -26,7 +26,10 @@
   function on(name, callback) {
     if (!listeners.has(name)) listeners.set(name, []);
     listeners.get(name).push(callback);
-    document.addEventListener(name, (event) => callback(event.detail));
+    return () => {
+      const callbacks = listeners.get(name) || [];
+      listeners.set(name, callbacks.filter((entry) => entry !== callback));
+    };
   }
 
   function ready(callback) {
@@ -149,6 +152,11 @@
     helpers: {
       money: formatMoney,
       number: (value) => new Intl.NumberFormat('ar-SA').format(value || 0),
+      addParamToUrl(key, value) {
+        const url = new URL(window.location.href);
+        url.searchParams.set(key, value);
+        return url.toString();
+      },
       inputDigitsOnly(input) {
         input.value = String(input.value || '').replace(/[^\d]/g, '');
       },
@@ -157,6 +165,7 @@
       get: () => window.location.href,
       asset: (value) => `${state.publicUrl || ''}/${String(value || '').replace(/^\/+/, '')}`,
       cdn: (value) => value,
+      is_page: (slug) => String(state.page?.slug || '') === String(slug || ''),
       is_placeholder: (value) => !value || String(value).includes('placeholder'),
     },
     storage: {
@@ -171,12 +180,22 @@
     notify: {
       success: (message) => console.log('[salla-runtime:success]', message),
       error: (message) => console.error('[salla-runtime:error]', message),
+      setNotifier(callback) {
+        state.notifier = callback;
+      },
     },
     event: {
       dispatch: emit,
       on,
       once(name, callback) {
         document.addEventListener(name, (event) => callback(event.detail), { once: true });
+      },
+      document: {
+        onClick(selector, callback) {
+          document.addEventListener('click', (event) => {
+            if (event.target?.closest?.(selector)) callback(event);
+          });
+        },
       },
       cart: {
         onUpdated(callback) {
@@ -217,15 +236,35 @@
         },
       },
       event: {
+        onUpdated(callback) {
+          on('cart::updated', callback);
+        },
+        onItemAdded(callback) {
+          on('cart::item-added', (detail) => {
+            callback(detail?.response || { data: state.cart }, detail?.product?.id || detail?.product_id);
+          });
+        },
         onItemUpdated(callback) {
           on('cart::item-updated', callback);
         },
         onItemUpdatedFailed(callback) {
           on('cart::item-updated-failed', callback);
         },
+        onItemDeleted(callback) {
+          on('cart::item-deleted', callback);
+        },
       },
       details() {
         return Promise.resolve({ data: { cart: state.cart || { items: [] } } });
+      },
+      deleteItem(id) {
+        state.cart = state.cart || { count: 0, items_count: 0, items: [], total: 0 };
+        state.cart.items = (state.cart.items || []).filter((entry) => String(entry.id) !== String(id));
+        state.cart.count = state.cart.items.length;
+        state.cart.items_count = state.cart.items.length;
+        emit('cart::item-deleted', { id, cart: state.cart });
+        emit('cart::updated', state.cart);
+        return Promise.resolve({ data: state.cart });
       },
       addItem(item = {}) {
         const product = (state.products || []).find((entry) => Number(entry.id) === Number(item.id || item.product_id)) || state.products?.[0];
@@ -244,14 +283,46 @@
         return Promise.resolve({ data: state.cart });
       },
     },
+    product: {
+      getPrice() {
+        const product = state.product || state.products?.[0] || {};
+        const data = {
+          ...product,
+          price: product.price || 0,
+          regular_price: product.regular_price || product.price || 0,
+          has_sale_price: product.has_sale_price || product.is_on_sale || false,
+          weight: product.weight || '',
+        };
+        emit('product::price.updated', { data });
+        return Promise.resolve({ data });
+      },
+      event: {
+        onPriceUpdated(callback) {
+          on('product::price.updated', callback);
+        },
+      },
+    },
     wishlist: {
+      event: {
+        onAdded(callback) {
+          on('wishlist::added', (detail) => callback(detail?.response || { data: state.wishlist || [] }, detail?.id));
+        },
+        onRemoved(callback) {
+          on('wishlist::removed', (detail) => callback(detail?.response || { data: state.wishlist || [] }, detail?.id));
+        },
+      },
       toggle(id) {
         const key = 'salla::wishlist';
         const wishlist = storage.get(key) || [];
         const numericId = Number(id);
         const index = wishlist.indexOf(numericId);
-        if (index >= 0) wishlist.splice(index, 1);
-        else wishlist.push(numericId);
+        if (index >= 0) {
+          wishlist.splice(index, 1);
+          emit('wishlist::removed', { response: { data: wishlist }, id: numericId });
+        } else {
+          wishlist.push(numericId);
+          emit('wishlist::added', { response: { data: wishlist }, id: numericId });
+        }
         storage.set(key, wishlist);
         emit('wishlist::updated', wishlist);
         return Promise.resolve({ data: wishlist });
@@ -260,6 +331,7 @@
         const key = 'salla::wishlist';
         const wishlist = (storage.get(key) || []).filter((item) => Number(item) !== Number(id));
         storage.set(key, wishlist);
+        emit('wishlist::removed', { response: { data: wishlist }, id: Number(id) });
         emit('wishlist::updated', wishlist);
         return Promise.resolve({ data: wishlist });
       },
@@ -274,12 +346,34 @@
         },
       },
     },
+    comment: {
+      event: {
+        onAdded(callback) {
+          on('comment::added', callback);
+        },
+      },
+    },
+    form: {
+      onSubmit(action, event) {
+        if (event?.preventDefault) event.preventDefault();
+        emit(`form::${action}`, event);
+        return false;
+      },
+      onChange(action, event) {
+        emit(`form::${action}`, event);
+        return false;
+      },
+    },
   };
 
   const originalDefine = customElements.define.bind(customElements);
+  const definedConstructors = new WeakSet();
   customElements.define = function define(name, constructor, options) {
     if (customElements.get(name)) return;
-    return originalDefine(name, constructor, options);
+    if (definedConstructors.has(constructor)) return;
+    const result = originalDefine(name, constructor, options);
+    definedConstructors.add(constructor);
+    return result;
   };
 
   class RuntimeElement extends HTMLElement {
@@ -294,6 +388,16 @@
   }
 
   class SallaButton extends RuntimeElement {
+    load() {
+      this.setAttribute('loading', 'true');
+      return this;
+    }
+
+    stop() {
+      this.removeAttribute('loading');
+      return this;
+    }
+
     render() {
       this.setAttribute('role', this.getAttribute('role') || 'button');
       this.tabIndex = this.tabIndex >= 0 ? this.tabIndex : 0;
@@ -307,6 +411,17 @@
   class SallaAddProductButton extends SallaButton {}
 
   class SallaCartSummary extends RuntimeElement {
+    animateToCart(target) {
+      if (target?.animate) {
+        target.animate([
+          { transform: 'scale(1)', opacity: 1 },
+          { transform: 'scale(.92)', opacity: .75 },
+          { transform: 'scale(1)', opacity: 1 },
+        ], { duration: 450, easing: 'ease-out' });
+      }
+      return this;
+    }
+
     update() {
       this.render();
     }
@@ -436,14 +551,40 @@
     'salla-login-modal',
     'salla-offer-modal',
     'salla-localization-modal',
+    'salla-notifications',
+    'salla-orders',
+    'salla-wallet',
+    'salla-user-settings',
+    'salla-verify',
+    'salla-edit-order-button',
+    'salla-order-totals-card',
+    'salla-rating-modal',
+    'salla-datetime-picker',
+    'salla-tel-input',
     'salla-filters',
     'salla-infinite-scroll',
     'salla-comments',
+    'salla-conditional-offer',
     'salla-progress-bar',
     'salla-count-down',
     'salla-quantity-input',
     'salla-product-options',
     'salla-breadcrumb',
+    'salla-cart-coupons',
+    'salla-cart-item-offers',
+    'salla-file-upload',
+    'salla-gifting',
+    'salla-installment',
+    'salla-loading',
+    'salla-loyalty-panel',
+    'salla-metadata',
+    'salla-mini-checkout-widget',
+    'salla-multiple-bundle-product',
+    'salla-offer',
+    'salla-product-size-guide',
+    'salla-quick-order',
+    'salla-social-share',
+    'salla-tiered-offer',
   ];
 
   const registry = {
@@ -464,7 +605,7 @@
   });
 
   simpleTags.forEach((name) => {
-    if (!customElements.get(name)) customElements.define(name, RuntimeElement);
+    if (!customElements.get(name)) customElements.define(name, class extends RuntimeElement {});
   });
 
   ready(() => {

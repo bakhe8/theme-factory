@@ -1,47 +1,69 @@
 {#
-| Variable        | Type       | Description                    |
-|-----------------|------------|--------------------------------|
-| products        | Products[] |                                |
-| title           | String     | Component Title                |
+| Variable                     | Type      | Description                                                                  |
+|------------------------------|-----------|------------------------------------------------------------------------------|
+| component                    | object    | Contains merchant settings for fields from twilight.json component section   |
+| title                        | ?string   | Fallback section title                                                       |
+| subtitle                     | ?string   | Fallback section subtitle                                                    |
+| products                     | Product[] | Fallback selected products                                                   |
+| component.products           | Product[] | Selected products                                                            |
+| component.show_hover_actions | bool      | Shows add-to-cart action over product image                                  |
+| position                     | int       | Sorting number start from zero                                               |
 #}
-<section class="s-block s-block--zen-products container py-12">
-    {% if title %}
-        <div class="s-block__title mb-10 text-center">
-            <h2 class="text-3xl font-light tracking-tight text-gray-900">{{ title }}</h2>
-            <div class="h-1 w-12 bg-primary mx-auto mt-4 rounded-full"></div>
+{% set block_title = component is defined and component.title is defined ? component.title : title|default(null) %}
+{% set block_subtitle = component is defined and component.subtitle is defined ? component.subtitle : subtitle|default(null) %}
+{% set selected_products = component is defined and component.products is defined ? component.products : products|default([]) %}
+{% set show_hover_actions = component is defined and component.show_hover_actions is defined ? component.show_hover_actions : true %}
+{% set component_id = 'zen-products-' ~ position %}
+
+<section class="s-block s-block--zen-products s-block--products-grid container py-8" id="{{ component_id }}" data-products-grid-experience>
+    {% if block_title or block_subtitle %}
+        <div class="s-block__title">
+            <div class="right-side">
+                {% if block_title %}
+                    <h2>{{ block_title }}</h2>
+                {% endif %}
+                {% if block_subtitle %}
+                    <p>{{ block_subtitle }}</p>
+                {% endif %}
+            </div>
         </div>
     {% endif %}
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {% for product in products %}
-            <div class="zen-product-card">
-                <a href="{{ product.url }}" class="zen-card-image block">
-                    <img src="{{ product.image.url }}" alt="{{ product.image.alt }}" loading="lazy">
-                </a>
-                
-                <div class="zen-card-actions">
-                    <salla-add-product-button 
-                        product-id="{{ product.id }}" 
-                        product-type="{{ product.type }}"
-                        class="btn-add-cart">
-                        {{ trans('pages.products.add_to_cart') }}
-                    </salla-add-product-button>
-                </div>
+    {% if selected_products|length %}
+        <div class="products-grid">
+            {% for product in selected_products %}
+                <article class="products-grid-card" data-products-grid-card tabindex="0" aria-current="false">
+                    <a href="{{ product.url }}" class="products-grid-card__media" aria-label="{{ product.name|e('html_attr') }}">
+                        <img src="{{ product.image.url|default(product.thumbnail) }}" alt="{{ product.image.alt|default(product.name)|e('html_attr') }}" loading="lazy">
+                    </a>
 
-                <div class="zen-card-content">
-                    <a href="{{ product.url }}" class="product-title">{{ product.name }}</a>
-                    <div class="product-price">
-                        {% if product.is_on_sale %}
-                            <span class="text-sm line-through text-gray-400 ml-2">{{ product.regular_price|money }}</span>
-                        {% endif %}
-                        <span>{{ product.price|money }}</span>
+                    {% if show_hover_actions %}
+                        <div class="products-grid-card__actions">
+                            <salla-add-product-button
+                                width="wide"
+                                product-id="{{ product.id }}"
+                                product-status="{{ product.status }}"
+                                product-type="{{ product.type }}">
+                                <span>{{ trans('pages.cart.add_to_cart') }}</span>
+                            </salla-add-product-button>
+                        </div>
+                    {% endif %}
+
+                    <div class="products-grid-card__content">
+                        <h3><a href="{{ product.url }}">{{ product.name }}</a></h3>
+                        <div class="products-grid-card__price">
+                            {% if product.is_on_sale %}
+                                <span class="line-through opacity-60">{{ product.regular_price|money }}</span>
+                            {% endif %}
+                            <strong>{{ product.price|money }}</strong>
+                        </div>
                     </div>
-                </div>
-            </div>
-        {% else %}
-            <div class="col-span-full text-center py-10 text-gray-400">
-                {{ trans('common.no_products') }}
-            </div>
-        {% endfor %}
-    </div>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="py-10 text-center text-gray-400">
+            {{ trans('common.no_products') }}
+        </div>
+    {% endif %}
 </section>

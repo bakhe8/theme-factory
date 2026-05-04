@@ -77,5 +77,55 @@
         "component_square_photos": false,
         "component_store_features": true,
         "component_youtube": false
+    },
+
+    "verticals": {
+        "_comment": "أنواع المتاجر المرجعية التي يجب أن يطابقها الثيم. إذا required=true ستفشل بوابة vertical عند عدم الالتزام",
+        "luxury_fragrance": {
+            "required": false,
+            "fixture": "fragrance-luxury"
+        }
+    },
+
+    "experiences": {
+        "_comment": "تجارب البيع فوق Custom Components. إذا required=true يجب أن تكون مثبتة ومارة عبر Experience Gate",
+        "fragrance_discovery": {
+            "required": false,
+            "slug": "fragrance-discovery"
+        },
+        "product_flip": {
+            "required": false,
+            "slug": "flip-showcase"
+        },
+        "lookbook": {
+            "required": false,
+            "slug": "editorial-lookbook"
+        }
+    },
+
+    "page_experiences": {
+        "_comment": "تجارب مرتبطة بصفحات محددة وليست home components ولا twilight.features",
+        "brands_alphabet_filter": {
+            "required": false,
+            "page": "brands.index",
+            "floating": true,
+            "letters": "ar-en"
+        }
+    },
+
+    "integrations": {
+        "_comment": "تكاملات إضافات خارجية. إذا required=true يجب توفير مصدر/عقد رسمي واضح قبل الاعتماد",
+        "image_search": {
+            "required": false,
+            "implementation": "external-addon",
+            "handled_by": "",
+            "placement": "header-search",
+            "source_url": ""
+        }
+    },
+
+    "innovation": {
+        "_comment": "تجارب ابتكارية تحت التطوير. لا تدخل certify/deliver إلا إذا كانت implemented أو certified في innovations/",
+        "experiments": []
     }
 }
