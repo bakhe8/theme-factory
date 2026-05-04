@@ -162,6 +162,8 @@ const reportFiles = [
   `twilight-smoke-${themeName}.json`,
   `rtl-${themeName}.md`,
   `rtl-${themeName}.json`,
+  `visual-checklist-${themeName}.md`,
+  `visual-checklist-${themeName}.json`,
   `link-smoke-${themeName}.json`,
 ];
 
@@ -174,6 +176,10 @@ for (const report of reportFiles) {
 
 if (copyIfExists(path.join(reportsDir, 'browser-smoke', themeName), path.join(reportsDeliveryPath, 'browser-smoke', themeName))) {
   copiedReports.push(`browser-smoke/${themeName}`);
+}
+
+if (copyIfExists(path.join(rootDir, 'quality', 'visual-checklists', `${themeName}.json`), path.join(reportsDeliveryPath, `visual-checklist-source-${themeName}.json`))) {
+  copiedReports.push(`visual-checklist-source-${themeName}.json`);
 }
 
 const manifest = {

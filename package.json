@@ -35,6 +35,7 @@
     "factory:browser": "node factory.js browser",
     "factory:twilight": "node factory.js twilight",
     "factory:rtl": "node factory.js rtl",
+    "factory:visual": "node factory.js visual",
     "factory:page-contract": "node factory.js page-contract",
     "factory:git-guard": "node factory.js git-guard",
     "factory:exceptions": "node factory.js exceptions",

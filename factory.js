@@ -35,6 +35,7 @@ const scripts = {
   browser: path.join(coreDir, 'browser-smoke.js'),
   twilight: path.join(coreDir, 'twilight-smoke.js'),
   rtl: path.join(coreDir, 'rtl-gate.js'),
+  visual: path.join(coreDir, 'visual-checklist-gate.js'),
   links: path.join(coreDir, 'link-smoke.js'),
   coverage: path.join(coreDir, 'page-coverage.js'),
   'apply-specs': path.join(coreDir, 'apply-specs.js'),
@@ -117,6 +118,7 @@ function printHelp() {
   console.log('  browser <theme>          - Run local browser smoke checks for generated previews');
   console.log('  twilight <theme>         - Run generated previews against official Twilight web components');
   console.log('  rtl <theme>              - Validate generated previews render as RTL without horizontal overflow');
+  console.log('  visual <gate|template|show> <theme> - Enforce or create the visual review checklist');
   console.log('  git-guard                - Validate staged theme changes before commit');
   console.log('  fix                     - Scan all themes for known unsafe patterns without destructive rewrites');
   console.log('  policy [theme]          - Validate theme structure, twilight.json, locales, and layout hooks');
@@ -242,6 +244,11 @@ switch (command) {
     break;
   }
 
+  case 'visual': {
+    process.exitCode = runNode(scripts.visual, [themeArg || 'gate', ...extraArgs].filter(Boolean)) ? 0 : 1;
+    break;
+  }
+
   case 'links': {
     process.exitCode = runNode(scripts.links, [theme, ...extraArgs]) ? 0 : 1;
     break;
@@ -315,7 +322,8 @@ switch (command) {
       runStage('Link smoke gate', () => runNode(scripts.links, [theme])) &&
       runStage('Browser smoke gate', () => runNode(scripts.browser, [theme])) &&
       runStage('Twilight components smoke gate', () => runNode(scripts.twilight, [theme])) &&
-      runStage('RTL render gate', () => runNode(scripts.rtl, [theme]));
+      runStage('RTL render gate', () => runNode(scripts.rtl, [theme])) &&
+      runStage('Visual checklist gate', () => runNode(scripts.visual, ['gate', theme]));
 
     if (passed) {
       console.log('\n✨ Build Completed Successfully!');

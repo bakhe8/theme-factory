@@ -441,12 +441,46 @@ async function waitForJson(url, timeoutMs = 10000) {
   throw new Error(`Chrome DevTools لم يستجب: ${url}`);
 }
 
+function urlsMatch(actual, expected) {
+  if (actual === expected) return true;
+  try {
+    if (decodeURI(actual) === expected) return true;
+  } catch (error) {
+    // Invalid escape sequences should simply fall through to the next check.
+  }
+  try {
+    return actual === encodeURI(expected);
+  } catch (error) {
+    return false;
+  }
+}
+
 async function createTarget(port, url) {
   const endpoint = `http://127.0.0.1:${port}/json/new?${encodeURIComponent(url)}`;
   let response = await fetch(endpoint, { method: 'PUT' });
   if (!response.ok) response = await fetch(endpoint);
   if (!response.ok) throw new Error(`فشل إنشاء تبويب Chrome: ${response.status}`);
   return response.json();
+}
+
+async function waitForPageReady(page, expectedUrl, timeoutMs = 12000) {
+  const start = Date.now();
+  while (Date.now() - start < timeoutMs) {
+    try {
+      const state = await page.send('Runtime.evaluate', {
+        expression: '({ href: location.href, readyState: document.readyState })',
+        returnByValue: true,
+      });
+      const value = state.result?.value || {};
+      if (urlsMatch(value.href, expectedUrl) && ['interactive', 'complete'].includes(value.readyState)) {
+        return true;
+      }
+    } catch (error) {
+      // The document can be between execution contexts while navigation settles.
+    }
+    await wait(100);
+  }
+  return false;
 }
 
 async function closeTarget(port, targetId) {
@@ -519,10 +553,9 @@ async function waitForTwilight(page) {
 async function checkPage(port, serverPort, file, officialComponents) {
   const relative = path.relative(rootDir, file).replace(/\\/g, '/');
   const url = `http://127.0.0.1:${serverPort}/${relative}`;
-  const target = await createTarget(port, url);
+  const target = await createTarget(port, 'about:blank');
   const findings = [];
   const warnings = [];
-  let loaded = false;
 
   const page = await connectCdp(target.webSocketDebuggerUrl, (message) => {
     if (message.method === 'Runtime.exceptionThrown') {
@@ -538,15 +571,13 @@ async function checkPage(port, serverPort, file, officialComponents) {
         else findings.push(detail);
       }
     }
-    if (message.method === 'Page.loadEventFired') loaded = true;
   });
 
   await page.send('Runtime.enable');
   await page.send('Page.enable');
   await page.send('Page.navigate', { url });
-
-  const start = Date.now();
-  while (!loaded && Date.now() - start < 12000) await wait(100);
+  const ready = await waitForPageReady(page, url);
+  if (!ready) findings.push('الصفحة لم تصل للعنوان المطلوب قبل قياس Twilight');
 
   const twilightState = await waitForTwilight(page);
   if (twilightState.loadError) findings.push(`Twilight load error: ${twilightState.loadError}`);
@@ -698,7 +729,7 @@ async function main() {
   };
 
   try {
-    await waitForJson(`http://127.0.0.1:${debugPort}/json/version`);
+    await waitForJson(`http://127.0.0.1:${debugPort}/json/version`, 20000);
     for (const file of files) {
       console.log(`Checking Twilight: ${path.relative(rootDir, file).replace(/\\/g, '/')}`);
       const pageResult = await checkPage(debugPort, serverPort, file, officialComponents);

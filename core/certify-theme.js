@@ -154,6 +154,10 @@ const stages = [
   ['RTL render gate', process.execPath, [path.join(__dirname, 'rtl-gate.js'), themeName]],
 ];
 
+if (!templateCalibration) {
+  stages.push(['Visual checklist gate', process.execPath, [path.join(__dirname, 'visual-checklist-gate.js'), 'gate', themeName]]);
+}
+
 let localPassed = true;
 for (const [stage, command, args, options] of stages) {
   if (!runStage(stage, command, args, options)) {

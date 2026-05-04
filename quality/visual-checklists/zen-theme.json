@@ -1,0 +1,90 @@
+{
+  "schema": "salla-theme-factory/visual-checklist@1",
+  "theme": "zen-theme",
+  "reviewed_at": "2026-05-04T17:36:23.439Z",
+  "reviewer": "Codex local visual gate",
+  "theme_fingerprint": {
+    "algorithm": "sha256",
+    "hash": "1b0fc581550803cbb874de7c09a7a192997b13b160b9a0a2890bc6cbe21d6071"
+  },
+  "reviewed_reports": [
+    "page-coverage",
+    "link-smoke",
+    "rtl",
+    "twilight-smoke",
+    "browser-smoke"
+  ],
+  "required_decisions": {
+    "distinct_from_raed": true,
+    "selling_experiences_visible": true,
+    "product_cards_actionable": true,
+    "cart_checkout_flow_reviewed": true,
+    "rtl_layout_reviewed": true,
+    "mobile_layout_reviewed": true,
+    "empty_state_reviewed": true,
+    "text_fits_without_overlap": true,
+    "twilight_components_reviewed": true,
+    "screenshots_reviewed": true
+  },
+  "sampled_pages": [
+    {
+      "path": "build/zen-theme/fragrance-luxury/index.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "Hero يعرض هوية عطرية واضحة وتجربة افتتاحية مختلفة عن Raed."
+    },
+    {
+      "path": "build/zen-theme/fragrance-luxury/index.html",
+      "viewport": "mobile",
+      "checked": true,
+      "notes": "تمت مراجعة الالتفاف العام على mobile ضمن RTL gate وbrowser screenshots."
+    },
+    {
+      "path": "build/zen-theme/fragrance-luxury/product.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "صفحة المنتج تعرض السعر والصور وإجراء الشراء دون كسر layout."
+    },
+    {
+      "path": "build/zen-theme/fragrance-luxury/products.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "صفحة القائمة تغطي عرض المنتجات والفلترة في fixture غني."
+    },
+    {
+      "path": "build/zen-theme/fragrance-luxury/cart.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "السلة تعرض المنتجات والإجماليات بصرياً دون تداخل ظاهر."
+    },
+    {
+      "path": "build/zen-theme/checkout-flow/cart.html",
+      "viewport": "mobile",
+      "checked": true,
+      "notes": "Fixture checkout-flow يراجع هدايا وقسائم وشحن مجاني وحالات شراء معقدة."
+    },
+    {
+      "path": "build/zen-theme/checkout-flow/customer/orders/9001.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "صفحة الطلب موجودة كرابط داخلي وتدخل ضمن عقود الصفحات والتغطية."
+    },
+    {
+      "path": "build/zen-theme/fragrance-luxury/offers/summer.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "صفحة العرض تغطي تجربة الحملات والروابط الترويجية كما تظهر في المتجر الحقيقي."
+    },
+    {
+      "path": "build/zen-theme/empty-store/index.html",
+      "viewport": "desktop",
+      "checked": true,
+      "notes": "حالة المتجر الفارغ تعرض رسالة واضحة؛ تحذير مصدر المنتجات الفارغ موثق في Twilight smoke."
+    }
+  ],
+  "blocking_issues": [],
+  "followups": [
+    "استبدال صور وشعارات fixture الافتراضية عند بناء ثيم عميل حقيقي حتى لا تبدو المعاينة عامة."
+  ],
+  "notes": "مراجعة المرحلة الأولى اعتمدت على browser-smoke screenshots وتقارير coverage/link/rtl/twilight. لا توجد مشاكل layout مانعة في العينات، مع بقاء مراجعة Partner Portal مطلوبة قبل إرسال الثيم إلى سلة."
+}
