@@ -86,5 +86,5 @@
   "followups": [
     "استبدال صور وشعارات fixture الافتراضية عند بناء ثيم عميل حقيقي حتى لا تبدو المعاينة عامة."
   ],
-  "notes": "مراجعة المرحلة الأولى اعتمدت على browser-smoke screenshots وتقارير coverage/link/rtl/twilight. لا توجد مشاكل layout مانعة في العينات، مع بقاء مراجعة Partner Portal مطلوبة قبل إرسال الثيم إلى سلة."
+  "notes": "مراجعة المرحلة الأولى اعتمدت على browser-smoke screenshots وتقارير coverage/link/rtl/twilight. لا توجد مشاكل layout مانعة في العينات، مع بقاء نتيجة مراجعة سلة اليدوية مطلوبة بعد تسليم مجلد الثيم لهم."
 }

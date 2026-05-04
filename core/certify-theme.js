@@ -44,7 +44,7 @@ function writeReport(finalStatus, meta = {}) {
     `- **الحالة:** ${finalStatus}`,
     `- **اعتماد محلي:** ${meta.localCertified ? 'نعم' : 'لا'}`,
     `- **قابل للتسليم:** ${meta.deliverableRequired ? 'نعم' : 'لا - قالب معايرة/مصدر'}`,
-    `- **مراجعة Salla CLI:** ${meta.sallaReviewed ? 'تمت' : 'لم تتم'}`,
+    `- **مراجعة سلة الخارجية:** ${meta.sallaReviewed ? 'تمت' : 'لم تتم'}`,
     fingerprint ? `- **بصمة الثيم:** ${fingerprint.algorithm}:${fingerprint.hash}` : '- **بصمة الثيم:** غير متاحة',
     '',
     '## المراحل',
@@ -54,7 +54,7 @@ function writeReport(finalStatus, meta = {}) {
     '## القرار',
     '',
     finalStatus.includes('مقبول')
-      ? 'الثيم اجتاز بوابات المصنع المحلية. الاعتماد النهائي على منصة سلة يبقى عبر Salla CLI وحساب المطور عند الحاجة.'
+      ? 'الثيم اجتاز بوابات المصنع المحلية. الاعتماد النهائي يبقى عبر مراجعة سلة اليدوية بعد تسليم مجلد الثيم لهم.'
       : 'الثيم لم يجتز الاعتماد. أصلح المرحلة الفاشلة ثم أعد تشغيل الأمر.',
     '',
   ];
@@ -176,7 +176,7 @@ if (localPassed && requireSallaReview) {
   });
   sallaReviewed = passed;
 } else if (localPassed) {
-  record('Salla CLI review', '⏭️', 'تم تخطيها محلياً. استخدم --require-salla أو FACTORY_REQUIRE_SALLA=1 للاعتماد القابل للنشر.');
+  record('External Salla review', '⏭️', 'تم تخطيها محلياً. مراجعة سلة النهائية تتم يدوياً بعد تسليم مجلد الثيم، أو عبر --require-salla إذا كان مسار CLI متاحاً.');
 }
 
 const finalStatus = passed

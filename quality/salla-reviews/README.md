@@ -1,8 +1,8 @@
 # Salla Review Evidence
 
-This directory stores the final Salla/Partner Portal review evidence for deliverable themes.
+This directory stores the manual Salla submission decision and, later, the final Salla review evidence for deliverable themes.
 
-Local certification proves that the factory gates passed. A Salla review file proves that the exact certified fingerprint was reviewed in the real Salla environment, or that a temporary delivery waiver was explicitly accepted.
+Local certification proves that the factory gates passed. A Salla review file proves that the exact certified fingerprint is approved for manual submission to Salla, or that the same fingerprint was later accepted after Salla's manual review.
 
 Create a template:
 
@@ -22,4 +22,4 @@ Gate:
 node factory.js salla-review gate <theme>
 ```
 
-`deliver` runs this gate automatically. A theme cannot be copied into `deliverables/<theme>/theme` without a `passed` review file or a valid `waived` review file.
+`deliver` runs this gate automatically. A theme cannot be copied into `deliverables/<theme>/theme` without a valid `waived` manual-submission decision or a `passed` review file after Salla returns its result.

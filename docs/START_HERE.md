@@ -82,14 +82,14 @@ node factory.js manufacture <theme-name>
 node factory.js certify <theme-name> --relaxed-docs
 ```
 
-5. أنشئ ملف مراجعة سلة بعد اختبار الثيم في البيئة الحقيقية أو بعد waiver موثق:
+5. أنشئ ملف قرار التسليم اليدوي لسلة. عند رجوع نتيجة مراجعة سلة لاحقاً يمكن تحديث الملف إلى `passed`:
 
 ```bash
 node factory.js salla-review template <theme-name>
 node factory.js salla-review gate <theme-name>
 ```
 
-6. صدر مجلد التسليم:
+6. صدر مجلد التسليم الذي سيرسل يدوياً لسلة:
 
 ```bash
 node factory.js deliver <theme-name>

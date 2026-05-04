@@ -88,7 +88,7 @@ function expectedTemplate(themeName, options = {}) {
     theme_fingerprint: fingerprint,
     local_certification_report: rel(certification.file),
     salla_review: {
-      environment: 'partner-portal',
+      environment: 'manual-theme-submission',
       reviewed_at: '',
       reviewed_by: '',
       store_url: '',
@@ -172,7 +172,7 @@ function validateSallaReview(themeName) {
     if (!sallaReview.environment) issues.push('salla_review.environment مطلوب عند status=passed');
     if ((sallaReview.result || '').toLowerCase() !== 'passed') issues.push('salla_review.result يجب أن يكون passed');
     if (!Array.isArray(review.evidence) || !review.evidence.some((item) => item.path_or_url)) {
-      warnings.push('يفضل إرفاق evidence: لقطة أو رابط تقرير أو ملاحظة من Partner Portal.');
+      warnings.push('يفضل إرفاق evidence: لقطة أو رابط تقرير أو ملاحظة من مراجعة سلة اليدوية.');
     }
   }
 

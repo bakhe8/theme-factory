@@ -12,7 +12,7 @@ innovations/<id>.innovation.json     سجل الأفكار الجديدة قبل
 themes/<theme>/                      مصدر الثيم المولد بواسطة المصنع فقط
 build/<theme>/                       معاينات runtime المحلية
 quality/visual-checklists/           مراجعة بصرية مرتبطة ببصمة الثيم
-quality/salla-reviews/               دليل مراجعة سلة أو waiver قبل التسليم
+quality/salla-reviews/               قرار التسليم اليدوي لسلة أو نتيجة مراجعتها بعد الرجوع
 reports/                             تقارير الاعتماد والفحص
 deliverables/<theme>/theme/          مجلد الثيم الجاهز للتسليم
 deliverables/<theme>/reports/        أدلة الاعتماد المرفقة
@@ -27,7 +27,7 @@ client request
   -> capabilities
   -> generators
   -> local certification
-  -> Salla review evidence
+  -> manual Salla submission decision
   -> deliverable folder
 ```
 
@@ -42,7 +42,7 @@ node factory.js salla-review gate <theme>
 node factory.js deliver <theme> --skip-certify
 ```
 
-`certify` يثبت الجاهزية المحلية. `deliver` يثبت أن الحزمة قابلة للتسليم ومربوطة بمراجعة سلة أو waiver.
+`certify` يثبت الجاهزية المحلية. `deliver` يثبت أن الحزمة قابلة للتسليم اليدوي لسلة ومربوطة بقرار تسليم موثق أو نتيجة مراجعة لاحقة.
 
 ## مراحل التصنيع
 
@@ -71,7 +71,7 @@ node factory.js deliver <theme> --skip-certify
 | Display | `node factory.js display gate <theme>` | مكونات عرض مسموحة | مكون يدوي أو غير موثق |
 | Page Contract | `node factory.js page-contract gate <theme>` | عقود صفحات سليمة | صفحة لا تطابق عقد سلة/Raed |
 | Visual | `node factory.js visual gate <theme>` | checklist حديث | مراجعة بصرية مفقودة أو قديمة |
-| Salla Review | `node factory.js salla-review gate <theme>` | دليل Partner Portal أو waiver | لا يوجد دليل مراجعة حقيقي قبل التسليم |
+| Salla Review | `node factory.js salla-review gate <theme>` | قرار تسليم يدوي أو نتيجة مراجعة سلة | لا يوجد قرار موثق يطابق بصمة الثيم |
 
 ## أوامر مفردة عند الحاجة
 
@@ -204,7 +204,7 @@ node factory.js visual gate <theme>
 
 ## التسليم
 
-بعد نجاح الاعتماد المحلي:
+بعد نجاح الاعتماد المحلي، جهز قرار التسليم اليدوي ثم أنشئ الحزمة التي سترسل لسلة:
 
 ```bash
 node factory.js salla-review template <theme>
@@ -221,14 +221,14 @@ deliverables/<theme>/
 └── reports/
 ```
 
-مجلد `theme/` هو المجلد الجاهز للتسليم. مجلد `reports/` يحفظ أدلة أن الثيم مر عبر بوابات المصنع.
+مجلد `theme/` هو المجلد الذي يسلّم يدوياً لسلة. مجلد `reports/` يحفظ أدلة أن الثيم مر عبر بوابات المصنع، ويمكن إرفاقه داخلياً أو الرجوع إليه إذا جاءت ملاحظات من سلة.
 
 قبل النسخ، `deliver` يتحقق من:
 
 - `reports/certify-<theme>.json`.
 - بصمة الثيم الحالية مقابل بصمة آخر اعتماد.
 - `quality/salla-reviews/<theme>.json`.
-- أن مراجعة سلة أو waiver يطابق بصمة الثيم الحالية.
+- أن قرار التسليم اليدوي أو نتيجة مراجعة سلة يطابق بصمة الثيم الحالية.
 
 إذا تغير أي ملف داخل مخرج الثيم بعد الاعتماد، يرفض التسليم ويطلب تشغيل `certify` من جديد.
 

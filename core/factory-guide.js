@@ -84,13 +84,13 @@ const guides = {
     commands: [
       'node factory.js certify <theme-name> --relaxed-docs',
       'node factory.js salla-review template <theme-name>',
-      'املأ quality/salla-reviews/<theme-name>.json بعد Partner Portal أو waiver موثق',
+      'املأ quality/salla-reviews/<theme-name>.json كقرار تسليم يدوي أو بعد رجوع نتيجة مراجعة سلة',
       'node factory.js salla-review gate <theme-name>',
       'node factory.js deliver <theme-name> --skip-certify',
     ],
     notes: [
       'deliver يفشل إذا تغيرت بصمة الثيم بعد certify.',
-      'deliver يفشل الآن بدون Salla review gate أو waiver صالح.',
+      'deliver يفشل بدون ملف salla-review صالح يثبت قرار التسليم اليدوي أو نتيجة مراجعة سلة.',
     ],
   },
   'fix-failure': {

@@ -12,7 +12,7 @@
 - ثيم Raed الرسمي.
 - بوابات محلية قابلة للتكرار.
 - visual checklist.
-- Salla review evidence قبل التسليم.
+- قرار تسليم يدوي موثق قبل إنشاء الحزمة، ثم نتيجة مراجعة سلة عند رجوعها.
 
 ## مصادر الحقيقة
 
@@ -50,7 +50,7 @@ node factory.js docs gate <theme> --strict
 | `twilight smoke` | Web Components تعمل في معاينة قريبة من Twilight |
 | `rtl gate` | عدم وجود overflow في RTL |
 | `visual gate` | جودة الواجهة وتجربة المتسوق تمت مراجعتها |
-| `salla-review gate` | لا تسليم بدون دليل من بيئة سلة أو waiver |
+| `salla-review gate` | لا تسليم بدون قرار يدوي موثق أو نتيجة مراجعة سلة |
 
 ## الأمن وDOM
 
@@ -100,9 +100,9 @@ core/policies/exception-registry.json
 - لا يستخدم شبكة خارجية.
 - مسجل كـ capability ويمر browser/visual.
 
-## مراجعة سلة الحقيقية
+## مراجعة سلة اليدوية
 
-قبل التسليم:
+مراجعة سلة نفسها تتم يدوياً بعد تسليم مجلد الثيم لهم. لذلك قبل إنشاء مجلد التسليم يسجل المصنع قراراً موثقاً بأن الثيم جاهز للإرسال اليدوي:
 
 ```bash
 node factory.js salla-review template <theme>
@@ -117,14 +117,14 @@ quality/salla-reviews/<theme>.json
 
 يجب أن يحتوي إما:
 
-- `status: "passed"` مع reviewed_at/reviewed_by/environment/evidence.
-- أو `status: "waived"` مع approved_by/reason/risk_accepted/expires_at.
+- `status: "waived"` كقرار إرسال يدوي مؤقت قبل رجوع مراجعة سلة.
+- أو `status: "passed"` بعد رجوع نتيجة سلة، مع reviewed_at/reviewed_by/environment/evidence.
 
 `deliver` يفشل بدون هذا الملف أو إذا لم يطابق بصمة الثيم الحالية.
 
 ## ما لا يغطيه المصنع بالكامل
 
-هذه النقاط تحتاج مراجعة بشرية أو Partner Portal:
+هذه النقاط تحتاج مراجعة سلة البشرية بعد تسليم مجلد الثيم:
 
 - قبول سلة النهائي.
 - ملاحظات reviewer البصرية.
@@ -150,3 +150,9 @@ node factory.js deliver <theme> --skip-certify
 ```
 
 ينجحان.
+
+بعدها يسلّم المجلد التالي لسلة للمراجعة اليدوية:
+
+```text
+deliverables/<theme>/theme
+```

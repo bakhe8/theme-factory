@@ -24,12 +24,12 @@
   },
   "local_certification_report": "reports/certify-luxury-fragrance.json",
   "salla_review": {
-    "environment": "partner-portal",
+    "environment": "manual-theme-submission",
     "reviewed_at": "",
     "reviewed_by": "",
     "store_url": "",
     "result": "waived",
-    "notes": "Waiver used only for local delivery packaging. Real Salla Partner Portal review remains the single deferred task."
+    "notes": "Waiver used only to create the manual submission package. The remaining task is to hand deliverables/luxury-fragrance/theme to Salla and wait for their review result."
   },
   "evidence": [
     {
@@ -45,7 +45,7 @@
   ],
   "waiver": {
     "approved_by": "Bakheet / Theme Factory owner",
-    "reason": "External Salla review requires access to the live platform workflow and was intentionally left as the only remaining task. Local factory certification, visual checklist, browser smoke, Twilight smoke, RTL, page contracts, links, and coverage all passed for the current theme fingerprint.",
+    "reason": "Salla review is a manual post-delivery process: the theme folder is handed to Salla and they review it using their own workflow. This waiver allows creating the local delivery package only. Local factory certification, visual checklist, browser smoke, Twilight smoke, RTL, page contracts, links, and coverage all passed for the current theme fingerprint.",
     "expires_at": "2026-06-05T23:59:59+03:00",
     "risk_accepted": true
   }

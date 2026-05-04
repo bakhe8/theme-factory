@@ -93,5 +93,5 @@
     "استبدال شعار وصور fixture المؤقتة عند تجهيز ثيم عميل حقيقي.",
     "تحسين ترجمات المعاينة المحلية التي تظهر مثل common.search في fixture قبل العروض التجارية."
   ],
-  "notes": "تمت مراجعة browser-smoke screenshots لعينة fragrance-luxury مع تقارير page coverage وlink smoke وRTL وTwilight بعد إضافة scent-quiz. لا توجد مشاكل layout مانعة في العينات، وتبقى مراجعة Partner Portal/سلة الحقيقية مطلوبة قبل الإرسال النهائي."
+  "notes": "تمت مراجعة browser-smoke screenshots لعينة fragrance-luxury مع تقارير page coverage وlink smoke وRTL وTwilight بعد إضافة scent-quiz. لا توجد مشاكل layout مانعة في العينات، وتبقى نتيجة مراجعة سلة اليدوية مطلوبة بعد تسليم مجلد الثيم لهم."
 }

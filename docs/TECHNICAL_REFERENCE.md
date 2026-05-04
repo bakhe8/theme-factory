@@ -61,7 +61,7 @@ node factory.js certify <theme_name>
 node factory.js certify <theme_name> --relaxed-docs
 ```
 
-لإضافة مراجعة Salla CLI عند توفر تسجيل الدخول:
+لإضافة مراجعة خارجية اختيارية عند توفر مسار Salla CLI:
 ```bash
 node factory.js certify <theme_name> --salla
 ```

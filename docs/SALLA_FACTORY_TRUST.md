@@ -49,8 +49,9 @@
    - يبني معاينة HTML من قوالب Twig الفعلية ويحقن Runtime محلي يحاكي عقد سلة الأساسية.
    - يمكن تشغيله مع `--fixture=fashion-rich` أو `--fixture=edge-cases` أو `--fixture=empty-store`.
 
-12. **Salla CLI Review**
-   - مرحلة اختيارية عبر `--salla` لأنها تحتاج تسجيل دخول وسياق منصة سلة.
+12. **Manual Salla Submission Decision**
+   - قبل `deliver` يسجل المصنع قرار تسليم يدوي أو نتيجة مراجعة سلة سابقة في `quality/salla-reviews/`.
+   - مراجعة سلة نفسها تحدث بعد تسليم مجلد `deliverables/<theme>/theme` لهم، ثم تحدث النتيجة في الملف نفسه.
 
 13. **Docs Intelligence**
    - يزامن `https://docs.salla.dev/llms.txt`، يجمع صفحات Twilight وWeb Components، ثم يولد قواعد ومكونات وعقود صفحات محلية.
@@ -68,7 +69,8 @@ node factory.js innovation gate my-new-theme
 node factory.js display gate my-new-theme
 node factory.js policy my-new-theme
 node factory.js certify my-new-theme
-node factory.js certify my-new-theme --salla
+node factory.js salla-review template my-new-theme --waiver
+node factory.js salla-review gate my-new-theme
 node factory.js deliver my-new-theme
 node factory.js docs sync --max=180
 node factory.js docs check my-new-theme
