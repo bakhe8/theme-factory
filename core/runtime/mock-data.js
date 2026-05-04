@@ -374,38 +374,43 @@ function buildHomeSections(themePath, fixture) {
     });
   }
 
-  push('home.fixed-products', {
-    title: 'اختيارات لا تفوت',
-    display_all_url: 'product.html',
-    products: {
-      source: 'selected',
-      source_value: products.slice(0, 6).map((item) => item.id),
-    },
-    limit: Math.min(products.length || 4, 6),
-  });
-
-  push('home.products-slider', {
-    title: 'الأكثر مشاهدة',
-    sub_title: 'منتجات مختلفة لاختبار السلايدر',
-    display_all_url: 'product.html',
-    products: {
-      source: 'selected',
-      source_value: products.slice(0, 8).map((item) => item.id),
-    },
-    limit: Math.min(products.length || 4, 8),
-  });
-
-  for (const section of home.productSections || []) {
-    push('home.products-slider', {
-      title: section.title,
-      sub_title: section.sub_title || '',
-      display_all_url: section.display_all_url || 'products.html',
+  if (products.length) {
+    push('home.fixed-products', {
+      title: 'اختيارات لا تفوت',
+      display_all_url: 'product.html',
       products: {
         source: 'selected',
-        source_value: section.ids || [],
+        source_value: products.slice(0, 6).map((item) => item.id),
       },
-      limit: Math.min(section.limit || products.length || 4, products.length || 4),
+      limit: Math.min(products.length, 6),
     });
+
+    push('home.products-slider', {
+      title: 'الأكثر مشاهدة',
+      sub_title: 'منتجات مختلفة لاختبار السلايدر',
+      display_all_url: 'product.html',
+      products: {
+        source: 'selected',
+        source_value: products.slice(0, 8).map((item) => item.id),
+      },
+      limit: Math.min(products.length, 8),
+    });
+
+    for (const section of home.productSections || []) {
+      const sourceValue = (section.ids || []).filter((id) => products.some((product) => Number(product.id) === Number(id)));
+      if (!sourceValue.length) continue;
+
+      push('home.products-slider', {
+        title: section.title,
+        sub_title: section.sub_title || '',
+        display_all_url: section.display_all_url || 'products.html',
+        products: {
+          source: 'selected',
+          source_value: sourceValue,
+        },
+        limit: Math.min(section.limit || products.length, products.length),
+      });
+    }
   }
 
   push('home.brands', {

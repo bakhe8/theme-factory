@@ -1,0 +1,52 @@
+{
+  "schema": "salla-theme-factory/salla-review@1",
+  "theme": "luxury-fragrance",
+  "status": "waived",
+  "created_at": "2026-05-04T23:12:59.648Z",
+  "theme_fingerprint": {
+    "algorithm": "sha256",
+    "hash": "a4aaa1f2d74a6fb81888957de42fc59137db5fc9ae63ba27c544582b13d4135e",
+    "files": 152,
+    "bytes": 1818104,
+    "excluded_entries": [
+      ".cache",
+      ".factory",
+      ".git",
+      ".github",
+      ".salla-cache",
+      ".turbo",
+      "build",
+      "node_modules"
+    ],
+    "excluded_files": [
+      ".gitignore"
+    ]
+  },
+  "local_certification_report": "reports/certify-luxury-fragrance.json",
+  "salla_review": {
+    "environment": "partner-portal",
+    "reviewed_at": "",
+    "reviewed_by": "",
+    "store_url": "",
+    "result": "waived",
+    "notes": "Waiver used only for local delivery packaging. Real Salla Partner Portal review remains the single deferred task."
+  },
+  "evidence": [
+    {
+      "type": "local-certification-report",
+      "path_or_url": "reports/certify-luxury-fragrance.json",
+      "notes": "Local certify passed after fixing Twilight smoke warnings."
+    },
+    {
+      "type": "twilight-smoke-report",
+      "path_or_url": "reports/twilight-smoke-luxury-fragrance.json",
+      "notes": "Twilight smoke passed with 0 issues and 0 warnings."
+    }
+  ],
+  "waiver": {
+    "approved_by": "Bakheet / Theme Factory owner",
+    "reason": "External Salla review requires access to the live platform workflow and was intentionally left as the only remaining task. Local factory certification, visual checklist, browser smoke, Twilight smoke, RTL, page contracts, links, and coverage all passed for the current theme fingerprint.",
+    "expires_at": "2026-06-05T23:59:59+03:00",
+    "risk_accepted": true
+  }
+}

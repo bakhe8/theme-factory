@@ -3,7 +3,7 @@
 > تاريخ التحليل: 2026-05-04
 > النموذج: Claude Sonnet 4.6
 > المحادثة: تقييم شامل للمشروع بدءاً من الفكرة حتى الفجوات وخطة التغطية
-> آخر تحديث تنفيذي: Codex، 2026-05-04
+> آخر تحديث تنفيذي: Codex، 2026-05-05
 
 ---
 
@@ -27,6 +27,11 @@
 | Checkout fixture | أُغلقت | `checkout-flow` يضغط القسيمة والشحن المجاني والولاء والهدايا والدفع المعلق |
 | Twilight الحقيقي | أُغلقت للمرحلة الأولى | `twilight smoke` يحقن loader الرسمي من `@salla.sa/twilight-components` ويمنع mock المكوّنات أثناء الفحص |
 | Visual checklist | أُغلقت للمرحلة الأولى | `visual checklist gate` يرفض الاعتماد دون مراجعة بصرية مرتبطة ببصمة الثيم |
+| قدرة إبداعية خارج Raed | أُغلقت للمرحلة الأولى | `scent-quiz` أصبحت capability/innovation مع status=`certified` وتمر عبر `certify` |
+| تحذير Twilight في المتجر الفارغ | أُغلق | runtime لا يولد `source-value=[]` لأقسام المنتجات المختارة عند خلو fixture من المنتجات |
+| مجلد التسليم | أُغلق محلياً | `deliverables/luxury-fragrance/theme` تم إنتاجه بعد `certify` و`Salla Review Gate` عبر waiver |
+
+**المتبقي الوحيد المتعمد بعد هذه الجولة:** مراجعة سلة الحقيقية داخل Partner Portal أو Salla CLI بحساب المطور. إلى أن تتم، يوجد waiver مؤقت في `quality/salla-reviews/luxury-fragrance.json` وينتهي في 2026-06-05.
 
 **القاعدة بعد هذا التحديث:** أي فجوة بقيت في هذا الملف يجب أن تكون قابلة للتحويل إلى Gate أو Checklist أو سجل استثناءات، لا مجرد ملاحظة محفوظة.
 
