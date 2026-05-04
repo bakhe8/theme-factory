@@ -130,6 +130,7 @@ const workflowGateArgs = [path.join(__dirname, 'workflow-gate.js'), 'gate', them
 if (!templateCalibration) workflowGateArgs.push('--deliverable');
 
 const stages = [
+  ['Exception registry gate', process.execPath, [path.join(__dirname, 'exception-registry.js'), 'gate']],
   ['Salla docs intelligence gate', process.execPath, docsGateArgs],
   ['Factory workflow gate', process.execPath, workflowGateArgs],
   ['Specs contract gate', process.execPath, [path.join(__dirname, 'specs-gate.js'), 'gate', themeName]],
@@ -140,6 +141,7 @@ const stages = [
   ['Store vertical gate', process.execPath, [path.join(__dirname, 'vertical-factory.js'), 'theme-gate', themeName]],
   ['Experience registry gate', process.execPath, [path.join(__dirname, 'experience-factory.js'), 'gate', themeName]],
   ['Page experience registry gate', process.execPath, [path.join(__dirname, 'page-experience-factory.js'), 'gate', themeName]],
+  ['Salla page contract gate', process.execPath, [path.join(__dirname, 'page-contract-gate.js'), 'gate', themeName]],
   ['Integration gate', process.execPath, [path.join(__dirname, 'integration-factory.js'), 'gate', themeName]],
   ['Frozen dependency install', 'pnpm', ['install', '--frozen-lockfile', '--ignore-scripts'], { cwd: themePath }],
   ['Production build', 'pnpm', ['run', 'production'], { cwd: themePath }],

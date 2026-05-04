@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { findException } = require('../exception-registry');
 
 const MIB = 1024 * 1024;
 
@@ -282,6 +283,17 @@ function addIssue(issues, file, type, detail, ruleId = null) {
 
 function addWarning(warnings, file, type, detail, ruleId = null) {
   warnings.push(withRule({ file, type, detail }, ruleId));
+}
+
+function addException(exceptions, file, type, detail, exception) {
+  exceptions.push({
+    file,
+    type,
+    detail,
+    exceptionId: exception.id,
+    decision: exception.decision,
+    reviewDue: exception.review_due === true,
+  });
 }
 
 function getAllFiles(dir, files = []) {
@@ -678,7 +690,7 @@ function validateTwilightComponentsRuntime(themePath, contract, issues, warnings
   }
 }
 
-function validateDocumentedSourceRules(themePath, issues, warnings) {
+function validateDocumentedSourceRules(themePath, issues, warnings, exceptions) {
   const srcPath = path.join(themePath, 'src');
   const sourceFiles = getAllFiles(srcPath);
 
@@ -695,7 +707,7 @@ function validateDocumentedSourceRules(themePath, issues, warnings) {
         addIssue(issues, relativePath, 'Security', 'استخدام eval/new Function/document.write يخالف مراجعة الأمان في الثيم', 'SALLA_NO_MERCHANT_CUSTOM_HTML');
       }
 
-      validateHtmlInjectionUsage(relativePath, content, issues, warnings);
+      validateHtmlInjectionUsage(relativePath, content, issues, warnings, exceptions);
 
       const basename = path.basename(file).toLowerCase();
       const hasNetworkRequest = /\bfetch\s*\(|\bXMLHttpRequest\b|\baxios\b|\bsalla\.api\.request\s*\(/.test(content);
@@ -711,57 +723,45 @@ function validateDocumentedSourceRules(themePath, issues, warnings) {
   validateProductCardContract(themePath, warnings);
 }
 
-function validateHtmlInjectionUsage(relativePath, content, issues, warnings) {
+function validateHtmlInjectionUsage(relativePath, content, issues, warnings, exceptions) {
   const sinks = [
     {
       name: 'innerHTML',
       pattern: /\.innerHTML\s*=/,
-      trusted: [
-        /\bsalla\.money\s*\(/,
-        /\bsalla\.helpers\./,
-        /<salla-loading\b/,
-        /\.innerHTML\.replace\s*\(/,
-        /\boriginalContent\b/,
-        /\bcurrentCount\b/,
-        /=\s*["'`]\s*["'`]\s*;?$/,
-      ],
     },
     {
       name: 'outerHTML',
       pattern: /\.outerHTML\s*=/,
-      trusted: [
-        /=\s*["'`]\s*</,
-        /<salla-loading\b/,
-      ],
     },
     {
       name: 'insertAdjacentHTML',
       pattern: /\.insertAdjacentHTML\s*\(/,
-      trusted: [
-        /\(\s*["'`](beforeend|afterbegin|beforebegin|afterend)["'`]\s*,\s*["'`]/,
-      ],
     },
   ];
 
   if (!sinks.some((sink) => sink.pattern.test(content))) return;
 
-  const hasLocalSanitizer = /\bescapeHTML\s*\(|\bescapeHtml\s*\(|\bsanitizeHTML\s*\(|\bDOMPurify\b/.test(content);
   const lines = content.split(/\r?\n/);
 
   lines.forEach((line, index) => {
     const sink = sinks.find((item) => item.pattern.test(line));
     if (!sink) return;
 
-    const trimmed = line.trim();
-    const trustedValue = sink.trusted.some((pattern) => pattern.test(trimmed));
+    const exception = findException({
+      category: 'policy.dom-sink',
+      gate: 'policy-check',
+      file: relativePath.replace(/\\/g, '/'),
+      sink: sink.name,
+      line: index + 1,
+    });
 
-    if (hasLocalSanitizer || trustedValue) {
-      addWarning(
-        warnings,
+    if (exception) {
+      addException(
+        exceptions,
         `${relativePath}:${index + 1}`,
         'Security',
-        `استخدام ${sink.name} موجود لكنه محاط بمؤشر تعقيم/قيمة موثوقة. أبقه تحت مراجعة المصنع عند أي تعديل.`,
-        'SALLA_INNERHTML_REQUIRES_SANITIZATION',
+        `استخدام ${sink.name} مقبول عبر Exception Registry: ${exception.id}`,
+        exception,
       );
       return;
     }
@@ -770,7 +770,7 @@ function validateHtmlInjectionUsage(relativePath, content, issues, warnings) {
       issues,
       `${relativePath}:${index + 1}`,
       'Security',
-      `استخدام ${sink.name} بدون تعقيم واضح أو قيمة موثوقة. استخدم textContent أو escapeHTML/DOMPurify حسب السياق.`,
+      `استخدام ${sink.name} غير مسجل في Exception Registry. استخدم textContent/DOM API آمن أو سجل استثناءً موثقاً قبل الاعتماد.`,
       'SALLA_INNERHTML_REQUIRES_SANITIZATION',
     );
   });
@@ -887,6 +887,7 @@ function validateProductCardContract(themePath, warnings) {
 function validateTheme(themePath, themeName) {
   const issues = [];
   const warnings = [];
+  const exceptions = [];
 
   if (!isValidThemeName(themeName)) {
     addIssue(issues, themeName, 'Naming', 'اسم الثيم يجب أن يكون kebab-case ويبدأ بحرف إنجليزي');
@@ -894,7 +895,7 @@ function validateTheme(themePath, themeName) {
 
   if (!fs.existsSync(themePath)) {
     addIssue(issues, themeName, 'Structure', 'مجلد الثيم غير موجود');
-    return { issues, warnings };
+    return { issues, warnings, exceptions };
   }
 
   for (const file of REQUIRED_FILES) {
@@ -908,10 +909,10 @@ function validateTheme(themePath, themeName) {
   validateLocales(themePath, issues, warnings);
   validateLayout(themePath, issues, warnings);
   validateWebComponentsUsage(themePath, issues, warnings);
-  validateDocumentedSourceRules(themePath, issues, warnings);
+  validateDocumentedSourceRules(themePath, issues, warnings, exceptions);
   validatePublicThemeSize(themePath, warnings, issues);
 
-  return { issues, warnings };
+  return { issues, warnings, exceptions };
 }
 
 function sanitizeThemeName(value) {

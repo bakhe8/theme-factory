@@ -1,0 +1,214 @@
+{
+  "schema": "salla-theme-factory/exception-registry@1",
+  "updated_at": "2026-05-04T00:00:00.000Z",
+  "exceptions": [
+    {
+      "id": "page-contract-orders-salla-map-raed-compatible",
+      "status": "accepted",
+      "category": "page-contract.web-component-missing",
+      "gate": "page-contract-gate",
+      "match": {
+        "page": "orders",
+        "component": "salla-map"
+      },
+      "decision": "accepted-as-raed-compatible-warning-suppressed",
+      "reason_ar": "وثائق صفحة تفاصيل الطلب تذكر salla-map ضمن Web Components، لكن قالب Raed الرسمي لا يستخدمه في الصفحة نفسها. لذلك لا نعد غيابه مخالفة حتى تظهر وثيقة أكثر صراحة تجعله إلزامياً.",
+      "sources": [
+        {
+          "title": "Salla Order Details page contract",
+          "url": "https://docs.salla.dev/422564m0",
+          "section": "JS Web Components"
+        },
+        {
+          "title": "Salla theme-raed order details template",
+          "url": "https://github.com/SallaApp/theme-raed/blob/master/src/views/pages/customer/orders/single.twig",
+          "section": "Official source template"
+        }
+      ],
+      "review_after": "2026-08-04",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "page-contract-cart-conditional-fields-raed-compatible",
+      "status": "accepted",
+      "category": "page-contract.web-component-missing",
+      "gate": "page-contract-gate",
+      "match": {
+        "page": "cart",
+        "component": "salla-conditional-fields"
+      },
+      "decision": "accepted-as-raed-compatible-warning-suppressed",
+      "reason_ar": "وثائق صفحة السلة تذكر salla-conditional-fields، لكن قالب Raed الرسمي لا يستخدمه في السلة الأساسية. غيابه لا يكسر العقد المحلي ما لم تطلب specs أو وثائق سلة استخدامه صراحة.",
+      "sources": [
+        {
+          "title": "Salla Cart page contract",
+          "url": "https://docs.salla.dev/422575m0",
+          "section": "JS Web Components"
+        },
+        {
+          "title": "Salla theme-raed cart template",
+          "url": "https://github.com/SallaApp/theme-raed/blob/master/src/views/pages/cart.twig",
+          "section": "Official source template"
+        }
+      ],
+      "review_after": "2026-08-04",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-add-product-toast-innerhtml-trusted",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/partials/add-product-toast.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-legacy-raed-source",
+      "reason_ar": "استخدام قديم موروث من Raed ويستعمل قيمة موثوقة/مهيأة داخل تدفق Toast. أي استخدام جديد خارج هذا الملف يجب أن يفشل.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed source pattern",
+          "url": "https://github.com/SallaApp/theme-raed",
+          "section": "Official source template"
+        }
+      ],
+      "review_after": "2026-08-04",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-digital-files-innerhtml-trusted",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/partials/digital-files.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-legacy-raed-source",
+      "reason_ar": "استخدام قديم موروث من Raed في واجهة الملفات الرقمية. يبقى مقبولاً فقط ضمن هذا الملف وتحت مراجعة دورية.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed source pattern",
+          "url": "https://github.com/SallaApp/theme-raed",
+          "section": "Official source template"
+        }
+      ],
+      "review_after": "2026-08-04",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-main-menu-insertadjacenthtml-trusted",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/partials/main-menu.js",
+        "sink": "insertAdjacentHTML"
+      },
+      "decision": "accepted-legacy-raed-source",
+      "reason_ar": "استخدام قديم موروث من Raed داخل بناء القائمة، ومحصور في ملف معروف. أي إدراج HTML جديد خارج السجل يفشل.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed source pattern",
+          "url": "https://github.com/SallaApp/theme-raed",
+          "section": "Official source template"
+        }
+      ],
+      "review_after": "2026-08-04",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-main-menu-innerhtml-trusted",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/partials/main-menu.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-legacy-raed-source",
+      "reason_ar": "استخدام قديم موروث من Raed داخل main-menu. القبول لا يمتد إلى ملفات أخرى أو استخدامات جديدة.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed source pattern",
+          "url": "https://github.com/SallaApp/theme-raed",
+          "section": "Official source template"
+        }
+      ],
+      "review_after": "2026-08-04",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-product-card-innerhtml-trusted",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/partials/product-card.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-legacy-raed-source",
+      "reason_ar": "استخدام موروث في custom product card ويجب ألا يتحول إلى نمط عام. أي كرت جديد يجب أن يستخدم DOM API آمن أو يسجل استثناءً منفصلاً.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla custom product card docs",
+          "url": "https://docs.salla.dev/422718m0",
+          "section": "Custom Salla Product Card Component"
+        }
+      ],
+      "review_after": "2026-08-04",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-wishlist-card-innerhtml-trusted",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/partials/wishlist-card.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-legacy-raed-source",
+      "reason_ar": "استخدام موروث في wishlist-card ويجب أن يبقى محصوراً في هذا الملف حتى يتم استبداله لاحقاً بـ DOM API آمن.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed source pattern",
+          "url": "https://github.com/SallaApp/theme-raed",
+          "section": "Official source template"
+        }
+      ],
+      "review_after": "2026-08-04",
+      "owner": "Salla Theme Factory"
+    }
+  ]
+}

@@ -15,11 +15,12 @@ console.log('-----------------------------------');
 
 for (const theme of themes) {
   const themePath = path.join(themesDir, theme);
-  const { issues, warnings } = validateTheme(themePath, theme);
+  const { issues, warnings, exceptions = [] } = validateTheme(themePath, theme);
 
   console.log(`\n📂 ${theme}`);
   console.log(`   ✅ Issues: ${issues.length === 0 ? 0 : issues.length}`);
   console.log(`   ⚠️ Warnings: ${warnings.length}`);
+  console.log(`   🧾 Exceptions: ${exceptions.length}`);
 
   for (const issue of issues) {
     console.log(`   ❌ [${issue.type}] ${issue.file}: ${issue.detail}`);
@@ -31,6 +32,11 @@ for (const theme of themes) {
     console.log(`   ⚠️ [${warning.type}] ${warning.file}: ${warning.detail}`);
     const source = formatRuleReference(warning);
     if (source) console.log(`      ↳ ${source}`);
+  }
+
+  for (const exception of exceptions) {
+    console.log(`   🧾 [${exception.type}] ${exception.file}: ${exception.detail}`);
+    if (exception.reviewDue) console.log('      ↳ مراجعة الاستثناء مستحقة');
   }
 
   if (issues.length > 0) failed = true;

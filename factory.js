@@ -28,6 +28,7 @@ const scripts = {
   component: path.join(coreDir, 'component-factory.js'),
   experience: path.join(coreDir, 'experience-factory.js'),
   'page-experience': path.join(coreDir, 'page-experience-factory.js'),
+  'page-contract': path.join(coreDir, 'page-contract-gate.js'),
   integration: path.join(coreDir, 'integration-factory.js'),
   fixtures: path.join(coreDir, 'fixtures-check.js'),
   vertical: path.join(coreDir, 'vertical-factory.js'),
@@ -35,6 +36,8 @@ const scripts = {
   links: path.join(coreDir, 'link-smoke.js'),
   coverage: path.join(coreDir, 'page-coverage.js'),
   'apply-specs': path.join(coreDir, 'apply-specs.js'),
+  'git-guard': path.join(coreDir, 'git-workflow-guard.js'),
+  exceptions: path.join(coreDir, 'exception-registry.js'),
 };
 
 function themePath(themeName) {
@@ -102,12 +105,15 @@ function printHelp() {
   console.log('  experience <list|show|gate> ... - Inspect or validate Experience Registry entries and specs requirements');
   console.log('  page-experience <theme> <id> [--dry-run] - Create a registered page-level experience');
   console.log('  page-experience <list|show|gate> ... - Inspect or validate Page Experience Registry entries');
+  console.log('  page-contract <list|show|gate> ... - Validate theme pages against Salla docs page contracts');
+  console.log('  exceptions <list|show|gate> ... - Inspect or validate accepted factory exceptions');
   console.log('  integration <list|show|gate> ... - Validate external addon/integration requirements from specs');
   console.log('  fixtures <list|show|gate> ... - Inspect or validate local runtime fixture datasets');
   console.log('  vertical <list|show|gate|theme-gate> ... - Inspect or validate benchmark store verticals from specs');
   console.log('  coverage <theme>         - Ensure every theme page has a generated local preview alternative');
   console.log('  links <theme>            - Validate generated preview internal links');
   console.log('  browser <theme>          - Run local browser smoke checks for generated previews');
+  console.log('  git-guard                - Validate staged theme changes before commit');
   console.log('  fix                     - Scan all themes for known unsafe patterns without destructive rewrites');
   console.log('  policy [theme]          - Validate theme structure, twilight.json, locales, and layout hooks');
   console.log('  audit <theme>           - Run integrity check and write reports/audit-<theme>.md');
@@ -187,6 +193,16 @@ switch (command) {
     break;
   }
 
+  case 'page-contract': {
+    process.exitCode = runNode(scripts['page-contract'], [themeArg || 'list', ...extraArgs].filter(Boolean)) ? 0 : 1;
+    break;
+  }
+
+  case 'exceptions': {
+    process.exitCode = runNode(scripts.exceptions, [themeArg || 'list', ...extraArgs].filter(Boolean)) ? 0 : 1;
+    break;
+  }
+
   case 'integration': {
     process.exitCode = runNode(scripts.integration, [themeArg || 'list', ...extraArgs].filter(Boolean)) ? 0 : 1;
     break;
@@ -219,6 +235,11 @@ switch (command) {
 
   case 'coverage': {
     process.exitCode = runNode(scripts.coverage, [theme, ...extraArgs]) ? 0 : 1;
+    break;
+  }
+
+  case 'git-guard': {
+    process.exitCode = runNode(scripts['git-guard'], [themeArg, ...extraArgs].filter(Boolean)) ? 0 : 1;
     break;
   }
 
@@ -260,6 +281,7 @@ switch (command) {
     console.log(`📦 Building Production-Ready Theme: [${theme.toUpperCase()}]`);
     const passed =
       runStage('Factory safety scan', () => runNode(scripts.fix)) &&
+      runStage('Exception registry gate', () => runNode(scripts.exceptions, ['gate'])) &&
       runStage('Salla docs intelligence gate', () => runNode(scripts.docs, ['gate', theme, '--strict'])) &&
       runStage('Factory workflow gate', () => runNode(scripts.workflow, ['gate', theme, '--deliverable'])) &&
       runStage('Specs contract gate', () => runNode(scripts.specs, ['gate', theme])) &&
@@ -270,6 +292,7 @@ switch (command) {
       runStage('Store vertical gate', () => runNode(scripts.vertical, ['theme-gate', theme])) &&
       runStage('Experience registry gate', () => runNode(scripts.experience, ['gate', theme])) &&
       runStage('Page experience registry gate', () => runNode(scripts['page-experience'], ['gate', theme])) &&
+      runStage('Salla page contract gate', () => runNode(scripts['page-contract'], ['gate', theme])) &&
       runStage('Integration gate', () => runNode(scripts.integration, ['gate', theme])) &&
       runStage('Production build', () => runThemeCommand(theme, 'pnpm', ['run', 'production'])) &&
       runStage('Integrity audit', () => runNode(scripts.audit, [theme])) &&

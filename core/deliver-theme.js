@@ -155,6 +155,8 @@ const reportFiles = [
   `certify-${themeName}.md`,
   `certify-${themeName}.json`,
   `audit-${themeName}.md`,
+  `page-contract-${themeName}.md`,
+  `page-contract-${themeName}.json`,
   `page-coverage-${themeName}.json`,
   `link-smoke-${themeName}.json`,
 ];

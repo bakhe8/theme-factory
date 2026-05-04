@@ -33,12 +33,16 @@
     "factory:coverage": "node factory.js coverage",
     "factory:links": "node factory.js links",
     "factory:browser": "node factory.js browser",
+    "factory:page-contract": "node factory.js page-contract",
+    "factory:git-guard": "node factory.js git-guard",
+    "factory:exceptions": "node factory.js exceptions",
     "factory:docs:sync": "node factory.js docs sync",
     "factory:docs:check": "node factory.js docs check",
     "factory:docs:gate": "node factory.js docs gate",
     "factory:docs:status": "node factory.js docs status",
     "factory:apply-specs": "node factory.js apply-specs",
     "factory:style": "node core/apply-style.js",
+    "prepare": "husky install",
     "git:tag": "git tag -a v$npm_package_version -m 'New theme version release'"
   },
   "devDependencies": {
