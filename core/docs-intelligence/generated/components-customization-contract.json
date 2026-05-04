@@ -1,0 +1,61 @@
+{
+  "subject": "js-web-components-ui-customization",
+  "allowedTargets": [
+    "colors",
+    "fonts",
+    "layouts",
+    "sizes",
+    "look-and-feel"
+  ],
+  "mechanisms": {
+    "tailwindConfig": {
+      "file": "tailwind.config.js",
+      "editable": true,
+      "keys": [
+        "screens",
+        "colors",
+        "fontFamily",
+        "extend",
+        "spacing",
+        "borderRadius"
+      ]
+    },
+    "cssVariables": {
+      "allowed": true,
+      "sourceHint": "https://docs.salla.dev/421945m0"
+    },
+    "selfDevelopedCss": {
+      "allowed": true,
+      "awayFromTailwindUtilities": true
+    },
+    "componentCssClasses": {
+      "allowed": true,
+      "examples": [
+        ".s-button",
+        ".s-button-wrap",
+        ".s-button-element",
+        ".s-button-link",
+        ".s-button-icon"
+      ]
+    },
+    "scssFiles": {
+      "allowed": true
+    }
+  },
+  "safeguards": {
+    "preventHardCodedData": true,
+    "outputCssCompliesWithTailwindConfig": true,
+    "uiConsistency": true
+  },
+  "evidence": {
+    "howItWorks": "## How it works\n\n**Twilight Web Components** are based on the basis and configuration of the [Tailwind CSS Framework](https://tailwindcss.com/). This ensures that all web components are easily customizable and that all output CSS styles comply with [Tailwind's configuration](https://tailwindcss.com/docs/configuration).\n\nIn order to make a general customization of the theme's overall look-and-feel, the file `tailwind.config.js` can be modified. The following is the default source code for this file, from which we can see how to change the values related to the theme's `colors`, `font`, and more.\n\n:::tip[Note]\nMore information about this configuration file can be found [here](https://tailwindc",
+    "customCss": "## Custom CSS framework\n\nTwilight Web Components use the same [CSS Variables](https://docs.salla.dev/doc-421945?nav=01HNFTD5Y5ESFQS3P9MJ0721VM) that have already been introduced. That means the developer also has the flexibility to use self-developed CSS styles away from the [Tailwind CSS Styles](https://tailwindcss.com/docs/utility-first).\n\nThe core idea here is that each component has its own CSS class, which allows the developer to implement the style as he wishes. For example, the JS Web Component [Button](https://docs.salla.dev/doc-422694?nav=01HNFTE06J4QC24T0D5BPRYKMD) comes with the following CSS class:\n\n```css\n.s-button{\n  &-wrap{\n    \n  }\n  &-element{\n    \n  }\n  &-link{\n    \n  }\n  &"
+  },
+  "sources": [
+    {
+      "title": "Components Customization",
+      "url": "https://docs.salla.dev/422690m0",
+      "section": "How it works / Custom CSS framework"
+    }
+  ]
+}

@@ -1,0 +1,2682 @@
+{
+  "version": 1,
+  "syncedAt": "2026-05-04T04:13:57.236Z",
+  "llms": {
+    "url": "https://docs.salla.dev/llms.txt",
+    "sha256": "511e7c5c3b428ce2e033dfcfc9e4ff7b263fca126e769b240a6f3c2568aec459",
+    "rawPath": "core/docs-intelligence/cache/raw/llms.txt",
+    "discoveredLinks": 790
+  },
+  "docs": [
+    {
+      "id": "theme-technical-review",
+      "title": "Technical Review",
+      "url": "https://docs.salla.dev/421888m0",
+      "tags": [
+        "theme",
+        "review",
+        "deny",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "24438e7ec7de2e6878f574d90e98e5873ae2aea58543b6b917315ebd687850be",
+      "bytes": 2964,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/theme-technical-review.html",
+      "status": "ok"
+    },
+    {
+      "id": "theme-main-requirements",
+      "title": "Main Requirements",
+      "url": "https://docs.salla.dev/421886m0",
+      "tags": [
+        "theme",
+        "review",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "4528fbc1811749d54442f51b2ed8fff078a02e365ec7f7ebfac6ee2d26571e22",
+      "bytes": 4917,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/theme-main-requirements.html",
+      "status": "ok"
+    },
+    {
+      "id": "theme-ux-ui-review",
+      "title": "UI / UX Review",
+      "url": "https://docs.salla.dev/421887m0",
+      "tags": [
+        "theme",
+        "review",
+        "page-contract",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "2c6847d528f0eeec8ed5deb8b3b81df789474262edcbd2108ab2c1202c2c3fb3",
+      "bytes": 9239,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/theme-ux-ui-review.html",
+      "status": "ok"
+    },
+    {
+      "id": "theme-metadata-review",
+      "title": "Metadata Review",
+      "url": "https://docs.salla.dev/421889m0",
+      "tags": [
+        "theme",
+        "metadata",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "fd5b9e7a52fc74cb41eb7f27a456d8ffc20fc9390b1081980edc5e55d7de366b",
+      "bytes": 8560,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/theme-metadata-review.html",
+      "status": "ok"
+    },
+    {
+      "id": "theme-pre-launch-review",
+      "title": "Pre-Launch Review",
+      "url": "https://docs.salla.dev/421890m0",
+      "tags": [
+        "theme",
+        "review",
+        "pre-launch",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "d4627a4f06377b9d1907f98802364b9a28941d0156642f8fe99664394b079b5f",
+      "bytes": 648,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/theme-pre-launch-review.html",
+      "status": "ok"
+    },
+    {
+      "id": "theme-setup",
+      "title": "Setup a theme",
+      "url": "https://docs.salla.dev/421879m0",
+      "tags": [
+        "theme",
+        "setup",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "62554ff40e782148f636806fc4e352e105313431341549c90a3619901ba41b99",
+      "bytes": 9215,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/theme-setup.html",
+      "status": "ok"
+    },
+    {
+      "id": "twilight-json",
+      "title": "Twilight.json",
+      "url": "https://docs.salla.dev/421921m0",
+      "tags": [
+        "theme",
+        "config",
+        "twilight-json",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "30ea3bc46a1cdfdfd288909a04ab2e4143789eba8cc81d15d76e342b395fae04",
+      "bytes": 6490,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/twilight-json.html",
+      "status": "ok"
+    },
+    {
+      "id": "twilight-flavoured-twig",
+      "title": "Twilight flavoured twig",
+      "url": "https://docs.salla.dev/421929m0",
+      "tags": [
+        "theme",
+        "twig",
+        "helpers",
+        "filters",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "7fc9aa3e5b61ec9c26bfb235b9a39889bf8b49169e537967239a78fd773ac20c",
+      "bytes": 8069,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/twilight-flavoured-twig.html",
+      "status": "ok"
+    },
+    {
+      "id": "theme-hooks",
+      "title": "Hooks",
+      "url": "https://docs.salla.dev/422552m0",
+      "tags": [
+        "theme",
+        "hooks",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "53af2807971653210f03ad57c301057c9246a183aba9ba48a6dab9a4feca8bda",
+      "bytes": 10024,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/theme-hooks.html",
+      "status": "ok"
+    },
+    {
+      "id": "theme-components-overview",
+      "title": "Overview",
+      "url": "https://docs.salla.dev/422580m0",
+      "tags": [
+        "theme",
+        "components",
+        "overview",
+        "component-catalog",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "7150727d74025666763e9ee54850ed0a8e4f0ddb4ebd09fbaa817138d1f57558",
+      "bytes": 6639,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/theme-components-overview.html",
+      "status": "ok"
+    },
+    {
+      "id": "web-components-customization",
+      "title": "Components Customization",
+      "url": "https://docs.salla.dev/422690m0",
+      "tags": [
+        "theme",
+        "components",
+        "customization",
+        "web-components-customization",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "88c41a7d88f0a5ea88d21e88fc40cc1ad9aeb2023f4ccf8634688213f282ae59",
+      "bytes": 3219,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/web-components-customization.html",
+      "status": "ok"
+    },
+    {
+      "id": "twilight-web-components-usage",
+      "title": "Usage",
+      "url": "https://docs.salla.dev/422689m0",
+      "tags": [
+        "theme",
+        "components",
+        "usage",
+        "web-components-usage",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "08a56a77aa1d507804b7449a92af001667f96635b456b8c03155e81564a70229",
+      "bytes": 5816,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/twilight-web-components-usage.html",
+      "status": "ok"
+    },
+    {
+      "id": "product-card",
+      "title": "Product Card",
+      "url": "https://docs.salla.dev/422718m0",
+      "tags": [
+        "component",
+        "product",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "66cb577ec19c1c9c8e9ee4bc8ba9ec19cd613651cdc578e8f8a90be909d2ff67",
+      "bytes": 17338,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/product-card.html",
+      "status": "ok"
+    },
+    {
+      "id": "add-product",
+      "title": "Add Product",
+      "url": "https://docs.salla.dev/422692m0",
+      "tags": [
+        "component",
+        "product",
+        "restricted"
+      ],
+      "discovered": false,
+      "sha256": "a821bbb1b0cd865d34b9347be38edf28d61b67a331c68af54832dc8a1bbe392b",
+      "bytes": 7973,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/add-product.html",
+      "status": "ok"
+    },
+    {
+      "id": "comments-component",
+      "title": "Comments component",
+      "url": "https://docs.salla.dev/422603m0",
+      "tags": [
+        "component",
+        "comments",
+        "template-component",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "8514b269a6601b60cb4a7af466d85bc54740ec9894f5afaf633ed40ad5963b06",
+      "bytes": 4008,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/comments-component.html",
+      "status": "ok"
+    },
+    {
+      "id": "product-options-components",
+      "title": "Options",
+      "url": "https://docs.salla.dev/422605m0",
+      "tags": [
+        "component",
+        "product",
+        "options",
+        "template-component",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "23ae921d09b5ea56e8c3a96c24da8d5ab0e511770f8366756e070688328bd347",
+      "bytes": 12665,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/product-options-components.html",
+      "status": "ok"
+    },
+    {
+      "id": "product-size-guide",
+      "title": "Product Size Guide",
+      "url": "https://docs.salla.dev/422721m0",
+      "tags": [
+        "component",
+        "product",
+        "size-guide",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "8e4cf8cb3aa4bde9d16cbe991f0ae0b0bcf5621d05340d068f2f5997b71915f6",
+      "bytes": 2078,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/product-size-guide.html",
+      "status": "ok"
+    },
+    {
+      "id": "verify",
+      "title": "Verify",
+      "url": "https://docs.salla.dev/422742m0",
+      "tags": [
+        "component",
+        "user",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "577f237e9f4368a27e1b4efdbcc1fb2efa2df7f90298b585e26681959b6935be",
+      "bytes": 3749,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/verify.html",
+      "status": "ok"
+    },
+    {
+      "id": "wishlist-page",
+      "title": "Wishlist",
+      "url": "https://docs.salla.dev/422565m0",
+      "tags": [
+        "page",
+        "customer",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "7c7528d707f5a9293f1b9073c85f8dc182b6d58043a77afe0ffbdb24529baaf8",
+      "bytes": 3386,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/wishlist-page.html",
+      "status": "ok"
+    },
+    {
+      "id": "notifications-page",
+      "title": "Notifications",
+      "url": "https://docs.salla.dev/422566m0",
+      "tags": [
+        "page",
+        "customer",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "6d5526bafc462d5c0e8d1064dfa7f54bef1c79fa8e402dfe1f36905326e96f67",
+      "bytes": 3129,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/notifications-page.html",
+      "status": "ok"
+    },
+    {
+      "id": "single-order-page",
+      "title": "Order details",
+      "url": "https://docs.salla.dev/422564m0",
+      "tags": [
+        "page",
+        "customer",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "10e9057d696abfd0838d879e41305e6ab8836aa6857bca2c0d61cbc8afb7b65c",
+      "bytes": 11632,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/single-order-page.html",
+      "status": "ok"
+    },
+    {
+      "id": "cart-page",
+      "title": "Cart",
+      "url": "https://docs.salla.dev/422575m0",
+      "tags": [
+        "page",
+        "cart",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "6774278cc712c1c30bc9d4f6f1da94c6762f1a672fe3b8476d2fed15165bd0e2",
+      "bytes": 7467,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/cart-page.html",
+      "status": "ok"
+    },
+    {
+      "id": "loyalty-page",
+      "title": "Loyalty",
+      "url": "https://docs.salla.dev/422576m0",
+      "tags": [
+        "page",
+        "loyalty",
+        "allow",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "68942f4be14be2adc08d4893479b2830b60e1ab14e4f6fdafff640f6d1261dbb",
+      "bytes": 3783,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/loyalty-page.html",
+      "status": "ok"
+    },
+    {
+      "id": "landing-page",
+      "title": "Landing Page",
+      "url": "https://docs.salla.dev/422579m0",
+      "tags": [
+        "page",
+        "landing",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "c9bbfc3b277aea05036d291232fbe960bc7c329ac026673605c9a31ec53f471a",
+      "bytes": 3798,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/landing-page.html",
+      "status": "ok"
+    },
+    {
+      "id": "home-page",
+      "title": "Home Page",
+      "url": "https://docs.salla.dev/422558m0",
+      "tags": [
+        "page",
+        "home",
+        "allow",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "f896c558918c6687a65e145b30c4d370485bb32bc1291977ed6ad53ceb5322cc",
+      "bytes": 10644,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/home-page.html",
+      "status": "ok"
+    },
+    {
+      "id": "global-variables",
+      "title": "Global Variables",
+      "url": "https://docs.salla.dev/421938m0",
+      "tags": [
+        "theme",
+        "variables",
+        "allow"
+      ],
+      "discovered": false,
+      "sha256": "aaf920561780dd07d4ab3eb9c5fdb04e206ff5f0206889d4e216e656c2e14e56",
+      "bytes": 337,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/global-variables.html",
+      "status": "ok"
+    },
+    {
+      "id": "theme-change-log",
+      "title": "Change Log",
+      "url": "https://docs.salla.dev/888746f0",
+      "tags": [
+        "theme",
+        "changelog",
+        "critical"
+      ],
+      "discovered": false,
+      "sha256": "b819e7cbd9b9749b0f57a59802aa0f2ff5660f47fb3198683c1c5ecc4d71bc2a",
+      "bytes": 101175,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/theme-change-log.html",
+      "status": "ok"
+    },
+    {
+      "id": "bundle-publish-requirements",
+      "title": "Bundle Publish Requirements",
+      "url": "https://docs.salla.dev/1945741m0",
+      "tags": [
+        "bundle",
+        "review",
+        "deny"
+      ],
+      "discovered": false,
+      "sha256": "77aaaae070d88dd36c5b294ce57264b0676378f3fea4f07a8c28475e3c6d5dc0",
+      "bytes": 7048,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/bundle-publish-requirements.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422741m0-md",
+      "title": "User Settings",
+      "url": "https://docs.salla.dev/422741m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "11a21a192a3e4759886e8db0b4a77e4da6a91ffb04a9b83d28b5c06eb16d3f0b",
+      "bytes": 1391,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422741m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-705835m0-md",
+      "title": "Menus",
+      "url": "https://docs.salla.dev/705835m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "bb0d48c5ad9af7b01806fc8c470202318e7e67d43e6031c39c14ed2098637735",
+      "bytes": 1469,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-705835m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849486f0-md",
+      "title": "Elements",
+      "url": "https://docs.salla.dev/849486f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "a44b8f13521fcd661c56a84d854a0306ab19fe709570744194c3dce2d0c2bfef",
+      "bytes": 6746,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849486f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-478518m0-md",
+      "title": "Apps Icons",
+      "url": "https://docs.salla.dev/478518m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "1a9c382dcbdb1b84c799aca21ad27c40a3a51001947b2a522b0efe5d5379ee62",
+      "bytes": 1404,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-478518m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-482370m0-md",
+      "title": "Breadcrumb",
+      "url": "https://docs.salla.dev/482370m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "ce2da75e264397d3c8344c9130959b037879089fa8231b182b1a2db95924b211",
+      "bytes": 2216,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-482370m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422696m0-md",
+      "title": "Color Picker",
+      "url": "https://docs.salla.dev/422696m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "23fd2bc4882d6de5cd2516be7b5f60fb9f13119c89283c3b0c70a229b1617de3",
+      "bytes": 5787,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422696m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422699m0-md",
+      "title": "Conditional Fields",
+      "url": "https://docs.salla.dev/422699m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "1f3bfbcd779f667e45da1483fa56f677c825cce5593a3eefcdef8cc450d6e838",
+      "bytes": 582,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422699m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422704m0-md",
+      "title": "Filters",
+      "url": "https://docs.salla.dev/422704m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "d3591d6a487384327447a3d1e9af4ae7f7b813b55f87608197b96887b24a2a4f",
+      "bytes": 2784,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422704m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422706m0-md",
+      "title": "Infinite Scroll",
+      "url": "https://docs.salla.dev/422706m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "30e1a6f4a272e02c5904d024f1da0302f53783e7584d1fb83064d68eb1addf0d",
+      "bytes": 3057,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422706m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422708m0-md",
+      "title": "List Tile",
+      "url": "https://docs.salla.dev/422708m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "de554260795adba40a7b208a43c6c8bee970743cffb6a7445f305057c2553b8f",
+      "bytes": 2145,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422708m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422709m0-md",
+      "title": "Loading",
+      "url": "https://docs.salla.dev/422709m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "b9b79f3b192ba5e20f09995ee1f9773d541fb66c2ce7d5cfb29b8727aa945d53",
+      "bytes": 1607,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422709m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422713m0-md",
+      "title": "Map",
+      "url": "https://docs.salla.dev/422713m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "e2d78417ed452c272956b479e779dbb89d3ee647fbf019a3ae4dc77176b66914",
+      "bytes": 4358,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422713m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422716m0-md",
+      "title": "Placeholder",
+      "url": "https://docs.salla.dev/422716m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "8a0d7fce265df706b10d1f75f3c11974839206c9a060ba57e0f0006ee7df5487",
+      "bytes": 1836,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422716m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422723m0-md",
+      "title": "Progress Bar",
+      "url": "https://docs.salla.dev/422723m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "241c86805f161e912da565785e3a6d62f5387b9a281cc24d5b53e73789798bea",
+      "bytes": 4976,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422723m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422727m0-md",
+      "title": "Rating Stars",
+      "url": "https://docs.salla.dev/422727m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "1488b2e1365153259fa273c62bb8bef797009bdabb9887990104679b035dcd0e",
+      "bytes": 1624,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422727m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-508226m0-md",
+      "title": "Reviews",
+      "url": "https://docs.salla.dev/508226m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "dc68272fbc2d0ae587c861d102c8f4cefa7d52f2ebf0ac93cd8fae39ddf1c07f",
+      "bytes": 4104,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-508226m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-602149m0-md",
+      "title": "Reviews Summary",
+      "url": "https://docs.salla.dev/602149m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "223071ceb304f848f4a15cefe61db1c83f4ba1f106be726576c6301686571597",
+      "bytes": 989,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-602149m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422733m0-md",
+      "title": "Sheet",
+      "url": "https://docs.salla.dev/422733m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "8e80ac18ce4cecad6d6432d4dd0f2b0ce273cbf0ebeb7f79520250dd49247097",
+      "bytes": 2666,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422733m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422734m0-md",
+      "title": "Skeleton",
+      "url": "https://docs.salla.dev/422734m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "147f442b93c92044f8083d53bb4f29cc3370cf5867ad2cc5dd4fd8a1ae7ab947",
+      "bytes": 1349,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422734m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422735m0-md",
+      "title": "Slider",
+      "url": "https://docs.salla.dev/422735m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "b372db55564dcfef6b98af11afe99ebab9040cb3b30b67de7e622b646d4e4563",
+      "bytes": 18669,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422735m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-499802m0-md",
+      "title": "Social",
+      "url": "https://docs.salla.dev/499802m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "5aceac18899afec121b5595c952cbc024d6e0dd5e9abe4b98044b296a9b77ecf",
+      "bytes": 773,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-499802m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422736m0-md",
+      "title": "Social Share",
+      "url": "https://docs.salla.dev/422736m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "17242815db43ffe54b952458320fcab9ff35616e6515a8840bbf58f1362e9106",
+      "bytes": 2421,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422736m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849487f0-md",
+      "title": "Form",
+      "url": "https://docs.salla.dev/849487f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "3add8fd0500857c85f14da2a5c38ca4c6cad3197533cbdd01fbabc95807fd7a4",
+      "bytes": 2420,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849487f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422694m0-md",
+      "title": "Button",
+      "url": "https://docs.salla.dev/422694m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "28485ca3b5a4e584a872b518cd1827e1d8da2e268b4738477e7c9f6922501bae",
+      "bytes": 5972,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422694m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422693m0-md",
+      "title": "Bottom Alert",
+      "url": "https://docs.salla.dev/422693m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "01b3e9b9739f6771ebbad3892ef7d6e5ff6b00281b68012916588b203ad98756",
+      "bytes": 1762,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422693m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-478494m0-md",
+      "title": "Contacts",
+      "url": "https://docs.salla.dev/478494m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "b14d0d9590148a4efbe64b61f3bb8cac3c754aa7b8130fc4ae92502168e405bb",
+      "bytes": 2253,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-478494m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422702m0-md",
+      "title": "Date Time Picker",
+      "url": "https://docs.salla.dev/422702m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "0a876615424586688255a3748f075e9f5d1ea56d1719b0ced451d7d4577e6196",
+      "bytes": 44888,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422702m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422703m0-md",
+      "title": "File Upload",
+      "url": "https://docs.salla.dev/422703m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "8a80d8c827369f879641d617a270b197e6f375a55d994b938ec8f167d04a0ebb",
+      "bytes": 50609,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422703m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-478492m0-md",
+      "title": "Menu",
+      "url": "https://docs.salla.dev/478492m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "c887edb274c72a2ac1b2e6525b01b31a966c4d9924ed3f2d784017ca3d6ea0dc",
+      "bytes": 1626,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-478492m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422724m0-md",
+      "title": "Quantity Input",
+      "url": "https://docs.salla.dev/422724m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "57b96c500d11abe4ccd19f4078dd9f3ca8cd9bbae0525d0346d34b7abf12f84a",
+      "bytes": 2242,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422724m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422746m0-md",
+      "title": "Select",
+      "url": "https://docs.salla.dev/422746m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "367f817be50bdffb89d6a118ab61e8ed97e3f69440828ae4a8d88ecf9227fc58",
+      "bytes": 9208,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422746m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422739m0-md",
+      "title": "Tel Input",
+      "url": "https://docs.salla.dev/422739m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "4d7b8f9f0705b9f9911a60c08a604215ad95a5b4cf7e5ffaed475ebbbd145b82",
+      "bytes": 3030,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422739m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849488f0-md",
+      "title": "Product",
+      "url": "https://docs.salla.dev/849488f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "70fede60a6e2a8b7886af591371bf978864f6b63996705d8d4c9bd10bef8ec87",
+      "bytes": 6415,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849488f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-478502m0-md",
+      "title": "Advertisement",
+      "url": "https://docs.salla.dev/478502m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "80476cffc7c34f5ac4b63b73f8f411e0017190bcbf7237cbe57d5592e81bfc23",
+      "bytes": 972,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-478502m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-482455m0-md",
+      "title": "Comments",
+      "url": "https://docs.salla.dev/482455m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "5741ee7d4d1e2b45a839aea77bc321887b8d93cc30bdc20775016e8f2970169e",
+      "bytes": 1486,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-482455m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-537931m0-md",
+      "title": "Conditional Offer",
+      "url": "https://docs.salla.dev/537931m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "ea80c0a307d2e12e322f55061d5f3cc1607b050f69f94d3c3fc7e599ec4c976c",
+      "bytes": 2426,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-537931m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422705m0-md",
+      "title": "Gifting",
+      "url": "https://docs.salla.dev/422705m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "1fea69407de0e84bae315d59c990e0d207f6e7c248489713dca1e8cd81d1b4cc",
+      "bytes": 3215,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422705m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422707m0-md",
+      "title": "Installment",
+      "url": "https://docs.salla.dev/422707m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "2914dfb2fc81f45adb4fc15313f949375cb6369664bd8e64dbfe2d6f68b95a2c",
+      "bytes": 4527,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422707m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-464599m0-md",
+      "title": "Meta Data",
+      "url": "https://docs.salla.dev/464599m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "a93935f8dbecf0cfd78e37a090d6a7969fcef9f405b58e4c31f592d4adfa8e9c",
+      "bytes": 1085,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-464599m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-440408m0-md",
+      "title": "Offer",
+      "url": "https://docs.salla.dev/440408m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "3dfcda138cc0ab005adfc349dd9d823fc16e7251547460348ac2f1288d075243",
+      "bytes": 2456,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-440408m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422715m0-md",
+      "title": "Offer Modal",
+      "url": "https://docs.salla.dev/422715m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "3f1c16e5ec14778c4c805b13bd345db590f96ae768deb545d5a9ed158493af45",
+      "bytes": 3189,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422715m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-508225m0-md",
+      "title": "Orders",
+      "url": "https://docs.salla.dev/508225m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "44cf699cababd3bc1939e593b26cdedd0681b7248aaa0f419cfaed5d7c513fd4",
+      "bytes": 920,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-508225m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-478374m0-md",
+      "title": "Payments",
+      "url": "https://docs.salla.dev/478374m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "7173bbaf915d9bd2f85ce3067f1f28af45338d9df46714249f64961016f53ce9",
+      "bytes": 1803,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-478374m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422719m0-md",
+      "title": "Products List",
+      "url": "https://docs.salla.dev/422719m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "e7959ed6816dda08c30f65097d01a9731e5612bdf7fca6419079308dc5c664e4",
+      "bytes": 9253,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422719m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422722m0-md",
+      "title": "Products Slider",
+      "url": "https://docs.salla.dev/422722m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "f2cda6de76dec1b9b5a4221fa98b84ad8a1c1c2a18cf6328272ee60b71de73d5",
+      "bytes": 6104,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422722m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422725m0-md",
+      "title": "Quick Buy",
+      "url": "https://docs.salla.dev/422725m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "12358933fe6b62a0f88af8cd124169f099e2d0e52fbc4328348d8ecc70c62ae4",
+      "bytes": 3268,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422725m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422729m0-md",
+      "title": "Scopes",
+      "url": "https://docs.salla.dev/422729m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "46c509de5f69102543c7988dad1319687b2b6ee63efcc950f6d6ec4dea5aa91b",
+      "bytes": 3761,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422729m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422730m0-md",
+      "title": "Search",
+      "url": "https://docs.salla.dev/422730m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "6dabd8f3d8f1998f1ac1ac7db14d0b5889d7ff2b739c3859fc84ec9539acabaf",
+      "bytes": 3215,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422730m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849489f0-md",
+      "title": "User",
+      "url": "https://docs.salla.dev/849489f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "87b1e3d66ed78c195fac4dd11826c4c598264c90a0813708ccf267146205330f",
+      "bytes": 3186,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849489f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422695m0-md",
+      "title": "Cart Summary",
+      "url": "https://docs.salla.dev/422695m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "459692fd09a248ee4ec5df62c59e2dd5d0c60a7a1ffc6054aa40d82a0273005f",
+      "bytes": 1852,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422695m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422710m0-md",
+      "title": "Localization",
+      "url": "https://docs.salla.dev/422710m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "63b8c33ac63ba94a3efc901c236d4754ce1f5b6d4937636ab823daefa5b5ad2f",
+      "bytes": 4477,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422710m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422711m0-md",
+      "title": "Login",
+      "url": "https://docs.salla.dev/422711m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "4137f993f18f924cf6421314f3f4e61560d6cab39d421fa9e437f594d1f82b91",
+      "bytes": 4610,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422711m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422712m0-md",
+      "title": "Loyalty",
+      "url": "https://docs.salla.dev/422712m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "9fbdfea860b89b81a6f113026d56f9a89bffbdaa6f38c43e72e1175dfadc2c9f",
+      "bytes": 3169,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422712m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422740m0-md",
+      "title": "User Menu",
+      "url": "https://docs.salla.dev/422740m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "3a4d62cd52513d72ddba3542a4110555bb11fa25d9c26dafec53796f1d5b5ce7",
+      "bytes": 2528,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422740m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-482367m0-md",
+      "title": "User Profile",
+      "url": "https://docs.salla.dev/482367m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "f4862f6f5eef9ad79d89f486b8cad6c023636d0eca0f56e148d880390a6b18be",
+      "bytes": 2301,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-482367m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-845943f0-md",
+      "title": "Review Process",
+      "url": "https://docs.salla.dev/845943f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "12b3b8f7cca216909f3137d6d2697d82e8d69d7c375ad68b8637d03c0cc12189",
+      "bytes": 999,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-845943f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422688m0-md",
+      "title": "Overview",
+      "url": "https://docs.salla.dev/422688m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "e118f95e087151a2b2e973241df6ca2d7da650bbd5213d16296055be98b3f162",
+      "bytes": 31677,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422688m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422701m0-md",
+      "title": "Count Down",
+      "url": "https://docs.salla.dev/422701m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "20ef0ab50152b9ad54a7fde5ed7d208867269c2e11ecb8abedb74dd6b9800ca5",
+      "bytes": 2923,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422701m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422714m0-md",
+      "title": "Modal",
+      "url": "https://docs.salla.dev/422714m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "446d1a6e962220eb1981f2d41046d74d9c1e6db7f995480a5fff51c89fe7cae2",
+      "bytes": 7239,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422714m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422738m0-md",
+      "title": "Tabs",
+      "url": "https://docs.salla.dev/422738m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "0c535adf1fa521bfe063fb05bfba6fc5edf700de1e83d958a5348200b8d4bc7c",
+      "bytes": 5910,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422738m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422717m0-md",
+      "title": "Product Availability",
+      "url": "https://docs.salla.dev/422717m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "ce5740ccd943fb581f8aba6c8c3171fad92a18fd40414b02c97036dd32b4e7cb",
+      "bytes": 2761,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422717m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422720m0-md",
+      "title": "Product Options",
+      "url": "https://docs.salla.dev/422720m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "fd2287713e24ccc5fa59153f4be87685831e30bb7c890c7ea318a7193b54f578",
+      "bytes": 4591,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422720m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422726m0-md",
+      "title": "Quick Order",
+      "url": "https://docs.salla.dev/422726m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "1190199d027b65bee24eb9ce1da9d9cf4190bb4d9b3c84a912925ecb08efe10c",
+      "bytes": 5518,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422726m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-421880m0-md",
+      "title": "Publish a theme",
+      "url": "https://docs.salla.dev/421880m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "b40b79a82005f82cafbd81ca43de6eec118252e59a66c265f0b13c763c2102d3",
+      "bytes": 5518,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-421880m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-845938f0-md",
+      "title": "Requirements & Review",
+      "url": "https://docs.salla.dev/845938f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "5deee5f1d2802e2ace6406d888cef5163fc025969caff295e2cbf3a2cc147792",
+      "bytes": 793,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-845938f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-421885m0-md",
+      "title": "Overview",
+      "url": "https://docs.salla.dev/421885m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "fa041c94d40c27e240cdfafd93d35a6eeaf933524a68db5909ac44614ab18f04",
+      "bytes": 2554,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-421885m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422561m0-md",
+      "title": "Single product",
+      "url": "https://docs.salla.dev/422561m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "2c0caf0c0fb468c055062895fbfd7710681f43cb7fd46bb10517926ef4c05265",
+      "bytes": 10430,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422561m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-845945f0-md",
+      "title": "Files and Folders Structure",
+      "url": "https://docs.salla.dev/845945f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "e117b25209f1d8e57bf705cc498ca0fe1671d8012bf9b3a08569893334e703ff",
+      "bytes": 883,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-845945f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-421918m0-md",
+      "title": "Directory structure",
+      "url": "https://docs.salla.dev/421918m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "503875b858cba9bd59114ca6cb6d36a683b77f977d1b682791e891d6eba74062",
+      "bytes": 1292,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-421918m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-846131f0-md",
+      "title": "Twig Template Engine",
+      "url": "https://docs.salla.dev/846131f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "1842a968182451512a36c40412667ca75ce29174de6268ca65534c2b468ec4fd",
+      "bytes": 791,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-846131f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-421928m0-md",
+      "title": "Basic syntax",
+      "url": "https://docs.salla.dev/421928m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "9d63f8d364a3436c3a552c4b256f868866e4b582a0775a283ec526b2f0f9ec27",
+      "bytes": 7975,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-421928m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-846176f0-md",
+      "title": "Theme Architecture",
+      "url": "https://docs.salla.dev/846176f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "3ca89522c2f6d2e62ac070715610470c8c9b44bad08cbcb01149805942ef0f2f",
+      "bytes": 1744,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-846176f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-846214f0-md",
+      "title": "Layouts",
+      "url": "https://docs.salla.dev/846214f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "4fda1eff0e9515dd9d4ae573a65f77a2697426e9aacf8c367d6ba5c5f7d38572",
+      "bytes": 2880,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-846214f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-421943m0-md",
+      "title": "Overview",
+      "url": "https://docs.salla.dev/421943m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "395baa4fd17202ae2f69798e72f9595ac86bdf0248aa5913d45076f61871f084",
+      "bytes": 4306,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-421943m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-421944m0-md",
+      "title": "Master Layout",
+      "url": "https://docs.salla.dev/421944m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "6aa3947a46bf8ba7e602002cf8710d55e27a76c490ca9b42707ebeb64707238e",
+      "bytes": 5094,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-421944m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-421945m0-md",
+      "title": "CSS Variables",
+      "url": "https://docs.salla.dev/421945m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "174317228db57885814d3379731f646b2bfa62e621986c06764b7a78163248ea",
+      "bytes": 3844,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-421945m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422553m0-md",
+      "title": "Localizations",
+      "url": "https://docs.salla.dev/422553m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "8cd02ed57492d6e937442c8f87df1bd55d2f09606ee765817fc24f500b1138f9",
+      "bytes": 5334,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422553m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849309f0-md",
+      "title": "Pages",
+      "url": "https://docs.salla.dev/849309f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "03e94cfc6bb2002966ff106ac0c3aaa76f46ea89dc08c7852304186c4ef0ccaa",
+      "bytes": 848,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849309f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422556m0-md",
+      "title": "Overview",
+      "url": "https://docs.salla.dev/422556m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "4cfb0431af46f29b78342adf7c6288c92a90d9c727efe8e2dba80f51a3c743cb",
+      "bytes": 11130,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422556m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849330f0-md",
+      "title": "Components",
+      "url": "https://docs.salla.dev/849330f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "d096aa882d590354e634353e705aefbd65b810c88ee3b62e5decc04c45471eae",
+      "bytes": 625,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849330f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849333f0-md",
+      "title": "Home Components",
+      "url": "https://docs.salla.dev/849333f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "14af0ac0cf0f7c77badbe7fdda0cb73a730e717999388c39dfffb46ceb74dfe8",
+      "bytes": 4534,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849333f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422582m0-md",
+      "title": "Youtube",
+      "url": "https://docs.salla.dev/422582m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "da010fd6b59b83e7859f6a82854a8cf90e22e6c04161e2a4c4fccdef9fa1081c",
+      "bytes": 906,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422582m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422583m0-md",
+      "title": "Fixed banner",
+      "url": "https://docs.salla.dev/422583m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "8c1b8dd96fe808b01764d3df0279f6cb09fcec31e8f2ed28ab47997bc6fd4523",
+      "bytes": 969,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422583m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422584m0-md",
+      "title": "Testimonials",
+      "url": "https://docs.salla.dev/422584m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "5b51a7c7db179f6e03219d959c959e559fe2b7d8d7cae41820e495518de660c5",
+      "bytes": 1423,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422584m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422585m0-md",
+      "title": "Parallax background",
+      "url": "https://docs.salla.dev/422585m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "8a072cedf0bcf72c2a06ec3ec45f6ca26ebbae29b552b579a0d145b603f1a27a",
+      "bytes": 1327,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422585m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422586m0-md",
+      "title": "Photos slider",
+      "url": "https://docs.salla.dev/422586m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "15f4665cd7df539445a2b39a405d5706d9cfc954d2ed8a6c905ccc0589a2ef78",
+      "bytes": 1404,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422586m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422588m0-md",
+      "title": "Square photos",
+      "url": "https://docs.salla.dev/422588m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "5f2c133260770f6d8043c4641596175ce5123fea69c8e03b62ea781759db21b5",
+      "bytes": 1236,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422588m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422589m0-md",
+      "title": "Fixed products",
+      "url": "https://docs.salla.dev/422589m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "e4c8b5c6644e03ae99d03b8d7c506ea5d02f40d4b2b9f4d877fd686c80188607",
+      "bytes": 1672,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422589m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422590m0-md",
+      "title": "Products slider",
+      "url": "https://docs.salla.dev/422590m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "f8eb7a459a4734da8d9f29cc4eb8ee09dbb1a51a9a475bbd25b9365d1a072e3d",
+      "bytes": 1923,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422590m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422591m0-md",
+      "title": "Featured products - Style 1",
+      "url": "https://docs.salla.dev/422591m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "9c844c4e0a56a812eb4fa8a073ceb025c8e16b9170bd08b792f75df0cd21696e",
+      "bytes": 3273,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422591m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422592m0-md",
+      "title": "Featured Products - Style 2",
+      "url": "https://docs.salla.dev/422592m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "f78f2cc0d0d58ece3b8e68d4ec7c8f8563c0c0009c122850ff2c6b83b464a53c",
+      "bytes": 2215,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422592m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422593m0-md",
+      "title": "Featured Products - Style 3",
+      "url": "https://docs.salla.dev/422593m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "0d15ecea349d65c2425832b5d75bca7e0224e894fbc5102ef12c7c390c7b111d",
+      "bytes": 3378,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422593m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422594m0-md",
+      "title": "Brands",
+      "url": "https://docs.salla.dev/422594m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "b05341dc454ff68cec570872d802a6bee39ad87940b61359bfdaedee7c5dc1be",
+      "bytes": 2252,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422594m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422595m0-md",
+      "title": "Enhanced Square Banners",
+      "url": "https://docs.salla.dev/422595m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "416a2d3520d6964cd5f0e37e1f28bb50f23965201440eaa40df27b9e5790347b",
+      "bytes": 3100,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422595m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422596m0-md",
+      "title": "Main Links",
+      "url": "https://docs.salla.dev/422596m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "6fc175df3be5da80534f95dbe24c479207972024bd67ab004a933f960989415b",
+      "bytes": 3288,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422596m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422597m0-md",
+      "title": "Enhanced Slider",
+      "url": "https://docs.salla.dev/422597m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "1c51ad555c1e30ce53110b0f0f333daa2f76a6cf63f85d096f6fc3e3808025c7",
+      "bytes": 2844,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422597m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422598m0-md",
+      "title": "Slider Products with Headers",
+      "url": "https://docs.salla.dev/422598m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "ecbeebfd4f26c853e030abee69e7a6196d02916b39ed073b9f9632a2ff8b37ee",
+      "bytes": 3605,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422598m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422599m0-md",
+      "title": "Latest Products",
+      "url": "https://docs.salla.dev/422599m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "259d45de69a3a5193e8ccc19c58ebe67bd7961b5eee5ed55cd8bebcd9efb439b",
+      "bytes": 1983,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422599m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422600m0-md",
+      "title": "Vertical Menu with Slider",
+      "url": "https://docs.salla.dev/422600m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "fd9014526c94232286e9f97a1ce526ab750869417b93dcd1aa732f8ec2caebb9",
+      "bytes": 1103,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422600m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849335f0-md",
+      "title": "Product Components",
+      "url": "https://docs.salla.dev/849335f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "b339f0a218e1886d0293ac805bced2d30984a0eaed799223d9cd77b30415ef43",
+      "bytes": 533,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849335f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422604m0-md",
+      "title": "Essentials",
+      "url": "https://docs.salla.dev/422604m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "cef1dabdd83b3e895958cc9199eb1ec1df1464b1bf6e563b48052c88c773467f",
+      "bytes": 4520,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422604m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849334f0-md",
+      "title": "Common Components",
+      "url": "https://docs.salla.dev/849334f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "3cf193c59db12bab706c202eadd12bc6a135ba443448395ff75d3b58b64f0c7f",
+      "bytes": 982,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849334f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422601m0-md",
+      "title": "Header Components",
+      "url": "https://docs.salla.dev/422601m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "16424498931fa6813bc6888b2725154c757fd4987389f59a5a2cd815856d5134",
+      "bytes": 9828,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422601m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422602m0-md",
+      "title": "Footer Components",
+      "url": "https://docs.salla.dev/422602m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "26229a24e2fd579bf1d0a8d5c9523e13f8fbab5a29e02a6f46fa5c50ce640830",
+      "bytes": 7351,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422602m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849311f0-md",
+      "title": "Product Pages",
+      "url": "https://docs.salla.dev/849311f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "a94f708b5183f015363b066b10c4118fa7ca1ef7258022c0fdd9e52f9fc9d366",
+      "bytes": 755,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849311f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422559m0-md",
+      "title": "Products listing",
+      "url": "https://docs.salla.dev/422559m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "0d9351f786b5ea8f661cefcc7b27908a116210b9820d5dbde8c3133a10e66812",
+      "bytes": 5976,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422559m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849314f0-md",
+      "title": "Customer Pages",
+      "url": "https://docs.salla.dev/849314f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "29f557227fd11181894e8d6a9ad61c84dd327982cb86c95380c1b83f9df03804",
+      "bytes": 1689,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849314f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422562m0-md",
+      "title": "Profile",
+      "url": "https://docs.salla.dev/422562m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "b92a1fefa6d9b9d802aaf2b8a232aca3ba60c1a701af3e270524321623f11727",
+      "bytes": 5502,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422562m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422563m0-md",
+      "title": "Orders list",
+      "url": "https://docs.salla.dev/422563m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "353ed1daba77911151aa348099125736a5ee2c281a410f75c90538030c9f481d",
+      "bytes": 3907,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422563m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422572m0-md",
+      "title": "Single brand",
+      "url": "https://docs.salla.dev/422572m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "8646899ff74285dbb08432688d112c1926af2efad992537cc4623bcb2e45dbfc",
+      "bytes": 3689,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422572m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849355f0-md",
+      "title": "Wishlist",
+      "url": "https://docs.salla.dev/849355f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "1f59bbb8a0a7480905b913af896e66f0864a38d1423a2c3faf3a72329a945d0f",
+      "bytes": 1144,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849355f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422654m0-md",
+      "title": "Add",
+      "url": "https://docs.salla.dev/422654m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "9ca8ae6a316fb5c00aae94854185fc4f55198fc3b9bf10042187a46f3d20a1aa",
+      "bytes": 1251,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422654m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422655m0-md",
+      "title": "Remove",
+      "url": "https://docs.salla.dev/422655m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "245da6567e594cdf4c7da7c6340efb8aaae58f96edbd3ce1378d0812b554120c",
+      "bytes": 1272,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422655m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422656m0-md",
+      "title": "Toggle",
+      "url": "https://docs.salla.dev/422656m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "7a9dc4efb1c92e412949bda7e023a072e43b6b0002a4c78308369e394fb9bd22",
+      "bytes": 1401,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422656m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849354f0-md",
+      "title": "Product",
+      "url": "https://docs.salla.dev/849354f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "9b66f8b6393b47cb1f0a7fd6adb6b13a47fe89764898332af48d6bd6ba2de112",
+      "bytes": 2856,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849354f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422641m0-md",
+      "title": "Get price",
+      "url": "https://docs.salla.dev/422641m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "2ece53e4c5ac76e08a2d598748ad56f401e3d8e9e83735a921c0174455817768",
+      "bytes": 1552,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422641m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422642m0-md",
+      "title": "Product availability",
+      "url": "https://docs.salla.dev/422642m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "2792d41c6ffc1f9d377ac9c96b607b30cab6837cfca73449d2df5736296c541f",
+      "bytes": 2267,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422642m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-2081248m0-md-nav-01kkbh7g55kw5agvasa4nv57gd",
+      "title": "Build Your App Function",
+      "url": "https://docs.salla.dev/2081248m0.md?nav=01KKBH7G55KW5AGVASA4NV57GD",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "243baa91565b482ac4f503454b072d3d0cbc03857252a826b00eef5c26e07a1b",
+      "bytes": 11467,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-2081248m0-md-nav-01kkbh7g55kw5agvasa4nv57gd.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-2081250m0-md-nav-01kkbh7g55kw5agvasa4nv57gd",
+      "title": "Test & Go Live",
+      "url": "https://docs.salla.dev/2081250m0.md?nav=01KKBH7G55KW5AGVASA4NV57GD",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "7e6dc157834eee287a89a0c1426037c0a4084eb853a428cf8233a81770badd88",
+      "bytes": 8767,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-2081250m0-md-nav-01kkbh7g55kw5agvasa4nv57gd.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-2006119m0-md-nav-01kkbh7g55kw5agvasa4nv57gd",
+      "title": "Event & Payload Reference",
+      "url": "https://docs.salla.dev/2006119m0.md?nav=01KKBH7G55KW5AGVASA4NV57GD",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "ca4d95c20be32b9ebcec0a2e8e0abb895eb157f35d245726c022ccfa2f3a3e15",
+      "bytes": 16563,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-2006119m0-md-nav-01kkbh7g55kw5agvasa4nv57gd.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-2006120m0-md-nav-01kkbh7g55kw5agvasa4nv57gd",
+      "title": "Examples",
+      "url": "https://docs.salla.dev/2006120m0.md?nav=01KKBH7G55KW5AGVASA4NV57GD",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "e89d302c523a2951593065cbe74487aa3bbf7eed6553f7a817df93cd95c62772",
+      "bytes": 8028,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-2006120m0-md-nav-01kkbh7g55kw5agvasa4nv57gd.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-845904f0-md",
+      "title": "Welcome to Salla's themes engine, Twilight",
+      "url": "https://docs.salla.dev/845904f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "51e7391459af2e84c138c520829196f705433c00a4b3ae69df566ebc28f9cb81",
+      "bytes": 4166,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-845904f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-421877m0-md",
+      "title": "Create a theme",
+      "url": "https://docs.salla.dev/421877m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "94cb6881025d9d190c5186d4b529ec4f0fc0c0dfe74cf1c47c37de02640982aa",
+      "bytes": 6053,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-421877m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-421878m0-md",
+      "title": "Develop a theme",
+      "url": "https://docs.salla.dev/421878m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "6c957171629cf9cd594249137a275fb6c8784997765f525b794975cd7ef9d297",
+      "bytes": 5579,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-421878m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422550m0-md",
+      "title": "Salla Icons",
+      "url": "https://docs.salla.dev/422550m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "b2d1c8121398d2af7412bcc7140226c1a0e03f080aee0bfc09999852092576e9",
+      "bytes": 3943,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422550m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422551m0-md",
+      "title": "Custom Fonts",
+      "url": "https://docs.salla.dev/422551m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "d378a5008a69f168eb143a5ec69dd9bf255ba4a08ffa0749dc60252e82039286",
+      "bytes": 1837,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422551m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849315f0-md",
+      "title": "Blog Pages",
+      "url": "https://docs.salla.dev/849315f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "a4d2a678a287ea100c54f9f13133162d6a654245aa4e98dda316961e931da691",
+      "bytes": 1031,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849315f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422567m0-md",
+      "title": "Blog listing",
+      "url": "https://docs.salla.dev/422567m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "55624730f917d03e99ef2ba38768cdf6392935426d4afae8134a606ee13a18bc",
+      "bytes": 4301,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422567m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422568m0-md",
+      "title": "Single blog",
+      "url": "https://docs.salla.dev/422568m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "004b27abc95820af75d1f9e0e687bcbd81744cf20e5673911d83dd28141a6354",
+      "bytes": 2938,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422568m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849319f0-md",
+      "title": "Brand Pages",
+      "url": "https://docs.salla.dev/849319f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "4f7dbfdd25985ed3299474089bfcd44ac63e365046efab4782004e91c74d8549",
+      "bytes": 1052,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849319f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422570m0-md",
+      "title": "Brands listing",
+      "url": "https://docs.salla.dev/422570m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "577e158f846b5980fdfff85e96f733b6e054056baeb482f4d387313b77cc4354",
+      "bytes": 2382,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422570m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422577m0-md",
+      "title": "Thank you",
+      "url": "https://docs.salla.dev/422577m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "9cdc6384d7ae18ef2def7020091470293086a0dedaa598c11dc8a2b7217b1b47",
+      "bytes": 3317,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422577m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422624m0-md",
+      "title": "Refresh",
+      "url": "https://docs.salla.dev/422624m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "e1ad92cc1268338c4045ea1bfde594c689b5dbf0e2311e4b189b979b35ef2a05",
+      "bytes": 1341,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422624m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849353f0-md",
+      "title": "Cart",
+      "url": "https://docs.salla.dev/849353f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "dce8086285aeccdfb83f3886a99040524745042b1ca3e723ebd7b9e4eee6fd56",
+      "bytes": 4206,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849353f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422625m0-md",
+      "title": "Latest",
+      "url": "https://docs.salla.dev/422625m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "054fec00f311ea9417f2c7abe06d766bd41496f31e4e1ea50beaa6641ce20136",
+      "bytes": 1148,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422625m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422626m0-md",
+      "title": "Details",
+      "url": "https://docs.salla.dev/422626m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "4de07c41355bb32b3ab29e52b9455628bfff477646abe49a3db9d716791e961f",
+      "bytes": 1565,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422626m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422628m0-md",
+      "title": "Quick Add",
+      "url": "https://docs.salla.dev/422628m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "ffd893793a1324dc1d747d6613bc6083b541d30d122f95e6f1c1158f434c5adf",
+      "bytes": 1384,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422628m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422629m0-md",
+      "title": "Add Item",
+      "url": "https://docs.salla.dev/422629m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "5528b405ff584f8083a5f8a1f42b8e44904488b70a7332d4b77f6542ee0a5a23",
+      "bytes": 2146,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422629m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422630m0-md",
+      "title": "Delete Item",
+      "url": "https://docs.salla.dev/422630m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "ca60b00ac46bebded4e32cedf281934735f9055c04e40dce0839fa35dbcb2bf4",
+      "bytes": 1440,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422630m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422632m0-md",
+      "title": "Delete Image",
+      "url": "https://docs.salla.dev/422632m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "d58b5f542786a92a2f6007fa156ed805921321dc12c814e68b9beca75b16908d",
+      "bytes": 1356,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422632m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422633m0-md",
+      "title": "Add Coupon",
+      "url": "https://docs.salla.dev/422633m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "6f698c5e46d7f5bc66b6556c69fb7cc1bb2654ef9c62bcb5fb1b24b1b63dd806",
+      "bytes": 1367,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422633m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422634m0-md",
+      "title": "Remove Coupon",
+      "url": "https://docs.salla.dev/422634m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "1392d38ca227ff98b29b41f64ea2852cbd7cd9baafebe3ec96cfe0d6c529f69a",
+      "bytes": 1175,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422634m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422635m0-md",
+      "title": "Get Upload Image",
+      "url": "https://docs.salla.dev/422635m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "c03e6864850cd4500482195961c4c49d9c279736b0b45f3826c4796762d11fd0",
+      "bytes": 638,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422635m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422636m0-md",
+      "title": "Get Quick Order Settings",
+      "url": "https://docs.salla.dev/422636m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "8bed8b749ba6e414ab84052b38f94f2d5f89dd7afed1fe04139b2c8418f5dd28",
+      "bytes": 1476,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422636m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422637m0-md",
+      "title": "Create Quick Order",
+      "url": "https://docs.salla.dev/422637m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "347e5bb856692c9f4da4cfff3d453b6b684f049b8ee164580349ad0c159a38c4",
+      "bytes": 1546,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422637m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422638m0-md",
+      "title": "Order Status",
+      "url": "https://docs.salla.dev/422638m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "9a48f6ceec91d82405eaf97a4b4485dcb697a578453abfb56785a326c69445e4",
+      "bytes": 803,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422638m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849356f0-md",
+      "title": "Loyalty",
+      "url": "https://docs.salla.dev/849356f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "b7e4cd86e5f24fb5cd39b7573d08bd2abe3c68fa25bd4583a039e4f49ecac726",
+      "bytes": 628,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849356f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422667m0-md",
+      "title": "Get Program",
+      "url": "https://docs.salla.dev/422667m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "a8fd6991b7f9d60554718f5b1f6625af42ead296a82df2109fe99f3ba5009df2",
+      "bytes": 1354,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422667m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422668m0-md",
+      "title": "Exchange",
+      "url": "https://docs.salla.dev/422668m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "e3cd03bea5c920121470a26921c401bbdb357af34f3f7a6525fa94201e7f0c5a",
+      "bytes": 1525,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422668m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422669m0-md",
+      "title": "Reset",
+      "url": "https://docs.salla.dev/422669m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "5093f9aec69dc01aaf7f73aaf147003d535ee0e42f12d64c652cdfedce6ce5c7",
+      "bytes": 1394,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422669m0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-849363f0-md",
+      "title": "Comment",
+      "url": "https://docs.salla.dev/849363f0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "c70a5a788a77d8343cda82a0dbbc053031ec7103c9c05a6d8ea305f84840aef0",
+      "bytes": 1173,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-849363f0-md.html",
+      "status": "ok"
+    },
+    {
+      "id": "docs-salla-dev-422681m0-md",
+      "title": "Add Comment",
+      "url": "https://docs.salla.dev/422681m0.md",
+      "tags": [
+        "discovered"
+      ],
+      "discovered": true,
+      "sha256": "ca97103c35fed9902d2cf10d6bf7fff3386b790574545e62f2f0b2bd038698d9",
+      "bytes": 1235,
+      "contentType": "text/markdown; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/docs-salla-dev-422681m0-md.html",
+      "status": "ok"
+    }
+  ],
+  "officialSources": [
+    {
+      "id": "theme-raed-master-layout",
+      "title": "Theme Raed Master Layout",
+      "url": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/master.twig",
+      "docsUrl": "https://docs.salla.dev/421944m0",
+      "tags": [
+        "official-template",
+        "layout",
+        "theme-raed"
+      ],
+      "sha256": "ca5f030a11ce1540424d38d528ccde5e2fac5b12eed33f085b6f0c9215474f2d",
+      "bytes": 11760,
+      "contentType": "text/plain; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/official-theme-raed-master-layout.twig",
+      "status": "ok"
+    },
+    {
+      "id": "theme-raed-cart-page",
+      "title": "Theme Raed Cart Page",
+      "url": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+      "docsUrl": "https://docs.salla.dev/422575m0",
+      "tags": [
+        "official-template",
+        "page",
+        "cart",
+        "theme-raed"
+      ],
+      "sha256": "da602c0b061eb899c7d5867d7b5fafa8920b0710e172abde277c24e206164aa9",
+      "bytes": 21786,
+      "contentType": "text/plain; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/official-theme-raed-cart-page.twig",
+      "status": "ok"
+    },
+    {
+      "id": "theme-raed-single-order-page",
+      "title": "Theme Raed Single Order Page",
+      "url": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+      "docsUrl": "https://docs.salla.dev/422564m0",
+      "tags": [
+        "official-template",
+        "page",
+        "customer",
+        "order",
+        "theme-raed"
+      ],
+      "sha256": "bfe9bd70e2823ca0863427421c4b41cbdf7ca0f9579afdfabdda9c6214676a81",
+      "bytes": 46023,
+      "contentType": "text/plain; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/official-theme-raed-single-order-page.twig",
+      "status": "ok"
+    },
+    {
+      "id": "theme-raed-wallet-page",
+      "title": "Theme Raed Wallet Page",
+      "url": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/wallet.twig",
+      "docsUrl": "https://github.com/SallaApp/theme-raed/blob/master/src/views/pages/customer/wallet.twig",
+      "tags": [
+        "official-template",
+        "page",
+        "customer",
+        "wallet",
+        "theme-raed"
+      ],
+      "sha256": "ef8e5587dc825e6fc5af18f7595d332b0402e472d7c55cdfdd1ac5e770f66c5f",
+      "bytes": 614,
+      "contentType": "text/plain; charset=utf-8",
+      "rawPath": "core/docs-intelligence/cache/raw/official-theme-raed-wallet-page.twig",
+      "status": "ok"
+    }
+  ],
+  "drift": {
+    "added": [],
+    "changed": [],
+    "removed": []
+  }
+}

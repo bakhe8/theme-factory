@@ -1,0 +1,49 @@
+<header class="bg-white border-b border-gray-100 sticky top-0 z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            
+            {# Logo #}
+            <div class="flex-shrink-0 flex items-center gap-4">
+                <a class="lg:hidden" href="#mobile-menu" aria-label="Open-menu">
+                    <i class="sicon-menu text-2xl text-gray-700"></i>
+                </a>
+                <a href="{{ store.url }}" class="block">
+                    <img fetchpriority="high" class="h-10 w-auto object-contain" loading="eager" src="{{ store.logo|cdn(150) }}" alt="{{ store.name }} logo">
+                </a>
+            </div>
+
+            {# Navigation Menu (Centered on Desktop) #}
+            <div class="hidden lg:flex items-center justify-center flex-grow">
+                <custom-main-menu></custom-main-menu>
+            </div>
+
+            {# User Actions #}
+            <div class="flex items-center gap-6 text-gray-600">
+                
+                {# Search - Modern Minimalist Style #}
+                <div class="hidden md:block">
+                    <salla-search inline oval height="38" width="220" placeholder="{{ trans('common.search') }}"></salla-search>
+                </div>
+
+                {# Localization #}
+                {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
+                    <button class="hover:text-primary transition-colors duration-200" onclick="salla.event.dispatch('localization::open')">
+                        <i class="sicon-globe text-xl"></i>
+                    </button>
+                {% endif %}
+
+                {# User Account #}
+                <salla-user-menu avatar-only show-header show-trigger></salla-user-menu>
+
+                {# Cart #}
+                <salla-cart-summary class="relative group">
+                    <div slot="icon" class="flex items-center gap-1 cursor-pointer">
+                        <i class="sicon-shopping-bag text-2xl group-hover:text-primary transition-colors"></i>
+                        <span class="hidden md:inline text-sm font-medium">{{ cart.total|money }}</span>
+                    </div>
+                </salla-cart-summary>
+
+            </div>
+        </div>
+    </div>
+</header>

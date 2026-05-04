@@ -1,0 +1,42 @@
+.zen-product-card {
+    @apply relative bg-white overflow-hidden transition-all duration-500 border border-gray-50 rounded-2xl;
+    
+    &:hover {
+        @apply shadow-xl -translate-y-1;
+        
+        .zen-card-actions {
+            @apply opacity-100 translate-y-0;
+        }
+    }
+
+    .zen-card-image {
+        @apply relative aspect-[4/5] overflow-hidden bg-gray-50;
+        img {
+            @apply w-full h-full object-cover transition-transform duration-700;
+        }
+    }
+
+    &:hover .zen-card-image img {
+        @apply scale-105;
+    }
+
+    .zen-card-content {
+        @apply p-5 text-center;
+        
+        .product-title {
+            @apply text-sm font-medium text-gray-800 mb-2 block truncate;
+        }
+        
+        .product-price {
+            @apply text-base font-bold text-primary;
+        }
+    }
+
+    .zen-card-actions {
+        @apply absolute bottom-24 left-0 right-0 px-4 transition-all duration-300 opacity-0 translate-y-4;
+        
+        .btn-add-cart {
+            @apply w-full bg-white/90 backdrop-blur-md text-gray-900 py-3 rounded-xl text-xs font-bold shadow-lg hover:bg-primary hover:text-white transition-all uppercase tracking-wider;
+        }
+    }
+}

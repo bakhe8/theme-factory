@@ -1,0 +1,5788 @@
+[
+  {
+    "component": "salla-accordion",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-add-product",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.addItem"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-add-product-button",
+    "properties": [
+      "channels",
+      "donating-amount",
+      "notify-options-availability",
+      "product-id",
+      "product-status",
+      "product-type",
+      "quantity",
+      "quick-buy",
+      "subscribed-options",
+      "support-sticky-bar"
+    ],
+    "events": [
+      "failed",
+      "success"
+    ],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "Add to cart api request done",
+      "Add to cart api request failed",
+      "cart",
+      "user.can_comment",
+      "cart.addItem",
+      "page.slug",
+      "pages.cart.add_to_cart",
+      "pages.cart.book_now",
+      "pages.products.donation_amount",
+      "pages.products.donation_exceed",
+      "pages.products.out_of_stock",
+      "pages.products.pre_order_now",
+      "pages.products.remained",
+      "pages.products.starting_price",
+      "salla::wishlist",
+      "store.settings.product.fit_type",
+      "store.settings.product.show_price_as_dash",
+      "theme.settings.placeholder",
+      "custom-wishlist-card:: product does not exist!",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Add Product",
+        "url": "https://docs.salla.dev/422692m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Wishlist",
+        "url": "https://docs.salla.dev/422565m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Featured products - Style 1",
+        "url": "https://docs.salla.dev/422591m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Featured Products - Style 2",
+        "url": "https://docs.salla.dev/422592m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Featured Products - Style 3",
+        "url": "https://docs.salla.dev/422593m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Slider Products with Headers",
+        "url": "https://docs.salla.dev/422598m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Latest Products",
+        "url": "https://docs.salla.dev/422599m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/product-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-product-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/product-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/wishlist-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-wishlist-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/wishlist-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-add-product-toast",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "Error processing product added event:",
+      "Product Added",
+      "cart",
+      "images/check.svg",
+      "pages.cart.added_to_cart",
+      "pages.cart.complete_order",
+      "pages.cart.view_cart",
+      "pages.checkout.show_more"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Master Layout",
+        "url": "https://docs.salla.dev/421944m0",
+        "section": "Official Theme Raed template: official-theme-raed-master-layout.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/master.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/add-product-toast.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-add-product-toast-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/add-product-toast.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-advertisement",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [
+      "adv"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Advertisement",
+        "url": "https://docs.salla.dev/478502m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-advertisment",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-apps-icons",
+    "properties": [
+      "apps-title",
+      "hide-title",
+      "vertical"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [
+      "app"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Apps Icons",
+        "url": "https://docs.salla.dev/478518m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-apps-publications",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Test & Go Live",
+        "url": "https://docs.salla.dev/2081250m0.md?nav=01KKBH7G55KW5AGVASA4NV57GD",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-booking-field",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-bottom-alert",
+    "properties": [
+      "action-label",
+      "action-url",
+      "icon",
+      "message",
+      "type"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Form",
+        "url": "https://docs.salla.dev/849487f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Bottom Alert",
+        "url": "https://docs.salla.dev/422693m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-branches",
+    "properties": [
+      "search-display-limit",
+      "selection"
+    ],
+    "events": [],
+    "methods": [
+      "close()",
+      "open(mode?: any, product_id?: number)",
+      "handleSubmit()"
+    ],
+    "slots": [
+      "footer"
+    ],
+    "sallaActions": [
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Scopes",
+        "url": "https://docs.salla.dev/422729m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-bread-crumb",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-breadcrumb",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [
+      "icon",
+      "item"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "page.parent",
+      "theme.settings.is_breadcrumbs_enabled",
+      "cart.updateItem",
+      "{{ item.id }}",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Breadcrumb",
+        "url": "https://docs.salla.dev/482370m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/layouts/customer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-layouts-customer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/customer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/blog/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-blog-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/blog/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/blog/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-blog-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/blog/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/brands/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-brands-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/brands/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/brands/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-brands-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/brands/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/loyalty.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-loyalty-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/loyalty.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/page-single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-page-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/page-single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/testimonials.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-testimonials-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/testimonials.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-bullet-delivery",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-button",
+    "properties": [
+      "href",
+      "target",
+      "color",
+      "disabled",
+      "fill",
+      "loader-position",
+      "loading",
+      "shape",
+      "size",
+      "width",
+      "country-code",
+      "name",
+      "phone",
+      "search-display-limit",
+      "selection",
+      "language",
+      "currency",
+      "inline",
+      "is-email-allowed",
+      "is-email-required",
+      "is-mobile-allowed",
+      "support-web-auth",
+      "without-reload",
+      "customer-points",
+      "guest-message",
+      "prize-points",
+      "prize-title",
+      "cenetered",
+      "has-skeleton",
+      "icon-style",
+      "is-closable",
+      "is-loading",
+      "no-padding",
+      "position",
+      "sub-title",
+      "sub-title-first",
+      "visible",
+      "agreement-text",
+      "confirm-pay-button-title",
+      "pay-button-title",
+      "product-id",
+      "quick-order-title",
+      "thanks-message"
+    ],
+    "events": [
+      "phoneEntered",
+      "modalVisibilityChanged",
+      "quickOrderSubmited"
+    ],
+    "methods": [
+      "close()",
+      "open(product_id: number)",
+      "disable()",
+      "enable()",
+      "load()",
+      "stop()",
+      "setText(html: string)",
+      "getValues()",
+      "isValid()",
+      "showOffer(offer: any)",
+      "open(mode?: any, product_id?: number)",
+      "handleSubmit()",
+      "open()",
+      "submit()",
+      "open(event?: any)",
+      "exchangeLoyaltyPoint()",
+      "resetExchange()",
+      "loading()",
+      "setTitle(modalTitle: any)",
+      "stopLoading()"
+    ],
+    "slots": [
+      "footer",
+      "header",
+      "icon",
+      "item",
+      "action",
+      "subtitle",
+      "title",
+      "category",
+      "product",
+      "currency",
+      "language",
+      "before-login-email",
+      "before-login-mobile",
+      "before-login-type",
+      "before-registration",
+      "after-login-email",
+      "after-login-mobile",
+      "after-login-type",
+      "after-registration ",
+      "modalVisibilityChanged"
+    ],
+    "sallaActions": [
+      "comment.send",
+      "size-guide::open",
+      "coupon.add",
+      "cart",
+      "user.can_comment",
+      "page.parent",
+      "theme.settings.is_breadcrumbs_enabled",
+      "user.country_code",
+      "scopes::open",
+      "user.currency_code",
+      "user.language_code",
+      "login::open",
+      "loyalty::open",
+      "modal::close",
+      "modal::open",
+      "pages.checkout.show_full_agreement",
+      "cart.addItem",
+      "profile.update",
+      "cart.updateItem",
+      "{{ item.id }}",
+      "rating::delete",
+      "rating::edit",
+      "rating::open",
+      "Error processing product added event:",
+      "Product Added",
+      "images/check.svg",
+      "pages.cart.added_to_cart",
+      "pages.cart.complete_order",
+      "pages.cart.view_cart",
+      "pages.checkout.show_more",
+      "page.slug",
+      "pages.cart.add_to_cart",
+      "pages.cart.book_now",
+      "pages.products.donation_amount",
+      "pages.products.donation_exceed",
+      "pages.products.out_of_stock",
+      "pages.products.pre_order_now",
+      "pages.products.remained",
+      "pages.products.starting_price",
+      "salla::wishlist",
+      "store.settings.product.fit_type",
+      "store.settings.product.show_price_as_dash",
+      "theme.settings.placeholder",
+      "custom-wishlist-card:: product does not exist!",
+      "{{ product.id }}",
+      "order.sendInvoice"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Usage",
+        "url": "https://docs.salla.dev/422689m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Comments component",
+        "url": "https://docs.salla.dev/422603m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product Size Guide",
+        "url": "https://docs.salla.dev/422721m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Wishlist",
+        "url": "https://docs.salla.dev/422565m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Order details",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Cart",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Loyalty",
+        "url": "https://docs.salla.dev/422576m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Landing Page",
+        "url": "https://docs.salla.dev/422579m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Breadcrumb",
+        "url": "https://docs.salla.dev/482370m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "List Tile",
+        "url": "https://docs.salla.dev/422708m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Form",
+        "url": "https://docs.salla.dev/849487f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Button",
+        "url": "https://docs.salla.dev/422694m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Tel Input",
+        "url": "https://docs.salla.dev/422739m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Offer Modal",
+        "url": "https://docs.salla.dev/422715m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Scopes",
+        "url": "https://docs.salla.dev/422729m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Search",
+        "url": "https://docs.salla.dev/422730m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Localization",
+        "url": "https://docs.salla.dev/422710m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Login",
+        "url": "https://docs.salla.dev/422711m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Loyalty",
+        "url": "https://docs.salla.dev/422712m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Modal",
+        "url": "https://docs.salla.dev/422714m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Quick Order",
+        "url": "https://docs.salla.dev/422726m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Testimonials",
+        "url": "https://docs.salla.dev/422584m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Profile",
+        "url": "https://docs.salla.dev/422562m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Orders list",
+        "url": "https://docs.salla.dev/422563m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Thank you",
+        "url": "https://docs.salla.dev/422577m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/order.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-order-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/order.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/add-product-toast.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-add-product-toast-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/add-product-toast.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/product-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-product-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/product-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/wishlist-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-wishlist-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/wishlist-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style1.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style1-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style1.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style2.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style2-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style2.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/landing-page.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-landing-page-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/landing-page.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/loyalty.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-loyalty-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/loyalty.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/partials/product/options.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-partials-product-options-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/partials/product/options.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/thank-you.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-thank-you-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/thank-you.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-cart",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-cart-coupons",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "cart.updateItem",
+      "{{ item.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-cart-item-offers",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "cart.updateItem",
+      "{{ item.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-cart-summary",
+    "properties": [
+      "show-cart-label"
+    ],
+    "events": [],
+    "methods": [
+      "animateToCart(image: any)"
+    ],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "[data-close-modal]",
+      "blocks.header.main_menu",
+      "theme.is_rtl",
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User",
+        "url": "https://docs.salla.dev/849489f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Cart Summary",
+        "url": "https://docs.salla.dev/422695m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/app.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-app-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/app.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-color-picker",
+    "properties": [
+      "color",
+      "enable-alpha",
+      "format",
+      "name",
+      "required",
+      "show-cancel-button",
+      "show-text-field"
+    ],
+    "events": [
+      "colorChanged",
+      "popupClosed",
+      "invalidInput",
+      "popupOpened",
+      "submitted"
+    ],
+    "methods": [
+      "openPicker()",
+      "closePicker()",
+      "destroyPicker()",
+      "movePopUp(options: Options, openImmediately: boolean) ",
+      "setColorValue(color: string, triggerEvent: boolean)",
+      "setPickerOption(options: Options) "
+    ],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Color Picker",
+        "url": "https://docs.salla.dev/422696m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-comment-form",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-comments",
+    "properties": [
+      "block-title",
+      "hide-form",
+      "item-id",
+      "load-more-text",
+      "show-form-avatar",
+      "type"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "sort",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Comments",
+        "url": "https://docs.salla.dev/482455m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/testimonials.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-testimonials-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/testimonials.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/blog/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-blog-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/blog/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/page-single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-page-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/page-single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/testimonials.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-testimonials-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/testimonials.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-conditional",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-conditional-fields",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "coupon.add",
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Cart",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Conditional Fields",
+        "url": "https://docs.salla.dev/422699m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-conditional-offer",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "store.features",
+      "cart.updateItem",
+      "{{ item.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Conditional Offer",
+        "url": "https://docs.salla.dev/537931m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-contacts",
+    "properties": [
+      "contacts-title",
+      "hide-title",
+      "horizontal",
+      "icons-only",
+      "is-header"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [
+      "contact"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Form",
+        "url": "https://docs.salla.dev/849487f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Contacts",
+        "url": "https://docs.salla.dev/478494m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-cookies-bar",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-count-down",
+    "properties": [
+      "boxed",
+      "color",
+      "date",
+      "digits",
+      "end-text",
+      "labeled",
+      "size"
+    ],
+    "events": [],
+    "methods": [
+      "endCountDown()"
+    ],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "page.slug",
+      "pages.cart.add_to_cart",
+      "pages.cart.book_now",
+      "pages.products.donation_amount",
+      "pages.products.donation_exceed",
+      "pages.products.out_of_stock",
+      "pages.products.pre_order_now",
+      "pages.products.remained",
+      "pages.products.starting_price",
+      "salla::wishlist",
+      "store.settings.product.fit_type",
+      "store.settings.product.show_price_as_dash",
+      "theme.settings.placeholder",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Landing Page",
+        "url": "https://docs.salla.dev/422579m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Count Down",
+        "url": "https://docs.salla.dev/422701m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/product-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-product-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/product-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/landing-page.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-landing-page-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/landing-page.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-custom-fields",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-datetime-picker",
+    "properties": [
+      "allow-input",
+      "allow-invalid-preload",
+      "alt-format",
+      "alt-input",
+      "alt-input-class",
+      "aria-date-format",
+      "auto-fill-default-time",
+      "click-opens",
+      "close-on-select",
+      "conjunction",
+      "date-format",
+      "default-date",
+      "default-hour",
+      "default-minute",
+      "default-seconds",
+      "disable-mobile",
+      "enable-seconds",
+      "enable-time",
+      "hour-increment",
+      "inline",
+      "locale",
+      "max-date",
+      "max-time",
+      "min-date",
+      "min-time",
+      "minute-increment",
+      "mode",
+      "month-selector-type",
+      "name",
+      "next-arrow",
+      "no-calendar",
+      "placeholder",
+      "position",
+      "prev-arrow",
+      "required",
+      "shorthand-current-month",
+      "show-months",
+      "static",
+      "time_-2-4hr",
+      "value",
+      "week-numbers",
+      "wrap"
+    ],
+    "events": [
+      "invalidInput",
+      "picked"
+    ],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "blocks.buy_as_gift.select_send_date_and_time",
+      "profile.update"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Form",
+        "url": "https://docs.salla.dev/849487f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Date Time Picker",
+        "url": "https://docs.salla.dev/422702m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Profile",
+        "url": "https://docs.salla.dev/422562m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-edit-order-button",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "rating::delete",
+      "rating::edit",
+      "rating::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-file-upload",
+    "properties": [
+      "accept",
+      "allow-browse",
+      "allow-drop",
+      "allow-image-preview",
+      "allow-multiple",
+      "allow-paste",
+      "allow-process",
+      "allow-remove",
+      "allow-reorder",
+      "allow-replace",
+      "allow-revert",
+      "cartItemId",
+      "check-validity",
+      "chunk-force",
+      "chunk-size",
+      "chunk-uploads",
+      "credits",
+      "disabled",
+      "drop-on-element",
+      "drop-on-page",
+      "drop-validation",
+      "file-id",
+      "files",
+      "force-revert",
+      "formData",
+      "height",
+      "icon-process",
+      "icon-remove",
+      "icon-retry",
+      "icon-undo",
+      "instant-upload",
+      "item-insert-interval",
+      "item-insert-location",
+      "label-decimal-separator",
+      "label-idle",
+      "label-thousands-separator",
+      "max-files-size",
+      "max-files-count",
+      "max-parallel-uploads",
+      "method",
+      "name",
+      "payload-name",
+      "profile-image",
+      "required",
+      "server-config",
+      "store-as-file",
+      "uploadedImage",
+      "url",
+      "value"
+    ],
+    "events": [
+      "added",
+      "invalidInput",
+      "remove",
+      "uploaded"
+    ],
+    "methods": [
+      "appendFile(file: FilePondInitialFile)"
+    ],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "common.uploader.browse",
+      "common.uploader.drag_and_drop",
+      "profile.update",
+      "size-guide::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Form",
+        "url": "https://docs.salla.dev/849487f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "File Upload",
+        "url": "https://docs.salla.dev/422703m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Profile",
+        "url": "https://docs.salla.dev/422562m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/layouts/customer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-layouts-customer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/customer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/partials/product/options.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-partials-product-options-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/partials/product/options.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-filters",
+    "properties": [
+      "autoload",
+      "filters-results",
+      "horizontal-cards",
+      "includes",
+      "limit",
+      "product-card-component",
+      "row-cards",
+      "sort-by",
+      "source",
+      "source-value"
+    ],
+    "events": [
+      "changed"
+    ],
+    "methods": [
+      "applyFilters()",
+      "getFilters()",
+      "resetFilters()",
+      "reload()",
+      "setFilters(filters: any)"
+    ],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "salla-filters::changed",
+      "salla-products-list::products.fetched",
+      "sort",
+      "theme.is_rtl"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Filters",
+        "url": "https://docs.salla.dev/422704m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Products List",
+        "url": "https://docs.salla.dev/422719m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/products.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-products-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/products.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-filters-widget",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-fulfillment-methods",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-fullfilment-methods",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-gifting",
+    "properties": [
+      "product-id",
+      "widget-title",
+      "widget-subtitle"
+    ],
+    "events": [],
+    "methods": [
+      "close()",
+      "goToStep2()",
+      "open()"
+    ],
+    "slots": [
+      "currencywidget-btn-content"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "cart.addItem",
+      "cart.updateItem",
+      "{{ item.id }}",
+      "common.messages.required_fields",
+      "pages.cart.free_shipping_alert",
+      "pages.cart.has_free_shipping",
+      "user.type",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Gifting",
+        "url": "https://docs.salla.dev/422705m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/cart.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-cart-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/cart.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-hook",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-icons",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [
+      "icon",
+      "item"
+    ],
+    "sallaActions": [
+      "page.parent",
+      "theme.settings.is_breadcrumbs_enabled"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Breadcrumb",
+        "url": "https://docs.salla.dev/482370m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Salla Icons",
+        "url": "https://docs.salla.dev/422550m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-icons-01",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Salla Icons",
+        "url": "https://docs.salla.dev/422550m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-icons-02",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Salla Icons",
+        "url": "https://docs.salla.dev/422550m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-icons-03",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Salla Icons",
+        "url": "https://docs.salla.dev/422550m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-icons-04",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Salla Icons",
+        "url": "https://docs.salla.dev/422550m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-icons-05",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Salla Icons",
+        "url": "https://docs.salla.dev/422550m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-icons-06",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Salla Icons",
+        "url": "https://docs.salla.dev/422550m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-icons-in-an-icomoon",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Salla Icons",
+        "url": "https://docs.salla.dev/422550m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-infinite-scroll",
+    "properties": [
+      "autoload",
+      "container",
+      "item",
+      "load-more-text",
+      "next-page"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "comment.send",
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Comments component",
+        "url": "https://docs.salla.dev/422603m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Notifications",
+        "url": "https://docs.salla.dev/422566m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Infinite Scroll",
+        "url": "https://docs.salla.dev/422706m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Latest Products",
+        "url": "https://docs.salla.dev/422599m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Products listing",
+        "url": "https://docs.salla.dev/422559m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Orders list",
+        "url": "https://docs.salla.dev/422563m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single brand",
+        "url": "https://docs.salla.dev/422572m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Blog listing",
+        "url": "https://docs.salla.dev/422567m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/blog/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-blog-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/blog/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-input-quantity",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-installment",
+    "properties": [
+      "country",
+      "currency",
+      "language",
+      "price"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "store.settings.installments",
+      "user.country_code",
+      "user.currency_code",
+      "user.language_code",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Installment",
+        "url": "https://docs.salla.dev/422707m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-list-tile",
+    "properties": [
+      "href",
+      "target"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [
+      "action",
+      "icon",
+      "subtitle",
+      "title"
+    ],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "List Tile",
+        "url": "https://docs.salla.dev/422708m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-loading",
+    "properties": [
+      "bg-color",
+      "color",
+      "size",
+      "width"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Loading",
+        "url": "https://docs.salla.dev/422709m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/validate-product-options.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-validate-product-options-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/validate-product-options.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-localization-modal",
+    "properties": [
+      "language",
+      "currency"
+    ],
+    "events": [],
+    "methods": [
+      "close()",
+      "open()",
+      "submit()"
+    ],
+    "slots": [
+      "currency",
+      "language",
+      "header",
+      "footer"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "user.currency_code",
+      "user.language_code",
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User",
+        "url": "https://docs.salla.dev/849489f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Localization",
+        "url": "https://docs.salla.dev/422710m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-login",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-login-modal",
+    "properties": [
+      "inline",
+      "is-email-allowed",
+      "is-email-required",
+      "is-mobile-allowed",
+      "support-web-auth",
+      "without-reload"
+    ],
+    "events": [],
+    "methods": [
+      "open(event?: any)"
+    ],
+    "slots": [
+      "before-login-email",
+      "before-login-mobile",
+      "before-login-type",
+      "before-registration",
+      "after-login-email",
+      "after-login-mobile",
+      "after-login-type",
+      "after-registration ",
+      "footer"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "login::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User",
+        "url": "https://docs.salla.dev/849489f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Login",
+        "url": "https://docs.salla.dev/422711m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Master Layout",
+        "url": "https://docs.salla.dev/421944m0",
+        "section": "Official Theme Raed template: official-theme-raed-master-layout.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/master.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-loyalty",
+    "properties": [
+      "customer-points",
+      "guest-message",
+      "prize-points",
+      "prize-title"
+    ],
+    "events": [],
+    "methods": [
+      "open()",
+      "close()",
+      "exchangeLoyaltyPoint()",
+      "resetExchange()"
+    ],
+    "slots": [],
+    "sallaActions": [
+      "coupon.add",
+      "cart",
+      "user.can_comment",
+      "loyalty::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Cart",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Loyalty",
+        "url": "https://docs.salla.dev/422576m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User",
+        "url": "https://docs.salla.dev/849489f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Loyalty",
+        "url": "https://docs.salla.dev/422712m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/loyalty.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-loyalty-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/loyalty.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-loyalty-panel",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.updateItem",
+      "{{ item.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-map",
+    "properties": [
+      "api-key",
+      "lat",
+      "lng",
+      "modal-title",
+      "name",
+      "readonly",
+      "required",
+      "seachable",
+      "theme",
+      "zoom"
+    ],
+    "events": [
+      "currentLocationChanged",
+      "invalidInput",
+      "mapClicked",
+      "selected"
+    ],
+    "methods": [
+      "open()"
+    ],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Order details",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Map",
+        "url": "https://docs.salla.dev/422713m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-menu",
+    "properties": [
+      "limit",
+      "source",
+      "source-value",
+      "topnav",
+      "use-react-link"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "blocks.home.display_all",
+      "common.titles.more",
+      "salla-menu::Error fetching menus",
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Menu",
+        "url": "https://docs.salla.dev/478492m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/main-menu.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-main-menu-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/main-menu.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-metadata",
+    "properties": [
+      "entity",
+      "entity-id"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Meta Data",
+        "url": "https://docs.salla.dev/464599m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-mini-checkout-widget",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Add Product",
+        "url": "https://docs.salla.dev/422692m0",
+        "section": "Add Product - Fast Checkout Feature"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/landing-page.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-landing-page-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/landing-page.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-modal",
+    "properties": [
+      "cenetered",
+      "has-skeleton",
+      "icon-style",
+      "is-closable",
+      "is-loading",
+      "no-padding",
+      "position",
+      "sub-title",
+      "sub-title-first",
+      "visible",
+      "width",
+      "agreement-text",
+      "confirm-pay-button-title",
+      "is-email-required",
+      "pay-button-title",
+      "product-id",
+      "quick-order-title",
+      "thanks-message"
+    ],
+    "events": [
+      "modalVisibilityChanged",
+      "quickOrderSubmited"
+    ],
+    "methods": [
+      "close()",
+      "loading()",
+      "setTitle(modalTitle: any)",
+      "open()",
+      "stopLoading()"
+    ],
+    "slots": [
+      "footer",
+      "modalVisibilityChanged"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "modal::close",
+      "modal::open",
+      "pages.checkout.show_full_agreement",
+      "rating::delete",
+      "rating::edit",
+      "rating::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Usage",
+        "url": "https://docs.salla.dev/422689m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Order details",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Modal",
+        "url": "https://docs.salla.dev/422714m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Quick Order",
+        "url": "https://docs.salla.dev/422726m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Footer Components",
+        "url": "https://docs.salla.dev/422602m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-modal-body",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "[data-close-modal]",
+      "blocks.header.main_menu",
+      "theme.is_rtl"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/app.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-app-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/app.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-modal-overlay",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "[data-close-modal]",
+      "blocks.header.main_menu",
+      "theme.is_rtl"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/app.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-app-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/app.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-multiple-bundle-product",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "size-guide::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/partials/product/options.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-partials-product-options-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/partials/product/options.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-notifications",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/notifications.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-notifications-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/notifications.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-offer",
+    "properties": [
+      "product-card-component"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [
+      "category"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "cart.updateItem",
+      "{{ item.id }}",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Offer",
+        "url": "https://docs.salla.dev/440408m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-offer-modal",
+    "properties": [],
+    "events": [],
+    "methods": [
+      "open(product_id: number)",
+      "showOffer(offer: any)"
+    ],
+    "slots": [
+      "header",
+      "category",
+      "product"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Offer Modal",
+        "url": "https://docs.salla.dev/422715m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Master Layout",
+        "url": "https://docs.salla.dev/421944m0",
+        "section": "Official Theme Raed template: official-theme-raed-master-layout.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/master.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-offers",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-offers-modal",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-order-details",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "rating::delete",
+      "rating::edit",
+      "rating::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-order-edit",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-order-summary",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-order-totals-card",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "rating::delete",
+      "rating::edit",
+      "rating::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-orders",
+    "properties": [
+      "load-more-text",
+      "params"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Orders",
+        "url": "https://docs.salla.dev/508225m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/orders/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-orders-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-payment",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-payments",
+    "properties": [
+      "sbc-id",
+      "with-made-in-ksa",
+      "with-sbc"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [
+      "cod",
+      "payment",
+      "sbc"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Payments",
+        "url": "https://docs.salla.dev/478374m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-placeholder",
+    "properties": [
+      "alignment",
+      "icon",
+      "icon-size"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [
+      "description",
+      "title"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Placeholder",
+        "url": "https://docs.salla.dev/422716m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-price-range",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-availability",
+    "properties": [
+      "channels",
+      "is-subscribed",
+      "product-id"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "page.id"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Usage",
+        "url": "https://docs.salla.dev/422689m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product Availability",
+        "url": "https://docs.salla.dev/422717m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-card",
+    "properties": [
+      "full-image",
+      "hide-add-btn",
+      "horizontal",
+      "special",
+      "minimal",
+      "product",
+      "shadow-on-hover",
+      "show-quantity",
+      "product-card-component",
+      "autoload",
+      "filters-results",
+      "horizontal-cards",
+      "includes",
+      "limit",
+      "row-cards",
+      "sort-by",
+      "source",
+      "source-value",
+      "autoplay",
+      "block-title",
+      "display-all-url",
+      "slider-id",
+      "sub-title"
+    ],
+    "events": [],
+    "methods": [
+      "reload()",
+      "setFilters(filters: any)"
+    ],
+    "slots": [
+      "\"add-to-cart-label\"",
+      "category"
+    ],
+    "sallaActions": [
+      "page.slug",
+      "pages.cart.add_to_cart",
+      "pages.cart.book_now",
+      "pages.products.donation_amount",
+      "pages.products.donation_exceed",
+      "pages.products.out_of_stock",
+      "pages.products.remained",
+      "pages.products.starting_price",
+      "salla::wishlist",
+      "store.settings.product.fit_type",
+      "store.settings.product.show_price_as_dash",
+      "theme.settings.placeholder",
+      "cart",
+      "user.can_comment",
+      "pages.products.pre_order_now"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Product Card",
+        "url": "https://docs.salla.dev/422718m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Offer",
+        "url": "https://docs.salla.dev/440408m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Products List",
+        "url": "https://docs.salla.dev/422719m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Products Slider",
+        "url": "https://docs.salla.dev/422722m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Header Components",
+        "url": "https://docs.salla.dev/422601m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/product-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-product-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/product-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style1.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style1-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style1.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style3.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style3-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style3.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-card-component",
+    "properties": [
+      "autoload",
+      "filters-results",
+      "horizontal-cards",
+      "includes",
+      "limit",
+      "product-card-component",
+      "row-cards",
+      "sort-by",
+      "source",
+      "source-value",
+      "autoplay",
+      "block-title",
+      "display-all-url",
+      "slider-id",
+      "sub-title"
+    ],
+    "events": [],
+    "methods": [
+      "reload()",
+      "setFilters(filters: any)"
+    ],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Products List",
+        "url": "https://docs.salla.dev/422719m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Products Slider",
+        "url": "https://docs.salla.dev/422722m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-fullfillment-methods",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-list",
+    "properties": [
+      "autoload",
+      "filters-results",
+      "horizontal-cards",
+      "includes",
+      "limit",
+      "product-card-component",
+      "row-cards",
+      "sort-by",
+      "source",
+      "source-value"
+    ],
+    "events": [],
+    "methods": [
+      "reload()",
+      "setFilters(filters: any)"
+    ],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Products List",
+        "url": "https://docs.salla.dev/422719m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-option",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-options",
+    "properties": [
+      "amount",
+      "currency",
+      "is-require-shipping",
+      "product-id",
+      "type",
+      "options"
+    ],
+    "events": [],
+    "methods": [
+      "getOption(option_id: any)",
+      "getSelectedOptions()",
+      "getSelectedOptionsData()",
+      "hasOutOfStockOption()",
+      "reportValidty()",
+      "event",
+      "option",
+      "detail"
+    ],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "page.id",
+      "size-guide::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Quick Buy",
+        "url": "https://docs.salla.dev/422725m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product Options",
+        "url": "https://docs.salla.dev/422720m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/validate-product-options.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-validate-product-options-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/validate-product-options.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/partials/product/options.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-partials-product-options-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/partials/product/options.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-size-guide",
+    "properties": [],
+    "events": [],
+    "methods": [
+      "close()",
+      "open(product_id: number)"
+    ],
+    "slots": [
+      "footer",
+      "header"
+    ],
+    "sallaActions": [
+      "size-guide::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Product Size Guide",
+        "url": "https://docs.salla.dev/422721m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/partials/product/options.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-partials-product-options-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/partials/product/options.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-slider",
+    "properties": [
+      "autoplay",
+      "block-title",
+      "display-all-url",
+      "includes",
+      "limit",
+      "product-card-component",
+      "slider-id",
+      "source",
+      "source-value",
+      "sub-title"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Products Slider",
+        "url": "https://docs.salla.dev/422722m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-products-list",
+    "properties": [
+      "product-card-component",
+      "autoload",
+      "filters-results",
+      "horizontal-cards",
+      "includes",
+      "limit",
+      "row-cards",
+      "sort-by",
+      "source",
+      "source-value"
+    ],
+    "events": [],
+    "methods": [
+      "reload()",
+      "setFilters(filters: any)"
+    ],
+    "slots": [
+      "category"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "blocks.home.display_all",
+      "common.titles.more",
+      "salla-menu::Error fetching menus",
+      "salla-filters::changed",
+      "salla-products-list::products.fetched",
+      "sort",
+      "theme.is_rtl"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Landing Page",
+        "url": "https://docs.salla.dev/422579m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Offer",
+        "url": "https://docs.salla.dev/440408m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Products List",
+        "url": "https://docs.salla.dev/422719m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Products listing",
+        "url": "https://docs.salla.dev/422559m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single brand",
+        "url": "https://docs.salla.dev/422572m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/main-menu.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-main-menu-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/main-menu.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/products.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-products-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/products.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style2.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style2-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style2.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/fixed-products.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-fixed-products-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/fixed-products.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/latest-products.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-latest-products-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/latest-products.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/brands/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-brands-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/brands/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/wishlist.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-wishlist-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/wishlist.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/landing-page.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-landing-page-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/landing-page.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-products-slider",
+    "properties": [
+      "autoplay",
+      "block-title",
+      "display-all-url",
+      "includes",
+      "limit",
+      "product-card-component",
+      "slider-id",
+      "source",
+      "source-value",
+      "sub-title"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Landing Page",
+        "url": "https://docs.salla.dev/422579m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Products Slider",
+        "url": "https://docs.salla.dev/422722m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style2.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style2-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style2.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/products-slider.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-products-slider-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/products-slider.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/slider-products-with-header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-slider-products-with-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/slider-products-with-header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/landing-page.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-landing-page-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/landing-page.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-progress-bar",
+    "properties": [
+      "color",
+      "donation",
+      "header",
+      "height",
+      "message",
+      "stripped",
+      "target",
+      "unit",
+      "value"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "theme.color.primary",
+      "page.slug",
+      "pages.cart.add_to_cart",
+      "pages.cart.book_now",
+      "pages.products.donation_amount",
+      "pages.products.donation_exceed",
+      "pages.products.out_of_stock",
+      "pages.products.pre_order_now",
+      "pages.products.remained",
+      "pages.products.starting_price",
+      "salla::wishlist",
+      "store.settings.product.fit_type",
+      "store.settings.product.show_price_as_dash",
+      "theme.settings.placeholder"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Progress Bar",
+        "url": "https://docs.salla.dev/422723m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/product-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-product-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/product-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-quantity-input",
+    "properties": [
+      "cart-item-id"
+    ],
+    "events": [],
+    "methods": [
+      "increase()",
+      "decrease()",
+      "setValue(value: any)"
+    ],
+    "slots": [],
+    "sallaActions": [
+      "coupon.add",
+      "cart",
+      "user.can_comment",
+      "cart.addItem",
+      "cart.updateItem",
+      "{{ item.id }}",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Cart",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Form",
+        "url": "https://docs.salla.dev/849487f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Quantity Input",
+        "url": "https://docs.salla.dev/422724m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/validate-product-options.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-validate-product-options-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/validate-product-options.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-quick-buy",
+    "properties": [
+      "amount",
+      "currency",
+      "is-require-shipping",
+      "product-id",
+      "type"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Quick Buy",
+        "url": "https://docs.salla.dev/422725m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-quick-order",
+    "properties": [
+      "agreement-text",
+      "confirm-pay-button-title",
+      "is-email-required",
+      "pay-button-title",
+      "product-id",
+      "quick-order-title",
+      "sub-title",
+      "thanks-message"
+    ],
+    "events": [
+      "quickOrderSubmited"
+    ],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "pages.checkout.show_full_agreement",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Quick Order",
+        "url": "https://docs.salla.dev/422726m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-rating-modal",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "rating::delete",
+      "rating::edit",
+      "rating::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Order details",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User",
+        "url": "https://docs.salla.dev/849489f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-rating-stars",
+    "properties": [
+      "name",
+      "reviews",
+      "size",
+      "value"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.addItem",
+      "rating::delete",
+      "rating::edit",
+      "rating::open",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Order details",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Rating Stars",
+        "url": "https://docs.salla.dev/422727m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/custom-testimonials.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-custom-testimonials-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/custom-testimonials.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-related",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-review-card",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-reviews",
+    "properties": [
+      "display-all-link",
+      "limit",
+      "source",
+      "source-value"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Reviews",
+        "url": "https://docs.salla.dev/508226m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/testimonials.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-testimonials-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/testimonials.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-reviews-summary",
+    "properties": [
+      "item-id"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Reviews Summary",
+        "url": "https://docs.salla.dev/602149m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-scopes",
+    "properties": [
+      "search-display-limit",
+      "selection"
+    ],
+    "events": [],
+    "methods": [
+      "close()",
+      "open(mode?: any, product_id?: number)",
+      "handleSubmit()"
+    ],
+    "slots": [
+      "footer"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Scopes",
+        "url": "https://docs.salla.dev/422729m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Master Layout",
+        "url": "https://docs.salla.dev/421944m0",
+        "section": "Official Theme Raed template: official-theme-raed-master-layout.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/master.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-search",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Product",
+        "url": "https://docs.salla.dev/849488f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Search",
+        "url": "https://docs.salla.dev/422730m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Master Layout",
+        "url": "https://docs.salla.dev/421944m0",
+        "section": "Official Theme Raed template: official-theme-raed-master-layout.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/master.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-select",
+    "properties": [
+      "autocomplete",
+      "autofocus",
+      "chips",
+      "clear-icon",
+      "clearable",
+      "color",
+      "disabled",
+      "flat",
+      "hide-detail",
+      "hint",
+      "item-disabled",
+      "item-text",
+      "item-value",
+      "label",
+      "loading",
+      "loading-color",
+      "multiple",
+      "persist-hint",
+      "placeholder",
+      "required",
+      "return-object",
+      "shape",
+      "size",
+      "value"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Form",
+        "url": "https://docs.salla.dev/849487f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Select",
+        "url": "https://docs.salla.dev/422746m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-sheet",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Sheet",
+        "url": "https://docs.salla.dev/422733m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-skeleton",
+    "properties": [
+      "height",
+      "type",
+      "width"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Skeleton",
+        "url": "https://docs.salla.dev/422734m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-slider",
+    "properties": [
+      "arrows-centered",
+      "auto-height",
+      "auto-play",
+      "block-subtitle",
+      "block-title",
+      "centered",
+      "controls-outer",
+      "direction",
+      "display-all-url",
+      "grid-thumbs",
+      "listen-to-thumbnails-option",
+      "loop",
+      "pagination",
+      "show-controls",
+      "show-thumbs-controls",
+      "slider-config",
+      "slides-per-view",
+      "thumbs-config",
+      "type",
+      "vertical",
+      "vertical-thumbs",
+      "product-card-component"
+    ],
+    "events": [
+      "afterInit",
+      "reachBeginning",
+      "reachEnd",
+      "slideChange",
+      "slideChangeTransitionStart",
+      "slideChangeTransitionEnd",
+      "slideNextTransitionStart",
+      "slideNextTransitionEnd",
+      "slidePrevTransitionStart",
+      "slidePrevTransitionEnd",
+      "sliderMove",
+      "sliderTransitionEnd",
+      "sliderTransitionStart",
+      "touchSliderEnd",
+      "touchSliderMove",
+      "touchSliderStart"
+    ],
+    "methods": [
+      "getSlides()",
+      "slideNext(speed?: number, runCallbacks?: boolean)",
+      "slideNextLoop(speed?: number, runCallbacks?: boolean)",
+      "slidePrev(speed?: number, runCallbacks?: boolean)",
+      "slidePrevLoop(speed?: number, runCallbacks?: boolean)",
+      "slideReset(speed?: number, runCallbacks?: boolean)",
+      "slideTo(index: number, speed?: number, runCallbacks?: boolean)",
+      "slideToClosest(speed?: number, runCallbacks?: boolean)",
+      "slideToLoop(index: number, speed?: number, runCallbacks?: boolean)",
+      "update()",
+      "updateAutoHeight(speed?: number)",
+      "updateProgress()",
+      "updateSlides()",
+      "updateSlidesClasses()"
+    ],
+    "slots": [
+      "items",
+      "thumbs",
+      "category"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "cart.addItem",
+      "product::price.updated.failed",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Loyalty",
+        "url": "https://docs.salla.dev/422576m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Slider",
+        "url": "https://docs.salla.dev/422735m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Offer",
+        "url": "https://docs.salla.dev/440408m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Blog listing",
+        "url": "https://docs.salla.dev/422567m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/product.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-product-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/product.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/custom-testimonials.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-custom-testimonials-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/custom-testimonials.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/enhanced-slider.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-enhanced-slider-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/enhanced-slider.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/main-links.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-main-links-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/main-links.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/photos-slider.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-photos-slider-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/photos-slider.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/blog/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-blog-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/blog/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/loyalty.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-loyalty-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/loyalty.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-slider-options",
+    "properties": [
+      "arrows-centered",
+      "auto-height",
+      "auto-play",
+      "block-subtitle",
+      "block-title",
+      "centered",
+      "controls-outer",
+      "direction",
+      "display-all-url",
+      "grid-thumbs",
+      "listen-to-thumbnails-option",
+      "loop",
+      "pagination",
+      "show-controls",
+      "show-thumbs-controls",
+      "slider-config",
+      "slides-per-view",
+      "thumbs-config",
+      "type",
+      "vertical",
+      "vertical-thumbs"
+    ],
+    "events": [
+      "afterInit",
+      "reachBeginning",
+      "reachEnd",
+      "slideChange",
+      "slideChangeTransitionStart",
+      "slideChangeTransitionEnd",
+      "slideNextTransitionStart",
+      "slideNextTransitionEnd",
+      "slidePrevTransitionStart",
+      "slidePrevTransitionEnd",
+      "sliderMove",
+      "sliderTransitionEnd",
+      "sliderTransitionStart",
+      "touchSliderEnd",
+      "touchSliderMove",
+      "touchSliderStart"
+    ],
+    "methods": [
+      "getSlides()",
+      "slideNext(speed?: number, runCallbacks?: boolean)",
+      "slideNextLoop(speed?: number, runCallbacks?: boolean)",
+      "slidePrev(speed?: number, runCallbacks?: boolean)",
+      "slidePrevLoop(speed?: number, runCallbacks?: boolean)",
+      "slideReset(speed?: number, runCallbacks?: boolean)",
+      "slideTo(index: number, speed?: number, runCallbacks?: boolean)",
+      "slideToClosest(speed?: number, runCallbacks?: boolean)",
+      "slideToLoop(index: number, speed?: number, runCallbacks?: boolean)",
+      "update()",
+      "updateAutoHeight(speed?: number)",
+      "updateProgress()",
+      "updateSlides()",
+      "updateSlidesClasses()"
+    ],
+    "slots": [
+      "items",
+      "thumbs"
+    ],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Slider",
+        "url": "https://docs.salla.dev/422735m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-sliders",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-social",
+    "properties": [
+      "contacts-title",
+      "hide-title",
+      "horizontal",
+      "icons-only",
+      "is-header"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [
+      "social-item",
+      "contact"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Social",
+        "url": "https://docs.salla.dev/499802m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Form",
+        "url": "https://docs.salla.dev/849487f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Contacts",
+        "url": "https://docs.salla.dev/478494m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-social-share",
+    "properties": [
+      "platforms",
+      "url",
+      "url-name"
+    ],
+    "events": [],
+    "methods": [
+      "open()",
+      "refresh()"
+    ],
+    "slots": [
+      "widget"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Social Share",
+        "url": "https://docs.salla.dev/422736m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-swiper",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-tab-content",
+    "properties": [
+      "background-color",
+      "vertical",
+      "name",
+      "active-class",
+      "height",
+      "centered"
+    ],
+    "events": [
+      "\"tabSelected\""
+    ],
+    "methods": [
+      "\"getChild\"",
+      "\"tabSelected\""
+    ],
+    "slots": [
+      "content",
+      "header"
+    ],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Tabs",
+        "url": "https://docs.salla.dev/422738m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-tab-header",
+    "properties": [
+      "background-color",
+      "vertical",
+      "name",
+      "active-class",
+      "height",
+      "centered"
+    ],
+    "events": [
+      "\"tabSelected\""
+    ],
+    "methods": [
+      "\"getChild\"",
+      "\"tabSelected\""
+    ],
+    "slots": [
+      "content",
+      "header"
+    ],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Tabs",
+        "url": "https://docs.salla.dev/422738m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-tabs",
+    "properties": [
+      "background-color",
+      "vertical",
+      "name",
+      "active-class",
+      "height",
+      "centered"
+    ],
+    "events": [
+      "\"tabSelected\""
+    ],
+    "methods": [
+      "\"getChild\"",
+      "\"tabSelected\""
+    ],
+    "slots": [
+      "content",
+      "header"
+    ],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Tabs",
+        "url": "https://docs.salla.dev/422738m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-tabs-content",
+    "properties": [
+      "background-color",
+      "vertical",
+      "name",
+      "active-class",
+      "height",
+      "centered"
+    ],
+    "events": [
+      "\"tabSelected\""
+    ],
+    "methods": [
+      "\"getChild\"",
+      "\"tabSelected\""
+    ],
+    "slots": [
+      "content",
+      "header"
+    ],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Tabs",
+        "url": "https://docs.salla.dev/422738m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-tabs-header",
+    "properties": [
+      "background-color",
+      "vertical",
+      "name",
+      "active-class",
+      "height",
+      "centered"
+    ],
+    "events": [
+      "\"tabSelected\""
+    ],
+    "methods": [
+      "\"getChild\"",
+      "\"tabSelected\""
+    ],
+    "slots": [
+      "content",
+      "header"
+    ],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Elements",
+        "url": "https://docs.salla.dev/849486f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Tabs",
+        "url": "https://docs.salla.dev/422738m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-tel-input",
+    "properties": [
+      "country-code",
+      "name",
+      "phone",
+      "agreement-text",
+      "confirm-pay-button-title",
+      "is-email-required",
+      "pay-button-title",
+      "product-id",
+      "quick-order-title",
+      "sub-title",
+      "thanks-message"
+    ],
+    "events": [
+      "phoneEntered",
+      "quickOrderSubmited"
+    ],
+    "methods": [
+      "getValues()",
+      "isValid()"
+    ],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "user.country_code",
+      "pages.checkout.show_full_agreement",
+      "profile.update"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Usage",
+        "url": "https://docs.salla.dev/422689m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Form",
+        "url": "https://docs.salla.dev/849487f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Tel Input",
+        "url": "https://docs.salla.dev/422739m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Quick Order",
+        "url": "https://docs.salla.dev/422726m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Profile",
+        "url": "https://docs.salla.dev/422562m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-tiered-offer",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "cart.updateItem",
+      "{{ item.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-trust-badges",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-user-menu",
+    "properties": [
+      "avatar-only",
+      "inline",
+      "relative-dropdown",
+      "show-header"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [
+      "trigger"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User",
+        "url": "https://docs.salla.dev/849489f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User Menu",
+        "url": "https://docs.salla.dev/422740m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/layouts/customer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-layouts-customer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/customer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-user-profile",
+    "properties": [
+      "custom-fields"
+    ],
+    "events": [],
+    "methods": [
+      "setCustomFields(fields: CustomField[])"
+    ],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User",
+        "url": "https://docs.salla.dev/849489f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User Profile",
+        "url": "https://docs.salla.dev/482367m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-user-settings",
+    "properties": [
+      "is-notifiable"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "profile.update"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User Settings",
+        "url": "https://docs.salla.dev/422741m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User",
+        "url": "https://docs.salla.dev/849489f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Profile",
+        "url": "https://docs.salla.dev/422562m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-userprofile",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-verify",
+    "properties": [
+      "auto-reload",
+      "display",
+      "support-web-auth",
+      "type"
+    ],
+    "events": [
+      "verified"
+    ],
+    "methods": [
+      "getCode()",
+      "open(data: any)"
+    ],
+    "slots": [
+      "after-footer",
+      "footer"
+    ],
+    "sallaActions": [
+      "cart",
+      "user.can_comment",
+      "profile.update"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Verify",
+        "url": "https://docs.salla.dev/422742m0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Change Log",
+        "url": "https://docs.salla.dev/888746f0",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "User",
+        "url": "https://docs.salla.dev/849489f0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Overview",
+        "url": "https://docs.salla.dev/422688m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Profile",
+        "url": "https://docs.salla.dev/422562m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-verify-modal",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "profile.update"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Profile",
+        "url": "https://docs.salla.dev/422562m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  },
+  {
+    "component": "salla-wallet",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Wallet Page",
+        "url": "https://github.com/SallaApp/theme-raed/blob/master/src/views/pages/customer/wallet.twig",
+        "section": "Official Theme Raed template: official-theme-raed-wallet-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/wallet.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-y",
+    "properties": [
+      "country",
+      "currency",
+      "language",
+      "price"
+    ],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "store.settings.installments",
+      "user.country_code",
+      "user.currency_code",
+      "user.language_code"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Installment",
+        "url": "https://docs.salla.dev/422707m0.md",
+        "section": "Usage / Properties / Events / Methods / Slots"
+      }
+    ]
+  }
+]

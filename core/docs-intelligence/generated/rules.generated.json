@@ -1,0 +1,309 @@
+[
+  {
+    "id": "SALLA_COMPONENT_CSS_CLASS_CUSTOMIZATION_ALLOWED",
+    "type": "allow",
+    "scope": "web-components.css",
+    "enforcement": "allow",
+    "source": {
+      "title": "Components Customization",
+      "url": "https://docs.salla.dev/422690m0",
+      "section": "Components Customization - Custom CSS framework"
+    },
+    "evidence": "Twilight Web Components use CSS Variables and component CSS classes, allowing self-developed CSS styles.",
+    "evidenceFingerprint": "SALLA_COMPONENT_CSS_CLASS_CUSTOMIZATION_ALLOWED|allow|web-components.css|allow|twilight web components use css variables and component css classes allowing self-developed css styles|",
+    "sources": [
+      {
+        "title": "Components Customization",
+        "url": "https://docs.salla.dev/422690m0",
+        "section": "Components Customization - Custom CSS framework"
+      }
+    ]
+  },
+  {
+    "id": "SALLA_CUSTOM_PRODUCT_CARD_ALLOWED",
+    "type": "allow",
+    "scope": "custom-salla-product-card",
+    "enforcement": "allow",
+    "source": {
+      "title": "Product Card",
+      "url": "https://docs.salla.dev/422718m0",
+      "section": "Product Card - Custom Salla Product Card Component"
+    },
+    "evidence": "The developer can fully customize cards within Product Lists by utilizing custom-salla-product-card.",
+    "evidenceFingerprint": "SALLA_CUSTOM_PRODUCT_CARD_ALLOWED|allow|custom-salla-product-card|allow|the developer can fully customize cards within product lists by utilizing custom-salla-product-card|",
+    "sources": [
+      {
+        "title": "Product Card",
+        "url": "https://docs.salla.dev/422718m0",
+        "section": "Product Card - Custom Salla Product Card Component"
+      },
+      {
+        "title": "Offer",
+        "url": "https://docs.salla.dev/440408m0.md",
+        "section": "Product Card - Custom Salla Product Card Component"
+      },
+      {
+        "title": "Products List",
+        "url": "https://docs.salla.dev/422719m0.md",
+        "section": "Product Card - Custom Salla Product Card Component"
+      },
+      {
+        "title": "Products Slider",
+        "url": "https://docs.salla.dev/422722m0.md",
+        "section": "Product Card - Custom Salla Product Card Component"
+      }
+    ],
+    "allowedCssVariables": []
+  },
+  {
+    "id": "SALLA_FAST_CHECKOUT_CSS_ONLY",
+    "type": "deny",
+    "scope": "salla-mini-checkout-widget",
+    "enforcement": "error",
+    "allowedCssVariables": [
+      "--salla-fast-checkout-button-height",
+      "--salla-fast-checkout-button-width",
+      "--salla-fast-checkout-button-border-radius"
+    ],
+    "source": {
+      "title": "Add Product",
+      "url": "https://docs.salla.dev/422692m0",
+      "section": "Add Product - Fast Checkout Feature"
+    },
+    "evidence": "This component is not allowed to be customized by the developer and can only be called to the Theme.",
+    "evidenceFingerprint": "SALLA_FAST_CHECKOUT_CSS_ONLY|deny|salla-mini-checkout-widget|error|this component is not allowed to be customized by the developer and can only be called to the theme|--salla-fast-checkout-button-border-radius,--salla-fast-checkout-button-height,--salla-fast-checkout-button-width",
+    "sources": [
+      {
+        "title": "Add Product",
+        "url": "https://docs.salla.dev/422692m0",
+        "section": "Add Product - Fast Checkout Feature"
+      }
+    ]
+  },
+  {
+    "id": "SALLA_GLOBAL_VARIABLES_READ_ALLOWED",
+    "type": "allow",
+    "scope": "theme.global-variables",
+    "enforcement": "allow",
+    "source": {
+      "title": "Global Variables",
+      "url": "https://docs.salla.dev/421938m0",
+      "section": "Global Variables"
+    },
+    "evidence": "These variables can be used within any of the Theme's pages.",
+    "evidenceFingerprint": "SALLA_GLOBAL_VARIABLES_READ_ALLOWED|allow|theme.global-variables|allow|these variables can be used within any of the themes pages|",
+    "sources": [
+      {
+        "title": "Global Variables",
+        "url": "https://docs.salla.dev/421938m0",
+        "section": "Global Variables"
+      }
+    ]
+  },
+  {
+    "id": "SALLA_LOCALIZATION_REQUIRED",
+    "type": "deny",
+    "scope": "theme.locales",
+    "enforcement": "error",
+    "source": {
+      "title": "Technical Review",
+      "url": "https://docs.salla.dev/421888m0",
+      "section": "Technical Review 1.2"
+    },
+    "evidence": "Theme should use localization and not static string.",
+    "evidenceFingerprint": "SALLA_LOCALIZATION_REQUIRED|deny|theme.locales|error|theme should use localization and not static string|",
+    "sources": [
+      {
+        "title": "Technical Review",
+        "url": "https://docs.salla.dev/421888m0",
+        "section": "Technical Review 1.2"
+      }
+    ]
+  },
+  {
+    "id": "SALLA_NO_MERCHANT_CUSTOM_HTML",
+    "type": "deny",
+    "scope": "twilight.settings",
+    "enforcement": "error",
+    "source": {
+      "title": "Technical Review",
+      "url": "https://docs.salla.dev/421888m0",
+      "section": "Technical Review 2.4 Security"
+    },
+    "evidence": "No custom HTML or elements that may compromise security are allowed.",
+    "evidenceFingerprint": "SALLA_NO_MERCHANT_CUSTOM_HTML|deny|twilight.settings|error|no custom html or elements that may compromise security are allowed|",
+    "sources": [
+      {
+        "title": "Technical Review",
+        "url": "https://docs.salla.dev/421888m0",
+        "section": "Technical Review 2.4 Security"
+      },
+      {
+        "title": "Bundle Publish Requirements",
+        "url": "https://docs.salla.dev/1945741m0",
+        "section": "Bundle Technical Review"
+      }
+    ],
+    "allowedCssVariables": []
+  },
+  {
+    "id": "SALLA_NO_PER_PRODUCT_REQUESTS",
+    "type": "deny",
+    "scope": "product-card.network",
+    "enforcement": "error",
+    "source": {
+      "title": "Technical Review",
+      "url": "https://docs.salla.dev/421888m0",
+      "section": "Technical Review 1.5"
+    },
+    "evidence": "Too much requests, for example every product has request, should be prevented.",
+    "evidenceFingerprint": "SALLA_NO_PER_PRODUCT_REQUESTS|deny|product-card.network|error|too much requests for example every product has request should be prevented|",
+    "sources": [
+      {
+        "title": "Technical Review",
+        "url": "https://docs.salla.dev/421888m0",
+        "section": "Technical Review 1.5"
+      }
+    ]
+  },
+  {
+    "id": "SALLA_NO_RAW_TWIG",
+    "type": "deny",
+    "scope": "twig",
+    "enforcement": "error",
+    "source": {
+      "title": "Technical Review",
+      "url": "https://docs.salla.dev/421888m0",
+      "section": "Technical Review 2.4 Security"
+    },
+    "evidence": "Search for any usage for |raw.",
+    "evidenceFingerprint": "SALLA_NO_RAW_TWIG|deny|twig|error|search for any usage for raw|",
+    "sources": [
+      {
+        "title": "Technical Review",
+        "url": "https://docs.salla.dev/421888m0",
+        "section": "Technical Review 2.4 Security"
+      }
+    ]
+  },
+  {
+    "id": "SALLA_TAILWIND_CONFIG_CUSTOMIZATION_ALLOWED",
+    "type": "allow",
+    "scope": "tailwind.config.js",
+    "enforcement": "allow",
+    "source": {
+      "title": "Components Customization",
+      "url": "https://docs.salla.dev/422690m0",
+      "section": "Components Customization - How it works"
+    },
+    "evidence": "The file tailwind.config.js can be modified to change colors, font, and more.",
+    "evidenceFingerprint": "SALLA_TAILWIND_CONFIG_CUSTOMIZATION_ALLOWED|allow|tailwind.config.js|allow|the file tailwind config js can be modified to change colors font and more|",
+    "sources": [
+      {
+        "title": "Components Customization",
+        "url": "https://docs.salla.dev/422690m0",
+        "section": "Components Customization - How it works"
+      }
+    ]
+  },
+  {
+    "id": "SALLA_TAILWIND_CONTENT_REQUIRED_FOR_WEB_COMPONENTS",
+    "type": "deny",
+    "scope": "tailwind.content",
+    "enforcement": "error",
+    "source": {
+      "title": "Usage",
+      "url": "https://docs.salla.dev/422689m0",
+      "section": "Usage - Tailwind Config"
+    },
+    "evidence": "Tailwind JIT requires template paths and the Twilight safe list in tailwind.config.js, otherwise CSS can be empty.",
+    "evidenceFingerprint": "SALLA_TAILWIND_CONTENT_REQUIRED_FOR_WEB_COMPONENTS|deny|tailwind.content|error|tailwind jit requires template paths and the twilight safe list in tailwind config js otherwise css can be empty|",
+    "sources": [
+      {
+        "title": "Usage",
+        "url": "https://docs.salla.dev/422689m0",
+        "section": "Usage - Tailwind Config"
+      }
+    ]
+  },
+  {
+    "id": "SALLA_THEME_SIZE_PUBLIC_1MB",
+    "type": "deny",
+    "scope": "theme.public",
+    "enforcement": "error",
+    "source": {
+      "title": "Technical Review",
+      "url": "https://docs.salla.dev/421888m0",
+      "section": "Technical Review 1.1"
+    },
+    "evidence": "Theme size should not exceed 1mb.",
+    "evidenceFingerprint": "SALLA_THEME_SIZE_PUBLIC_1MB|deny|theme.public|error|theme size should not exceed 1mb|",
+    "sources": [
+      {
+        "title": "Technical Review",
+        "url": "https://docs.salla.dev/421888m0",
+        "section": "Technical Review 1.1"
+      }
+    ]
+  },
+  {
+    "id": "SALLA_TWILIGHT_THEMES_AUTO_INJECT_WEB_COMPONENTS",
+    "type": "allow",
+    "scope": "twilight.web-components.runtime",
+    "enforcement": "allow",
+    "source": {
+      "title": "Usage",
+      "url": "https://docs.salla.dev/422689m0",
+      "section": "Usage - Twilight Themes"
+    },
+    "evidence": "Within Twilight themes, there is no need to include Twilight web components in the bundle or HTML because the engine injects them.",
+    "evidenceFingerprint": "SALLA_TWILIGHT_THEMES_AUTO_INJECT_WEB_COMPONENTS|allow|twilight.web-components.runtime|allow|within twilight themes there is no need to include twilight web components in the bundle or html because the engine injects them|",
+    "sources": [
+      {
+        "title": "Usage",
+        "url": "https://docs.salla.dev/422689m0",
+        "section": "Usage - Twilight Themes"
+      }
+    ]
+  },
+  {
+    "id": "SALLA_WEB_COMPONENTS_BUNDLER_ES_MODULES_ALLOWED",
+    "type": "allow",
+    "scope": "web-components.bundler",
+    "enforcement": "allow",
+    "source": {
+      "title": "Usage",
+      "url": "https://docs.salla.dev/422689m0",
+      "section": "Usage - Bundler/ES modules"
+    },
+    "evidence": "Bundler/ES modules usage can install @salla.sa/twilight-components and import the loader.",
+    "evidenceFingerprint": "SALLA_WEB_COMPONENTS_BUNDLER_ES_MODULES_ALLOWED|allow|web-components.bundler|allow|bundler es modules usage can install salla sa twilight-components and import the loader|",
+    "sources": [
+      {
+        "title": "Usage",
+        "url": "https://docs.salla.dev/422689m0",
+        "section": "Usage - Bundler/ES modules"
+      }
+    ]
+  },
+  {
+    "id": "SALLA_WEB_COMPONENTS_UI_CUSTOMIZATION_ALLOWED",
+    "type": "allow",
+    "scope": "web-components.ui",
+    "enforcement": "allow",
+    "source": {
+      "title": "Components Customization",
+      "url": "https://docs.salla.dev/422690m0",
+      "section": "Components Customization"
+    },
+    "evidence": "The user interface can be customized by changing colors, fonts, layouts, and sizes.",
+    "evidenceFingerprint": "SALLA_WEB_COMPONENTS_UI_CUSTOMIZATION_ALLOWED|allow|web-components.ui|allow|the user interface can be customized by changing colors fonts layouts and sizes|",
+    "sources": [
+      {
+        "title": "Components Customization",
+        "url": "https://docs.salla.dev/422690m0",
+        "section": "Components Customization"
+      }
+    ]
+  }
+]

@@ -1,0 +1,925 @@
+[
+  {
+    "name": "brands",
+    "path": "src/views/components/brands.twig",
+    "variables": [
+      "component.brands",
+      "link"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Brands",
+        "url": "https://docs.salla.dev/422594m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThis component lists the brands related to the merchant's store using a _loop_. Based on that, a brand _url_ and _logo_ will be displayed as per the developer style.\n\n```php lineNumbers\n<h2>{{ trans('blocks.home.browse_brands') }}</h2>\n<a href=\"{{ link('brands') }}\"> {{ trans('blocks.home.display_all') }} </a>\n{% for brand in component.brands %}\n <a href=\"{{ brand.url }}\">\n <img src=\"{{ brand.logo }}\" alt=\"\"/>\n </a>\n{% endfor %}\n```"
+  },
+  {
+    "name": "comments",
+    "path": "src/views/components/comments.twig",
+    "variables": [
+      "comment",
+      "comment.avatar",
+      "comment.content",
+      "comment.created_at",
+      "comment.has_order",
+      "comment.id",
+      "comment.is_pending",
+      "comment.name",
+      "comment.replies",
+      "comment.stars",
+      "comment.type",
+      "comments",
+      "comments.next_page",
+      "comments.total",
+      "id",
+      "type",
+      "user.can_comment"
+    ],
+    "components": [
+      "salla-button",
+      "salla-infinite-scroll"
+    ],
+    "sallaActions": [
+      "comment.send"
+    ],
+    "sources": [
+      {
+        "title": "Comments component",
+        "url": "https://docs.salla.dev/422603m0",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "## Usage \nThis component will check the eligibility of the user to create comments. If the user is allowed, the component will display comment section contaiting the text field to allow user to comment and submit the comment using `salla-button`. \n\n```php lineNumbers\n{% if user.can_comment %}\n<form onsubmit=\"return salla.form.onSubmit('comment.send', event);\">\n <input name=\"type\" type=\"hidden\" value=\"{{ type }}\" />\n <input name=\"id\" type=\"hidden\" value=\"{{ id }}\" />\n\n <h2>{{ trans('blocks.comments.title') }}</h2>\n <textarea placeholder=\"{{ trans('blocks.comments.placeholder') }}\" name=\"comment\" required maxlength=\"500\" cols=\"30\" rows=\"30\"></textarea>\n <div>\n <salla-button type=\"submit\" loade"
+  },
+  {
+    "name": "donation-progress-bar",
+    "path": "src/views/components/donation-progress-bar.twig",
+    "variables": [
+      "date",
+      "money",
+      "offer.categories",
+      "offer.description",
+      "offer.name",
+      "offer.products",
+      "pages.products.donation_target_date",
+      "products"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Essentials",
+        "url": "https://docs.salla.dev/422604m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\n\nThe `donation` object contains all of the donation related values and messages. For example;\n\n- `product.donation.collected_amount`: shows the collected amount up to date.\n- `product.donation.target_amount`: shows the targeted amount to be collected.\n- `product.donation.target_percent`: shows the percentage of the targeted amount.\n\n```js\n{% if product.donation.target_message %}\n <span>{{ product.donation.target_message }}</span>\n{% else %}\n <div class=\"...\">\n <span>{{ product.donation.collected_amount|money }}</span>\n <span>{{ product.donation.target_amount|money }}</span>\n </div>\n <div class=\"...\">\n <div class=\"...\" style=\"width: {{ product.donation.target_percent }}%\">\n </div>\n "
+  },
+  {
+    "name": "enhanced-slider",
+    "path": "src/views/components/enhanced-slider.twig",
+    "variables": [
+      "component.slides"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Enhanced Slider",
+        "url": "https://docs.salla.dev/422597m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThis component uses a slider to display the images, where the developer can use any slider library.\n\n```php lineNumbers\n{% for slide in component.slides %}\n <img src=\"{{ slide.image }}\">\n <h3>{{ slide.title }}</h3>\n <p>{{ slide.description }}</p>\n{% endfor %}\n```"
+  },
+  {
+    "name": "enhanced-square-banners",
+    "path": "src/views/components/enhanced-square-banners.twig",
+    "variables": [
+      "component.banners"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Enhanced Square Banners",
+        "url": "https://docs.salla.dev/422595m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nIn this component, we use a _loop_ statement to go through banners and display both `banner.image` and `banner.url`.\n\n```php lineNumbers\n{% for banner in component.banners %}\n<div style=\"background-image: url('{{banner.image}}');\">\n <a href=\"{{banner.url}}\">\n <h3>{{banner.title}}</h3>\n <p>{{banner.description}}</p>\n </a>\n</div>\n{% endfor %}\n```"
+  },
+  {
+    "name": "featured-products-style1",
+    "path": "src/views/components/featured-products-style1.twig",
+    "variables": [
+      "items",
+      "main_product",
+      "main_product.id",
+      "main_product.status",
+      "main_product.title",
+      "main_product.type",
+      "money"
+    ],
+    "components": [
+      "salla-add-product-button"
+    ],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Featured products - Style 1",
+        "url": "https://docs.salla.dev/422591m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\n\nIn general, this pre-styled featured products component starts with checking if there is a _main product_ to display in bigger size:\n\n```php lineNumbers\n{% if main_product %}\n <div class=\"product-feature\">\n <div>\n <h2>{{ main_product.title }}</h2>\n </div>\n <a href=\"{{ product.url }}\">\n <img src=\"{{ product.image.url }}\" alt=\"{{ product.image.alt }}\"/>\n {% if product.promotion_title %} {{ product.promotion_title }} {% endif %}\n </a>\n <h3>\n <a href=\"{{ product.url }}\">{{ product.name }}</a>\n </h3>\n {% if product.on_sale %}\n <div>\n <h4>{{ product.sale_price|money }}</h4>\n {{ product.regular_price|money }}\n </div>\n {% else %}\n <h4>{{ product.price|money }}</h4>\n {% endif %}\n\n <salla-a"
+  },
+  {
+    "name": "featured-products-style2",
+    "path": "src/views/components/featured-products-style2.twig",
+    "variables": [
+      "items",
+      "money"
+    ],
+    "components": [
+      "salla-add-product-button"
+    ],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Featured Products - Style 2",
+        "url": "https://docs.salla.dev/422592m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage \n\nThe component list the products as per a pre-defined slider. Developer has the option to use any style, or slider base in the `is_slider` value. \n\n```php lineNumbers\n{% for section in items %}\n <h2>{{ section.title }}</h2>\n\n <div class=\"products-section\">\n {% for product in section.products %}\n <div class=\"product-item\">\n <a href=\"{{ product.url }}\">\n <img src=\"{{ product.image.url }}\" alt=\"{{ product.image.alt }}\"/>\n {% if product.promotion_title %} {{ product.promotion_title }}\n {% endif %}\n </a>\n <h3>\n <a href=\"{{ product.url }}\">{{ product.name }}</a>\n </h3>\n {% if product.on_sale %}\n <div>\n <h4>{{ product.sale_price|money }}</h4>\n {{ product.regular_price|money }}\n </div>\n {"
+  },
+  {
+    "name": "featured-products-style3",
+    "path": "src/views/components/featured-products-style3.twig",
+    "variables": [
+      "items",
+      "money"
+    ],
+    "components": [
+      "salla-add-product-button"
+    ],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Featured Products - Style 3",
+        "url": "https://docs.salla.dev/422593m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nIn general, this pre-styled featured products component with a _main product_ to display in bigger size, and then a column of products in smaller size:\n\n```php lineNumbers\n{% for section in items %}\n\n <h2>{{ section.title }}</h2>\n\n {% if section.featured_product %}\n <div id=\"featured-product-{{ section.featured_product.id }}\">\n <a href=\"{{ section.featured_product.url }}\">\n <img src=\"{{ 'images/s-empty.png' | asset }}\"\n data-src=\"{{ section.featured_product.image.url }}\"\n alt=\"{{ section.featured_product.image.alt }}\"/>\n </a>\n {% if section.featured_product.promotion_title %}\n {{ section.featured_product.promotion_title }}\n {% endif %}\n <a href=\"{{ section.featured_product.url }}\">"
+  },
+  {
+    "name": "fixed-banner",
+    "path": "src/views/components/fixed-banner.twig",
+    "variables": [
+      "image.alt",
+      "image.url",
+      "url"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Fixed banner",
+        "url": "https://docs.salla.dev/422583m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThis fixed banner component receives the values of `image.url` and `image.alt` and displays it a background for this fixed area.\n\n```php lineNumbers\n<a href=\"{{ url }}\" aria-label=\"Banner {{ image.alt }}\">\n <img src=\"{{'images/s-empty.png' | asset}}\" data-src=\"{{ image.url }}\" alt=\"{{ image.alt }}\" />\n</a>\n```\n<br>\n\n:::tip[Educational Clip]\n\n<Video src=\"https://youtu.be/onCsXbZi_34?si=hTnZvYwNg_ZhHZHP\"></Video>\n\n:::"
+  },
+  {
+    "name": "fixed-products",
+    "path": "src/views/components/fixed-products.twig",
+    "variables": [
+      "display_all_url",
+      "money",
+      "products",
+      "title"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Fixed products",
+        "url": "https://docs.salla.dev/422589m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage \nThis component takes a list of the `products` that should be displayed, and then use **for-loop** statement to show them out. Developer has the option of styling them the way he may need.\n\n```php lineNumbers\n<div class=\"head\">\n {% if title %}\n <h2>{{ title }}</h2>\n {% endif %}\n\n {% if display_all_url %}\n <a href=\"{{ display_all_url }}\">{{ trans('blocks.home.display_all') }}</a>\n {% endif %}\n</div>\n\n{% for product in products %}\n <div class=\"item\">\n <a href=\"{{ product.url }}\">\n <img src=\"{{ product.image.url }}\" alt=\"{{ product.image.alt }}\"/>\n {% if product.promotion_title %}\n {{ product.promotion_title }}\n {% endif %}\n </a>\n <h3>\n <a href=\"{{ product.url }}\">{{ product.name }}</"
+  },
+  {
+    "name": "header",
+    "path": "src/views/components/header/header.twig",
+    "variables": [
+      "advertisement.description",
+      "advertisement.icon",
+      "advertisement.is_new_window",
+      "advertisement.url",
+      "breadcrumbs",
+      "component",
+      "first",
+      "is_current_url",
+      "is_root_menu",
+      "iterable",
+      "link",
+      "loop.last",
+      "menus",
+      "money",
+      "new_notifications_count",
+      "pending_orders_count",
+      "slice",
+      "theme.settings.get"
+    ],
+    "components": [
+      "salla-product-card"
+    ],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Header Components",
+        "url": "https://docs.salla.dev/422601m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nUsing the `advertisement` object, we can get the details of `advertisement.icon`, `advertisement.url`, `advertisement.description`, and so on. The developer can use these data within any style designed by them.\n\n```php lineNumbers\n{% if advertisement.icon %}\n <span class=\"{{ advertisement.icon }}\"></span>\n{% endif %}\n{% if advertisement.url %}\n <a href=\"{{ advertisement.url }}\" {% if advertisement.is_new_window %} target='_blank' {% endif %}>\n {{ advertisement.description }}\n </a>\n{% else %}\n {{ advertisement.description }}\n{% endif %}\n```\n\n<hr/>"
+  },
+  {
+    "name": "index",
+    "path": "src/views/components/index.twig",
+    "variables": [
+      "date",
+      "hook",
+      "money",
+      "orders",
+      "orders.next_page",
+      "articles",
+      "articles.count",
+      "categories",
+      "component",
+      "empty",
+      "slides",
+      "brandGroup",
+      "brands",
+      "char",
+      "page.title"
+    ],
+    "components": [
+      "salla-button",
+      "salla-infinite-scroll",
+      "salla-slider"
+    ],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Orders list",
+        "url": "https://docs.salla.dev/422563m0.md",
+        "section": "Location / Variables / Usage"
+      },
+      {
+        "title": "Blog listing",
+        "url": "https://docs.salla.dev/422567m0.md",
+        "section": "Location / Variables / Usage"
+      },
+      {
+        "title": "Brands listing",
+        "url": "https://docs.salla.dev/422570m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nMainly, in this page's template, the list of the customer's `orders` are displyed using a `for-loop` statement. This can be done easily by using the `orders` object as we see in the following example. Note that the Salla component salla [infinite scroll](https://docs.salla.dev/doc-422706?nav=01HNFTE06J4QC24T0D5BPRYKMD) has been used to ease the pagination process.\n\n```php lineNumbers=true\n{% if orders|length %}\n <salla-infinite-scroll next-page=\"{{ orders.next_page }}\" item=\".customer-row\">\n <table>\n <thead>\n <tr>\n <th scope=\"col\">{{ trans('pages.thank_you.order_id') }}</th>\n <th scope=\"col\">{{ trans('pages.orders.total') }}</th>\n <th scope=\"col\">{{ trans('pages.orders.date') }}</t"
+  },
+  {
+    "name": "latest-products",
+    "path": "src/views/components/latest-products.twig",
+    "variables": [
+      "money",
+      "products",
+      "products.next_page"
+    ],
+    "components": [
+      "salla-infinite-scroll",
+      "salla-add-product-button"
+    ],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Latest Products",
+        "url": "https://docs.salla.dev/422599m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThis component receives a list of new products, if any. Then it loops through them using *for-loop* in order to display paginated using `salla-infinite-scroll`:\n\n```php lineNumbers\n<h2>{{ trans('blocks.home.latest_products') }}</h2>\n{% if products|length %}\n <salla-infinite-scroll next-page=\"{{ products.next_page }}\" next-page.autoload>\n {% for product in products %}\n <a href=\"{{ product.url }}\">\n <img src=\"{{ product.image.url }}\" alt=\"{{ product.image.alt }}\" />\n {% if product.promotion_title %}\n {{ product.promotion_title }}\n {% endif %}\n </a>\n <h3>\n <a href=\"{{ product.url }}\">{{ product.name }}</a>\n </h3>\n\n {% if product.on_sale %}\n <h4>{{ product.sale_price|money }}</h4>\n {{ "
+  },
+  {
+    "name": "main-links",
+    "path": "src/views/components/main-links.twig",
+    "variables": [
+      "component.links"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Main Links",
+        "url": "https://docs.salla.dev/422596m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe main links are displayed using a pre-defined style, which can be edited by the developer. \nThis component uses the `link url` and `link icon` for example, and displays them using a **for-loop**.\n\n```php lineNumbers\n{% for link in component.links %}\n <a href=\"{{ link.url }}\"></a>\n <i class=\"{{ link.icon }}\"></i>\n <h4>{{ link.title }}</h4>\n </a>\n{% endfor %}\n```"
+  },
+  {
+    "name": "master",
+    "path": "src/views/components/master.twig",
+    "variables": [
+      "block",
+      "component",
+      "content",
+      "endblock",
+      "extends",
+      "head",
+      "home",
+      "home.js",
+      "hook",
+      "scripts",
+      "styles",
+      "theme.set",
+      "theme.settings.get"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Master Layout",
+        "url": "https://docs.salla.dev/421944m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "## Usage\n\nBy exploring the [`src/views/layouts/master.twig\n`](https://github.com/SallaApp/theme-raed/blob/master/src/views/pages/index.twig) file, which is the [Home Page](https://docs.salla.dev/doc-422558) is of the theme, we can see the following:\n\n```js lineNumbers\n{% extends \"layouts.master\" %}\n{% block content %}\n {% component home %}\n{% endblock %}\n{% block scripts %}\n <script type=\"text/javascript\" defer src=\"{{ home.js |asset('dist/home.js') }}\"></script>\n{% endblock %}\n```\n\n- Line #1: extending the \"layouts.master\", which is [`master.twig`](https://github.com/SallaApp/theme-raed/blob/master/src/views/layouts/master.twig).\n- Lines #2 to #4: injecting the `{% component home %}` inside"
+  },
+  {
+    "name": "parallax-background",
+    "path": "src/views/components/parallax-background.twig",
+    "variables": [
+      "image.url",
+      "link_text",
+      "title",
+      "url"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Parallax background",
+        "url": "https://docs.salla.dev/422585m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThis component receives `url` variable with `is_opacity`, and set them both as a background for a container `<div>`. That container is set to reflect the `parallax`.\nIn case of receiving the values of `title` and `link_text`, they will be displayed inside the parallax container.\n\n```php lineNumbers\n<div style=\"background-image: url('{{ image.url }}');\">\n {% if title %}\n <h3>{{ title }}</h3>\n {% endif %}\n\n {% if url and link_text %}\n <a href=\"{{ url }}\">{{ link_text }}</a>\n {% endif %}\n</div>\n```"
+  },
+  {
+    "name": "photos-slider",
+    "path": "src/views/components/photos-slider.twig",
+    "variables": [
+      "items",
+      "position"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Photos slider",
+        "url": "https://docs.salla.dev/422586m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nUsing a **for-loop**, The slider's images within `items` will be displayed using `item.image.url`.\n\n```php lineNumbers\n<section id=\"photos-{{ position }}\">\n <div data-id=\"photos-{{ position }}\">\n <div class=\"swiper-wrapper\">\n {% for item in items %}\n <div class=\"swiper-slide\" data-src=\"{{ item.image.url }}\"></div>\n {% endfor %}\n </div>\n <div class=\"swiper-pagination\"></div>\n <button aria-label=\"Previous Slide\" class=\"slider-prev\">\n Previous\n </button>\n <button aria-label=\"Next Slide\" class=\"slider-next\">\n Next\n </button>\n </div>\n</section>\n```"
+  },
+  {
+    "name": "color",
+    "path": "src/views/components/product/options/color.twig",
+    "variables": [
+      "option.details",
+      "option.id"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Color / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe HTML element _input_radio_ is used to allow customers to select one item at a time. The details of the product's colors can be displayed using a _for-loop_ statement through the `details` object.\n\n```js\n{% for detail in option.details %}\n<div>\n <input type=\"radio\"\n {{ detail.is_selected?'checked':'' }} \n {{ detail.is_out?\"disabled\":\"\" }} \n name=\"options[{{ option.id }}]\"\n value=\"{{ detail.id }}\" ... />\n\n <p>{{ detail.name }}</p>\n \n {% if detail.is_out %}\n <small>Out of stock</small>\n {% endif %}\n</div>\n{% endfor %}\n```"
+  },
+  {
+    "name": "date",
+    "path": "src/views/components/product/options/date.twig",
+    "variables": [
+      "attirubtes",
+      "option.id",
+      "option.placeholder",
+      "required",
+      "value"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Date / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe HTML element _input_ is used to show this component with some predefined attributes.\n```js\n<input class=\"form-input date-element{{ required?' required':'' }}\"\n id=\"...\"\n data-min-date=\"today\"\n placeholder=\"{{ option.placeholder }}\"\n name=\"options[{{ option.id }}]\" {{ attirubtes|raw }}\n readonly=\"readonly\"\n value=\"{{ value }}\"\n type=\"text\"\n/>\n```"
+  },
+  {
+    "name": "datetime",
+    "path": "src/views/components/product/options/datetime.twig",
+    "variables": [
+      "attirubtes",
+      "from_date_time",
+      "option.id",
+      "option.placeholder",
+      "order_times",
+      "required",
+      "time_zone",
+      "to_date_time",
+      "value"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Datetime / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe HTML element _input_ is used to show this component with some predefined attributes. Some of the main variables here are `option.placeholder` and `order_times`. \n\n```js\n<input class=\"form-input date-time-element{{ required?' required':'' }}\"\n placeholder=\"{{ option.placeholder }}\"\n data-order-times=\"{{ order_times|json_encode }}\"\n data-timezone=\"{{ time_zone }}\"\n name=\"options[{{ option.id }}]\"\n {{ attirubtes|raw }}\n {% if from_date_time %}\n data-from-date-time='{{ from_date_time }}'\n data-to-date-time='{{ to_date_time }}'\n {% endif %}\n readonly=\"readonly\"\n value=\"{{ value }}\"\n type=\"text\"\n/>\n```"
+  },
+  {
+    "name": "donation",
+    "path": "src/views/components/product/options/donation.twig",
+    "variables": [
+      "product.can_donate",
+      "product.donation.completed",
+      "product.price"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Donation / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nIn order for the customer to make a donation using the currently being viewed product, that product should allow donations. This can be checked by checking the variable `product.can_donate`. The price of that product can also be used as a default value by using `<input type=\"text\" value=\"{{ product.price }}\" />`.\n\nTo check if the donation target has been accomplished, the developer can use the variable `product.donation.completed`.\n\n```js\n{% if product.can_donate %}\n<div>\n <p>Donation Amount</p>\n <div>\n <input type=\"text\" value=\"{{ product.price }}\" />\n ...\n </div>\n</div>\n{% else %}\n<h4 class=\"...\">\n {% if product.donation.completed %}\n <p>Donation Exceed Target Amount</p>\n {% else"
+  },
+  {
+    "name": "image",
+    "path": "src/views/components/product/options/image.twig",
+    "variables": [
+      "attirubtes",
+      "option.id",
+      "value"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Image / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe HTML element _input_ is used to show this component with some predefined attributes. \n```js\n<input name=\"options[{{ option.id }}]\"\n class=\"...\"\"\n {% if value %}\n data-default=\"{{ value }}\"\n {% endif %}\n {{ attirubtes|raw }}\n type=\"file\"\n/>\n```"
+  },
+  {
+    "name": "multiple-options",
+    "path": "src/views/components/product/options/multiple-options.twig",
+    "variables": [
+      "attirubtes",
+      "detail",
+      "detail.full_name",
+      "detail.id",
+      "detail.is_selected",
+      "disabled",
+      "key",
+      "option.details",
+      "option.id"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Multiple Options / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe list of given options to the user can be retrieved and displayed using the _for-loop_ statement through the `option object. This list of options includes details such as `full_name`.\n```js\n<div>\n {% for key,detail in option.details %}\n <div >\n <input id=\"...\" \n {{ disabled?\"disabled\":\"\" }} {{detail.is_selected?\"checked\":\"\" }} \n name=\"options[{{ option.id }}]\" data-option=\"{{ option.id }}\"\n value=\"{{ detail.id }}\" type=\"checkbox\" {{ attirubtes|raw }} />\n \n <p>{{ detail.full_name }}</p>\n \n </div>\n {% endfor %}\n</div>\n```"
+  },
+  {
+    "name": "number",
+    "path": "src/views/components/product/options/number.twig",
+    "variables": [
+      "attirubtes",
+      "option.id",
+      "option.placeholder",
+      "value"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Number / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe HTML element _input_ is used to show this component with some predefined attributes. \n\n```js\n<input placeholder=\"{{ option.placeholder }}\"\n name=\"options[{{ option.id }}]\"\n value=\"{{ value }}\"\n type=\"text\"\n {{ attirubtes|raw }}\n/>\n```"
+  },
+  {
+    "name": "single-option",
+    "path": "src/views/components/product/options/single-option.twig",
+    "variables": [
+      "attirubtes",
+      "detail",
+      "detail.full_name",
+      "detail.id",
+      "detail.is_selected",
+      "key",
+      "option.details",
+      "option.id",
+      "option.placeholder"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Single Option / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe HTML element _select_ is used to show this component with some predefined attributes. Inside this element, a _for-loop_ is used to iterate through the `options` which contains the list of the given options.\n```js\n<select name=\"options[{{ option.id }}]\"\n data-option=\"{{ option.id }}\" {{ attirubtes|raw }}>\n <option placeholder value=\"\">{{ option.placeholder }}</option>\n {% for key,detail in option.details %}\n <option {{ detail.is_selected ? \"selected\" : \"\" }} value=\"{{ detail.id }}\">\n {{ detail.full_name }}\n </option>\n {% endfor %}\n</select>\n```"
+  },
+  {
+    "name": "splitter",
+    "path": "src/views/components/product/options/splitter.twig",
+    "variables": [],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Splitter / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe developer has the ability to create a _css class_ to style a break line. As shown below, we can apply this splitter class to any _div_ element.\n\n```js\n<div class=\"splitter\"></div>\n```"
+  },
+  {
+    "name": "text",
+    "path": "src/views/components/product/options/text.twig",
+    "variables": [
+      "attirubtes",
+      "option.id",
+      "option.placeholder",
+      "value"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Text / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe HTML element _input_ is used to show this component with some predefined attributes. The `option` object is used to show any detail related to the component, for example, `option.placeholder` to set a default text as a start.\n\n```js\n<input placeholder=\"{{ option.placeholder }}\"\n name=\"options[{{ option.id }}]\" {{ attirubtes|raw }}\n value=\"{{ value }}\"\n type=\"text\"/>\n```"
+  },
+  {
+    "name": "textarea",
+    "path": "src/views/components/product/options/textarea.twig",
+    "variables": [
+      "attirubtes",
+      "option.id",
+      "option.placeholder",
+      "value"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Textarea / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe HTML element _input_ is used to show this component with some predefined attributes. The `option` object is used to show any detail related to the component, for example, `option.placeholder` to set a default text as a start.\n\n```js\n<textarea placeholder=\"{{ option.placeholder }}\"\n name=\"options[{{ option.id }}]\" {{ attirubtes|raw }}>\n {{ value }}\n</textarea>\n```"
+  },
+  {
+    "name": "thumbnail",
+    "path": "src/views/components/product/options/thumbnail.twig",
+    "variables": [
+      "detail",
+      "detail_index",
+      "detail.id",
+      "detail.image",
+      "detail.is_out",
+      "detail.is_selected",
+      "detail.name",
+      "detail.option_value",
+      "key_prefix",
+      "option.details",
+      "option.id"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Thumbnail / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe list of given thumbnails for a product's options can be retrieved and displayed using the _for-loop_ statement through the `option object. This list of options includes details such as `detail.image` to display the thumbnail's image. This component may use the  _html input radio_ element in order to restrict the user to selecting one image, option, at a time.\n\n```js\n{% for detail_index, detail in option.details %}\n<input {{ detail.is_selected?'checked':'' }} \n required type=\"radio\" \n id=\"option_{{ detail.id }}-{{ key_prefix }}\" \n {{ detail.is_out?\"disabled\":\"\" }} \n data-itemid=\"{{ detail.id }}\" \n name=\"options[{{ option.id }}]\"\n data-img-id=\"{{ detail.option_value }}\" \n value=\""
+  },
+  {
+    "name": "time",
+    "path": "src/views/components/product/options/time.twig",
+    "variables": [
+      "attirubtes",
+      "option.id",
+      "option.placeholder",
+      "value"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Options",
+        "url": "https://docs.salla.dev/422605m0",
+        "section": "Location / Time / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe HTML element _input_ is used to show this component with some predefined attributes along with the `option` object.\n\n```js\n<input placeholder=\"{{ option.placeholder }}\"\n name=\"options[{{ option.id }}]\" {{ attirubtes|raw }}\n readonly=\"readonly\"\n value=\"{{ value }}\"\n type=\"text\"/>\n```"
+  },
+  {
+    "name": "products-slider",
+    "path": "src/views/components/products-slider.twig",
+    "variables": [
+      "display_all_url",
+      "money",
+      "position",
+      "products",
+      "type"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Products slider",
+        "url": "https://docs.salla.dev/422590m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage \nThis component takes a list of the `products` that should be displayed, and then use **for-loop** statement to show them out.The method for displaying the products is `swiper-slide`. Developer has the option to use any other slider.\n\n```php lineNumbers\n\n<section id=\"best-offers-{{ position }}-slider\">\n <div>\n {% if display_all_url %}\n <a href=\"{{ display_all_url }}\">{{ trans('blocks.home.display_all') }}</a>\n {% endif %}\n <div>\n <button aria-label=\"Previous Slide\"></button>\n <button aria-label=\"Next Slide\"></button>\n </div>\n </div>\n <div data-id=\"{{ type }}-slider\">\n {% for product in products %}\n <a href=\"{{ product.url }}\">\n <img src=\"{{ product.image.url }}\" alt=\"{{ product.ima"
+  },
+  {
+    "name": "profile",
+    "path": "src/views/components/profile.twig",
+    "variables": [
+      "hook",
+      "user.birthday",
+      "user.email",
+      "user.first_name",
+      "user.last_name",
+      "user.mobile"
+    ],
+    "components": [
+      "salla-datetime-picker",
+      "salla-tel-input",
+      "salla-file-upload",
+      "salla-button",
+      "salla-user-settings",
+      "salla-verify",
+      "salla-verify-modal"
+    ],
+    "sallaActions": [
+      "profile.update"
+    ],
+    "sources": [
+      {
+        "title": "Profile",
+        "url": "https://docs.salla.dev/422562m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe customer's profile page receives all of the `User` model information, which is accessible automatically on this page because it's included in the [`master.twig`](https://docs.salla.dev/doc-421944?nav=01HNFTD5Y5ESFQS3P9MJ0721VM) layout file. This information can be displayed as per the developer's needs. Finally, to verify the form's input, the [`salla-verify-modal`](https://docs.salla.dev/doc-422742?nav=01HNFTE06J4QC24T0D5BPRYKMD) component can be used.\nThe following is a full example for all of the above.\n\nFor example, here we display customer's first name:\n\n```php\n<p> Welcome back {{ user.first_name }}! </p>\n```\n\nThis page includes a form, by which the customer's profile can "
+  },
+  {
+    "name": "single",
+    "path": "src/views/components/single.twig",
+    "variables": [
+      "breadcrumbs",
+      "component",
+      "hook",
+      "is_cart",
+      "link",
+      "money",
+      "option",
+      "option_index",
+      "option.element",
+      "option.id",
+      "option.name",
+      "option.placeholder",
+      "option.required",
+      "option.type",
+      "product.attachments",
+      "product.brand",
+      "product.brand.logo",
+      "product.brand.name",
+      "product.can_add_note",
+      "product.can_upload_file",
+      "product.description",
+      "product.has_metadata",
+      "product.has_read_more",
+      "product.id",
+      "product.images",
+      "product.is_hidden_quantity",
+      "product.is_on_sale",
+      "product.max_quantity",
+      "product.name",
+      "product.notes",
+      "product.options",
+      "product.price",
+      "product.promotion_title",
+      "product.rating",
+      "product.regular_price",
+      "product.sale_price",
+      "product.status",
+      "product.subtitle",
+      "product.tags",
+      "product.type",
+      "brand.banner",
+      "brand.description",
+      "brand.name",
+      "page.title",
+      "products",
+      "products.next_page",
+      "date",
+      "related"
+    ],
+    "components": [
+      "salla-add-product",
+      "salla-button",
+      "salla-gifting",
+      "salla-installment",
+      "salla-products-slider",
+      "salla-quick-order",
+      "salla-quantity-input",
+      "salla-rating-stars",
+      "salla-slider",
+      "salla-social-share",
+      "salla-add-product-button",
+      "salla-metadata",
+      "salla-products-list",
+      "salla-infinite-scroll"
+    ],
+    "sallaActions": [
+      "cart.addItem"
+    ],
+    "sources": [
+      {
+        "title": "Single product",
+        "url": "https://docs.salla.dev/422561m0.md",
+        "section": "Location / Variables / Usage"
+      },
+      {
+        "title": "Single brand",
+        "url": "https://docs.salla.dev/422572m0.md",
+        "section": "Location / Variables / Usage"
+      },
+      {
+        "title": "Single blog",
+        "url": "https://docs.salla.dev/422568m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThis page template starts with extracting main variables from the `product` object, such as product title and id. Using this. object, the developer has the ability to perform many tasks related to the product page, as we will see in the following parts.\n\n#### Product description\nInitially, several variables, such as `product.promotion_title`, `product.brand`, `product.name`, `product.rating`, `product.subtitle`, `product.description`, and `product.tags`, can be used by the developer to display multiple pieces of information about a single product.\n\n```php lineNumbers\n{% if(product.promotion_title) %}\n {{ product.promotion_title }}\n{% endif %}\n\n{% if product.brand %}\n <img title=\"{{"
+  },
+  {
+    "name": "slider-products-with-header",
+    "path": "src/views/components/slider-products-with-header.twig",
+    "variables": [
+      "component.background",
+      "component.description",
+      "component.products",
+      "component.title",
+      "money"
+    ],
+    "components": [
+      "salla-add-product-button"
+    ],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Slider Products with Headers",
+        "url": "https://docs.salla.dev/422598m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThis component starts with showing the headers:\n```php lineNumbers\n<div style=\"background-image: url('{{component.background}}');\">\n <h3>{{component.title}}</h3>\n <p>{{component.description}}</p>\n</div>\n```\n\nThen it loops through a list of products to display them within a _slider_:\n\n```php lineNumbers\n{% for product in component.products %}\n <div class=\"product-item\">\n <a href=\"{{ product.url }}\">\n <img src=\"{{ product.image.url }}\" alt=\"{{ product.image.alt }}\"/>\n {% if product.promotion_title %}\n {{ product.promotion_title }}\n {% endif %}\n </a>\n <h3>\n <a href=\"{{ product.url }}\">{{ product.name }}</a>\n </h3>\n {% if product.on_sale %}\n <h4>{{ product.sale_price|money }}</h4>\n {{ "
+  },
+  {
+    "name": "square-photos",
+    "path": "src/views/components/square-photos.twig",
+    "variables": [
+      "image.url",
+      "items"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Square photos",
+        "url": "https://docs.salla.dev/422588m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThis component takes a list of photos as a collection of `items[]`. Each item in this collection has `url`, `link_type`, `image.url`, and `image.alt`. The first item represents the first image that will be the __leading__ photo and will be bigger in size, then a **for-loop** will be used to list the rest of the photos.\n\n```php lineNumbers\n{% for item in items %}\n <a href=\"{{ item.url }}\" {% if item.link_type=='external_link' %} target=\"_blank\" {% endif %}>\n <img src=\"{{ items[0].image.url }}\" alt=\"{{ item.text }}\">\n {% if item.text %}\n <h3>{{ item.text }}</h3>\n {% endif %}\n </a>\n{% endfor %}\n```"
+  },
+  {
+    "name": "testimonials",
+    "path": "src/views/components/testimonials.twig",
+    "variables": [
+      "items",
+      "range"
+    ],
+    "components": [
+      "salla-button"
+    ],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Testimonials",
+        "url": "https://docs.salla.dev/422584m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThe file `src\\views\\components\\home\\testimonials.twig` receives a list of `testimonials`, which are the customers' feedbacks, in the form of a collection of `items[]`,and then displays them inside a slider. The sorting of this collection is as per the newest.\n\nIn the following code we see how we can easily display the values of `item.avatar`, `item.name`, `item.text` inside the slider uing **for-loop**. Also `salla-button` is used here to navigate between `previous slide` and `next slide`.\n\n```php lineNumbers\n<h2>{{ trans('blocks.home.testimonials') }}</h2>\n\n{% for item in items %}\n <img src=\"{{ item.avatar }}\" alt=\"{{ item.name }}\"/>\n\n <p>{{ item.text }}</p>\n <div>\n <h4>{{ item.na"
+  },
+  {
+    "name": "vertical-menu-with-slider",
+    "path": "src/views/components/vertical-menu-with-slider.twig",
+    "variables": [
+      "component",
+      "icon",
+      "items",
+      "menu",
+      "render_in",
+      "title"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Vertical Menu with Slider",
+        "url": "https://docs.salla.dev/422600m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThis component renderes dynamic content with links and images by looping through items and conditionally adding classes.\n\n``` php lineNumbers\n<section>\n <div> {% component menu render_in 'home.vertical-cats' with {title:title, icon:icon} %}\n <ul> {% for item in items %}\n <li>\n <a href=\"{{item.url}}\">\n <img src=\"{{ item.image.url }}\" alt=\"{{ item.image.alt }}\" />\n </a>\n </li>\n {% endfor %}\n </ul>\n </div>\n</section>\n```"
+  },
+  {
+    "name": "youtube",
+    "path": "src/views/components/youtube.twig",
+    "variables": [
+      "youtube_id"
+    ],
+    "components": [],
+    "sallaActions": [],
+    "sources": [
+      {
+        "title": "Youtube",
+        "url": "https://docs.salla.dev/422582m0.md",
+        "section": "Location / Variables / Usage"
+      }
+    ],
+    "usage": "### Usage\nThis component needs the` youtube_id` variable, which is the video URL, in order to display the embedded YouTube video. Below we can see its code. The **default** look of this component in the following code:\n\n```php lineNumbers\n<section>\n <iframe width=\"560\" height=\"349\" src=\"https://www.youtube.com/embed/{{ youtube_id }}?rel=0&hd=1\" frameborder=\"0\" allowfullscreen></iframe>\n</section>\n```"
+  }
+]

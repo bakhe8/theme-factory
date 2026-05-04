@@ -1,0 +1,223 @@
+[
+  {
+    "page": "wishlist",
+    "variables": [
+      "products"
+    ],
+    "components": [
+      "salla-add-product-button",
+      "salla-button"
+    ],
+    "hooksDocumented": true,
+    "usage": "### Usage\nThis page simply receives the `products` object which represents the list of the products that the customer has added to his own wishlist. Based on that, we use a simple `for-loop` statement to display each product. \n\nThe developer can show a button to encourage the customer to move a product from the wishlist into the cart. For this purpose [`salla-button`](https://docs.salla.dev/doc-422694?nav=01HNFTE06J4QC24T0D5BPRYKMD) component can be used.\n \n\n```php lineNumbers=true\n{% for product in products %}\n <a href=\"{{ product.url }}\">\n <img src=\"{{ product.image.url }}\" alt=\"{{ product.image.alt }}\"/>\n </a>\n <h3>\n <a href=\"{{ product.url }}\">{{ product.name }}</a>\n </h3>\n <div>\n {% if ",
+    "source": {
+      "title": "Wishlist",
+      "url": "https://docs.salla.dev/422565m0",
+      "section": "Usage / Variables / JS Web Components / Hooks"
+    }
+  },
+  {
+    "page": "notifications",
+    "variables": [
+      "notifications"
+    ],
+    "components": [
+      "salla-infinite-scroll"
+    ],
+    "hooksDocumented": true,
+    "usage": "### Usage\nThis page receives an array of `notifications` as an object. This array contains all of the notification's data for the currently logged-in user. Each notification can be displayed using a `for-loop` statement. \n\nA common implementation for this page, is to display each notification as a link, which the user can click to open and view the details of the notification he wants to see.\n\n:::tip[Note]\nThe Salla component [`salla-infinite-scroll`](https://docs.salla.dev/doc-422706?nav=01HNFTE06J4QC24T0D5BPRYKMD) has been used to ease the pagination process.\n:::\n\n```php lineNumbers=true\n<salla-infinite-scroll next-page=\"{{ notifications.next_page }}\" item=\".notifications-row\">\n {% for not",
+    "source": {
+      "title": "Notifications",
+      "url": "https://docs.salla.dev/422566m0",
+      "section": "Usage / Variables / JS Web Components / Hooks"
+    }
+  },
+  {
+    "page": "orders",
+    "variables": [
+      "order.discounts",
+      "order.cod_cost",
+      "order.shipping_cost",
+      "order.tax",
+      "order.payment_url",
+      "order.can_cancel"
+    ],
+    "components": [
+      "salla-button",
+      "salla-rating-modal",
+      "salla-map",
+      "salla-modal",
+      "salla-rating-stars"
+    ],
+    "hooksDocumented": true,
+    "usage": "### Usage\n\nIn the order's detailes page template, we need to show several element related to the `order` that is currently being handeled. For example below we have a table that shows the order's `order.created_at`, `order.shipping.logo`, `order.shipping.name`, `order.shipping.number`, `order.status.name`. This is to disaply the shipping information of the order.\n\n```php lineNumbers=true\n<table>\n <tbody>\n <tr>\n <td>\n <div>{{ trans('pages.orders.date') }}</div>\n <strong>{{ order.created_at|date }}</strong>\n </td>\n\n {% if order.shipping %}\n <td>\n <div>{{ trans('pages.orders.shipment_details') }}</div>\n <div>\n {% if order.shipping.logo %}\n <div><img src=\"{{ order.shipping.logo }}\" alt=\"\"/></div",
+    "source": {
+      "title": "Order details",
+      "url": "https://docs.salla.dev/422564m0",
+      "section": "Usage / Variables / JS Web Components / Hooks"
+    }
+  },
+  {
+    "page": "cart",
+    "variables": [
+      "cart.free_shipping_bar.has_free_shipping"
+    ],
+    "components": [
+      "salla-quantity-input",
+      "salla-button",
+      "salla-loyalty",
+      "salla-conditional-fields"
+    ],
+    "hooksDocumented": true,
+    "usage": "#### Usage\n\nThe [`cart page template`](https://github.com/SallaApp/theme-raed/blob/master/src/views/pages/cart.twig) consists of several parts, which are a form to display all of the cart's items/product, free shipping option, and any added discount.",
+    "source": {
+      "title": "Cart",
+      "url": "https://docs.salla.dev/422575m0",
+      "section": "Usage / Variables / JS Web Components / Hooks"
+    }
+  },
+  {
+    "page": "loyalty",
+    "variables": [
+      "loyalty",
+      "user.loyalty_points"
+    ],
+    "components": [
+      "salla-button",
+      "salla-loyalty",
+      "salla-slider"
+    ],
+    "hooksDocumented": false,
+    "usage": "### Usage\nThis page template receives the [`loyalty`](https://docs.salla.dev/doc-422712?nav=01HNFTE06J4QC24T0D5BPRYKMD) object, which contains all of the information related to the loyalty program, such as its name and description. The developer may show the collected points of a logged in user by using the variable `user.loyalty_points`.\n\n```php lineNumbers\n<div>\n <span>{{ loyalty.name }}</span>\n</div>\n<div>\n <h1>{{loyalty.name}}</h1>\n <p>\n {{loyalty.description}}\n </p>\n \n {% if user.loyalty_points %}\n <p>{{user.loyalty_points}}</p>\n {% endif %}\n</div>\n\n```\n\nA _for-loop_ statement can be used to display a list of the possible methods for collecting points as follows:\n\n```php lineNumbers\n{% ",
+    "source": {
+      "title": "Loyalty",
+      "url": "https://docs.salla.dev/422576m0",
+      "section": "Usage / Variables / JS Web Components / Hooks"
+    }
+  },
+  {
+    "page": "landing",
+    "variables": [
+      "landing"
+    ],
+    "components": [
+      "salla-button",
+      "salla-count-down",
+      "salla-products-slider",
+      "salla-products-list"
+    ],
+    "hooksDocumented": false,
+    "usage": "## Usage \nThis page template receives the `landing` object, which contains all of the information related to the landing page. If this object was not received, the developer may show the 404 not found error page:\n\n```php lineNumbers\n{% if not landing %}\n<div>\n <header>\n <div><a href=\"{{ store.url }}\"><img src=\"{{ store.logo }}\" alt=\"logo\" /></a>\n <h1>{{trans('common.errors.404')}}</h1>\n <div>{{trans('common.elements.back_home')}}</div>\n </div>\n </header>\n</div>\n```\n\nIf the `landing` object has been received, the developer may check different thing such as if the Landing Page offer `is_expired` or not:\n\n```php lineNumbers\n{% if landing.is_expired %}\n<div>\n <header>\n <div><a href=\"{{ store.url",
+    "source": {
+      "title": "Landing Page",
+      "url": "https://docs.salla.dev/422579m0",
+      "section": "Usage / Variables / JS Web Components / Hooks"
+    }
+  },
+  {
+    "page": "home",
+    "variables": [],
+    "components": [],
+    "hooksDocumented": false,
+    "usage": "### Usage\nTwilight provides two different methods to handle the Home Page via the file [`src/views/pages/index.twig`](https://github.com/SallaApp/theme-raed/blob/master/src/views/pages/index.twig). The goal here is to enable the developer to perform any design or appearance he may need for this page.\n\nThe methods are:\n- [Theme Features and Theme Components](#theme-features-and-theme-components)\n- [Developer Static Content](#static-content)",
+    "source": {
+      "title": "Home Page",
+      "url": "https://docs.salla.dev/422558m0",
+      "section": "Usage / Variables / JS Web Components / Hooks"
+    },
+    "route": "/",
+    "template": "src/views/pages/index.twig",
+    "twigComponents": [
+      "home"
+    ],
+    "themeFeatures": [
+      {
+        "name": "Youtube",
+        "description": "This feature is responsible for displaying Youtube videos that the developer preselects."
+      },
+      {
+        "name": "Fixed Banner",
+        "description": "Fixed banner is the area in charge of displaying a banner that is fixated on the home page."
+      },
+      {
+        "name": "Featured prodcuts style 1",
+        "description": "Using this feature, showcases the featured products in a pre-defined style."
+      },
+      {
+        "name": "Featured prodcuts style 2",
+        "description": "Using this feature, showcases the featured products in a pre-defined style."
+      },
+      {
+        "name": "Featured prodcuts style 3",
+        "description": "Using this feature, showcases the featured products in a pre-defined style."
+      },
+      {
+        "name": "Testimonials",
+        "description": "This feature displays testimonials that the developer preselects."
+      },
+      {
+        "name": "Parallax backgorund",
+        "description": "This feature displays products with a backgournd that zooms out slowly giving a 2D effect."
+      },
+      {
+        "name": "Photos slider",
+        "description": "Photos are displayed in a slider by using this feature."
+      },
+      {
+        "name": "Store Features",
+        "description": "This feature oversees the display of store's overall features, such as detailed product description or customer review of the product."
+      },
+      {
+        "name": "Square photos",
+        "description": "Use this feature to display photos in a square shape."
+      },
+      {
+        "name": "Fixed products",
+        "description": "Use this feature to pin the products that you wish to have displayed always."
+      },
+      {
+        "name": "Products slider",
+        "description": "This slider feature helps navigate between products vertically/horizontally."
+      },
+      {
+        "name": "Latest Products",
+        "description": "This feature displays the latest products added to the store automatically."
+      },
+      {
+        "name": "Vertical Menu with Slider",
+        "description": "This feature display a vertical menue with slider to display links and images"
+      }
+    ],
+    "themeComponents": [
+      {
+        "name": "Brands",
+        "description": "Brands' logos of the store are displayed in this component section."
+      },
+      {
+        "name": "Main links",
+        "description": "This component helps to portray the store main links."
+      },
+      {
+        "name": "Enhanced Slider",
+        "description": "The slider component helps navigate vertically/horizontally."
+      },
+      {
+        "name": "Slider products with header",
+        "description": "Slider products with header displays the products in a slide and give the sldier a header title."
+      },
+      {
+        "name": "Enhanced Square Banners",
+        "description": "Enhanced banners in a square shape are displayed with this component's help"
+      }
+    ],
+    "customComponentExample": {
+      "schemaFile": "twilight.json",
+      "schemaSection": "components",
+      "exampleName": "custom-slider",
+      "examplePath": "src/views/components/home/custom-slider.twig"
+    },
+    "featurePrefix": "component-",
+    "allowsStaticContent": true,
+    "prefersThemeFeatures": true
+  }
+]

@@ -1,0 +1,1991 @@
+[
+  {
+    "component": "salla-add-product-button",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "page.slug",
+      "pages.cart.add_to_cart",
+      "pages.cart.book_now",
+      "pages.products.donation_amount",
+      "pages.products.donation_exceed",
+      "pages.products.out_of_stock",
+      "pages.products.pre_order_now",
+      "pages.products.remained",
+      "pages.products.starting_price",
+      "salla::wishlist",
+      "store.settings.product.fit_type",
+      "store.settings.product.show_price_as_dash",
+      "theme.settings.placeholder",
+      "custom-wishlist-card:: product does not exist!",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/partials/product-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-product-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/product-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/wishlist-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-wishlist-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/wishlist-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-add-product-toast",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "Error processing product added event:",
+      "Product Added",
+      "cart",
+      "images/check.svg",
+      "pages.cart.added_to_cart",
+      "pages.cart.complete_order",
+      "pages.cart.view_cart",
+      "pages.checkout.show_more"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Master Layout",
+        "url": "https://docs.salla.dev/421944m0",
+        "section": "Official Theme Raed template: official-theme-raed-master-layout.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/master.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/add-product-toast.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-add-product-toast-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/add-product-toast.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-apps-icons",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-breadcrumb",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.updateItem",
+      "{{ item.id }}",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/layouts/customer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-layouts-customer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/customer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/blog/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-blog-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/blog/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/blog/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-blog-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/blog/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/brands/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-brands-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/brands/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/brands/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-brands-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/brands/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/loyalty.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-loyalty-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/loyalty.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/page-single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-page-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/page-single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/testimonials.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-testimonials-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/testimonials.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-button",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.updateItem",
+      "{{ item.id }}",
+      "rating::delete",
+      "rating::edit",
+      "rating::open",
+      "Error processing product added event:",
+      "Product Added",
+      "cart",
+      "images/check.svg",
+      "pages.cart.added_to_cart",
+      "pages.cart.complete_order",
+      "pages.cart.view_cart",
+      "pages.checkout.show_more",
+      "page.slug",
+      "pages.cart.add_to_cart",
+      "pages.cart.book_now",
+      "pages.products.donation_amount",
+      "pages.products.donation_exceed",
+      "pages.products.out_of_stock",
+      "pages.products.pre_order_now",
+      "pages.products.remained",
+      "pages.products.starting_price",
+      "salla::wishlist",
+      "store.settings.product.fit_type",
+      "store.settings.product.show_price_as_dash",
+      "theme.settings.placeholder",
+      "custom-wishlist-card:: product does not exist!",
+      "profile.update",
+      "size-guide::open",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}",
+      "order.sendInvoice"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/order.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-order-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/order.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/add-product-toast.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-add-product-toast-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/add-product-toast.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/product-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-product-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/product-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/wishlist-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-wishlist-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/wishlist-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style1.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style1-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style1.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style2.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style2-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style2.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/landing-page.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-landing-page-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/landing-page.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/loyalty.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-loyalty-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/loyalty.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/partials/product/options.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-partials-product-options-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/partials/product/options.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/thank-you.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-thank-you-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/thank-you.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-cart-coupons",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.updateItem",
+      "{{ item.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-cart-item-offers",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.updateItem",
+      "{{ item.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-cart-summary",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "[data-close-modal]",
+      "blocks.header.main_menu",
+      "theme.is_rtl",
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/app.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-app-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/app.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-comments",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "sort",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/testimonials.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-testimonials-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/testimonials.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/blog/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-blog-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/blog/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/page-single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-page-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/page-single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/testimonials.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-testimonials-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/testimonials.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-conditional-offer",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.updateItem",
+      "{{ item.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-contacts",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-count-down",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "page.slug",
+      "pages.cart.add_to_cart",
+      "pages.cart.book_now",
+      "pages.products.donation_amount",
+      "pages.products.donation_exceed",
+      "pages.products.out_of_stock",
+      "pages.products.pre_order_now",
+      "pages.products.remained",
+      "pages.products.starting_price",
+      "salla::wishlist",
+      "store.settings.product.fit_type",
+      "store.settings.product.show_price_as_dash",
+      "theme.settings.placeholder",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/partials/product-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-product-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/product-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/landing-page.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-landing-page-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/landing-page.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-datetime-picker",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "profile.update"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-edit-order-button",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "rating::delete",
+      "rating::edit",
+      "rating::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-file-upload",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "profile.update",
+      "size-guide::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/layouts/customer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-layouts-customer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/customer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/partials/product/options.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-partials-product-options-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/partials/product/options.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-filters",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "salla-filters::changed",
+      "salla-products-list::products.fetched",
+      "sort",
+      "theme.is_rtl"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/products.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-products-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/products.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-gifting",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.updateItem",
+      "{{ item.id }}",
+      "common.messages.required_fields",
+      "pages.cart.free_shipping_alert",
+      "pages.cart.has_free_shipping",
+      "user.type",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/cart.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-cart-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/cart.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-infinite-scroll",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/blog/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-blog-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/blog/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-installment",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-loading",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/partials/validate-product-options.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-validate-product-options-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/validate-product-options.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-localization-modal",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-login-modal",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Master Layout",
+        "url": "https://docs.salla.dev/421944m0",
+        "section": "Official Theme Raed template: official-theme-raed-master-layout.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/master.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-loyalty",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/loyalty.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-loyalty-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/loyalty.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-loyalty-panel",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.updateItem",
+      "{{ item.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-menu",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "blocks.home.display_all",
+      "common.titles.more",
+      "salla-menu::Error fetching menus",
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/partials/main-menu.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-main-menu-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/main-menu.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-metadata",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-mini-checkout-widget",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/landing-page.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-landing-page-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/landing-page.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-modal",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "rating::delete",
+      "rating::edit",
+      "rating::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-modal-body",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "[data-close-modal]",
+      "blocks.header.main_menu",
+      "theme.is_rtl"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/app.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-app-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/app.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-modal-overlay",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "[data-close-modal]",
+      "blocks.header.main_menu",
+      "theme.is_rtl"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/app.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-app-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/app.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-multiple-bundle-product",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "size-guide::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/partials/product/options.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-partials-product-options-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/partials/product/options.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-notifications",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/customer/notifications.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-notifications-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/notifications.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-offer",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.updateItem",
+      "{{ item.id }}",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-offer-modal",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Master Layout",
+        "url": "https://docs.salla.dev/421944m0",
+        "section": "Official Theme Raed template: official-theme-raed-master-layout.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/master.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-order-details",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "rating::delete",
+      "rating::edit",
+      "rating::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-order-totals-card",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "rating::delete",
+      "rating::edit",
+      "rating::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-orders",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/customer/orders/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-orders-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-payments",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-card",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "page.slug",
+      "pages.cart.add_to_cart",
+      "pages.cart.book_now",
+      "pages.products.donation_amount",
+      "pages.products.donation_exceed",
+      "pages.products.out_of_stock",
+      "pages.products.pre_order_now",
+      "pages.products.remained",
+      "pages.products.starting_price",
+      "salla::wishlist",
+      "store.settings.product.fit_type",
+      "store.settings.product.show_price_as_dash",
+      "theme.settings.placeholder"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/partials/product-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-product-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/product-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style1.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style1-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style1.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style3.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style3-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style3.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-options",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "size-guide::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/partials/validate-product-options.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-validate-product-options-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/validate-product-options.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/partials/product/options.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-partials-product-options-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/partials/product/options.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-product-size-guide",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "size-guide::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/partials/product/options.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-partials-product-options-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/partials/product/options.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-products-list",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "blocks.home.display_all",
+      "common.titles.more",
+      "salla-menu::Error fetching menus",
+      "salla-filters::changed",
+      "salla-products-list::products.fetched",
+      "sort",
+      "theme.is_rtl"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/partials/main-menu.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-main-menu-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/main-menu.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/products.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-products-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/products.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style2.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style2-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style2.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/fixed-products.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-fixed-products-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/fixed-products.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/latest-products.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-latest-products-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/latest-products.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/brands/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-brands-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/brands/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/customer/wishlist.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-wishlist-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/wishlist.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/landing-page.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-landing-page-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/landing-page.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-products-slider",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/components/home/featured-products-style2.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-featured-products-style2-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/featured-products-style2.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/products-slider.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-products-slider-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/products-slider.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/slider-products-with-header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-slider-products-with-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/slider-products-with-header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/landing-page.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-landing-page-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/landing-page.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-progress-bar",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "page.slug",
+      "pages.cart.add_to_cart",
+      "pages.cart.book_now",
+      "pages.products.donation_amount",
+      "pages.products.donation_exceed",
+      "pages.products.out_of_stock",
+      "pages.products.pre_order_now",
+      "pages.products.remained",
+      "pages.products.starting_price",
+      "salla::wishlist",
+      "store.settings.product.fit_type",
+      "store.settings.product.show_price_as_dash",
+      "theme.settings.placeholder"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/partials/product-card.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-product-card-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/product-card.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-quantity-input",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.updateItem",
+      "{{ item.id }}",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/assets/js/partials/validate-product-options.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-partials-validate-product-options-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/partials/validate-product-options.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-quick-order",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-rating-modal",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "rating::delete",
+      "rating::edit",
+      "rating::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-rating-stars",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "rating::delete",
+      "rating::edit",
+      "rating::open",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Single Order Page",
+        "url": "https://docs.salla.dev/422564m0",
+        "section": "Official Theme Raed template: official-theme-raed-single-order-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/orders/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/custom-testimonials.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-custom-testimonials-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/custom-testimonials.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-reviews",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/components/home/testimonials.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-testimonials-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/testimonials.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-scopes",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Master Layout",
+        "url": "https://docs.salla.dev/421944m0",
+        "section": "Official Theme Raed template: official-theme-raed-master-layout.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/master.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-search",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Master Layout",
+        "url": "https://docs.salla.dev/421944m0",
+        "section": "Official Theme Raed template: official-theme-raed-master-layout.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/master.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-slider",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "product::price.updated.failed",
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/assets/js/product.js",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-assets-js-product-js.js",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/assets/js/product.js",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/custom-testimonials.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-custom-testimonials-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/custom-testimonials.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/enhanced-slider.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-enhanced-slider-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/enhanced-slider.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/main-links.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-main-links-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/main-links.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/components/home/photos-slider.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-home-photos-slider-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/home/photos-slider.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/blog/index.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-blog-index-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/blog/index.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/loyalty.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-loyalty-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/loyalty.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-social",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-social-share",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.addItem",
+      "scopes::open",
+      "{{ product.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/product/single.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-product-single-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/product/single.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-tel-input",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "profile.update"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-tiered-offer",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "cart.updateItem",
+      "{{ item.id }}"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Cart Page",
+        "url": "https://docs.salla.dev/422575m0",
+        "section": "Official Theme Raed template: official-theme-raed-cart-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/cart.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-trust-badges",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/components/footer/footer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-footer-footer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/footer/footer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-user-menu",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "scopes::open"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/components/header/header.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-components-header-header-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/components/header/header.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      },
+      {
+        "title": "Theme Raed: src/views/layouts/customer.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-layouts-customer-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/layouts/customer.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-user-settings",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "profile.update"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-verify",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [
+      "profile.update"
+    ],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed: src/views/pages/customer/profile.twig",
+        "url": "https://docs.salla.dev/845904f0",
+        "section": "Official Theme Raed template: official-theme-raed-src-views-pages-customer-profile-twig.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/profile.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  },
+  {
+    "component": "salla-wallet",
+    "properties": [],
+    "events": [],
+    "methods": [],
+    "slots": [],
+    "sallaActions": [],
+    "cssVariables": [],
+    "sources": [
+      {
+        "title": "Theme Raed Wallet Page",
+        "url": "https://github.com/SallaApp/theme-raed/blob/master/src/views/pages/customer/wallet.twig",
+        "section": "Official Theme Raed template: official-theme-raed-wallet-page.twig",
+        "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/src/views/pages/customer/wallet.twig",
+        "sourceType": "official-template",
+        "syncedAt": "2026-05-04T04:19:04.203Z"
+      }
+    ]
+  }
+]

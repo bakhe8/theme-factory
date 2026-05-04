@@ -1,0 +1,79 @@
+{
+  "subject": "twilight-web-components-usage",
+  "runtimeModes": {
+    "twilightThemes": {
+      "autoInjected": true,
+      "bundleOrHtmlIncludeRequired": false,
+      "evidence": "#### Twilight Themes\n\nWhen using **Twilight web components** within Twilight themes, there's no need to include them in your bundle or HTML. The **Twilight theme engine** will automatically inject the latest version of the **Twilight web components** into the page."
+    },
+    "bundlerEsModules": {
+      "allowedOutsideTwilightThemeRuntime": true,
+      "requires": [
+        "Node.js",
+        "Tailwind CSS"
+      ],
+      "package": "@salla.sa/twilight-components",
+      "installCommands": [
+        "npm install @salla.sa/twilight-components --save",
+        "yarn add @salla.sa/twilight-components"
+      ],
+      "importPath": "@salla.sa/twilight-components/loader",
+      "registrationFunctions": [
+        "applyPolyfills",
+        "defineCustomElements"
+      ],
+      "registersOn": "window",
+      "evidence": "#### Bundler/ES modules\n\nYou need Node.js and Tailwind CSS installed, then install the components by performing one of the following commands:\n\n<Tabs>\n <Tab title=\"NPM Installation Command\">\n```\nnpm install @salla.sa/twilight-components --save\n```\n </Tab>\n <Tab title=\"Yarn Installation Command\">\n```\nyarn add @salla.sa/twilight-components\n```\n </Tab>\n</Tabs>\n\n<br>\n\nIn your javascript codebase, you can import the components as follows:\n\n<Tabs>\n <Tab title=\"Import Command\">\n \nThe following code imports and applies polyfills for older browsers, then registers the **Twilight Web Components** with the `window` object, enabling their use in the webpage.\n \n```js\nimport {\n applyPolyfills, \n defineCus"
+    },
+    "cdn": {
+      "allowedOutsideTwilightThemeRuntime": true,
+      "scriptType": "module",
+      "src": "https://unpkg.com/@salla.sa/twilight-components@latest/dist/twilight-components/twilight-components.esm.js"
+    }
+  },
+  "tailwindConfig": {
+    "file": "tailwind.config.js",
+    "foundation": "Tailwind CSS",
+    "plugin": "@salla.sa/twilight-tailwind-theme",
+    "requiresTemplatePaths": true,
+    "emptyCssRisk": true,
+    "safeListPath": "node_modules/@salla.sa/twilight-tailwind-theme/safe-list-css.txt",
+    "documentedContentPaths": [
+      "views/**/*.twig",
+      "node_modules/@salla.sa/twilight-tailwind-theme/safe-list-css.txt"
+    ],
+    "starterThemeIncludesTailwindConfig": true,
+    "evidence": "### Tailwind Config\n\n[Tailwind CSS Framework](https://tailwindcss.com/) is the default foundation for the **Twilight web components**. There is a possibility that future plans may include other CSS frameworks.\n\nNow you can adding twilight tainwind theme to your `tailwind.config.js` file:\n\n```js\n ...\n plugins: [\n ...\n      require('@salla.sa/twilight-tailwind-theme'),\n      ...\n]\n ...\n```\n\n**Tailwind** added a [just-in-time compiler](https://v2.tailwindcss.com/docs/just-in-time-mode), which generates styles as the developer writes the theme rather than generating everything in advance at initial build time.\n\nSince JIT mode generates your CSS on-demand by scanning your template files, it’s cru"
+  },
+  "markupExamples": [
+    "salla-button",
+    "salla-modal",
+    "salla-product-availability",
+    "salla-tel-input"
+  ],
+  "cssVariables": [
+    "--color-primary",
+    "--color-primary-dark",
+    "--color-primary-light",
+    "--color-primary-reverse",
+    "--font-main"
+  ],
+  "events": {
+    "recommendsDomEvents": true,
+    "customEventsDocumentedPerComponent": true,
+    "examples": [
+      "modalVisibilityChanged"
+    ],
+    "whenDefined": [
+      "salla-button"
+    ],
+    "evidence": "## Events\n\nWe recommend using DOM events, but we also provide custom events to help with specific event kinds. All custom events are always documented on their own documentation page for each component.\n\n```js title=\"Modal Event Initialization\"\n// Save reference to the modal component below\nvar modal = document.querySelector(\"salla-modal\");\n\n// Listen for open events\nmodal.addEventListener(\"modalVisibilityChanged\", function (status) {\n console.log(\"Modal is opened?\", status);\n});\n```\n\nMoreover, developers can detect when a component has been loaded, as Twilight registers its components using the standard Web Components API's CustomElementsRegistry object. This object also provides a `whenDef"
+  },
+  "sources": [
+    {
+      "title": "Usage",
+      "url": "https://docs.salla.dev/422689m0",
+      "section": "Usage / Installation / Tailwind Config / CSS Variables / Events"
+    }
+  ]
+}

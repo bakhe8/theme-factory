@@ -1,0 +1,317 @@
+{
+  "root": "src/views/components/",
+  "characteristics": {
+    "reusable": true,
+    "strictTyping": true,
+    "defaultValues": true,
+    "requiredOnlyWhenMarked": true,
+    "customComponentsAllowed": true
+  },
+  "categories": [
+    {
+      "id": "home",
+      "title": "Home Components",
+      "location": "src/views/components/home/",
+      "items": [
+        {
+          "name": "Youtube",
+          "url": "https://docs.salla.dev/doc-422582?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "Fixed banner",
+          "url": "https://docs.salla.dev/doc-422583?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "Testimonials",
+          "url": "https://docs.salla.dev/doc-422584?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "Random testimonials"
+        },
+        {
+          "name": "Parallax background",
+          "url": "https://docs.salla.dev/doc-422585?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "Photos slider",
+          "url": "https://docs.salla.dev/doc-422586?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "Store features",
+          "url": "https://docs.salla.dev/doc-422587?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "Fixed products",
+          "url": "https://docs.salla.dev/doc-422589?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "Products slider",
+          "url": "https://docs.salla.dev/doc-422590?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "Featured products style 1",
+          "url": "https://docs.salla.dev/doc-422591?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "Featured products style 2",
+          "url": "https://docs.salla.dev/doc-422592?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "Featured products style 3",
+          "url": "https://docs.salla.dev/doc-422593?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "latest products",
+          "url": "https://docs.salla.dev/doc-422599?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "name": "Vertical menue with slider"
+        }
+      ],
+      "docLinks": [
+        {
+          "title": "here",
+          "url": "https://docs.salla.dev/doc-422558?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Youtube",
+          "url": "https://docs.salla.dev/doc-422582?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Fixed banner",
+          "url": "https://docs.salla.dev/doc-422583?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Testimonials",
+          "url": "https://docs.salla.dev/doc-422584?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Parallax background",
+          "url": "https://docs.salla.dev/doc-422585?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Photos slider",
+          "url": "https://docs.salla.dev/doc-422586?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Store features",
+          "url": "https://docs.salla.dev/doc-422587?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Fixed products",
+          "url": "https://docs.salla.dev/doc-422589?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Products slider",
+          "url": "https://docs.salla.dev/doc-422590?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Featured products style 1",
+          "url": "https://docs.salla.dev/doc-422591?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Featured products style 2",
+          "url": "https://docs.salla.dev/doc-422592?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Featured products style 3",
+          "url": "https://docs.salla.dev/doc-422593?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "latest products",
+          "url": "https://docs.salla.dev/doc-422599?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        }
+      ],
+      "groups": []
+    },
+    {
+      "id": "header",
+      "title": "Header Components",
+      "location": "src/views/components/header/",
+      "items": [
+        {
+          "name": "Header"
+        },
+        {
+          "name": "Advertisement"
+        },
+        {
+          "name": "Breadcrumbs"
+        },
+        {
+          "name": "Main Menu"
+        },
+        {
+          "name": "User Menu"
+        }
+      ],
+      "docLinks": [
+        {
+          "title": "Header Components",
+          "url": "https://docs.salla.dev/doc-422601?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        }
+      ],
+      "groups": []
+    },
+    {
+      "id": "footer",
+      "title": "Footer Components",
+      "location": "src/views/components/footer/",
+      "items": [
+        {
+          "name": "Footer"
+        },
+        {
+          "name": "Contacts"
+        },
+        {
+          "name": "Copyrights"
+        },
+        {
+          "name": "Mobile Apps"
+        },
+        {
+          "name": "Pages"
+        },
+        {
+          "name": "Payment Methods"
+        },
+        {
+          "name": "Social"
+        }
+      ],
+      "docLinks": [
+        {
+          "title": "Footer Components",
+          "url": "https://docs.salla.dev/doc-422602?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        }
+      ],
+      "groups": []
+    },
+    {
+      "id": "product",
+      "title": "Product Components",
+      "location": "src/views/components/product/",
+      "items": [
+        {
+          "name": "Essentials"
+        },
+        {
+          "name": "Options"
+        }
+      ],
+      "docLinks": [],
+      "groups": [
+        {
+          "id": "product-essentials",
+          "title": "Essentials",
+          "location": "src/views/components/product/",
+          "items": [
+            {
+              "name": "Donation progress bar"
+            },
+            {
+              "name": "Offer"
+            },
+            {
+              "name": "Notify availability"
+            },
+            {
+              "name": "Quick access"
+            },
+            {
+              "name": "Similar products"
+            }
+          ],
+          "docLinks": [
+            {
+              "title": "Essentials",
+              "url": "https://docs.salla.dev/doc-422604?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+            }
+          ]
+        },
+        {
+          "id": "product-options",
+          "title": "Options",
+          "location": "src/views/components/product/options/",
+          "items": [
+            {
+              "name": "Color"
+            },
+            {
+              "name": "Date"
+            },
+            {
+              "name": "Datetime"
+            },
+            {
+              "name": "Donation"
+            },
+            {
+              "name": "Image"
+            },
+            {
+              "name": "Multiple Options"
+            },
+            {
+              "name": "Number"
+            },
+            {
+              "name": "Single Option"
+            },
+            {
+              "name": "Splitter"
+            },
+            {
+              "name": "Text"
+            },
+            {
+              "name": "Textarea"
+            },
+            {
+              "name": "Thumbnail"
+            },
+            {
+              "name": "Time"
+            }
+          ],
+          "docLinks": [
+            {
+              "title": "Options",
+              "url": "https://docs.salla.dev/doc-422605?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comments",
+      "title": "Comments Component",
+      "location": "src/views/components/comments.twig",
+      "items": [],
+      "docLinks": [
+        {
+          "title": "Comments component",
+          "url": "https://docs.salla.dev/doc-422603?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Single page",
+          "url": "https://docs.salla.dev/doc-422578?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        },
+        {
+          "title": "Single product page",
+          "url": "https://docs.salla.dev/doc-422561?nav=01HNFTD5Y5ESFQS3P9MJ0721VM"
+        }
+      ],
+      "groups": []
+    }
+  ],
+  "overview": "## Components \nTwilight main pages include many components that aim to deliver the best shipping experience for the end user.\nIn this article we will walk you through the main pages' components, which are:\n\n||||||\n|---|--|----|---|---|\n|[Home components](#home-components)|[Header components](#header-components)|[Footer components](#footer-components)|[Products components](#products-components)|[Comments component](#comments-component)|\n\n### Home Components \nHome components [`src/views/components/home/`](https://github.com/SallaApp/theme-raed/tree/master/src/views/components/home) are found in the home page and it's significant in giving the store front- display. Each component plays a role i",
+  "sources": [
+    {
+      "title": "Overview",
+      "url": "https://docs.salla.dev/422580m0",
+      "section": "Overview / Components catalog"
+    }
+  ]
+}

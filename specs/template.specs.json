@@ -1,0 +1,81 @@
+{
+    "_instructions": "انسخ هذا الملف إلى specs/<theme-name>.specs.json وعدّل القيم حسب هوية علامتك التجارية",
+
+    "brand": {
+        "name_ar": "اسم الثيم بالعربي",
+        "name_en": "Theme Name",
+        "identifier": "my-theme",
+        "version": "1.0.0",
+        "author": "اسم المطور أو الشركة",
+        "author_email": "email@example.com"
+    },
+
+    "visual_identity": {
+        "_comment_preset": "preset يطبق قيماً جاهزة: luxury | bold | minimalist | fashion | custom. عند اختيار custom تُستخدم قيم colors وfont أدناه",
+        "preset": "custom",
+
+        "colors": {
+            "_comment": "أكواد HEX فقط",
+            "primary": "#111111",
+            "accent": "#E6BEAE",
+            "background": "#fdfdfd",
+            "text": "#231f1e"
+        },
+
+        "_comment_font": "الخطوط المتاحة: Outfit | Cairo | Amiri | Almarai | DINNextLTArabic | Dubai | Estedad",
+        "font": "Outfit"
+    },
+
+    "settings": {
+        "_comment": "true لتفعيل، false لتعطيل",
+
+        "header": {
+            "sticky": true,
+            "dark_topbar": false,
+            "important_links": true,
+            "more_menu": true
+        },
+
+        "homepage": {
+            "show_all_button": true,
+            "vertical_fixed_products": false
+        },
+
+        "product": {
+            "image_zoom": true,
+            "sticky_add_to_cart": true,
+            "add_product_toast": true,
+            "show_tags": true
+        },
+
+        "footer": {
+            "dark": false
+        }
+    },
+
+    "features": {
+        "_comment": "true لتفعيل الميزة، false لحذفها. يؤثر على ما يظهر في لوحة تحكم التاجر",
+        "_comment_allowed": "هذه هي الميزات المسموح بها فقط حسب سياسة سلة (ALLOWED_FEATURES في salla-theme-policy.js)",
+
+        "mega_menu": true,
+        "fonts": true,
+        "color": true,
+        "breadcrumb": true,
+        "filters": true,
+        "unite_cards_height": true,
+        "menu_images": false,
+
+        "_comment_components": "بلوكات الصفحة الرئيسية المتاحة للتاجر",
+        "component_featured_products": true,
+        "component_fixed_banner": true,
+        "component_fixed_products": true,
+        "component_products_slider": true,
+        "component_photos_slider": true,
+        "component_parallax_background": false,
+        "component_random_testimonials": false,
+        "component_testimonials": true,
+        "component_square_photos": false,
+        "component_store_features": true,
+        "component_youtube": false
+    }
+}

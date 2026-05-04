@@ -1,0 +1,154 @@
+{
+  "subject": "theme-raed-official-baseline",
+  "repository": "https://github.com/SallaApp/theme-raed",
+  "role": {
+    "startingPoint": true,
+    "installedByDefault": true,
+    "shippedWithTwilight": true,
+    "customUiComponents": true,
+    "hooksAndEvents": true
+  },
+  "usage": {
+    "directoryStructure": {
+      "viewsComponentsHome": true,
+      "layoutsMaster": true,
+      "pages": [
+        "comments.twig",
+        "master.twig",
+        "cart.twig",
+        "index.twig",
+        "loyalty.twig",
+        "page-single.twig",
+        "thank-you.twig",
+        "single.twig",
+        "notifications.twig",
+        "profile.twig",
+        "wishlist.twig",
+        "single-comment.twig",
+        "card-full-image.twig",
+        "card-mini.twig",
+        "card.twig",
+        "options.twig",
+        "slider.twig"
+      ]
+    },
+    "previewCommands": [
+      "salla theme preview",
+      "salla theme p"
+    ]
+  },
+  "mainFeatures": {
+    "preDefinedThemeFeatures": [
+      {
+        "name": "Youtube",
+        "url": "https://docs.salla.dev/doc-422582/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "This component is responsible for displaying Youtube videos that the developer preselects."
+      },
+      {
+        "name": "Fixed Banner",
+        "url": "https://docs.salla.dev/doc-422583/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "Fixed banner is the area in charge of displaying a banner that is fixated on the home page."
+      },
+      {
+        "name": "Testimonials",
+        "url": "https://docs.salla.dev/doc-422584/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "This component displays testimonials that the developer preselects."
+      },
+      {
+        "name": "Parallax backgorund",
+        "url": "https://docs.salla.dev/doc-422585/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "This component displays products with a backgournd that zooms out slowly giving a 2D effect."
+      },
+      {
+        "name": "Photos slider",
+        "url": "https://docs.salla.dev/doc-422586/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "Photos are displayed in a slider by using this component."
+      },
+      {
+        "name": "Store Features",
+        "url": "https://docs.salla.dev/doc-422587/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "This component is responsible for showcasing the store features such as a detailed product description, customer reviews of the product, and a fast guest check-out option."
+      },
+      {
+        "name": "Square photos",
+        "url": "https://docs.salla.dev/doc-422588/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "Use this component to display photos in a square shape."
+      },
+      {
+        "name": "Fixed products",
+        "url": "https://docs.salla.dev/doc-422589/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "Use this component to pin the products that you wish to have displayed always."
+      },
+      {
+        "name": "Products slider",
+        "url": "https://docs.salla.dev/doc-422590/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "This slider component helps navigate between products vertically/horizontally."
+      },
+      {
+        "name": "Featured prodcuts style 1",
+        "url": "https://docs.salla.dev/doc-422591/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "Using this component, featured products are exhibited in a pre-defined style."
+      },
+      {
+        "name": "Featured prodcuts style 2",
+        "url": "https://docs.salla.dev/doc-422592/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "Using this component, featured products are exhibited in a pre-defined style."
+      },
+      {
+        "name": "Featured prodcuts style 3",
+        "url": "https://docs.salla.dev/doc-422593/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "Using this component, featured products are exhibited in a pre-defined style."
+      },
+      {
+        "name": "Latest Products",
+        "url": "https://docs.salla.dev/doc-422599/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "This component displays the latest products added to the store automatically."
+      },
+      {
+        "name": "Vertical menu with slider",
+        "url": "https://docs.salla.dev/doc-422600/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "Used to display a menu for a group of the sub-pages' links in a vertical menu."
+      }
+    ],
+    "customThemeComponents": [
+      {
+        "name": "Brands",
+        "url": "https://docs.salla.dev/doc-422594/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "Brands' logos of the store are displayed in this component section."
+      },
+      {
+        "name": "Enhanced Squared Image",
+        "url": "https://docs.salla.dev/doc-422595/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "Enhanced images in a square shape are displayed with the help of this component."
+      },
+      {
+        "name": "Main links",
+        "url": "https://docs.salla.dev/doc-422596/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "This component helps to portray the store main links."
+      },
+      {
+        "name": "Enhanced Slider",
+        "url": "https://docs.salla.dev/doc-422597/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "The slider component helps navigate vertically/horizontally."
+      },
+      {
+        "name": "Slider products with header",
+        "url": "https://docs.salla.dev/doc-422598/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM",
+        "description": "Slider products with header displays the products in a slide and give the sldier a header title."
+      }
+    ]
+  },
+  "evidence": {
+    "overview": "## Overview\nTheme Raed is the starting point for developers to design themes for merchant stores that reflect the uniqueness of each store on the [Salla Platform](https://s.salla.sa). Custom themes will make it much easier for developers to tailor the merchant's store to its changing demands over time. It shipped as the default theme along with the [Twilight Themes](https://docs.salla.dev/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM), which is the Salla themes engine for developers to create customizable themes to be used on the [Salla Platform](https://salla.sa/site/).",
+    "usage": "## Usage \nTheme Raed will be installed as the default theme when you install Twilight. We'll look at how this theme's directories are set up and how to use the preview mode in the next section.\n\n### Directory structure \n**Theme Raed** is a collection of files and folders that define the Salla Store presentation layer. Following is the directory structure for this starter theme.\n```shell\n+---scr\n +---assets\n | +---images \n | +---js \n | +---styles \n +---locales\n | ar.json\n | en.json\n +---views\n +---components\n | +---footer\n | +---header\n | +---home\n | +---product\n | comments.twig\n +---layouts\n | master.twig\n +---pages\n | cart.twig\n | index.twig\n | loyalty.twig\n | page-single.twig\n | thank-you.",
+    "mainFeatures": "## Main Features \nBy default, Theme Raed home page displays a collection of Pre-Defined and Custom Components. These components are located in the [`src/views/components/home/`](https://github.com/SallaApp/theme-raed/tree/master/src/views/components/home) folder.\n\n### Theme Features \n Pre-Defined Components, which are know as Theme Features, listed in the [twilight.json](https://github.com/SallaApp/theme-raed/blob/master/twilight.json) under the `features` section. Below is a list of these components.\n \n | <div style=\"width:220px\">Component</div> | Discription |\n | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n | [Youtube](https://docs.salla.dev/doc-422582/?nav=01HNF"
+  },
+  "source": {
+    "title": "Theme Raed README",
+    "url": "https://github.com/SallaApp/theme-raed",
+    "section": "README / Usage / Main Features",
+    "officialTemplateUrl": "https://raw.githubusercontent.com/SallaApp/theme-raed/master/README.md",
+    "sourceType": "official-template",
+    "syncedAt": "2026-05-04T04:19:04.203Z"
+  }
+}

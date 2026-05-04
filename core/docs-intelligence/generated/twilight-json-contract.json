@@ -1,0 +1,87 @@
+{
+  "file": "twilight.json",
+  "rootPlacement": true,
+  "sections": [
+    "author",
+    "settings",
+    "features",
+    "components"
+  ],
+  "author": {
+    "keys": [
+      "version",
+      "theme_name",
+      "repo_url",
+      "support_url"
+    ]
+  },
+  "settings": {
+    "requiredShape": [
+      "type",
+      "label",
+      "id",
+      "format"
+    ],
+    "retrieval": [
+      "theme.settings.get(\"topnav_is_dark\")"
+    ],
+    "evidence": "## Theme settings\n\nThe theme settings store information about global values that can be used anywhere in the theme. These values can be defined by their `type`, `label`, `id`, and `format`.\n\nIn the following example, there are two setting definitions:\n\n- The first is for a boolean value with a `switch` format, which by default is not selected.\n- The second setting is for a string value that represents the path to the theme's default image placeholder for any image.\n\n<Tabs>\n <Tab>\n \n```json title"
+  },
+  "features": {
+    "prefix": "component-",
+    "examples": [
+      "component-featured-products",
+      "component-fixed-banner",
+      "component-fixed-products",
+      "component-parallax-background",
+      "component-photos-slider",
+      "component-products-slider",
+      "component-random-testimonials",
+      "component-square-photos",
+      "component-store-features",
+      "component-testimonials",
+      "component-youtube",
+      "filters"
+    ],
+    "bestPractice": true,
+    "evidence": "## Theme Features\n\nThis part of the [twilight.json](https://github.com/SallaApp/theme-raed/blob/master/twilight.json) lists the theme features, which are [pre-defined components](https://docs.salla.dev/doc-421879?nav=01HNFTD5Y5ESFQS3P9MJ0721VM). It is a group of built-in components that come with Twilight for the [Home Page](https://docs.salla.dev/doc-422558?nav=01HNFTD5Y5ESFQS3P9MJ0721VM).\n\n:::tip[Note]\nAs a best practice, ensure to use the [Theme features](https://docs.salla.dev/doc-421879?nav"
+  },
+  "components": {
+    "schemaSection": "components",
+    "pathMapsTo": "src/views/components/{path.replace(\".\", \"/\")}.twig",
+    "example": {
+      "name": "custom-slider",
+      "path": "home.custom-slider",
+      "fields": [
+        {
+          "id": "images",
+          "type": "collection",
+          "format": "collection"
+        },
+        {
+          "id": "image",
+          "type": "string",
+          "format": "image"
+        },
+        {
+          "id": "title",
+          "type": "string",
+          "format": ""
+        },
+        {
+          "id": "sub_title",
+          "type": "string",
+          "format": "textarea"
+        }
+      ]
+    },
+    "evidence": "## Theme components\n\nIn addition to the [Theme features](#theme-features), which are the pre-defined components, the twilight.json file lists a group of [Theme Component(s)](https://docs.salla.dev/doc-421879?nav=01HNFTD5Y5ESFQS3P9MJ0721VM). These components are custom-built by the developer for the [Home Page](doc-422558?nav=01HNFTD5Y5ESFQS3P9MJ0721VM). The developer has the option to use own, new, and [custom component](https://docs.salla.dev/doc-422558?nav=01HNFTD5Y5ESFQS3P9MJ0721VM) as per th"
+  },
+  "sources": [
+    {
+      "title": "Twilight.json",
+      "url": "https://docs.salla.dev/421921m0",
+      "section": "Author settings / Theme settings / Theme Features / Theme components"
+    }
+  ]
+}

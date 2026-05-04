@@ -1,0 +1,89 @@
+{
+  "helpers": [
+    {
+      "name": "is_current_url",
+      "description": "Checks the link."
+    },
+    {
+      "name": "is_page",
+      "description": "Displays the page name."
+    },
+    {
+      "name": "link",
+      "description": "Creates links."
+    },
+    {
+      "name": "old",
+      "description": "Keeps previous inputs."
+    },
+    {
+      "name": "page",
+      "description": "Creates a link to the page."
+    },
+    {
+      "name": "pluralize",
+      "description": "Transforms the word into singular or plural forms."
+    },
+    {
+      "name": "trans",
+      "description": "Translates texts to the current store language."
+    }
+  ],
+  "filters": [
+    {
+      "name": "asset",
+      "description": "Creates links to Salla's theme files."
+    },
+    {
+      "name": "camel_case",
+      "description": "Replaces punctations and spaces with letters in uppercase."
+    },
+    {
+      "name": "cdn",
+      "description": "Retrives links of pre-defined files such as `font` and `saicon`."
+    },
+    {
+      "name": "currency",
+      "description": "Adds currency sign."
+    },
+    {
+      "name": "date",
+      "description": "Displays the dates in the current page language."
+    },
+    {
+      "name": "is_placeholder",
+      "description": "Checks if image url is placeholder or image."
+    },
+    {
+      "name": "kebab_case",
+      "description": "Replaces the spaces with a dash."
+    },
+    {
+      "name": "money",
+      "description": "An alias for currency filter."
+    },
+    {
+      "name": "number",
+      "description": "Parses numbers into Arabic numbers."
+    },
+    {
+      "name": "snake_case",
+      "description": "Replaces spaces in texts with underscore and keeps first letter in lowercase."
+    },
+    {
+      "name": "studly_case",
+      "description": "Capilaizes first letters in each subword."
+    },
+    {
+      "name": "time_ago",
+      "description": "Shows the time of and action execution."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Twilight flavoured twig",
+      "url": "https://docs.salla.dev/421929m0",
+      "section": "Helpers / Filters"
+    }
+  ]
+}

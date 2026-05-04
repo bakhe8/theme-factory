@@ -1,0 +1,47 @@
+{#
+| Variable        | Type       | Description                    |
+|-----------------|------------|--------------------------------|
+| products        | Products[] |                                |
+| title           | String     | Component Title                |
+#}
+<section class="s-block s-block--zen-products container py-12">
+    {% if title %}
+        <div class="s-block__title mb-10 text-center">
+            <h2 class="text-3xl font-light tracking-tight text-gray-900">{{ title }}</h2>
+            <div class="h-1 w-12 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+    {% endif %}
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {% for product in products %}
+            <div class="zen-product-card">
+                <a href="{{ product.url }}" class="zen-card-image block">
+                    <img src="{{ product.image.url }}" alt="{{ product.image.alt }}" loading="lazy">
+                </a>
+                
+                <div class="zen-card-actions">
+                    <salla-add-product-button 
+                        product-id="{{ product.id }}" 
+                        product-type="{{ product.type }}"
+                        class="btn-add-cart">
+                        {{ trans('pages.products.add_to_cart') }}
+                    </salla-add-product-button>
+                </div>
+
+                <div class="zen-card-content">
+                    <a href="{{ product.url }}" class="product-title">{{ product.name }}</a>
+                    <div class="product-price">
+                        {% if product.is_on_sale %}
+                            <span class="text-sm line-through text-gray-400 ml-2">{{ product.regular_price|money }}</span>
+                        {% endif %}
+                        <span>{{ product.price|money }}</span>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-span-full text-center py-10 text-gray-400">
+                {{ trans('common.no_products') }}
+            </div>
+        {% endfor %}
+    </div>
+</section>
