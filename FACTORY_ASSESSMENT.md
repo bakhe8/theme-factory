@@ -25,7 +25,7 @@
 | Exception Registry | أُغلقت للمرحلة الأولى | `exceptions gate` يثبت أن كل استثناء له نطاق ومصدر ومراجعة |
 | RTL | أُغلقت للمرحلة الأولى | `rtl gate` يفحص صفحات معاينة desktop/mobile بلا overflow أفقي |
 | Checkout fixture | أُغلقت | `checkout-flow` يضغط القسيمة والشحن المجاني والولاء والهدايا والدفع المعلق |
-| Twilight الحقيقي | مفتوحة | ما زال يحتاج smoke يحمّل Twilight.js الحقيقي أو بيئة سلة أقرب |
+| Twilight الحقيقي | أُغلقت للمرحلة الأولى | `twilight smoke` يحقن loader الرسمي من `@salla.sa/twilight-components` ويمنع mock المكوّنات أثناء الفحص |
 | Visual checklist | مفتوحة | تحتاج ربطاً إلزامياً قبل الاعتماد |
 
 **القاعدة بعد هذا التحديث:** أي فجوة بقيت في هذا الملف يجب أن تكون قابلة للتحويل إلى Gate أو Checklist أو سجل استثناءات، لا مجرد ملاحظة محفوظة.
@@ -140,7 +140,7 @@
 
 **النقطة 10:** أداء RTL في جميع الصفحات غير مضمون — لا rule يمنع استخدام `margin-left` بدل logical properties.
 
-**النقطة 11:** سلوك Web Components ضمن بيئة Twilight الحقيقية غير محاكى — الـ browser smoke يعمل بدون تحميل Twilight.js الحقيقي.
+**النقطة 11:** سلوك Web Components ضمن بيئة Twilight الحقيقية أصبح مفحوصاً في المرحلة الأولى عبر `twilight-smoke`: يتم فتح معاينات المصنع نفسها، تعطيل تعريفات mock لـ `salla-*`، ثم تحميل loader الرسمي المحلي من `@salla.sa/twilight-components` والتحقق من تعريف المكوّنات الأساسية.
 
 ---
 
@@ -193,7 +193,7 @@
 | **لا بيئة سلة حقيقية** | إضافة خطوة إلزامية في `workflow gate` تطلب تأكيد اختبار على partner portal قبل التسليم النهائي |
 | **checkout غير مختبر** | إضافة fixture خاص بـ checkout flow يغطي: قسيمة، شحن مجاني، نقاط ولاء، منتج رقمي |
 | **RTL غير مفحوص** | rule في policy يرصد `margin-left` / `right:` / `padding-left` + browser smoke مع `dir="rtl"` صراحة |
-| **Web Components في Twilight** | تحميل Twilight.js الحقيقي من CDN سلة داخل browser smoke لاختبار custom events مثل `salla:cart.updated` |
+| **Web Components في Twilight** | تم تنفيذ smoke مستقل يحمّل حزمة Twilight الرسمية من `node_modules` داخل صفحات المعاينة، مع بقاء الاختبار السحابي/Partner Portal كخطوة لاحقة |
 
 ---
 
@@ -222,7 +222,7 @@
 | **تم** | git pre-commit hook | منخفض | عالٍ | 1 |
 | **تم** | RTL render gate مع browser smoke | منخفض | متوسط | 10 |
 | **تم** | checkout fixture جديد | متوسط | متوسط | 9 |
-| **متوسط** | Twilight.js في browser smoke | متوسط | عالٍ | 11 |
+| **تم** | Twilight.js في browser smoke | متوسط | عالٍ | 11 |
 | **متوسط** | رفع rules من 14 → ~30 | عالٍ | متوسط | 4 |
 | **متوسط** | Twig helpers الناقصة | منخفض | منخفض | 6 |
 | **طويل المدى** | visual checklist إلزامي في certify | منخفض | متوسط | 12 |
@@ -234,7 +234,7 @@
 
 الخيط المشترك بين كل التحفظات: المصنع قوي في منع الأخطاء البنيوية والأمنية الواضحة، لكن الفجوة بين ما يُفحص محلياً وما تطلبه سلة فعلياً لا تزال قائمة — سواء على مستوى الفريق (الانضباط) أو التغطية (7.7%) أو البيئة (محلي vs cloud).
 
-**تم تنفيذ page-contract gate وgit hook وException Registry وRTL gate وcheckout fixture. أكبر ثغرة تشغيلية متبقية الآن هي Twilight.js الحقيقي/بيئة سلة الأقرب للواقع، ثم visual checklist.**
+**تم تنفيذ page-contract gate وgit hook وException Registry وRTL gate وcheckout fixture وTwilight smoke. أكبر ثغرة تشغيلية متبقية الآن هي إلزام visual checklist ثم اختبار Partner Portal/سلة الحقيقي قبل التسليم النهائي.**
 
 ---
 
@@ -325,7 +325,7 @@
 | **متوسط** | `node factory.js guide` للتوجيه التفاعلي | متوسط | متوسط | مراجعة خارجية |
 | **متوسط** | توثيق "متى تستخدم أي أمر" لتخفيف ثقل manufacture | منخفض | متوسط | مراجعة خارجية |
 | **تم** | Exception Registry للاستثناءات المؤقتة الموثقة | متوسط | عالٍ | مراجعة خارجية |
-| **متوسط** | Twilight.js في browser smoke | متوسط | عالٍ | تحليلنا |
+| **تم** | Twilight.js في browser smoke | متوسط | عالٍ | تحليلنا |
 | **متوسط** | رفع rules من 14 → ~30 | عالٍ | متوسط | تحليلنا |
 | **متوسط** | Twig helpers الناقصة | منخفض | منخفض | تحليلنا |
 | **طويل المدى** | visual checklist إلزامي في certify | منخفض | متوسط | تحليلنا |

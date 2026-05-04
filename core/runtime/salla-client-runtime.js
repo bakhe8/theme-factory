@@ -600,13 +600,15 @@
     'salla-rating-stars': SallaRatingStars,
   };
 
-  Object.entries(registry).forEach(([name, constructor]) => {
-    if (!customElements.get(name)) customElements.define(name, constructor);
-  });
+  if (!window.__SALLA_TWILIGHT_EXTERNAL__) {
+    Object.entries(registry).forEach(([name, constructor]) => {
+      if (!customElements.get(name)) customElements.define(name, constructor);
+    });
 
-  simpleTags.forEach((name) => {
-    if (!customElements.get(name)) customElements.define(name, class extends RuntimeElement {});
-  });
+    simpleTags.forEach((name) => {
+      if (!customElements.get(name)) customElements.define(name, class extends RuntimeElement {});
+    });
+  }
 
   ready(() => {
     window.app = window.app || {};
