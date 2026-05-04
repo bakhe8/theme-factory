@@ -4,6 +4,7 @@ const { loadThemeSpecs } = require('./specs-loader');
 const { getApprovedThemeSource, rootDir } = require('./factory-config');
 
 const themesDir = path.join(rootDir, 'themes');
+const REQUIRED_BASE_TEMPLATE = 'raed';
 
 function manifestPathFor(themeName) {
   return path.join(themesDir, themeName || '', '.factory', 'manifest.json');
@@ -64,6 +65,10 @@ function validateWorkflow(themeName, options = {}) {
   }
 
   if (manifest.role === 'generated-theme') {
+    if (manifest.source_template !== REQUIRED_BASE_TEMPLATE) {
+      result.issues.push(`source_template يجب أن يكون ${REQUIRED_BASE_TEMPLATE}. كل الثيمات المولدة تبدأ من themes/${REQUIRED_BASE_TEMPLATE} فقط.`);
+    }
+
     const source = getApprovedThemeSource(manifest.source_template || 'raed');
     if (!source) {
       result.issues.push(`source_template غير معتمد في factory.config.json: ${manifest.source_template || '-'}`);

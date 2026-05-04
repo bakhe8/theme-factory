@@ -93,7 +93,7 @@ node factory.js deliver <theme>
    `node factory.js innovation gate <theme>`
 
 8. ثيم Raed:
-   Raed هو starting point ومعيار معايرة، وليس سقفاً للإبداع. لا ترفض فكرة فقط لأنها غير موجودة في Raed إذا كانت تمر عبر السياسات والبوابات.
+   Raed هو قاعدة التصنيع الإلزامية لكل ثيم جديد ومعيار المعايرة، وليس سقفاً للإبداع. المصنع يبدأ من `themes/raed` فقط عبر `create/manufacture`، ثم يضيف قدرات المصنع المطلوبة في specs. لا ترفض فكرة فقط لأنها غير موجودة في Raed إذا كانت تمر عبر السياسات والبوابات.
 
 ---
 
@@ -125,7 +125,7 @@ node factory.js manufacture <theme>
 مراحل `manufacture`:
 
 - إنشاء `workorders/<theme>/intake.json` وقراءة `specs/<theme>.specs.json`.
-- إنشاء الثيم من مصدر معتمد في `factory.config.json`.
+- إنشاء الثيم من قاعدة التصنيع الإلزامية `themes/raed`.
 - كتابة توقيع المصنع في `themes/<theme>/.factory/manifest.json`.
 - تطبيق المواصفات.
 - تثبيت التجارب المطلوبة من `specs.experiences`.

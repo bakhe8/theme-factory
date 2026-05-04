@@ -29,7 +29,7 @@ node factory.js intake my-new-theme --name-ar="ثيم جديد" --name-en="New T
 node factory.js manufacture my-new-theme
 ```
 
-لا تبدأ بنسخ `themes/raed` يدوياً. المصنع ينشئ الثيم من مصدر معتمد ويسجل توقيعه في:
+لا تبدأ بنسخ `themes/raed` يدوياً. المصنع نفسه يبدأ دائماً من `themes/raed` كقاعدة سلة الرسمية، ثم يطبق المواصفات والقدرات المسجلة، ويسجل توقيعه في:
 
 ```text
 themes/<theme>/.factory/manifest.json

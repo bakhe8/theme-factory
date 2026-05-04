@@ -16,7 +16,8 @@ const rootDir = path.join(__dirname, '..');
 const config = loadFactoryConfig();
 const themesDir = workspacePath('themes');
 const specsDir = workspacePath('specs');
-const templateName = sanitizeThemeName(process.env.FACTORY_TEMPLATE_THEME || 'raed');
+const REQUIRED_BASE_TEMPLATE = 'raed';
+const templateName = sanitizeThemeName(process.env.FACTORY_TEMPLATE_THEME || REQUIRED_BASE_TEMPLATE);
 const approvedSource = getApprovedThemeSource(templateName);
 const templatePath = approvedSource?.absolutePath || path.join(themesDir, templateName);
 const themePath = path.join(themesDir, themeName);
@@ -148,6 +149,10 @@ if (rawThemeName !== themeName) {
   console.log(`ℹ️ تم تطبيع الاسم إلى: ${themeName}`);
 }
 
+if (templateName !== REQUIRED_BASE_TEMPLATE) {
+  fail(`مصدر التصنيع الوحيد المسموح به هو themes/${REQUIRED_BASE_TEMPLATE}. لا تستخدم FACTORY_TEMPLATE_THEME لتغيير قاعدة الثيم.`);
+}
+
 if (!fs.existsSync(templatePath)) {
   fail(`قالب المصنع غير موجود: themes/${templateName}`);
 }
@@ -176,7 +181,7 @@ if (docsPreflight.issues.length > 0) {
 }
 
 console.log(`🚀 جاري إنشاء ثيم جديد مطابق لسياسة المصنع: ${themeName}`);
-console.log(`📦 القالب المعتمد: themes/${templateName}`);
+console.log(`📦 قاعدة التصنيع الإلزامية: themes/${REQUIRED_BASE_TEMPLATE}`);
 
 try {
   copyRecursive(templatePath, themePath);

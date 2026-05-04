@@ -50,7 +50,7 @@ node factory.js deliver <theme> --skip-certify
 
 1. يفحص ذاكرة وثائق سلة.
 2. يتأكد أن `specs/<theme>.specs.json` موجود وصالح.
-3. ينشئ الثيم من مصدر معتمد داخل `factory.config.json`.
+3. ينشئ الثيم من قاعدة التصنيع الإلزامية `themes/raed`.
 4. يكتب توقيع المصنع داخل `themes/<theme>/.factory/manifest.json`.
 5. يطبق المواصفات على `twilight.json` وملفات الهوية.
 6. يثبت التجارب المطلوبة في `specs.experiences`.
@@ -100,7 +100,7 @@ themes/<theme>/.factory/manifest.json
 هذا الملف يثبت:
 
 - أن الثيم أنشئ بواسطة `salla-theme-factory`.
-- مصدر القالب المعتمد، مثل `raed`.
+- أن مصدر القالب هو `raed` فقط. أي `generated-theme` بمصدر آخر يفشل في `workflow gate`.
 - مسار عقد المواصفات.
 - دور الثيم: `generated-theme` أو `source-template`.
 
