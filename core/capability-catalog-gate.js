@@ -348,6 +348,7 @@ function activeRequirementsFromSpecs(themeName, args, result) {
   ];
 
   for (const [key, config] of Object.entries(specs.integrations || {})) {
+    if (key.startsWith('_')) continue;
     if (!config || config.required === true) continue;
     const id = normalizeIntegrationId(config.id || key);
     const capability = capabilityForRequirement({ capabilities: result.capabilities }, 'integration', id);

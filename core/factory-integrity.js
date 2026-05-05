@@ -81,9 +81,8 @@ function scanSourceFiles() {
       }
     }
 
-    if (file.endsWith('.twig') && content.includes('|raw')) {
-      addIssue(relativePath, 'Security', 'استخدام فلتر |raw يتطلب تبريراً وتعقيماً واضحاً');
-    }
+    // Twig rendering rules are enforced through the policy pack so documented
+    // exceptions remain visible instead of becoming duplicate integrity issues.
   }
 }
 

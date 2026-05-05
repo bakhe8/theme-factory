@@ -1,0 +1,118 @@
+{
+  "_instructions": "انسخ هذا الملف إلى specs/<theme-name>.specs.json وعدّل القيم حسب هوية علامتك التجارية",
+  "brand": {
+    "name_ar": "ثيم إلكترونيات برو",
+    "name_en": "Electronics Pro",
+    "identifier": "electronics-store",
+    "version": "1.0.0",
+    "author": "Salla Theme Factory",
+    "author_email": "support@salla.sa"
+  },
+  "visual_identity": {
+    "_comment_preset": "preset يطبق قيماً جاهزة: luxury | bold | minimalist | fashion | custom. عند اختيار custom تُستخدم قيم colors وfont أدناه",
+    "preset": "custom",
+    "colors": {
+      "_comment": "أكواد HEX فقط",
+      "primary": "#0E7490",
+      "accent": "#F97316",
+      "background": "#F8FAFC",
+      "text": "#17202A"
+    },
+    "_comment_font": "الخطوط المتاحة: Outfit | Cairo | Amiri | Almarai | DINNextLTArabic | Dubai | Estedad",
+    "font": "Cairo"
+  },
+  "settings": {
+    "_comment": "true لتفعيل، false لتعطيل",
+    "header": {
+      "sticky": true,
+      "dark_topbar": true,
+      "important_links": true,
+      "more_menu": true
+    },
+    "homepage": {
+      "show_all_button": true,
+      "vertical_fixed_products": false
+    },
+    "product": {
+      "image_zoom": true,
+      "sticky_add_to_cart": true,
+      "add_product_toast": true,
+      "show_tags": true
+    },
+    "footer": {
+      "dark": true
+    }
+  },
+  "features": {
+    "_comment": "true لتفعيل الميزة، false لحذفها. يؤثر على ما يظهر في لوحة تحكم التاجر",
+    "_comment_allowed": "هذه هي الميزات المسموح بها فقط حسب سياسة سلة (ALLOWED_FEATURES في salla-theme-policy.js)",
+    "mega_menu": true,
+    "fonts": true,
+    "color": true,
+    "breadcrumb": true,
+    "filters": true,
+    "unite_cards_height": true,
+    "menu_images": false,
+    "_comment_components": "بلوكات الصفحة الرئيسية المتاحة للتاجر",
+    "component_featured_products": true,
+    "component_fixed_banner": true,
+    "component_fixed_products": true,
+    "component_products_slider": true,
+    "component_photos_slider": true,
+    "component_parallax_background": false,
+    "component_random_testimonials": false,
+    "component_testimonials": true,
+    "component_square_photos": false,
+    "component_store_features": true,
+    "component_youtube": false
+  },
+  "verticals": {
+    "_comment": "أنواع المتاجر المرجعية التي يجب أن يطابقها الثيم. إذا required=true ستفشل بوابة vertical عند عدم الالتزام",
+    "luxury_fragrance": {
+      "required": false,
+      "fixture": "fragrance-luxury"
+    },
+    "electronics": {
+      "required": true,
+      "fixture": "electronics-rich"
+    }
+  },
+  "experiences": {
+    "_comment": "تجارب البيع فوق Custom Components. إذا required=true يجب أن تكون مثبتة ومارة عبر Experience Gate",
+    "fragrance_discovery": {
+      "required": false,
+      "slug": "fragrance-discovery"
+    },
+    "product_flip": {
+      "required": true,
+      "slug": "device-spec-cards"
+    },
+    "lookbook": {
+      "required": false,
+      "slug": "editorial-lookbook"
+    }
+  },
+  "page_experiences": {
+    "_comment": "تجارب مرتبطة بصفحات محددة وليست home components ولا twilight.features",
+    "brands_alphabet_filter": {
+      "required": false,
+      "page": "brands.index",
+      "floating": true,
+      "letters": "ar-en"
+    }
+  },
+  "integrations": {
+    "_comment": "تكاملات إضافات خارجية. إذا required=true يجب توفير مصدر/عقد رسمي واضح قبل الاعتماد",
+    "image_search": {
+      "required": false,
+      "implementation": "external-addon",
+      "handled_by": "",
+      "placement": "header-search",
+      "source_url": ""
+    }
+  },
+  "innovation": {
+    "_comment": "تجارب ابتكارية تحت التطوير. لا تدخل certify/deliver إلا إذا كانت implemented أو certified في innovations/",
+    "experiments": []
+  }
+}

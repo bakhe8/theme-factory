@@ -1,0 +1,93 @@
+{#
+| Variable                      | Type      | Description                                                                  |
+|-------------------------------|-----------|------------------------------------------------------------------------------|
+| component                     | object    | Contains merchant settings for fields from twilight.json component section   |
+| title                         | ?string   | Fallback section title                                                       |
+| subtitle                      | ?string   | Fallback section subtitle                                                    |
+| products                      | Product[] | Fallback selected products                                                   |
+| component.products            | Product[] | Selected products                                                            |
+| component.show_details_button | bool      | Shows a details link on the card back                                        |
+| position                      | int       | Sorting number start from zero                                               |
+#}
+{% set block_title = component is defined and component.title is defined ? component.title : title|default(null) %}
+{% set block_subtitle = component is defined and component.subtitle is defined ? component.subtitle : subtitle|default(null) %}
+{% set selected_products = component is defined and component.products is defined ? component.products : products|default([]) %}
+{% set show_details_button = component is defined and component.show_details_button is defined ? component.show_details_button : true %}
+{% set component_id = 'device-spec-cards-' ~ position %}
+
+<section class="s-block s-block--device-spec-cards s-block--product-flip container py-8" id="{{ component_id }}" data-product-flip-experience>
+    {% if block_title or block_subtitle %}
+        <div class="s-block__title">
+            <div class="right-side">
+                {% if block_title %}
+                    <h2>{{ block_title }}</h2>
+                {% endif %}
+                {% if block_subtitle %}
+                    <p>{{ block_subtitle }}</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if selected_products|length %}
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {% for product in selected_products %}
+                <article class="product-flip-card" data-product-flip-card>
+                    <div class="product-flip-card__inner">
+                        <div class="product-flip-card__face product-flip-card__front">
+                            <custom-salla-product-card product="{{ product }}"></custom-salla-product-card>
+                            <button type="button" class="product-flip-card__toggle" data-product-flip-toggle aria-expanded="false">
+                                <span>{{ trans('common.show_more')|default('More') }}</span>
+                                <i class="sicon-arrow-left"></i>
+                            </button>
+                        </div>
+
+                        <div class="product-flip-card__face product-flip-card__back" aria-hidden="true">
+                            <button type="button" class="product-flip-card__close" data-product-flip-toggle aria-label="{{ trans('common.close')|default('Close') }}">
+                                <i class="sicon-cancel"></i>
+                            </button>
+
+                            <a href="{{ product.url }}" class="product-flip-card__media" aria-label="{{ product.name|e('html_attr') }}">
+                                <img src="{{ product.image.url|default(product.thumbnail) }}" alt="{{ product.image.alt|default(product.name)|e('html_attr') }}" loading="lazy">
+                            </a>
+
+                            <div class="product-flip-card__content">
+                                <h3><a href="{{ product.url }}">{{ product.name }}</a></h3>
+                                {% if product.subtitle %}
+                                    <p>{{ product.subtitle }}</p>
+                                {% endif %}
+
+                                <div class="product-flip-card__price">
+                                    {% if product.is_on_sale %}
+                                        <span class="line-through opacity-60">{{ product.regular_price|money }}</span>
+                                    {% endif %}
+                                    <strong>{{ product.price|money }}</strong>
+                                </div>
+
+                                <salla-add-product-button
+                                    fill="outline"
+                                    width="wide"
+                                    product-id="{{ product.id }}"
+                                    product-status="{{ product.status }}"
+                                    product-type="{{ product.type }}">
+                                    <i class="sicon-shopping-bag"></i>
+                                    <span>{{ trans('pages.cart.add_to_cart') }}</span>
+                                </salla-add-product-button>
+
+                                {% if show_details_button %}
+                                    <a href="{{ product.url }}" class="product-flip-card__details">
+                                        {{ trans('blocks.home.display_all')|default('View details') }}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="py-10 text-center text-gray-400">
+            {{ trans('common.no_products') }}
+        </div>
+    {% endif %}
+</section>

@@ -120,6 +120,16 @@ for (const vertical of parseList('--vertical=')) {
       slug: 'fragrance-discovery',
     };
   }
+
+  if (key === 'electronics') {
+    specs.verticals[key].fixture = 'electronics-rich';
+    specs.experiences = specs.experiences || {};
+    specs.experiences.product_flip = {
+      ...(specs.experiences.product_flip || {}),
+      required: true,
+      slug: 'device-spec-cards',
+    };
+  }
 }
 
 for (const experience of parseList('--experience=')) {

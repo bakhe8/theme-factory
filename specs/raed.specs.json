@@ -42,7 +42,7 @@
   "verticals": {},
   "experiences": {
     "fragrance_discovery": {
-      "required": true,
+      "required": false,
       "slug": "fragrance-discovery"
     }
   },

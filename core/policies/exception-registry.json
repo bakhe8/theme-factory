@@ -1,6 +1,6 @@
 {
   "schema": "salla-theme-factory/exception-registry@1",
-  "updated_at": "2026-05-04T00:00:00.000Z",
+  "updated_at": "2026-05-05T00:00:00.000Z",
   "exceptions": [
     {
       "id": "page-contract-orders-salla-map-raed-compatible",
@@ -208,6 +208,500 @@
         }
       ],
       "review_after": "2026-08-04",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-app-innerhtml-official-raed",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/app.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-official-raed-inherited-source",
+      "reason_ar": "??????? ????? ?? Raed ?????? ??????? ????? ????? ?? ????? Salla money ???? ????? ??????. ?????? ????? ?? ??? ????? ??? ???? ??????? innerHTML ?? ?????? ?????? ???????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/assets/js/app.js",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/assets/js/app.js",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-blog-innerhtml-official-raed",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/blog.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-official-raed-inherited-source",
+      "reason_ar": "??????? ????? ?? Raed ?????? ???????? ????? ?? ??????? ??? ???? ???????. ?? ????? ???? ??? ?? ???? DOM API ???.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/assets/js/blog.js",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/assets/js/blog.js",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-blog-outerhtml-official-raed",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/blog.js",
+        "sink": "outerHTML"
+      },
+      "decision": "accepted-official-raed-inherited-source",
+      "reason_ar": "??????? ?????? ?? ??????? ?? loader ???? ????? ?? Raed ??????. ?????? ???? ?????? ?? ?????? ?????? ??? ?? ?????? ?????? ??? ????? ?????? ??? ?? ???? ???????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/assets/js/blog.js",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/assets/js/blog.js",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-cart-innerhtml-official-raed",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/cart.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-official-raed-inherited-source",
+      "reason_ar": "??????? ????? ?? Raed ?????? ?????? ????? ????? ???????? ?? ?????? Salla runtime. ?? ???? ?????? ????? ?? ?????? ??? ????? ??? ??????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/assets/js/cart.js",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/assets/js/cart.js",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-product-innerhtml-official-raed",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/product.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-official-raed-inherited-source",
+      "reason_ar": "??????? ????? ?? Raed ?????? ?????? ????? ?????? ?? ?????? ??????. ?????? ????? ???? ?????? ???.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/assets/js/product.js",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/assets/js/product.js",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-products-innerhtml-official-raed",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/products.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-official-raed-inherited-source",
+      "reason_ar": "??????? ????? ?? Raed ?????? ?????? ????? ???? ???????? ?? ??????? Salla. ?? ??????? ???? ???? ??? ????? ???? ???????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/assets/js/products.js",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/assets/js/products.js",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-thankyou-innerhtml-official-raed",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/thankyou.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-official-raed-inherited-source",
+      "reason_ar": "??????? ????? ?? Raed ?????? ?????? ????? ????? ??????? ?? Salla. ??? ??????? ?????? ??? ???? ??? ??? ????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/assets/js/thankyou.js",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/assets/js/thankyou.js",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "dom-sink-validate-product-options-innerhtml-official-raed",
+      "status": "accepted",
+      "category": "policy.dom-sink",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/js/partials/validate-product-options.js",
+        "sink": "innerHTML"
+      },
+      "decision": "accepted-official-raed-inherited-source",
+      "reason_ar": "??????? ????? ?? Raed ?????? ?????? salla-loading ????. ?????? ????? ?? loader ?????? ???? ??? ?????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/assets/js/partials/validate-product-options.js",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/assets/js/partials/validate-product-options.js",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "twig-raw-footer-store-description-official-raed",
+      "status": "accepted",
+      "category": "policy.twig-raw",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/views/components/footer/footer.twig",
+        "sink": "|raw"
+      },
+      "decision": "accepted-official-raed-trusted-rendering",
+      "reason_ar": "??? ??? ?????? HTML ??? ????? Salla/Raed ??????. ?????? ????? ?? ???? ?????? ?????? ??? ???? |raw ?? ?????? ?????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/views/components/footer/footer.twig",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/views/components/footer/footer.twig",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "twig-raw-products-slider-subtitle-official-raed",
+      "status": "accepted",
+      "category": "policy.twig-raw",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/views/components/home/products-slider.twig",
+        "sink": "|raw"
+      },
+      "decision": "accepted-official-raed-trusted-rendering",
+      "reason_ar": "????? subtitle ??? ???? Salla ?????? ??? ?? Raed upstream. ??? ??????? |raw ?????? ????? ??? ??????? ?????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/views/components/home/products-slider.twig",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/views/components/home/products-slider.twig",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "twig-raw-blog-single-body-official-raed",
+      "status": "accepted",
+      "category": "policy.twig-raw",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/views/pages/blog/single.twig",
+        "sink": "|raw"
+      },
+      "decision": "accepted-official-raed-trusted-rendering",
+      "reason_ar": "??? ??? ?????? ?????? ?? Salla ??? ?? Raed ??????. ?????? ????? ?????? ?????? ???? ?????? ?????? ?? ?????? ??????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/views/pages/blog/single.twig",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/views/pages/blog/single.twig",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "twig-raw-brand-description-official-raed",
+      "status": "accepted",
+      "category": "policy.twig-raw",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/views/pages/brands/single.twig",
+        "sink": "|raw"
+      },
+      "decision": "accepted-official-raed-trusted-rendering",
+      "reason_ar": "??? ??? ??????? ??? ????? Salla ?? Raed ??????. ?? ???? ?????? ????? ???? ????? ??? ??????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/views/pages/brands/single.twig",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/views/pages/brands/single.twig",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "twig-raw-order-details-official-raed",
+      "status": "accepted",
+      "category": "policy.twig-raw",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/views/pages/customer/orders/single.twig",
+        "sink": "|raw"
+      },
+      "decision": "accepted-official-raed-trusted-rendering",
+      "reason_ar": "????? ??? ????? ????? ??????? ?????????? ?????? ?? Raed ??????. ?????? ????? ?? ???? ????? ???????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/views/pages/customer/orders/single.twig",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/views/pages/customer/orders/single.twig",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "twig-raw-landing-page-content-official-raed",
+      "status": "accepted",
+      "category": "policy.twig-raw",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/views/pages/landing-page.twig",
+        "sink": "|raw"
+      },
+      "decision": "accepted-official-raed-trusted-rendering",
+      "reason_ar": "??? ????? landing page ??? ????? Salla/Raed ??????. ?? Landing experience ????? ??? ?? ???? ???? HTML ?? ?????? |raw.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/views/pages/landing-page.twig",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/views/pages/landing-page.twig",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "twig-raw-page-single-content-official-raed",
+      "status": "accepted",
+      "category": "policy.twig-raw",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/views/pages/page-single.twig",
+        "sink": "|raw"
+      },
+      "decision": "accepted-official-raed-trusted-rendering",
+      "reason_ar": "??? ????? ?????? ??????? ?????? ?? Salla ??? ?? Raed ??????. ?????? ?? ???? ??? ????? ????? ?????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/views/pages/page-single.twig",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/views/pages/page-single.twig",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "twig-raw-product-index-title-official-raed",
+      "status": "accepted",
+      "category": "policy.twig-raw",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/views/pages/product/index.twig",
+        "sink": "|raw"
+      },
+      "decision": "accepted-official-raed-trusted-rendering",
+      "reason_ar": "????? ???? ????? ???????? ????? ?? Raed ??????. ???? ??????? ?? ?????? ?????? ?? ????? ??????? ????? ????? ??????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/views/pages/product/index.twig",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/views/pages/product/index.twig",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "twig-raw-product-single-description-official-raed",
+      "status": "accepted",
+      "category": "policy.twig-raw",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/views/pages/product/single.twig",
+        "sink": "|raw"
+      },
+      "decision": "accepted-official-raed-trusted-rendering",
+      "reason_ar": "??? ?????? ?????? ????? ???? ??? ?? Raed ?????? ?? ?????? ???? Salla. ?? ????? ????? ????? ?????? ??????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/views/pages/product/single.twig",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/views/pages/product/single.twig",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "twig-raw-thank-you-instructions-official-raed",
+      "status": "accepted",
+      "category": "policy.twig-raw",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/views/pages/thank-you.twig",
+        "sink": "|raw"
+      },
+      "decision": "accepted-official-raed-trusted-rendering",
+      "reason_ar": "??????? ????? ?? ???? ????? ?????? ?? Raed ?????? ????? ?? ?????? Salla. ?????? ????? ?? ??? ?????.",
+      "sources": [
+        {
+          "title": "Salla Technical Review security",
+          "url": "https://docs.salla.dev/421888m0",
+          "section": "Technical Review 2.4 Security"
+        },
+        {
+          "title": "Salla theme-raed src/views/pages/thank-you.twig",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/views/pages/thank-you.twig",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
+      "owner": "Salla Theme Factory"
+    },
+    {
+      "id": "fast-checkout-landing-page-widget-official-raed",
+      "status": "accepted",
+      "category": "policy.fast-checkout-css",
+      "gate": "policy-check",
+      "match": {
+        "file": "src/assets/styles/04-components/landing-page.scss",
+        "component": "salla-mini-checkout-widget"
+      },
+      "decision": "accepted-official-raed-fast-checkout-layout",
+      "reason_ar": "??????? layout ??? salla-mini-checkout-widget ?????? ?? Raed ?????? ??????. ?????? ?????? ???????? ????? ???? ????? ???? ?? ??????? ????? ?????? ????? ?????? ???????.",
+      "sources": [
+        {
+          "title": "Salla Add Product - Fast Checkout Feature",
+          "url": "https://docs.salla.dev/422692m0",
+          "section": "Fast checkout component styling contract"
+        },
+        {
+          "title": "Salla theme-raed src/assets/styles/04-components/landing-page.scss",
+          "url": "https://github.com/SallaApp/theme-raed/blob/3e83be63781fc33ae191df7f41c5c4d45be61eae/src/assets/styles/04-components/landing-page.scss",
+          "section": "Official upstream source"
+        }
+      ],
+      "review_after": "2026-08-05",
       "owner": "Salla Theme Factory"
     }
   ]

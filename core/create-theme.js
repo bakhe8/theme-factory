@@ -77,6 +77,94 @@ function copyRecursive(source, destination) {
   fs.copyFileSync(source, destination);
 }
 
+function normalizeGeneratedThemeSource() {
+  normalizeGeneratedGitignore();
+  normalizeBlogLikeLoader();
+  normalizeBrandsIndexNavigation();
+}
+
+function normalizeGeneratedGitignore() {
+  const gitignorePath = path.join(themePath, '.gitignore');
+  if (!fs.existsSync(gitignorePath)) return;
+
+  const content = fs.readFileSync(gitignorePath, 'utf8');
+  const normalized = content
+    .split(/\r?\n/)
+    .filter((line) => line.trim() !== 'pnpm-lock.yaml')
+    .join('\n');
+
+  fs.writeFileSync(gitignorePath, `${normalized.replace(/\n+$/g, '')}\n`);
+}
+
+function normalizeBlogLikeLoader() {
+  const blogPath = path.join(themePath, 'src', 'assets', 'js', 'blog.js');
+  if (!fs.existsSync(blogPath)) return;
+
+  let content = fs.readFileSync(blogPath, 'utf8');
+  if (!content.includes("likeBtn.querySelector('i').outerHTML")) return;
+
+  content = content.replace(
+    /\s*const originalContent = likeBtn\.innerHTML;\r?\n\s*likeBtn\.querySelector\('i'\)\.outerHTML = '<span class="loader loader--small"><\/span>';/,
+    '\n            const loaderState = this.showLikeLoader(likeBtn);',
+  );
+  content = content.replace(/likeBtn\.innerHTML = originalContent;/g, 'this.restoreLikeLoader(loaderState);');
+
+  if (!content.includes('showLikeLoader(likeBtn)')) {
+    content = content.replace(
+      '    handleExistingLike(likeBtn, blogId) {',
+      [
+        '    showLikeLoader(likeBtn) {',
+        "        const icon = likeBtn.querySelector('i');",
+        '        if (!icon) {',
+        '            return null;',
+        '        }',
+        '',
+        "        const loader = document.createElement('span');",
+        "        loader.classList.add('loader', 'loader--small');",
+        '        const originalIcon = icon.cloneNode(true);',
+        '        icon.replaceWith(loader);',
+        '',
+        '        return { loader, originalIcon };',
+        '    }',
+        '',
+        '    restoreLikeLoader(state) {',
+        '        if (!state?.loader?.isConnected || !state.originalIcon) {',
+        '            return;',
+        '        }',
+        '',
+        '        state.loader.replaceWith(state.originalIcon);',
+        '    }',
+        '',
+        '    handleExistingLike(likeBtn, blogId) {',
+      ].join('\n'),
+    );
+  }
+
+  fs.writeFileSync(blogPath, content);
+}
+
+function normalizeBrandsIndexNavigation() {
+  const brandsPath = path.join(themePath, 'src', 'assets', 'js', 'brands.js');
+  if (!fs.existsSync(brandsPath)) return;
+
+  let content = fs.readFileSync(brandsPath, 'utf8');
+  const unsafeSnippet = "        navWrap.style.height = nav.clientHeight + 'px';";
+  if (!content.includes(unsafeSnippet)) return;
+
+  content = content.replace(
+    unsafeSnippet,
+    [
+      '        if (!nav || !navWrap) {',
+      '            return;',
+      '        }',
+      '',
+      "        navWrap.style.height = nav.clientHeight + 'px';",
+    ].join('\n'),
+  );
+
+  fs.writeFileSync(brandsPath, content);
+}
+
 function rewritePackage() {
   const packagePath = path.join(themePath, 'package.json');
   const manifest = readJson(packagePath);
@@ -185,6 +273,7 @@ console.log(`📦 قاعدة التصنيع الإلزامية: themes/${REQUIRE
 
 try {
   copyRecursive(templatePath, themePath);
+  normalizeGeneratedThemeSource();
   writeFactoryManifest();
   const manifest = rewritePackage();
   rewriteTwilight(manifest);

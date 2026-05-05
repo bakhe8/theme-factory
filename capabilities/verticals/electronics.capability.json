@@ -1,0 +1,60 @@
+{
+  "schema": "salla-theme-factory/capability@1",
+  "id": "electronics",
+  "type": "vertical",
+  "status": "implemented",
+  "title": {
+    "ar": "متجر إلكترونيات",
+    "en": "Electronics Store"
+  },
+  "summary": "بيئة بيانات ومعاينة محلية لمتاجر الإلكترونيات تغطي الأجهزة عالية القيمة، المواصفات، الضمان، التصنيفات التقنية، المخزون، الباقات، والبيع الإضافي.",
+  "source": {
+    "kind": "factory-benchmark",
+    "links": [
+      {
+        "title": "Electronics benchmark",
+        "url": "docs/benchmarks/electronics.md"
+      },
+      {
+        "title": "Electronics vertical guide",
+        "url": "docs/ELECTRONICS_VERTICAL.md"
+      },
+      {
+        "title": "Product flip capability",
+        "url": "capabilities/home/product-flip.capability.json"
+      }
+    ],
+    "notes": "يعتمد على benchmark سلوكي مصطنع لاختبار جاهزية المصنع لقطاع الإلكترونيات دون نسخ متجر خارجي أو تصميم تجاري."
+  },
+  "policy": {
+    "decision": "allowed_with_conditions",
+    "conditions": [
+      "تستخدم بيانات fixture محلية أو بيانات متجر سلة المتاحة في runtime فقط.",
+      "لا تضيف منطق ضمان أو تمويل أو مقارنة يتجاوز بيانات سلة أو إعدادات التاجر.",
+      "أي تكامل خارجي مثل البحث بالصورة أو مقارنة أسعار خارجية يجب أن يدخل عبر integration capability مستقلة.",
+      "يجب أن تغطي preview pages وvisual checklist منتجات عالية القيمة وحالات المخزون قبل التسليم."
+    ]
+  },
+  "factory": {
+    "registry": "core/vertical-registry.js",
+    "generator": "core/vertical-factory.js",
+    "gate": "core/vertical-factory.js",
+    "spec_section": "verticals",
+    "spec_key": "electronics",
+    "registry_id": "electronics"
+  },
+  "quality": {
+    "required_gates": [
+      "fixtures",
+      "vertical",
+      "experience",
+      "preview",
+      "coverage",
+      "links",
+      "browser",
+      "twilight",
+      "rtl",
+      "visual"
+    ]
+  }
+}

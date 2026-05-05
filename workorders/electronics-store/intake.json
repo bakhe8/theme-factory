@@ -1,0 +1,20 @@
+{
+  "schema": "salla-theme-factory/workorder@1",
+  "theme": "electronics-store",
+  "created_at": "2026-05-04T23:40:19.562Z",
+  "status": "intake-created",
+  "inputs": {
+    "specs": "specs/electronics-store.specs.json",
+    "requested_verticals": [
+      "electronics"
+    ],
+    "requested_experiences": [],
+    "requested_page_experiences": [],
+    "requested_innovations": [],
+    "applied_innovation_fulfillment": []
+  },
+  "next_steps": [
+    "node factory.js manufacture electronics-store",
+    "node factory.js deliver electronics-store"
+  ]
+}

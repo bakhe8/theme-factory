@@ -36,6 +36,33 @@ const VERTICALS = {
       homeSections: 4,
     },
   },
+  electronics: {
+    id: 'electronics',
+    title: 'Electronics Store',
+    benchmark: {
+      name: 'Synthetic Electronics Store',
+      url: 'docs/benchmarks/electronics.md',
+      observedAt: '2026-05-05',
+    },
+    fixture: 'electronics-rich',
+    requiredSignals: [
+      'تصنيفات تقنية واضحة: جوالات، لابتوبات، صوتيات، ألعاب، منزل ذكي، كاميرات، شاشات، إكسسوارات',
+      'منتجات تحمل مواصفات تقنية وضمان وتوافق اتصال، وليس مجرد اسم وسعر',
+      'حالات مخزون مهمة للإلكترونيات: خصم، نافد، طلب مسبق، وباقات',
+      'رسائل ثقة مناسبة لقيمة الأجهزة: ضمان رسمي، دفع آمن، توصيل آمن',
+      'أقسام رئيسية تساعد المتسوق على المقارنة والترقية والبيع الإضافي',
+      'تجربة عرض تفاعلية للمنتجات تبقي السعر والرابط وزر السلة متاحة',
+      'منتجات رقمية أو خدمية مثل الضمان الممتد بدون اختراع منطق خارج المنصة',
+      'صفحات منتجات وتصنيفات وسلة قابلة للفحص بصريا على بيانات إلكترونيات غنية',
+    ],
+    requiredExperiences: ['product-flip'],
+    minimums: {
+      products: 12,
+      categories: 8,
+      reviews: 4,
+      homeSections: 4,
+    },
+  },
 };
 
 function normalizeVerticalId(value) {

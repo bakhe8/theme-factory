@@ -7,6 +7,8 @@
   "source_template": "raed",
   "source_path": "themes/raed",
   "source_url": "https://github.com/SallaApp/theme-raed",
+  "source_ref": "master",
+  "upstream_commit": "3e83be63781fc33ae191df7f41c5c4d45be61eae",
   "specs_path": "specs/raed.specs.json",
-  "created_at": "2026-05-04T00:00:00.000Z"
+  "refreshed_at": "2026-05-05T00:16:46.1223890Z"
 }

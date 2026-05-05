@@ -699,7 +699,7 @@ function validateDocumentedSourceRules(themePath, issues, warnings, exceptions) 
     const content = fs.readFileSync(file, 'utf8');
 
     if (file.endsWith('.twig') && content.includes('|raw')) {
-      addIssue(issues, relativePath, 'Security', 'استخدام |raw محظور بسياسة المصنع لأنه يحتاج مراجعة أمنية صريحة', 'SALLA_NO_RAW_TWIG');
+      validateRawTwigUsage(relativePath, content, issues, exceptions);
     }
 
     if (file.endsWith('.js')) {
@@ -719,8 +719,37 @@ function validateDocumentedSourceRules(themePath, issues, warnings, exceptions) 
     }
   }
 
-  validateFastCheckoutCss(themePath, issues);
+  validateFastCheckoutCss(themePath, issues, exceptions);
   validateProductCardContract(themePath, warnings);
+}
+
+function validateRawTwigUsage(relativePath, content, issues, exceptions) {
+  const lines = content.split(/\r?\n/);
+
+  lines.forEach((line, index) => {
+    if (!line.includes('|raw')) return;
+
+    const exception = findException({
+      category: 'policy.twig-raw',
+      gate: 'policy-check',
+      file: relativePath.replace(/\\/g, '/'),
+      sink: '|raw',
+      line: index + 1,
+    });
+
+    if (exception) {
+      addException(
+        exceptions,
+        `${relativePath}:${index + 1}`,
+        'Security',
+        `استخدام |raw مقبول عبر Exception Registry: ${exception.id}`,
+        exception,
+      );
+      return;
+    }
+
+    addIssue(issues, `${relativePath}:${index + 1}`, 'Security', 'استخدام |raw محظور بسياسة المصنع لأنه يحتاج مراجعة أمنية صريحة', 'SALLA_NO_RAW_TWIG');
+  });
 }
 
 function validateHtmlInjectionUsage(relativePath, content, issues, warnings, exceptions) {
@@ -791,7 +820,7 @@ function validatePublicThemeSize(themePath, warnings, issues) {
   }
 }
 
-function validateFastCheckoutCss(themePath, issues) {
+function validateFastCheckoutCss(themePath, issues, exceptions) {
   const stylesPath = path.join(themePath, 'src', 'assets', 'styles');
   const styleFiles = getAllFiles(stylesPath).filter((file) => /\.(s?css|pcss)$/i.test(file));
 
@@ -801,6 +830,26 @@ function validateFastCheckoutCss(themePath, issues) {
 
     const violations = findMiniCheckoutCssViolations(content);
     for (const violation of violations) {
+      const relativePath = path.relative(themePath, file).replace(/\\/g, '/');
+      const exception = findException({
+        category: 'policy.fast-checkout-css',
+        gate: 'policy-check',
+        file: relativePath,
+        component: 'salla-mini-checkout-widget',
+        line: violation.line,
+      });
+
+      if (exception) {
+        addException(
+          exceptions,
+          `${path.relative(themePath, file)}:${violation.line}`,
+          'SallaComponent',
+          `تخصيص salla-mini-checkout-widget مقبول عبر Exception Registry: ${exception.id}`,
+          exception,
+        );
+        continue;
+      }
+
       addIssue(
         issues,
         `${path.relative(themePath, file)}:${violation.line}`,

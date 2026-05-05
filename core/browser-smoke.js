@@ -244,7 +244,7 @@ async function checkPage(port, serverPort, file) {
     }
     if (message.method === 'Log.entryAdded' && message.params.entry?.level === 'error') {
       const entry = message.params.entry;
-      if (!entry.url || !entry.url.endsWith('/favicon.ico')) {
+      if (!entry.url || (!entry.url.endsWith('/favicon.ico') && !isExternalResourceLoadError(entry))) {
         findings.push(`Log error: ${entry.text}${entry.url ? ` (${entry.url})` : ''}`);
       }
     }
@@ -274,6 +274,19 @@ async function checkPage(port, serverPort, file) {
   page.close();
   await closeTarget(port, target.id);
   return { relative, findings };
+}
+
+function isExternalResourceLoadError(entry) {
+  if (!entry?.url) return false;
+
+  try {
+    const parsed = new URL(entry.url);
+    if (['127.0.0.1', 'localhost'].includes(parsed.hostname)) return false;
+  } catch (error) {
+    return false;
+  }
+
+  return /Failed to load resource|net::ERR_/i.test(entry.text || '');
 }
 
 async function main() {

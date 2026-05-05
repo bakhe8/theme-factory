@@ -26,18 +26,18 @@ class Blog extends BasePage {
                 return salla.notify.error(salla.lang.get('common.messages.must_login'));
             }
 
-            const originalContent = likeBtn.textContent;
+            const originalContent = likeBtn.innerHTML;
             likeBtn.querySelector('i').outerHTML = '<span class="loader loader--small"></span>';
 
             const endpoint = `blog/articles/${blogId}/like`;
             try {
                 await salla.api.request(endpoint, '', this.isLiked ? 'delete' : 'put');
-                likeBtn.textContent = originalContent;
+                likeBtn.innerHTML = originalContent;
                 this.updateLikedBlogs(blogId, !this.isLiked);
                 this.updateLikesCount(!this.isLiked);
                 this.isLiked = !this.isLiked;
             } catch (e) {
-                 likeBtn.textContent = originalContent;
+                 likeBtn.innerHTML = originalContent;
                 if (e.response?.status === 409) {
                     this.handleExistingLike(likeBtn, blogId);
                 }
@@ -67,7 +67,7 @@ class Blog extends BasePage {
 
         anime({
             targets: countSpan,
-            textContent: isLiked ? currentCount + 1 : currentCount - 1,
+            innerHTML: isLiked ? currentCount + 1 : currentCount - 1,
             duration: 400,
             round: 1,
             easing: 'easeOutExpo',
