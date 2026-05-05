@@ -56,6 +56,202 @@
       .replace(/>/g, '&gt;');
   }
 
+  function injectRuntimeStyles() {
+    if (document.querySelector('style[data-salla-runtime-styles]')) return;
+    const style = document.createElement('style');
+    style.dataset.sallaRuntimeStyles = 'true';
+    style.textContent = `
+      salla-search[inline],
+      salla-search .salla-runtime-search {
+        display: block;
+        width: 100%;
+      }
+
+      .salla-runtime-search {
+        min-height: 40px;
+        border: 1px solid rgba(15, 23, 42, 0.12);
+        border-radius: 999px;
+        background: #fff;
+        padding: 0 1rem;
+        color: var(--color-text, #111827);
+        outline: none;
+      }
+
+      .salla-runtime-search:focus {
+        border-color: var(--color-primary, #0e7490);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary, #0e7490) 16%, transparent);
+      }
+
+      .salla-runtime-menu {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .salla-runtime-menu a {
+        color: inherit;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .salla-runtime-cart-count {
+        position: absolute;
+        top: -0.25rem;
+        inset-inline-start: -0.25rem;
+        display: inline-flex;
+        min-width: 1.125rem;
+        height: 1.125rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: var(--color-primary, #0e7490);
+        color: #fff;
+        font-size: 0.6875rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      salla-cart-summary {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      salla-cart-summary .sicon-shopping-bag {
+        position: relative;
+        font-size: 0;
+      }
+
+      salla-cart-summary .sicon-shopping-bag::before {
+        content: '';
+        display: block;
+        width: 1rem;
+        height: 0.875rem;
+        border: 2px solid currentColor;
+        border-radius: 0.25rem;
+      }
+
+      salla-cart-summary .sicon-shopping-bag::after {
+        content: '';
+        position: absolute;
+        top: 0.45rem;
+        left: 50%;
+        width: 0.5rem;
+        height: 0.375rem;
+        border: 2px solid currentColor;
+        border-bottom: 0;
+        border-radius: 999px 999px 0 0;
+        transform: translateX(-50%);
+      }
+
+      .salla-runtime-user-menu {
+        display: inline-flex;
+        width: 2.5rem;
+        height: 2.5rem;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 1px solid rgba(15, 23, 42, 0.12);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--color-primary, #0e7490);
+        font-weight: 700;
+      }
+
+      .salla-runtime-user-menu img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .salla-runtime-contacts {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        white-space: nowrap;
+      }
+
+      .salla-runtime-contacts a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .sicon-menu {
+        position: relative;
+        display: inline-flex;
+        width: 1.125rem;
+        height: 1.125rem;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+      }
+
+      .sicon-menu::before {
+        content: '';
+        display: block;
+        width: 1.125rem;
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+        box-shadow: 0 -0.375rem 0 currentColor, 0 0.375rem 0 currentColor;
+      }
+
+      .sicon-cancel {
+        position: relative;
+        display: inline-flex;
+        width: 1.125rem;
+        height: 1.125rem;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+      }
+
+      .sicon-cancel::before,
+      .sicon-cancel::after {
+        content: '';
+        position: absolute;
+        width: 1rem;
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+      }
+
+      .sicon-cancel::before {
+        transform: rotate(45deg);
+      }
+
+      .sicon-cancel::after {
+        transform: rotate(-45deg);
+      }
+
+      @media (max-width: 640px) {
+        .top-navbar .container,
+        .top-navbar .container > .flex-1,
+        .top-navbar .header-search {
+          min-width: 0;
+          max-width: 100%;
+        }
+
+        .top-navbar .container,
+        .top-navbar .container > .flex-1 {
+          flex-wrap: wrap;
+        }
+
+        .top-navbar .header-search {
+          flex: 1 1 100%;
+        }
+
+        .top-navbar salla-contacts[is-header],
+        .top-navbar .salla-runtime-menu--topnav {
+          display: none;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
   function selectedProducts(element) {
     const products = state.products || [];
     const sourceValue = element.getAttribute('source-value');
@@ -130,7 +326,10 @@
     },
     lang: {
       get(key, params = {}) {
-        let value = getPath(state.translations || {}, key, key);
+        const translations = state.translations || {};
+        let value = Object.prototype.hasOwnProperty.call(translations, key)
+          ? translations[key]
+          : getPath(translations, key, key);
         Object.entries(params || {}).forEach(([name, replacement]) => {
           value = value.replace(`{${name}}`, replacement);
         });
@@ -445,7 +644,7 @@
       const input = document.createElement('input');
       input.type = 'search';
       input.placeholder = this.getAttribute('placeholder') || window.salla.lang.get('common.search');
-      input.className = 'salla-runtime-search';
+      input.className = 's-search-input salla-runtime-search';
       this.appendChild(input);
     }
   }
@@ -455,15 +654,64 @@
       const source = this.getAttribute('source') || this.getAttribute('type') || 'header';
       window.salla.component.getMenus(source).then((response) => {
         const nav = document.createElement('nav');
-        nav.className = 'salla-runtime-menu';
+        const isTopnav = this.hasAttribute('topnav');
+        nav.className = `salla-runtime-menu${isTopnav ? ' salla-runtime-menu--topnav' : ''}`;
         response.data.forEach((item) => {
           const link = document.createElement('a');
           link.href = item.url;
           link.textContent = item.title;
+          if (isTopnav) link.className = 'topnav-link-item';
           nav.appendChild(link);
         });
         this.replaceChildren(nav);
       });
+    }
+  }
+
+  class SallaUserMenu extends RuntimeElement {
+    render() {
+      if (this.children.length) return;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'salla-runtime-user-menu';
+      const user = state.user || {};
+      button.setAttribute('aria-label', user.name || 'User');
+      if (user.avatar) {
+        const image = document.createElement('img');
+        image.src = user.avatar;
+        image.alt = user.name || '';
+        button.appendChild(image);
+      } else {
+        button.textContent = String(user.name || user.first_name || 'U').trim().slice(0, 1).toUpperCase();
+      }
+      this.appendChild(button);
+    }
+  }
+
+  class SallaContacts extends RuntimeElement {
+    render() {
+      if (this.children.length) return;
+      const contacts = state.store?.contacts || {};
+      const wrapper = document.createElement('div');
+      wrapper.className = 'salla-runtime-contacts';
+
+      if (contacts.mobile || contacts.phone) {
+        const phone = document.createElement('a');
+        phone.href = `tel:${contacts.mobile || contacts.phone}`;
+        phone.textContent = contacts.mobile || contacts.phone;
+        phone.className = this.hasAttribute('is-header') ? 'topnav-link-item right-side' : '';
+        wrapper.appendChild(phone);
+      }
+
+      if (contacts.email) {
+        const email = document.createElement('a');
+        email.href = `mailto:${contacts.email}`;
+        email.textContent = contacts.email;
+        email.className = this.hasAttribute('is-header') ? 'topnav-link-item right-side' : '';
+        wrapper.appendChild(email);
+      }
+
+      this.appendChild(wrapper);
     }
   }
 
@@ -593,6 +841,8 @@
     'salla-cart-summary': SallaCartSummary,
     'salla-search': SallaSearch,
     'salla-menu': SallaMenu,
+    'salla-user-menu': SallaUserMenu,
+    'salla-contacts': SallaContacts,
     'salla-products-list': SallaProductsList,
     'salla-products-slider': SallaProductsSlider,
     'salla-slider': SallaSlider,
@@ -601,6 +851,8 @@
   };
 
   if (!window.__SALLA_TWILIGHT_EXTERNAL__) {
+    injectRuntimeStyles();
+
     Object.entries(registry).forEach(([name, constructor]) => {
       if (!customElements.get(name)) customElements.define(name, constructor);
     });

@@ -21,6 +21,17 @@ function readTwilight(themePath) {
   }
 }
 
+function readThemeSpecs(themeName) {
+  const file = path.join(__dirname, '..', '..', 'specs', `${themeName}.specs.json`);
+  if (!fs.existsSync(file)) return {};
+
+  try {
+    return JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch (error) {
+    return {};
+  }
+}
+
 function slugify(value, fallback = 'item') {
   const clean = String(value || '')
     .trim()
@@ -31,7 +42,9 @@ function slugify(value, fallback = 'item') {
   return clean || fallback;
 }
 
-function collectSettings(twilight) {
+function collectSettings(twilight, themeName) {
+  const specs = readThemeSpecs(themeName);
+  const colors = specs.visual_identity?.colors || {};
   const settings = {};
   for (const item of twilight.settings || []) {
     if (!item.id || item.type === 'static') continue;
@@ -45,9 +58,6 @@ function collectSettings(twilight) {
   }
 
   return {
-    primary_color: '#111111',
-    accent_color: '#E6BEAE',
-    bg_color: '#ffffff',
     header_is_sticky: true,
     footer_is_dark: false,
     topnav_is_dark: false,
@@ -55,6 +65,11 @@ function collectSettings(twilight) {
     enable_add_product_toast: true,
     placeholder: 'images/placeholder.png',
     ...settings,
+    primary_color: colors.primary || settings.primary_color || '#111111',
+    accent_color: colors.accent || settings.accent_color || '#E6BEAE',
+    bg_color: colors.background || settings.bg_color || '#ffffff',
+    text_color: colors.text || settings.text_color || '#111111',
+    font_family: specs.visual_identity?.font || settings.font_family || 'DINNextLTArabic-Regular',
   };
 }
 
@@ -94,6 +109,7 @@ const baseTranslations = {
   'common.no_reviews': 'لا توجد مراجعات بعد',
   'common.titles.home': 'الرئيسية',
   'common.titles.support': 'الدعم',
+  'common.titles.more': 'المزيد',
   'common.elements.back_home': 'العودة للرئيسية',
   'common.elements.tax_number': 'الرقم الضريبي',
   'common.elements.warning': 'تنبيه',
@@ -815,7 +831,7 @@ function createOrder(source = {}, products = [], index = 0) {
 
 function createMockContext(themeName, themePath, options = {}) {
   const twilight = readTwilight(themePath);
-  const settings = collectSettings(twilight);
+  const settings = collectSettings(twilight, themeName);
   const fixture = getFixture(options.fixture || process.env.FACTORY_FIXTURE || 'fashion-rich', themePath);
   const fixtureProducts = (Array.isArray(fixture.products) ? fixture.products : products).map(enrichProduct);
   const primaryProduct = fixtureProducts[0] || enrichProduct(products[0]);

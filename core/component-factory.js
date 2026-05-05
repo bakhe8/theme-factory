@@ -1686,20 +1686,25 @@ function renderProductFlipStyles() {
   return `.s-block--product-flip {
   .product-flip-card {
     min-height: 460px;
+    display: flex;
     perspective: 1400px;
 
     &__inner {
       position: relative;
+      width: 100%;
       min-height: 100%;
       transform-style: preserve-3d;
       transition: transform 280ms ease;
     }
 
-    &.is-flipped &__inner {
-      transform: rotateY(180deg);
+    &.is-flipped {
+      .product-flip-card__inner {
+        transform: rotateY(180deg);
+      }
     }
 
     &__face {
+      width: 100%;
       min-height: 460px;
       backface-visibility: hidden;
     }
@@ -1708,6 +1713,11 @@ function renderProductFlipStyles() {
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
+
+      custom-salla-product-card {
+        display: flex;
+        flex: 1;
+      }
     }
 
     &__back {
